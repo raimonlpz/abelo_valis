@@ -1,0 +1,55 @@
+.wrapper_right {
+  position: absolute;
+  top: 0;
+  right: 20px;
+}
+
+.wrapper_left {
+  position: absolute;
+  top: 0;
+  left: 20px;
+}
+
+.wrapper_rand1 {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+}
+.wrapper_rand2 {
+  position: absolute;
+  top: 55%;
+  right: 20%;
+}
+.wrapper_rand3 {
+  position: absolute;
+  top: 5%;
+  right: 13%;
+}
+
+.folderWrapper {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.folderWrapper img {
+  width: 70px;
+  height: auto;
+}
+
+.folderText {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.marginBottom20 {
+  margin-bottom: 20px;
+}
+
+.folderWrapperRand1 {
+  top: 20%;
+  left: 35%;
+  position: absolute !important;
+}

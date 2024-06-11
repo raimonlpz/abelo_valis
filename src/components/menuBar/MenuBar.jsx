@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './MenuBar.module.css'
 import menuBarData from './menuBarData'
 
-export default function MenuBar() {
+export default function MenuBar({ openApp }) {
     
  const [menuBarOpen, setMenuBarOpen] = useState(false)
  const [clickedMenuItem, setClickedMenuItem] = useState(0)
@@ -20,6 +20,11 @@ export default function MenuBar() {
     setTimeout(() => {
         setClickedMenuItem(0)
     }, 5000)
+
+    if (id === '8') {
+        // PhotoBooth
+        openApp()
+    }
  }
 
 //  if (!menuBarOpen) {

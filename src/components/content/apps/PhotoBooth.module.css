@@ -17,6 +17,15 @@
   padding-top: 20px;
 }
 
+.appTitle {
+  position: absolute;
+  font-size: 0.85rem;
+  color: rgb(69, 69, 69);
+  top: 1.25rem;
+  left: 51%;
+  transform: translateX(-50%);
+}
+
 .left_inner_wrapper {
   height: 5%;
   width: 100%;
@@ -42,12 +51,20 @@ PhotoBooth
   margin-top: 0.5rem;
 }
 
-.photobooth video {
-  height: calc(100%);
+.photobooth video,
+.photobooth canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
   width: 100%;
   object-fit: cover;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
+}
+
+.photobooth canvas {
+  border: 2px solid red;
 }
 
 .commands {

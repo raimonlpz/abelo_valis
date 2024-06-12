@@ -7,6 +7,7 @@ import StatusBar from './components/statusBar/StatusBar'
 import AppleMenu from './components/content/appleMenu/AppleMenu'
 import MenuBar from './components/menuBar/MenuBar'
 import PhotoBooth from './components/content/apps/PhotoBooth'
+import GMaps from './components/content/apps/GMaps'
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
 
   // Apps 
   const [isPhotoBoothOpen, setIsPhotoBoothOpen] = useState(false)
+  const [isGMapsOpen, setIsGMapsOpen] = useState(false)
 
   const toggleAppleMenu = () => {
     setIsAppleMenuOpen(!isAppleMenuOpen)
@@ -32,6 +34,15 @@ function App() {
 
   const closeFolderContent = () => {
     setIsFolderOpen(false)
+  }
+
+
+  const openGMaps = () => {
+    setIsGMapsOpen(true)
+  }
+  
+  const closeGMaps = () => {
+    setIsGMapsOpen(false)
   }
 
   const openPhotoBooth = () => {
@@ -57,12 +68,12 @@ function App() {
 
         <FolderContent isFolderOpen={isFolderOpen} closeFolderContent={closeFolderContent} />
         <PhotoBooth isPhotoBoothOpen={isPhotoBoothOpen} closePhotoBooth={closePhotoBooth} />
-
+        <GMaps isGMapsOpen={isGMapsOpen} closeGMaps={closeGMaps} />
 
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} />
       </div>
 
-      <MenuBar openApp={openPhotoBooth} />
+      <MenuBar openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} />
     </div>
     </>
   )

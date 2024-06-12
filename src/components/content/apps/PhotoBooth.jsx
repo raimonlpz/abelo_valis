@@ -14,6 +14,9 @@ export default function PhotoBooth({ isPhotoBoothOpen, closePhotoBooth }) {
       let stream = null;
       let animationFrameId = null;
 
+      const image = new Image();
+      image.src = '/images/customicons/facemesh.png';
+
         if (videoRef.current && isPhotoBoothOpen) {
 
             let mediaDevices = navigator.mediaDevices;
@@ -41,9 +44,6 @@ export default function PhotoBooth({ isPhotoBoothOpen, closePhotoBooth }) {
                 });
 
                 faceApiRef.current = faceapi
-
-                const image = new Image();
-                image.src = '/images/customicons/facemesh.png';
 
                 const drawFilter = (context, box) => {
                   if (!box) return;

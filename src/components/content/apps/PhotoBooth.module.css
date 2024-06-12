@@ -63,10 +63,6 @@ PhotoBooth
   border-bottom-left-radius: 10px;
 }
 
-.photobooth canvas {
-  border: 2px solid red;
-}
-
 .commands {
   position: absolute;
   bottom: 1rem;

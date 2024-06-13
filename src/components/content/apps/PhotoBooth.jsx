@@ -4,7 +4,7 @@ import Draggable from 'react-draggable'
 import ml5 from 'ml5'
 
 
-const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
 
     const faceApiRef = useRef()
     const canvasRef = useRef()
@@ -115,6 +115,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, minimizeApp,
                 alt="icns"
               />
               <img
+                onClick={maximizeApp}
                 className={styles.left_corner_button_img}
                 src="/images/icons/zoom.png"
                 alt="icns"

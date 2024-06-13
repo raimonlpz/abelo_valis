@@ -54,7 +54,7 @@ function App() {
   const openFolderContent = () => {
     setIsFolderOpen(true)
     editZIndex('BaseFolder')
-    maximizeApp(baseFolderRef)
+    unMinimizeApp(baseFolderRef)
   }
 
   const closeFolderContent = () => {
@@ -67,7 +67,7 @@ function App() {
   const openGMaps = () => {
     setIsGMapsOpen(true)
     editZIndex('GMaps')
-    maximizeApp(gmapsAppRef)
+    unMinimizeApp(gmapsAppRef)
   }
   
   const closeGMaps = () => {
@@ -80,7 +80,7 @@ function App() {
   const openPhotoBooth = () => {
     setIsPhotoBoothOpen(true)
     editZIndex('PhotoBooth')
-    maximizeApp(photoboothAppRef)
+    unMinimizeApp(photoboothAppRef)
   }
 
   const closePhotoBooth = () => {
@@ -129,13 +129,20 @@ function App() {
   }
 
 
-  const maximizeApp = (appRef) => {
+  const unMinimizeApp = (appRef) => {
     if (appRef.current.style.transform === 'scale(0.15)') {
       appRef.current.style.top = '10%';
       appRef.current.style.left = '10%'
       appRef.current.style.transform = 'scale(1)';
     }
     onStopDrag()
+  }
+  
+  const maximizeApp = (appRef) => {
+    appRef.current.style.top = '-40px' 
+    appRef.current.style.left = 0
+    appRef.current.style.width = '100vw'
+    appRef.current.style.height = '100vh'
   }
 
   return (
@@ -155,6 +162,7 @@ function App() {
           ref={baseFolderRef} 
           isFolderOpen={isFolderOpen} 
           closeFolderContent={closeFolderContent}
+          maximizeApp={() => maximizeApp(baseFolderRef)}
           minimizeApp={() => minimizeApp(baseFolderRef)}  
           onStartDrag={() => editZIndex('BaseFolder')} 
           onStopDrag={onStopDrag}
@@ -163,6 +171,7 @@ function App() {
           ref={photoboothAppRef} 
           isPhotoBoothOpen={isPhotoBoothOpen} 
           closePhotoBooth={closePhotoBooth}
+          maximizeApp={() => maximizeApp(photoboothAppRef)}
           minimizeApp={() => minimizeApp(photoboothAppRef)} 
           onStartDrag={() => editZIndex('PhotoBooth')} 
           onStopDrag={onStopDrag}
@@ -171,6 +180,7 @@ function App() {
           ref={gmapsAppRef} 
           isGMapsOpen={isGMapsOpen} 
           closeGMaps={closeGMaps} 
+          maximizeApp={() => maximizeApp(gmapsAppRef)}
           minimizeApp={() => minimizeApp(gmapsAppRef)}
           onStartDrag={() => editZIndex('GMaps')} 
           onStopDrag={onStopDrag}

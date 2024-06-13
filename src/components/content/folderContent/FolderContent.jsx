@@ -2,7 +2,7 @@ import React, { forwardRef } from 'react'
 import styles from './FolderContent.module.css'
 import Draggable from 'react-draggable';
 
-const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
     return (
       <Draggable onStart={onStartDrag} onStop={onStopDrag}>
         <div
@@ -27,6 +27,7 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, mini
                 alt="icns"
               />
               <img
+                onClick={maximizeApp}
                 className={styles.left_corner_button_img}
                 src="/images/icons/zoom.png"
                 alt="icns"

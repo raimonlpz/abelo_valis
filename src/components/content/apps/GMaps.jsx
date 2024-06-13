@@ -3,10 +3,11 @@ import React, { forwardRef } from 'react'
 import styles from './GMaps.module.css'
 import Draggable from 'react-draggable'
 
-const GMaps = forwardRef(({ isGMapsOpen, closeGMaps, onStartDrag }, ref) => {
+const GMaps = forwardRef(({ isGMapsOpen, closeGMaps, minimizeApp, onStartDrag, onStopDrag }, ref) => {
   return (
     <Draggable
       onStart={onStartDrag}
+      onStop={onStopDrag}
     >
         <div
             ref={ref}
@@ -25,6 +26,7 @@ const GMaps = forwardRef(({ isGMapsOpen, closeGMaps, onStartDrag }, ref) => {
                 alt="icns"
               />
               <img
+                onClick={minimizeApp}
                 className={styles.left_corner_button_img}
                 src="/images/icons/minimise.png"
                 alt="icns"

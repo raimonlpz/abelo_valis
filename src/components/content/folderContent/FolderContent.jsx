@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react'
 import styles from './FolderContent.module.css'
 import Draggable from 'react-draggable';
 
-const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, onStartDrag }, ref) => {
+const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, minimizeApp, onStartDrag, onStopDrag }, ref) => {
     return (
-      <Draggable onStart={onStartDrag}>
+      <Draggable onStart={onStartDrag} onStop={onStopDrag}>
         <div
           ref={ref}   
           className={styles.wrapper}
@@ -21,6 +21,7 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, onSt
                 alt="icns"
               />
               <img
+                onClick={minimizeApp}
                 className={styles.left_corner_button_img}
                 src="/images/icons/minimise.png"
                 alt="icns"

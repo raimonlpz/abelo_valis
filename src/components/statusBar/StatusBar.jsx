@@ -12,7 +12,6 @@ export default function StatusBar({ toggleAppleMenu }) {
     }
 
     const getTime = useCallback(() => {
-      console.log("worked");
       var date = new Date();
       var d = date.getDay();
       var h = date.getHours();

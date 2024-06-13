@@ -48,36 +48,52 @@ function App() {
     }
   }
 
+  /**
+   * Base Folder
+   */
   const openFolderContent = () => {
     setIsFolderOpen(true)
     editZIndex('BaseFolder')
+    maximizeApp(baseFolderRef)
   }
 
   const closeFolderContent = () => {
     setIsFolderOpen(false)
   }
 
+  /**
+   * GMaps
+   */
   const openGMaps = () => {
     setIsGMapsOpen(true)
     editZIndex('GMaps')
+    maximizeApp(gmapsAppRef)
   }
   
   const closeGMaps = () => {
     setIsGMapsOpen(false)
   }
 
+  /**
+   * PhotoBooth
+   */
   const openPhotoBooth = () => {
     setIsPhotoBoothOpen(true)
     editZIndex('PhotoBooth')
+    maximizeApp(photoboothAppRef)
   }
 
   const closePhotoBooth = () => {
     setIsPhotoBoothOpen(false)
   }
 
+  /**
+   * Utils
+   */
   const editZIndex = (appSel) => {
     appRefs.forEach((app) => {
       app.style.zIndex = 1
+      app.style.transition = 'none'
     })
     switch (appSel) {
       case 'GMaps':
@@ -94,6 +110,34 @@ function App() {
     }
   }
 
+  const onStopDrag = () => {
+    appRefs.forEach((app) => {
+      app.style.transition = 'all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1)'
+    })
+  }
+
+  const minimizeApp = (appRef) => {
+    if (appRef === baseFolderRef) {
+      appRef.current.style.top = 'calc(100vh - 370px)';
+      appRef.current.style.left = '62%'
+    } else {
+      appRef.current.style.top = 'calc(100vh - 305px)';
+      appRef.current.style.left = '75%'
+    }
+    appRef.current.style.transform = 'scale(0.15)';
+    onStopDrag()
+  }
+
+
+  const maximizeApp = (appRef) => {
+    if (appRef.current.style.transform === 'scale(0.15)') {
+      appRef.current.style.top = '10%';
+      appRef.current.style.left = '10%'
+      appRef.current.style.transform = 'scale(1)';
+    }
+    onStopDrag()
+  }
+
   return (
     <>
     <div className="wrapper">
@@ -107,9 +151,30 @@ function App() {
         
         <Folders openFolderContent={openFolderContent} />
 
-        <FolderContent ref={baseFolderRef} isFolderOpen={isFolderOpen} closeFolderContent={closeFolderContent} onStartDrag={() => editZIndex('BaseFolder')} />
-        <PhotoBooth ref={photoboothAppRef} isPhotoBoothOpen={isPhotoBoothOpen} closePhotoBooth={closePhotoBooth} onStartDrag={() => editZIndex('PhotoBooth')} />
-        <GMaps ref={gmapsAppRef} isGMapsOpen={isGMapsOpen} closeGMaps={closeGMaps} onStartDrag={() => editZIndex('GMaps')} />
+        <FolderContent 
+          ref={baseFolderRef} 
+          isFolderOpen={isFolderOpen} 
+          closeFolderContent={closeFolderContent}
+          minimizeApp={() => minimizeApp(baseFolderRef)}  
+          onStartDrag={() => editZIndex('BaseFolder')} 
+          onStopDrag={onStopDrag}
+        />
+        <PhotoBooth 
+          ref={photoboothAppRef} 
+          isPhotoBoothOpen={isPhotoBoothOpen} 
+          closePhotoBooth={closePhotoBooth}
+          minimizeApp={() => minimizeApp(photoboothAppRef)} 
+          onStartDrag={() => editZIndex('PhotoBooth')} 
+          onStopDrag={onStopDrag}
+        />
+        <GMaps 
+          ref={gmapsAppRef} 
+          isGMapsOpen={isGMapsOpen} 
+          closeGMaps={closeGMaps} 
+          minimizeApp={() => minimizeApp(gmapsAppRef)}
+          onStartDrag={() => editZIndex('GMaps')} 
+          onStopDrag={onStopDrag}
+        />
 
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} />
       </div>

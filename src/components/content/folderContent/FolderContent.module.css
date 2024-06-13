@@ -6,6 +6,8 @@
   top: 80px;
   border-radius: 6px;
   display: flex;
+
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 .left_inner_wrapper {

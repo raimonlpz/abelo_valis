@@ -4,7 +4,7 @@ import Draggable from 'react-draggable'
 import ml5 from 'ml5'
 
 
-const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, onStartDrag }, ref) => {
+const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, minimizeApp, onStartDrag, onStopDrag }, ref) => {
 
     const faceApiRef = useRef()
     const canvasRef = useRef()
@@ -92,7 +92,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, onStartDrag 
     }, [isPhotoBoothOpen])
 
   return (
-    <Draggable onStart={onStartDrag}>
+    <Draggable onStart={onStartDrag} onStop={onStopDrag}>
         <div
           ref={ref}
           className={styles.wrapper}
@@ -109,6 +109,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, onStartDrag 
                 alt="icns"
               />
               <img
+                onClick={minimizeApp}
                 className={styles.left_corner_button_img}
                 src="/images/icons/minimise.png"
                 alt="icns"

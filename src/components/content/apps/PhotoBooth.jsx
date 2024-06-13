@@ -1,10 +1,10 @@
-import React, { useEffect, useRef } from 'react'
+import React, { forwardRef, useEffect, useRef } from 'react'
 import styles from './PhotoBooth.module.css'
 import Draggable from 'react-draggable'
 import ml5 from 'ml5'
 
 
-export default function PhotoBooth({ isPhotoBoothOpen, closePhotoBooth }) {
+const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth }, ref) => {
 
     const faceApiRef = useRef()
     const canvasRef = useRef()
@@ -96,6 +96,7 @@ export default function PhotoBooth({ isPhotoBoothOpen, closePhotoBooth }) {
   return (
     <Draggable>
         <div
+          ref={ref}
           className={styles.wrapper}
           style={{
             visibility: isPhotoBoothOpen ? "visible" : "hidden",
@@ -134,4 +135,7 @@ export default function PhotoBooth({ isPhotoBoothOpen, closePhotoBooth }) {
         </div>
     </Draggable>
   )
-}
+})
+
+
+export default PhotoBooth

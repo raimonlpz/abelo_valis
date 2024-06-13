@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React, { forwardRef } from 'react'
 import styles from './FolderContent.module.css'
 import Draggable from 'react-draggable';
 
-
-const FolderContent = ({ isFolderOpen, closeFolderContent }) => {
+const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent }, ref) => {
     return (
       <Draggable>
-
         <div
+          ref={ref}   
           className={styles.wrapper}
           style={{
             visibility: isFolderOpen ? "visible" : "hidden",
@@ -255,6 +254,6 @@ const FolderContent = ({ isFolderOpen, closeFolderContent }) => {
 
       </Draggable>
     );
-  };
+  });
 
 export default FolderContent

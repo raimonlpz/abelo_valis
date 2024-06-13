@@ -1,13 +1,14 @@
 
-import React from 'react'
+import React, { forwardRef } from 'react'
 import styles from './GMaps.module.css'
 import Draggable from 'react-draggable'
 
-export default function GMaps({ isGMapsOpen, closeGMaps }) {
+const GMaps = forwardRef(({ isGMapsOpen, closeGMaps }, ref) => {
   return (
     <Draggable
     >
         <div
+            ref={ref}
             className={styles.wrapper}
             style={{
                 visibility: isGMapsOpen ? "visible" : "hidden",
@@ -37,7 +38,7 @@ export default function GMaps({ isGMapsOpen, closeGMaps }) {
           </div>
           <div className="gmaps">
             <iframe   
-                    frameborder="0"
+                    frameBorder="0"
                     style={{border: 0, marginTop: '.4rem', borderBottomRightRadius: '10px', borderBottomLeftRadius: '10px'}}
                     width="100%"
                     height="400"
@@ -49,4 +50,6 @@ export default function GMaps({ isGMapsOpen, closeGMaps }) {
         </div>
     </Draggable>
   )
-}
+})
+
+export default GMaps

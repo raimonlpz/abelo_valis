@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { createRef, useEffect, useRef, useState } from 'react'
 import './App.css'
 import FolderContent from './components/content/folderContent/FolderContent'
 import Folders from './components/content/folders/Folders'
@@ -11,12 +11,32 @@ import GMaps from './components/content/apps/GMaps'
 
 function App() {
 
+  const [appRefs, setAppRefs] = useState([])
+  const baseFolderRef = createRef()
+  const photoboothAppRef = useRef()
+  const gmapsAppRef = useRef() 
+
   const [isFolderOpen, setIsFolderOpen] = useState(false) 
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
   // Apps 
   const [isPhotoBoothOpen, setIsPhotoBoothOpen] = useState(false)
   const [isGMapsOpen, setIsGMapsOpen] = useState(false)
+
+
+  useEffect(() => {
+    if (
+      baseFolderRef.current &&
+      gmapsAppRef.current &&
+      photoboothAppRef 
+    ) {
+      setAppRefs([
+        baseFolderRef.current,
+        gmapsAppRef.current,
+        photoboothAppRef.current
+      ])
+    }
+  }, [])
 
   const toggleAppleMenu = () => {
     setIsAppleMenuOpen(!isAppleMenuOpen)
@@ -30,15 +50,16 @@ function App() {
 
   const openFolderContent = () => {
     setIsFolderOpen(true)
+    editZIndex('BaseFolder')
   }
 
   const closeFolderContent = () => {
     setIsFolderOpen(false)
   }
 
-
   const openGMaps = () => {
     setIsGMapsOpen(true)
+    editZIndex('GMaps')
   }
   
   const closeGMaps = () => {
@@ -47,10 +68,30 @@ function App() {
 
   const openPhotoBooth = () => {
     setIsPhotoBoothOpen(true)
+    editZIndex('PhotoBooth')
   }
 
   const closePhotoBooth = () => {
     setIsPhotoBoothOpen(false)
+  }
+
+  const editZIndex = (appSel) => {
+    appRefs.forEach((app) => {
+      app.style.zIndex = 1
+    })
+    switch (appSel) {
+      case 'GMaps':
+        gmapsAppRef.current.style.zIndex = 2
+        break
+      case 'PhotoBooth':
+        photoboothAppRef.current.style.zIndex = 2
+        break
+      case 'BaseFolder':
+        baseFolderRef.current.style.zIndex = 2
+        break
+      default:
+        break
+    }
   }
 
   return (
@@ -66,9 +107,9 @@ function App() {
         
         <Folders openFolderContent={openFolderContent} />
 
-        <FolderContent isFolderOpen={isFolderOpen} closeFolderContent={closeFolderContent} />
-        <PhotoBooth isPhotoBoothOpen={isPhotoBoothOpen} closePhotoBooth={closePhotoBooth} />
-        <GMaps isGMapsOpen={isGMapsOpen} closeGMaps={closeGMaps} />
+        <FolderContent ref={baseFolderRef} isFolderOpen={isFolderOpen} closeFolderContent={closeFolderContent} />
+        <PhotoBooth ref={photoboothAppRef} isPhotoBoothOpen={isPhotoBoothOpen} closePhotoBooth={closePhotoBooth} />
+        <GMaps ref={gmapsAppRef} isGMapsOpen={isGMapsOpen} closeGMaps={closeGMaps} />
 
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} />
       </div>

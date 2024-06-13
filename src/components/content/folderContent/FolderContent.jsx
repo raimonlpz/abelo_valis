@@ -2,9 +2,9 @@ import React, { forwardRef } from 'react'
 import styles from './FolderContent.module.css'
 import Draggable from 'react-draggable';
 
-const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent }, ref) => {
+const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, onStartDrag }, ref) => {
     return (
-      <Draggable>
+      <Draggable onStart={onStartDrag}>
         <div
           ref={ref}   
           className={styles.wrapper}

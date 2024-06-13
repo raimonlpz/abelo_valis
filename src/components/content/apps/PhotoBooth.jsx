@@ -4,7 +4,7 @@ import Draggable from 'react-draggable'
 import ml5 from 'ml5'
 
 
-const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth }, ref) => {
+const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, onStartDrag }, ref) => {
 
     const faceApiRef = useRef()
     const canvasRef = useRef()
@@ -91,10 +91,8 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth }, ref) => {
         }
     }, [isPhotoBoothOpen])
 
-
-
   return (
-    <Draggable>
+    <Draggable onStart={onStartDrag}>
         <div
           ref={ref}
           className={styles.wrapper}

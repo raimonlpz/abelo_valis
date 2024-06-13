@@ -107,9 +107,9 @@ function App() {
         
         <Folders openFolderContent={openFolderContent} />
 
-        <FolderContent ref={baseFolderRef} isFolderOpen={isFolderOpen} closeFolderContent={closeFolderContent} />
-        <PhotoBooth ref={photoboothAppRef} isPhotoBoothOpen={isPhotoBoothOpen} closePhotoBooth={closePhotoBooth} />
-        <GMaps ref={gmapsAppRef} isGMapsOpen={isGMapsOpen} closeGMaps={closeGMaps} />
+        <FolderContent ref={baseFolderRef} isFolderOpen={isFolderOpen} closeFolderContent={closeFolderContent} onStartDrag={() => editZIndex('BaseFolder')} />
+        <PhotoBooth ref={photoboothAppRef} isPhotoBoothOpen={isPhotoBoothOpen} closePhotoBooth={closePhotoBooth} onStartDrag={() => editZIndex('PhotoBooth')} />
+        <GMaps ref={gmapsAppRef} isGMapsOpen={isGMapsOpen} closeGMaps={closeGMaps} onStartDrag={() => editZIndex('GMaps')} />
 
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} />
       </div>

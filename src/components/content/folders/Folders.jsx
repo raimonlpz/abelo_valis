@@ -6,7 +6,7 @@ export default function Folders({ openFolderContent }) {
   return (
     <>
        <div className={styles.wrapper_left}>
-       <Draggable >
+          <Draggable >
             <div className={styles.folderWrapper}>
                   <img 
                     src="/images/menubarimages/3.png" 

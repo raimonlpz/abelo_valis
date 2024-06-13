@@ -3,9 +3,10 @@ import React, { forwardRef } from 'react'
 import styles from './GMaps.module.css'
 import Draggable from 'react-draggable'
 
-const GMaps = forwardRef(({ isGMapsOpen, closeGMaps }, ref) => {
+const GMaps = forwardRef(({ isGMapsOpen, closeGMaps, onStartDrag }, ref) => {
   return (
     <Draggable
+      onStart={onStartDrag}
     >
         <div
             ref={ref}

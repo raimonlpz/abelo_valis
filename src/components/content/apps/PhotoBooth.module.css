@@ -75,13 +75,54 @@ PhotoBooth
   background-color: rgb(255, 67, 67);
   padding: 0.75rem;
   border-radius: 45%;
+
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .commands:hover {
   cursor: pointer;
+  width: 55px;
+  height: 55px;
 }
 
 .commands img {
   width: 100%;
   height: auto;
+}
+
+.effectGrid {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(245, 245, 245, 0.2);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(31.5485px);
+  border-top-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.effectGrid div {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+}
+
+.effectGrid div:hover {
+  cursor: pointer;
+}
+
+.effectGrid div.selected {
+  border: 1px solid rgb(79, 79, 79);
+  border-radius: 10px;
+}
+
+.effectGrid div img {
+  width: auto;
+  height: 100%;
 }

@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useRef } from 'react'
+import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import styles from './PhotoBooth.module.css'
 import Draggable from 'react-draggable'
 import ml5 from 'ml5'
@@ -10,12 +10,14 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
     const canvasRef = useRef()
     const videoRef = useRef()
 
+    const [imgFilter, setImgFilter] = useState('facemesh.png')
+
     useEffect(() => {
       let stream = null;
       let animationFrameId = null;
 
       const image = new Image();
-      image.src = '/images/customicons/facemesh.png';
+      image.src = `/images/customicons/${imgFilter}`;
 
         if (videoRef.current && isPhotoBoothOpen) {
 
@@ -89,7 +91,12 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
             cancelAnimationFrame(animationFrameId)
           }
         }
-    }, [isPhotoBoothOpen])
+    }, [isPhotoBoothOpen, imgFilter])
+
+
+  const onFilterChange = (filter) => {
+    setImgFilter(filter)
+  }
 
   return (
     <Draggable onStart={onStartDrag} onStop={onStopDrag}>
@@ -131,6 +138,24 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
 
             <div className={styles.commands}>
                 <img src="/images/customicons/photobooth-shot.png" alt="" />
+            </div>
+
+            <div className={styles.effectGrid}>
+              <div>
+                <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
+              </div>
+              <div>
+                <img src="/images/customicons/facemesh3.png" alt="" onClick={() => onFilterChange('facemesh3.png')} />
+              </div>
+              <div>
+                <img src="/images/customicons/facemesh4.webp" alt="" onClick={() => onFilterChange('facemesh4.webp')} />
+              </div>
+              <div>
+                <img src="/images/customicons/facemesh5.webp" alt=""  onClick={() => onFilterChange('facemesh5.webp')} />  
+              </div>
+              <div>
+                <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
+              </div>
             </div>
         </div>
     </Draggable>

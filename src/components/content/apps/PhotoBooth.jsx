@@ -136,26 +136,56 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
                 <canvas ref={canvasRef}></canvas>
              </div>
 
-            <div className={styles.commands}>
-                <img src="/images/customicons/photobooth-shot.png" alt="" />
-            </div>
-
             <div className={styles.effectGrid}>
-              <div>
+              <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}>
                 <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
               </div>
-              <div>
+              <div className={imgFilter === 'facemesh3.png' ? styles.selected : ''}>
                 <img src="/images/customicons/facemesh3.png" alt="" onClick={() => onFilterChange('facemesh3.png')} />
               </div>
-              <div>
+              <div className={imgFilter === 'facemesh4.webp' ? styles.selected : ''}>
                 <img src="/images/customicons/facemesh4.webp" alt="" onClick={() => onFilterChange('facemesh4.webp')} />
               </div>
-              <div>
+              <div className={imgFilter === 'facemesh5.webp' ? styles.selected : ''}>
                 <img src="/images/customicons/facemesh5.webp" alt=""  onClick={() => onFilterChange('facemesh5.webp')} />  
               </div>
-              <div>
+              <div className={imgFilter === 'facemesh6.webp' ? styles.selected : ''}>
                 <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
               </div>
+              <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}>
+                <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
+              </div>
+              <div className={imgFilter === 'facemesh3.png' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh3.png" alt="" onClick={() => onFilterChange('facemesh3.png')} />
+              </div>
+              <div className={imgFilter === 'facemesh4.webp' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh4.webp" alt="" onClick={() => onFilterChange('facemesh4.webp')} />
+              </div>
+              <div className={imgFilter === 'facemesh5.webp' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh5.webp" alt=""  onClick={() => onFilterChange('facemesh5.webp')} />  
+              </div>
+              <div className={imgFilter === 'facemesh6.webp' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
+              </div>
+              <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}>
+                <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
+              </div>
+              <div className={imgFilter === 'facemesh3.png' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh3.png" alt="" onClick={() => onFilterChange('facemesh3.png')} />
+              </div>
+              <div className={imgFilter === 'facemesh4.webp' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh4.webp" alt="" onClick={() => onFilterChange('facemesh4.webp')} />
+              </div>
+              <div className={imgFilter === 'facemesh5.webp' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh5.webp" alt=""  onClick={() => onFilterChange('facemesh5.webp')} />  
+              </div>
+              <div className={imgFilter === 'facemesh6.webp' ? styles.selected : ''}>
+                <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
+              </div>
+            </div>
+
+            <div className={styles.commands}>
+                <img src="/images/customicons/photobooth-shot.png" alt="" />
             </div>
         </div>
     </Draggable>

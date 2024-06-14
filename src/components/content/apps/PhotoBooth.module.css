@@ -91,6 +91,7 @@ PhotoBooth
 }
 
 .effectGrid {
+  width: 100%;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -105,7 +106,7 @@ PhotoBooth
 }
 
 .effectGrid div {
-  width: 35px;
+  width: 10%;
   height: 35px;
   display: flex;
   justify-content: center;
@@ -117,8 +118,8 @@ PhotoBooth
   cursor: pointer;
 }
 
-.effectGrid div.selected {
-  border: 1px solid rgb(79, 79, 79);
+.selected {
+  border: 1px solid rgba(255, 255, 255, 0.068);
   border-radius: 10px;
 }
 

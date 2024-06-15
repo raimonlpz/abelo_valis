@@ -23,6 +23,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-draggable": "^4.4.6",
+    "react-merge-refs": "^2.1.1",
     "three": "0.159.0"
   },
   "devDependencies": {

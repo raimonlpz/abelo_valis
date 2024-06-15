@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './Folders.module.css'
 import Draggable from 'react-draggable'
 
-export default function Folders({ openFolderContent, openCircGallery }) {
+export default function Folders({ openFolderContent, openCircGallery, openLinearGallery }) {
 
   const [folderOnfocus, setFolderOnfocus] = useState(null)
 
@@ -148,7 +148,7 @@ export default function Folders({ openFolderContent, openCircGallery }) {
                     src="/images/customicons/gun.png"
                     draggable="false"
                     alt="folder" 
-                    onDoubleClick={openFolderContent}
+                    onDoubleClick={openLinearGallery}
                     className={`${styles.folderText} ${folderOnfocus === 'macarradas' ? styles.selectedIcon : ''} `}  
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'macarradas' ? styles.selected : ''} `}>Macarrada$</span>

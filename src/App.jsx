@@ -15,12 +15,14 @@ import Sketch from './components/content/apps/Sketch/Sketch'
 import Music from './components/content/apps/Music/Music'
 import CircGallery from './components/content/apps/CircGallery/CircGallery'
 import Auth from './components/content/auth/Auth'
+import LinearGallery from './components/content/apps/LinearGallery/LinearGallery'
 
 function App() {
 
   const [appRefs, setAppRefs] = useState([])
   const [isAuth, setIsAuth] = useState(false)
 
+  const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
   const photoboothAppRef = useRef()
   const baseFolderRef = useRef()
@@ -51,6 +53,7 @@ function App() {
   /**
    * Apps
    */
+  const [isLinearGalleryOpen, setIsLinearGalleryOpen] = useState(false)
   const [isCircGalleryOpen, setIsCircGalleryOpen] = useState(false)
   const [isPhotoBoothOpen, setIsPhotoBoothOpen] = useState(false)
   const [isSketchOpen, setIsSketchOpen] = useState(false)
@@ -60,6 +63,7 @@ function App() {
 
   useEffect(() => {
     if (
+      linearGalleryAppRef.current &&
       circGalleryAppRef.current &&
       photoboothAppRef.current &&
       baseFolderRef.current &&
@@ -68,6 +72,7 @@ function App() {
       musicAppRef.current
     ) {
       setAppRefs([
+        linearGalleryAppRef.current,
         circGalleryAppRef.current,
         photoboothAppRef.current,
         baseFolderRef.current,
@@ -167,6 +172,19 @@ function App() {
   }
 
   /**
+   * Linear Gallery
+   */
+  const openLinearGallery = () => {
+    setIsLinearGalleryOpen(true)
+    editZIndex('LinearGallery')
+    unMinimizeApp(linearGalleryAppRef)
+  }
+
+  const closeLinearGallery = () => {
+    setIsLinearGalleryOpen(false)
+  }
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -192,6 +210,9 @@ function App() {
         break
       case 'CircGallery':
         circGalleryAppRef.current.style.zIndex = 2
+        break
+      case 'LinearGallery':
+        linearGalleryAppRef.current.style.zIndex = 2
         break
       default:
         break
@@ -259,7 +280,7 @@ function App() {
 
       <div className="inner_wrapper" onClick={closeAppleMenu}>
         
-        <Folders openFolderContent={openFolderContent} openCircGallery={openCircGallery}  />
+        <Folders openFolderContent={openFolderContent} openCircGallery={openCircGallery} openLinearGallery={openLinearGallery}  />
 
         <FolderContent 
           ref={baseFolderRef} 
@@ -278,6 +299,16 @@ function App() {
           maximizeApp={() => maximizeApp(circGalleryAppRef)}
           minimizeApp={() => minimizeApp(circGalleryAppRef)}
           onStartDrag={() => editZIndex('CircGallery')}
+          onStopDrag={onStopDrag}
+        />
+
+        <LinearGallery 
+          ref={linearGalleryAppRef}
+          isLinearGalleryOpen={isLinearGalleryOpen}
+          closeLinearGallery={closeLinearGallery}
+          maximizeApp={() => maximizeApp(linearGalleryAppRef)}
+          minimizeApp={() => minimizeApp(linearGalleryAppRef)}
+          onStartDrag={() => editZIndex('LinearGallery')}
           onStopDrag={onStopDrag}
         />
         

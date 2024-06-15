@@ -1,6 +1,7 @@
 .wrapper {
   width: 100vw;
   height: 100vh;
+  background: rgb(37, 37, 37);
   /* background-image: url("./assets/bg.png");
   background-repeat: no-repeat;
   background-position: center center;

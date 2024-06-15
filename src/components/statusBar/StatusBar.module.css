@@ -11,6 +11,7 @@
   justify-content: space-between;
   align-items: center;
   color: #ffffff;
+  z-index: 10;
 }
 
 .wrapper_inner_left {

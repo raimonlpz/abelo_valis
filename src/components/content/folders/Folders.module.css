@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: unset;
+}
+
 .wrapper_right {
   position: absolute;
   top: 0;

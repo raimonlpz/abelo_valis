@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './MenuBar.module.css'
 import menuBarData from './menuBarData'
 
-export default function MenuBar({ openPhotoBooth, openGMaps }) {
+export default function MenuBar({ openPhotoBooth, openGMaps, openSketch }) {
     
  const [menuBarOpen, setMenuBarOpen] = useState(false)
  const [clickedMenuItem, setClickedMenuItem] = useState(0)
@@ -29,6 +29,11 @@ export default function MenuBar({ openPhotoBooth, openGMaps }) {
     if (id === '8') {
         // PhotoBooth
         openPhotoBooth()
+    }
+
+    if (id === '9') {
+        // Sketch
+        openSketch()
     }
  }
 

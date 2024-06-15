@@ -43,7 +43,7 @@ const GMaps = forwardRef(({ isGMapsOpen, closeGMaps, maximizeApp, minimizeApp, o
           <div className="gmaps">
             <iframe   
                     frameBorder="0"
-                    style={{border: 0, marginTop: '.4rem', borderBottomRightRadius: '10px', borderBottomLeftRadius: '10px'}}
+                    style={{border: 0, marginTop: '.6rem', borderBottomRightRadius: '10px', borderBottomLeftRadius: '10px'}}
                     width="100%"
                     height="400"
                     title="Maps view"

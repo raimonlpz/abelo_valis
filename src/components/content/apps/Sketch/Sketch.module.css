@@ -7,7 +7,7 @@
   border-radius: 6px;
   display: flex;
   flex-direction: column;
-  background: rgba(245, 245, 245, 0.5);
+  background: #19011c;
   background-blend-mode: luminosity;
   backdrop-filter: blur(81.5485px);
   border-top-left-radius: 10px;
@@ -15,6 +15,10 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-top: 20px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 5px 10px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.04);
 
   transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -43,13 +47,21 @@
   transform: translateX(-50%);
 }
 
-/**
-GMaps
-*/
-.gmaps {
-  width: 100%;
-  height: 95%;
-  position: relative;
-  margin-top: 0.5rem;
-  overflow: hidden;
+.sketch {
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+label {
+  margin: 10px;
+}
+
+input[type="range"] {
+  margin-left: 10px;
+}
+
+.canvas {
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #19011c;
 }

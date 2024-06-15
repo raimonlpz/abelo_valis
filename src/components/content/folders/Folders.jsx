@@ -10,8 +10,9 @@ export default function Folders({ openFolderContent }) {
     <>
        <div className={styles.wrapper_left}>
           <Draggable >
-            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)}>
-                  <img 
+            <a rel="noopener noreferrer" href="https://abelovalis.bigcartel.com/" target="_blank" className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)}>
+      
+                <img 
                     src="/images/menubarimages/3.png" 
                     alt="folder" 
                     draggable="false"
@@ -19,7 +20,8 @@ export default function Folders({ openFolderContent }) {
                     className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selected : ''} `}>&nbsp;Abel Store</span>
-            </div>
+
+            </a>
           </Draggable>
 
           <div className={styles.marginBottom20}>
@@ -90,13 +92,15 @@ export default function Folders({ openFolderContent }) {
       <div className={styles.wrapper_rand3}>
           <Draggable>
             <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('insta')} onMouseLeave={() => setFolderOnfocus(null)}> 
-                  <img 
-                    src="/images/customicons/insta-logo.webp" 
-                    alt="folder" 
-                    draggable="false"
-                    onClick={openFolderContent} 
-                    className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''} `}
-                  />
+                  <a rel="noopener noreferrer" href="https://www.instagram.com/abelovalis" target="_blank">
+                    <img 
+                      src="/images/customicons/insta-logo.webp" 
+                      alt="folder" 
+                      draggable="false"
+                      onClick={openFolderContent} 
+                      className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''} `}
+                    />
+                  </a>
                   {/* <span className={styles.folderText}>&nbsp;CV_2024.pdf</span> */}
             </div>
           </Draggable>

@@ -1,39 +1,50 @@
 
-import { createRef, useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import FolderContent from './components/content/folderContent/FolderContent'
 import Folders from './components/content/folders/Folders'
 import StatusBar from './components/statusBar/StatusBar'
 import AppleMenu from './components/content/appleMenu/AppleMenu'
 import MenuBar from './components/menuBar/MenuBar'
-import PhotoBooth from './components/content/apps/PhotoBooth'
-import GMaps from './components/content/apps/GMaps'
+import PhotoBooth from './components/content/apps/PhotoBooth/PhotoBooth'
+import GMaps from './components/content/apps/GMaps/GMaps'
+import Sketch from './components/content/apps/Sketch/Sketch'
 
 function App() {
 
   const [appRefs, setAppRefs] = useState([])
-  const baseFolderRef = createRef()
+
   const photoboothAppRef = useRef()
+  const baseFolderRef = useRef()
+  const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
 
+  /**
+   * Base Folder
+   */
   const [isFolderOpen, setIsFolderOpen] = useState(false) 
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
-  // Apps 
+  /**
+   * Apps
+   */
   const [isPhotoBoothOpen, setIsPhotoBoothOpen] = useState(false)
+  const [isSketchOpen, setIsSketchOpen] = useState(false)
   const [isGMapsOpen, setIsGMapsOpen] = useState(false)
 
 
   useEffect(() => {
     if (
+      photoboothAppRef.current &&
       baseFolderRef.current &&
-      gmapsAppRef.current &&
-      photoboothAppRef 
+      sketchAppRef.current &&
+      gmapsAppRef.current
     ) {
       setAppRefs([
+        photoboothAppRef.current,
         baseFolderRef.current,
-        gmapsAppRef.current,
-        photoboothAppRef.current
+        sketchAppRef.current,
+        gmapsAppRef.current
       ])
     }
   }, [])
@@ -88,6 +99,20 @@ function App() {
   }
 
   /**
+   * Sketch
+   */
+  const openSketch = () => {
+    setIsSketchOpen(true)
+    editZIndex('Sketch')
+    unMinimizeApp(sketchAppRef)
+  }
+
+  const closeSketch = () => {
+    setIsSketchOpen(false)
+  }
+
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -104,6 +129,9 @@ function App() {
         break
       case 'BaseFolder':
         baseFolderRef.current.style.zIndex = 2
+        break
+      case 'Sketch':
+        sketchAppRef.current.style.zIndex = 2
         break
       default:
         break
@@ -185,11 +213,20 @@ function App() {
           onStartDrag={() => editZIndex('GMaps')} 
           onStopDrag={onStopDrag}
         />
+        <Sketch 
+          ref={sketchAppRef}
+          isSketchOpen={isSketchOpen}
+          closeSketch={closeSketch}
+          maximizeApp={() => maximizeApp(sketchAppRef)}
+          minimizeApp={() => minimizeApp(sketchAppRef)} 
+          onStartDrag={() => editZIndex('Sketch')}
+          onStopDrag={onStopDrag}
+        />
 
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} />
       </div>
 
-      <MenuBar openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} />
+      <MenuBar openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} />
     </div>
     </>
   )

@@ -1,8 +1,9 @@
 {
-  "name": "core",
+  "name": "abelo-valis",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "author": "martir.io",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

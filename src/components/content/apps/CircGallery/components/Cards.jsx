@@ -31,7 +31,7 @@ export default function Cards({ category, data, from = 0, len = Math.PI * 2, rad
                     rotation={[0, Math.PI / 2 + angle, 0]}
                     active={hovered !== null}
                     hovered={hovered === i}
-                    url={`/img${Math.floor(i % 10) + 1}.jpg`}
+                    url={`/abelo/img${Math.floor(i % 20) + 1}.webp`}
                 />
                 )
         })}

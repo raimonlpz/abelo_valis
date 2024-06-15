@@ -1,0 +1,101 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../../../assets/bg2.jpeg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  display: flex;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  /* background: linear-gradient(135deg, #e0e0e0, #f5f5f5); */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease-in-out;
+}
+
+.authContainer {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  border-radius: 20px;
+}
+
+.loginBox {
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  background: #d9d9d9;
+  margin: 0 auto 20px;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.inputField {
+  display: block;
+  width: calc(100% - 60px);
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: none;
+  border: none;
+  color: rgb(224, 224, 224);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+}
+
+.inputField:focus {
+  border-color: #007aff;
+  outline: none;
+}
+
+.loginButton {
+  cursor: pointer;
+  opacity: 0.4;
+  width: 40px;
+  height: 40px;
+  transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.loginButton img {
+  width: 45px;
+  height: 45px;
+  background: #d9d9d91f;
+  border-radius: 50%;
+  margin-top: 0.75rem;
+}
+
+.loginButton:hover {
+  transform: scale(1.2);
+}

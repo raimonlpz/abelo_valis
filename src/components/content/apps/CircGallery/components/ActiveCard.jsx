@@ -20,7 +20,7 @@ export default function ActiveCard({ hovered, ...props }) {
       <Text font={suspend(inter).default} fontSize={0.5} position={[3.15, 3.85, 0]} anchorX="left" color="white">
         {hovered !== null && `${name}\n${hovered}`}
       </Text>
-      <Image ref={ref} transparent radius={0.3} position={[0, .5, 0]} scale={[5.5, 1.618 * 5.5, 0.2, 1]} url={`/abelo/img${Math.floor(hovered % 20) + 1}.webp`} />
+      <Image ref={ref} transparent radius={0.3} position={[0, -.35, 0]} scale={[5.5, 1.618 * 5.5, 0.2, 1]} url={`/abelo/img${Math.floor(hovered % 20) + 1}.webp`} />
     </Billboard>
   )
 }

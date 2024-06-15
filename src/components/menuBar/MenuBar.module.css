@@ -7,6 +7,8 @@
   background: rgba(245, 245, 245, 0.15);
   background-blend-mode: luminosity;
   backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
   border-radius: 20px;
 
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.1),

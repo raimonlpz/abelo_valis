@@ -18,6 +18,8 @@
   background: rgba(245, 245, 245, 0.5);
   background-blend-mode: luminosity;
   backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
   height: 100%;
   width: 200px;
   border-top-left-radius: 10px;

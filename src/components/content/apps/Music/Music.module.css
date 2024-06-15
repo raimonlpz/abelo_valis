@@ -10,6 +10,8 @@
   background: rgb(40, 40, 40);
   background-blend-mode: luminosity;
   backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;

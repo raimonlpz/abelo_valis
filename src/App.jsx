@@ -14,10 +14,12 @@ import GMaps from './components/content/apps/GMaps/GMaps'
 import Sketch from './components/content/apps/Sketch/Sketch'
 import Music from './components/content/apps/Music/Music'
 import CircGallery from './components/content/apps/CircGallery/CircGallery'
+import Auth from './components/content/auth/Auth'
 
 function App() {
 
   const [appRefs, setAppRefs] = useState([])
+  const [isAuth, setIsAuth] = useState(false)
 
   const circGalleryAppRef = useRef()
   const photoboothAppRef = useRef()
@@ -25,6 +27,20 @@ function App() {
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
   const musicAppRef = useRef()
+
+  const wrapperRef = useRef()
+  const videoBgRef = useRef()
+
+  useEffect(() => {
+    if (isAuth) {
+      if (videoBgRef.current) {
+        videoBgRef.current.play()
+      }
+      if (wrapperRef.current) {
+        wrapperRef.current.style.opacity = 1
+      }
+    }
+  }, [isAuth])
 
   /**
    * Base Folder
@@ -60,7 +76,7 @@ function App() {
         musicAppRef.current
       ])
     }
-  }, [])
+  }, [isAuth])
 
   const toggleAppleMenu = () => {
     setIsAppleMenuOpen(!isAppleMenuOpen)
@@ -192,6 +208,9 @@ function App() {
     if (appRef === baseFolderRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
+    } else if (appRef === circGalleryAppRef) {
+      appRef.current.style.top = 'calc(100vh - 440px)';
+      appRef.current.style.left = '50%'
     } else {
       appRef.current.style.top = 'calc(100vh - 305px)';
       appRef.current.style.left = '75%'
@@ -217,10 +236,18 @@ function App() {
     appRef.current.style.height = '100vh'
   }
 
+  const onSignin = () => {
+    setIsAuth(true)
+  }
+
+  if (!isAuth) {
+    return <Auth onSignin={onSignin} />
+  } 
+
   return (
     <>
-    <div className="wrapper">
-    <video id="background-video" autoPlay loop disablePictureInPicture controlsList="nodownload">
+    <div className="wrapper" ref={wrapperRef}>
+    <video id="background-video" autoPlay loop disablePictureInPicture controlsList="nodownload" ref={videoBgRef}>
       <source src="/videos/reel.mp4" type="video/mp4" />
     </video>
 

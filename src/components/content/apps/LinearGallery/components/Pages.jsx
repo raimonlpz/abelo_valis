@@ -8,7 +8,7 @@ export default function Pages() {
 
     return (
         <Float
-        speed={2} // Animation speed, defaults to 1
+        speed={1.15} // Animation speed, defaults to 1
         rotationIntensity={.1} // XYZ rotation intensity, defaults to 1
         floatIntensity={.15} // Up/down float intensity, defaults to 1
     >

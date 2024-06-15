@@ -13,11 +13,13 @@ import PhotoBooth from './components/content/apps/PhotoBooth/PhotoBooth'
 import GMaps from './components/content/apps/GMaps/GMaps'
 import Sketch from './components/content/apps/Sketch/Sketch'
 import Music from './components/content/apps/Music/Music'
+import CircGallery from './components/content/apps/CircGallery/CircGallery'
 
 function App() {
 
   const [appRefs, setAppRefs] = useState([])
 
+  const circGalleryAppRef = useRef()
   const photoboothAppRef = useRef()
   const baseFolderRef = useRef()
   const sketchAppRef = useRef()
@@ -33,6 +35,7 @@ function App() {
   /**
    * Apps
    */
+  const [isCircGalleryOpen, setIsCircGalleryOpen] = useState(false)
   const [isPhotoBoothOpen, setIsPhotoBoothOpen] = useState(false)
   const [isSketchOpen, setIsSketchOpen] = useState(false)
   const [isGMapsOpen, setIsGMapsOpen] = useState(false)
@@ -41,6 +44,7 @@ function App() {
 
   useEffect(() => {
     if (
+      circGalleryAppRef.current &&
       photoboothAppRef.current &&
       baseFolderRef.current &&
       sketchAppRef.current &&
@@ -48,6 +52,7 @@ function App() {
       musicAppRef.current
     ) {
       setAppRefs([
+        circGalleryAppRef.current,
         photoboothAppRef.current,
         baseFolderRef.current,
         sketchAppRef.current,
@@ -133,6 +138,19 @@ function App() {
   }
 
   /**
+   * Circ. Gallery
+   */
+  const openCircGallery = () => {
+    setIsCircGalleryOpen(true)
+    editZIndex('CircGallery')
+    unMinimizeApp(circGalleryAppRef)
+  }
+
+  const closeCircGallery = () => {
+    setIsCircGalleryOpen(false)
+  }
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -155,6 +173,9 @@ function App() {
         break
       case 'Music':
         musicAppRef.current.style.zIndex = 2
+        break
+      case 'CircGallery':
+        circGalleryAppRef.current.style.zIndex = 2
         break
       default:
         break
@@ -207,7 +228,7 @@ function App() {
 
       <div className="inner_wrapper" onClick={closeAppleMenu}>
         
-        <Folders openFolderContent={openFolderContent} />
+        <Folders openFolderContent={openFolderContent} openCircGallery={openCircGallery}  />
 
         <FolderContent 
           ref={baseFolderRef} 
@@ -218,6 +239,17 @@ function App() {
           onStartDrag={() => editZIndex('BaseFolder')} 
           onStopDrag={onStopDrag}
         />
+
+        <CircGallery
+          ref={circGalleryAppRef}
+          isCircGalleryOpen={isCircGalleryOpen}
+          closeCircGallery={closeCircGallery}
+          maximizeApp={() => maximizeApp(circGalleryAppRef)}
+          minimizeApp={() => minimizeApp(circGalleryAppRef)}
+          onStartDrag={() => editZIndex('CircGallery')}
+          onStopDrag={onStopDrag}
+        />
+        
         <PhotoBooth 
           ref={photoboothAppRef} 
           isPhotoBoothOpen={isPhotoBoothOpen} 

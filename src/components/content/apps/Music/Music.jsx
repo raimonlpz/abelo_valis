@@ -50,7 +50,7 @@ const Music = forwardRef(({
                 <iframe 
                     style={{borderRadius: '12px' }} 
                     src="https://open.spotify.com/embed/artist/6EhQW9yBg612lW3SII1bpA?utm_source=generator&theme=0" 
-                    width="500" 
+                    width="550" 
                     height="400" 
                     frameBorder="0" 
                     allowFullScreen="" 

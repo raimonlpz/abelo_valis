@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './Folders.module.css'
 import Draggable from 'react-draggable'
 
-export default function Folders({ openFolderContent }) {
+export default function Folders({ openFolderContent, openCircGallery }) {
 
   const [folderOnfocus, setFolderOnfocus] = useState(null)
 
@@ -34,7 +34,7 @@ export default function Folders({ openFolderContent }) {
                     src="/images/folder.png" 
                     alt="folder" 
                     draggable="false"
-                    onDoubleClick={openFolderContent} 
+                    onDoubleClick={openCircGallery} 
                     className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selected : ''} `}>&nbsp; 2021-2024</span>

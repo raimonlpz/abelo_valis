@@ -1,0 +1,67 @@
+.wrapper {
+  position: absolute;
+  width: 80vw;
+  height: 85vh;
+  left: 15%;
+  top: 10px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(155, 155, 155, 0.514);
+  background-blend-mode: luminosity;
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  backdrop-filter: blur(81.5485px);
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding-top: 20px;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 5px 10px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.04);
+
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.left_inner_wrapper {
+  height: 5%;
+  width: 100%;
+  padding-left: 1rem;
+}
+
+.left_corner_buttons {
+  margin-bottom: 40px;
+  cursor: pointer;
+}
+
+.left_corner_button_img {
+  margin-right: 10px;
+}
+
+.appTitle {
+  position: absolute;
+  font-size: 0.75rem;
+  color: rgb(69, 69, 69);
+  top: 1.25rem;
+  left: 51%;
+  transform: translateX(-50%);
+}
+.circGallery {
+  text-align: center;
+  margin-top: 0.6rem;
+  width: 80vw;
+  height: 100%;
+  overflow: hidden;
+  cursor: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxMCIgZmlsbD0iI0U4QjA1OSIvPjwvc3ZnPg=="),
+    auto;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  touch-action: none;
+  animation: fade-in 5s ease 1s forwards;
+}

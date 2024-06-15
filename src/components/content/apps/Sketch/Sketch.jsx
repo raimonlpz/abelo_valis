@@ -1,7 +1,20 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef, useState, useEffect } from 'react'
 import styles from './Sketch.module.css'
 import Canvas from './Canvas'
 import Draggable from 'react-draggable';
+
+const getRandomColor = () => {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+
+const getRandomSize = () => {
+  return Math.floor(Math.random() * 50) + 1; // Random size between 1 and 50
+};
 
 const Sketch = forwardRef(({
   isSketchOpen,
@@ -12,9 +25,17 @@ const Sketch = forwardRef(({
   onStopDrag,
 }, ref) => {
 
-  const [brushSize, setBrushSize] = useState(3);
-  const [brushColor, setBrushColor] = useState('white');
+  const [brushSize, setBrushSize] = useState(getRandomSize());
+  const [brushColor, setBrushColor] = useState(getRandomColor());
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setBrushSize(getRandomSize());
+      setBrushColor(getRandomColor());
+    }, 5000); // Change every 5 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <Draggable
@@ -53,25 +74,7 @@ const Sketch = forwardRef(({
             </div>
           </div>
           <div className={styles.sketch}>
-            {/* <label>
-              Brush Size:
-              <input
-                  type="range"
-                  min="1"
-                  max="50"
-                  value={brushSize}
-                  onChange={(e) => setBrushSize(e.target.value)}
-                />
-              </label>
-              <label>
-                Brush Color:
-                <input
-                  type="color"
-                  value={brushColor}
-                  onChange={(e) => setBrushColor(e.target.value)}
-                />
-              </label> */}
-                          <Canvas brushSize={brushSize} brushColor={brushColor} />
+                <Canvas brushSize={brushSize} brushColor={brushColor} />
             </div>
           </div>
     </Draggable>

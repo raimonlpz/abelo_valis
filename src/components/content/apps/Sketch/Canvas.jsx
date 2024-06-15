@@ -21,7 +21,7 @@ const Canvas = ({ brushSize, brushColor }) => {
                 if (p.mouseOver) {
                     p.stroke(currentBrushColor)
                     p.strokeWeight(currentBrushSize)
-                    p.line(p.pmouseX, p.pmouseY, x, y)
+                    p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
                 }
             }
 
@@ -47,7 +47,7 @@ const Canvas = ({ brushSize, brushColor }) => {
         return () => {
             p5Instance.remove();
         };
-    }, [])
+    }, [brushColor, brushSize])
 
     return <div ref={sketchRef} className={styles.canvas} />;
 }

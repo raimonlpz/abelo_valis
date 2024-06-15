@@ -240,6 +240,10 @@ function App() {
     setIsAuth(true)
   }
 
+  const onShutDown = () => {
+    setIsAuth(false)
+  }
+
   if (!isAuth) {
     return <Auth onSignin={onSignin} />
   } 
@@ -314,7 +318,7 @@ function App() {
           onStopDrag={onStopDrag}
         />
 
-        <AppleMenu isAppleMenuOpen={isAppleMenuOpen} />
+        <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
       </div>
 
       <MenuBar openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />

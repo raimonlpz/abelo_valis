@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './AppleMenu.module.css'
 
-export default function AppleMenu({ isAppleMenuOpen }) {
+export default function AppleMenu({ isAppleMenuOpen, onShutDown }) {
     return (
       <>
         <div
@@ -43,25 +43,25 @@ export default function AppleMenu({ isAppleMenuOpen }) {
   
             <div className={styles.border}></div>
   
-            <li className={styles.li}>
+            <li className={styles.li} onClick={onShutDown}>
               <p className={styles.p}>Sleep</p>
             </li>
   
-            <li className={styles.li}>
+            <li className={styles.li} onClick={onShutDown}>
               <p className={styles.p}>Restart</p>
             </li>
   
-            <li className={styles.li}>
+            <li className={styles.li} onClick={onShutDown}>
               <p className={styles.p}>Shut Down...</p>
             </li>
   
             <div className={styles.border}></div>
   
-            <li className={styles.li}>
+            <li className={styles.li} onClick={onShutDown}>
               <p className={styles.p}>Lock Screen</p>
               <span className={styles.chars}>&#x21e7; &#x2318; Q</span>
             </li>
-            <li className={styles.li}>
+            <li className={styles.li} onClick={onShutDown}>
               <p className={styles.p}>Log Out User...</p>
               <span className={styles.chars}>&#x2318; &#x21e7; Q</span>
             </li>

@@ -37,7 +37,7 @@ function App() {
         videoBgRef.current.play()
       }
       if (wrapperRef.current) {
-        wrapperRef.current.style.opacity = 1
+        wrapperRef.current.style.filter = 'brightness(100%)'
       }
     }
   }, [isAuth])

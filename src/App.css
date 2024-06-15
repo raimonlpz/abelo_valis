@@ -7,8 +7,8 @@
   background-size: cover; */
   display: flex;
   overflow: hidden;
-  transition: opacity 0.5s ease-in-out;
-  opacity: 0;
+  transition: filter 0.5s ease-in-out;
+  filter: brightness(30%);
 }
 
 .inner_wrapper {

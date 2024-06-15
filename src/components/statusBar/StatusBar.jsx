@@ -1,40 +1,24 @@
 import React from 'react'
 import styles from './StatusBar.module.css'
 import { useState, useCallback, useEffect } from 'react'
+import { getDayAndTime } from '../../utils/time'
 
 export default function StatusBar({ toggleAppleMenu }) {
-
-    const [currentTime, setCurrentTime] = useState("")
-
-    function checkTime (i) {
-      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-        return i;
-    }
+    const [currentTime, setCurrentTime] = useState(getDayAndTime())
 
     const getTime = useCallback(() => {
-      var date = new Date();
-      var d = date.getDay();
-      var h = date.getHours();
-      var m = date.getMinutes();
-      m = checkTime(m);
-      var days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-      ];
-  
-      var currentDayAndTime = `${days[d].substr(0, 3)} ${h}:${m}`;
+      const currentDayAndTime = getDayAndTime();
       setCurrentTime(currentDayAndTime);
     }, []);
 
     useEffect(() => {
-      setInterval(() => {
+      const interval = setInterval(() => {
         getTime();
       }, 1000);
+
+      return () => {
+        clearInterval(interval)
+      }
     }, [getTime]);
 
 

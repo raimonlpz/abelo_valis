@@ -6,19 +6,24 @@ export default function Auth({ onSignin }) {
  const wrapperRef = useRef()
 
  const onClick = () => {
-    wrapperRef.current.style.opacity = 0
+    wrapperRef.current.style.filter = 'brightness(0%)'
     setTimeout(() => {
         onSignin()
-    }, 250);
+    }, 850);
  }
 
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
-        <div className={styles.authContainer}>
+        <div className={styles.dayTime}>
+            <span>Sunday, 15 October</span>
+            <span>8:14</span>
+        </div>  
+        <div className={styles.authContainer}>                
             <div className={styles.loginBox}>
                 <div className={styles.avatar}>
                     <img src="/abelo/avatar.png" alt="" />
                 </div>
+                <span className={styles.nickname}>Abelo Valis</span>
                 <input
                     defaultValue="$$$_abelo_valis_69"
                     type="text"

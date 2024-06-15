@@ -128,7 +128,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
                 alt="icns"
               />
 
-              <div className={styles.appTitle}>EgoBooth</div>
+              <div className={styles.appTitle}>🪞 EgoBooth</div>
             </div>
           </div>
             <div className={styles.photobooth}>

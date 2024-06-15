@@ -37,7 +37,7 @@ const GMaps = forwardRef(({ isGMapsOpen, closeGMaps, maximizeApp, minimizeApp, o
                 src="/images/icons/zoom.png"
                 alt="icns"
               />
-              <div className={styles.appTitle}>VivaVigo</div>
+              <div className={styles.appTitle}>📍 VivaVigo</div>
             </div>
           </div>
           <div className="gmaps">

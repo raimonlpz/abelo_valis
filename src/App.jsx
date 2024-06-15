@@ -6,9 +6,13 @@ import Folders from './components/content/folders/Folders'
 import StatusBar from './components/statusBar/StatusBar'
 import AppleMenu from './components/content/appleMenu/AppleMenu'
 import MenuBar from './components/menuBar/MenuBar'
+/**
+ * Apps
+ */
 import PhotoBooth from './components/content/apps/PhotoBooth/PhotoBooth'
 import GMaps from './components/content/apps/GMaps/GMaps'
 import Sketch from './components/content/apps/Sketch/Sketch'
+import Music from './components/content/apps/Music/Music'
 
 function App() {
 
@@ -18,6 +22,7 @@ function App() {
   const baseFolderRef = useRef()
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
+  const musicAppRef = useRef()
 
   /**
    * Base Folder
@@ -31,6 +36,7 @@ function App() {
   const [isPhotoBoothOpen, setIsPhotoBoothOpen] = useState(false)
   const [isSketchOpen, setIsSketchOpen] = useState(false)
   const [isGMapsOpen, setIsGMapsOpen] = useState(false)
+  const [isMusicOpen, setIsMusicOpen] = useState(false)
 
 
   useEffect(() => {
@@ -38,13 +44,15 @@ function App() {
       photoboothAppRef.current &&
       baseFolderRef.current &&
       sketchAppRef.current &&
-      gmapsAppRef.current
+      gmapsAppRef.current &&
+      musicAppRef.current
     ) {
       setAppRefs([
         photoboothAppRef.current,
         baseFolderRef.current,
         sketchAppRef.current,
-        gmapsAppRef.current
+        gmapsAppRef.current,
+        musicAppRef.current
       ])
     }
   }, [])
@@ -111,6 +119,18 @@ function App() {
     setIsSketchOpen(false)
   }
 
+  /**
+   * Music / Spoti
+   */
+  const openMusic = () => {
+    setIsMusicOpen(true)
+    editZIndex('Music')
+    unMinimizeApp(musicAppRef)
+  }
+
+  const closeMusic = () => {
+    setIsMusicOpen(false)
+  }
 
   /**
    * Utils
@@ -132,6 +152,9 @@ function App() {
         break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
+        break
+      case 'Music':
+        musicAppRef.current.style.zIndex = 2
         break
       default:
         break
@@ -222,11 +245,20 @@ function App() {
           onStartDrag={() => editZIndex('Sketch')}
           onStopDrag={onStopDrag}
         />
+        <Music 
+          ref={musicAppRef}
+          isMusicOpen={isMusicOpen}
+          closeMusic={closeMusic}
+          maximizeApp={() => maximizeApp(musicAppRef)}
+          minimizeApp={() => minimizeApp(musicAppRef)}
+          onStartDrag={() => editZIndex('Music')}
+          onStopDrag={onStopDrag}
+        />
 
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} />
       </div>
 
-      <MenuBar openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} />
+      <MenuBar openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
     </div>
     </>
   )

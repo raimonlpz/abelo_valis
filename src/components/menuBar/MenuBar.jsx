@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './MenuBar.module.css'
 import menuBarData from './menuBarData'
 
-export default function MenuBar({ openPhotoBooth, openGMaps, openSketch }) {
+export default function MenuBar({ openPhotoBooth, openGMaps, openSketch, openMusic }) {
     
  const [menuBarOpen, setMenuBarOpen] = useState(false)
  const [clickedMenuItem, setClickedMenuItem] = useState(0)
@@ -20,6 +20,11 @@ export default function MenuBar({ openPhotoBooth, openGMaps, openSketch }) {
     setTimeout(() => {
         setClickedMenuItem(0)
     }, 5000)
+
+    if (id === '4') {
+        // Music / Spoti 
+        openMusic()
+    }
 
     if (id === '5') {
         // GMaps

@@ -13,7 +13,7 @@ const menuBarData = [
   },
   {
     id: "4",
-    image: "/images/menubarimages/4.png",
+    image: "/images/menubarimages/iValis.png",
   },
   {
     id: "5",
@@ -29,11 +29,11 @@ const menuBarData = [
   },
   {
     id: "8",
-    image: "/images/menubarimages/13.png",
+    image: "/images/menubarimages/Bitmap2.png",
   },
   {
     id: "9",
-    image: "/images/menubarimages/9.png",
+    image: "/images/menubarimages/Bitmap.png",
   },
   {
     id: "10",
@@ -45,7 +45,7 @@ const menuBarData = [
   },
   {
     id: "12",
-    image: "/images/menubarimages/12.png",
+    image: "/images/menubarimages/Papelera.png",
   },
 ];
 

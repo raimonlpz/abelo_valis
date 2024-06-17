@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styles from './MenuBar.module.css'
 import menuBarData from './menuBarData'
 
-export default function MenuBar({ openPhotoBooth, openGMaps, openSketch, openMusic }) {
+export default function MenuBar({ openFolderContent, openPhotoBooth, openGMaps, openSketch, openMusic }) {
     
  const [menuBarOpen, setMenuBarOpen] = useState(false)
  const [clickedMenuItem, setClickedMenuItem] = useState(0)
@@ -21,6 +21,19 @@ export default function MenuBar({ openPhotoBooth, openGMaps, openSketch, openMus
         setClickedMenuItem(0)
     }, 5000)
 
+    if (id === '1') {
+        openFolderContent()
+    }
+
+    if (id === '2') {
+        // Calendar
+    }
+
+    if (id === '3') {
+        // Abelo Store
+        window.open('https://abelovalis.bigcartel.com/', '_blank');
+    }
+
     if (id === '4') {
         // Music / Spoti 
         openMusic()
@@ -29,6 +42,15 @@ export default function MenuBar({ openPhotoBooth, openGMaps, openSketch, openMus
     if (id === '5') {
         // GMaps
         openGMaps()
+    }
+    
+    if (id === '6') {
+        // Agenda
+    }
+
+    if (id === '7') {
+        // Mail
+        window.open('mailto:abelovalis@gmail.com', '_blank')
     }
 
     if (id === '8') {
@@ -39,6 +61,10 @@ export default function MenuBar({ openPhotoBooth, openGMaps, openSketch, openMus
     if (id === '9') {
         // Sketch
         openSketch()
+    }
+
+    if (id === '10') {
+        // AboutMe / Notes
     }
  }
 

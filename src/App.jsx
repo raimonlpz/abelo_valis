@@ -352,7 +352,7 @@ function App() {
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
       </div>
 
-      <MenuBar openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
+      <MenuBar openFolderContent={openFolderContent} openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
     </div>
     </>
   )

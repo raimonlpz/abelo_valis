@@ -15,18 +15,21 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
           <div className={styles.left_inner_wrapper}>
             <div className={styles.left_corner_buttons}>
               <img
+                onTouchStart={closeFolderContent}
                 onClick={closeFolderContent}
                 className={styles.left_corner_button_img}
                 src="/images/icons/close.png"
                 alt="icns"
               />
               <img
+                onTouchStart={minimizeApp}
                 onClick={minimizeApp}
                 className={styles.left_corner_button_img}
                 src="/images/icons/minimise.png"
                 alt="icns"
               />
               <img
+                onTouchStart={maximizeApp}
                 onClick={maximizeApp}
                 className={styles.left_corner_button_img}
                 src="/images/icons/zoom.png"

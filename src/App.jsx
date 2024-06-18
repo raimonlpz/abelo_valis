@@ -273,7 +273,7 @@ function App() {
     <>
     <div className="wrapper" ref={wrapperRef}>
     <video id="background-video" autoPlay loop disablePictureInPicture controlsList="nodownload" ref={videoBgRef}>
-      <source src="/videos/reel.mp4" type="video/mp4" />
+      <source src="/videos/reel2.mp4" type="video/mp4" />
     </video>
 
       <StatusBar toggleAppleMenu={toggleAppleMenu} />

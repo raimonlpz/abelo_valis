@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styles from './Folders.module.css'
 import Draggable from 'react-draggable'
+import { isTouchDevice } from '../../../utils/isTouchDevice'
 
 export default function Folders({ openFolderContent, openCircGallery, openLinearGallery }) {
 
@@ -16,6 +17,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/menubarimages/3.png" 
                     alt="folder" 
                     draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selectedIcon : ''} `}
                   />
@@ -34,6 +36,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/folder.png" 
                     alt="folder" 
                     draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openCircGallery} 
                     className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selectedIcon : ''} `}
                   />
@@ -50,6 +53,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/folder.png" 
                     alt="folder" 
                     draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'entrevistas' ? styles.selectedIcon : ''} `}
                   />
@@ -66,6 +70,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/customicons/txt-format.png" 
                     alt="folder" 
                     draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'sobre_mi' ? styles.selectedIcon : ''} `}
                   />
@@ -81,6 +86,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/customicons/pdf-format.png" 
                     alt="folder" 
                     draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selectedIcon : ''} `}
                   />
@@ -114,6 +120,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/folder.png" 
                     alt="folder" 
                     draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selectedIcon : ''} `}
                   />
@@ -130,6 +137,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/folder.png" 
                     draggable="false"
                     alt="folder" 
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openFolderContent}  
                     className={`${styles.folderText} ${folderOnfocus === 'documents' ? styles.selectedIcon : ''} `}
                   />
@@ -147,7 +155,8 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                   <img 
                     src="/images/customicons/gun.png"
                     draggable="false"
-                    alt="folder" 
+                    alt="folder"
+                    onTouchStart={isTouchDevice() ? openFolderContent : null} 
                     onDoubleClick={openLinearGallery}
                     className={`${styles.folderText} ${folderOnfocus === 'macarradas' ? styles.selectedIcon : ''} `}  
                   />
@@ -164,6 +173,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                         src="/images/folder.png" 
                     draggable="false"
                     alt="folder" 
+                    onTouchStart={isTouchDevice() ? openFolderContent : null}
                     onDoubleClick={openFolderContent}  
                     className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selectedIcon : ''} `}  
                   />

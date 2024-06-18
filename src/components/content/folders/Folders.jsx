@@ -17,8 +17,8 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/menubarimages/3.png" 
                     alt="folder" 
                     draggable="false"
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    onDoubleClick={openFolderContent} 
+                    // onTouchStart={isTouchDevice() ? openFolderContent : null}
+                    // onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selected : ''} `}>&nbsp;Abel Store</span>
@@ -36,7 +36,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/folder.png" 
                     alt="folder" 
                     draggable="false"
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
+                    onTouchStart={isTouchDevice() ? openCircGallery : null}
                     onDoubleClick={openCircGallery} 
                     className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selectedIcon : ''} `}
                   />
@@ -156,7 +156,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/customicons/gun.png"
                     draggable="false"
                     alt="folder"
-                    onTouchStart={isTouchDevice() ? openFolderContent : null} 
+                    onTouchStart={isTouchDevice() ? openLinearGallery : null} 
                     onDoubleClick={openLinearGallery}
                     className={`${styles.folderText} ${folderOnfocus === 'macarradas' ? styles.selectedIcon : ''} `}  
                   />

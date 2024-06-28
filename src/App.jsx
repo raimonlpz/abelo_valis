@@ -16,6 +16,7 @@ import Music from './components/content/apps/Music/Music'
 import CircGallery from './components/content/apps/CircGallery/CircGallery'
 import Auth from './components/content/auth/Auth'
 import LinearGallery from './components/content/apps/LinearGallery/LinearGallery'
+import ValisMode from './components/valisMode/ValisMode'
 
 function App() {
 
@@ -354,6 +355,8 @@ function App() {
 
       <MenuBar openFolderContent={openFolderContent} openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
     </div>
+
+    {/* <ValisMode /> */}
     </>
   )
 }

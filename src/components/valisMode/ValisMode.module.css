@@ -1,0 +1,41 @@
+.valisContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  pointer-events: none;
+}
+
+.valisContainer img {
+  width: 90%;
+  height: auto;
+}
+
+.burst {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Initial size */
+  height: 100vh; /* Initial size */
+  background-color: #8b0000; /* Blackish color with opacity */
+  animation: burst-effect 0.1s infinite;
+  z-index: 100;
+}
+
+@keyframes burst-effect {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.75;
+  }
+  100% {
+    opacity: 0;
+  }
+}

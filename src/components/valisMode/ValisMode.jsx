@@ -11,6 +11,13 @@ export default function ValisMode() {
     if (effectRan.current) return
     changeImg()
     effectRan.current = true
+    var audio = new Audio('/sound/void.mp3');
+    audio.play(); 
+    audio.loop = true
+
+    return () => {
+      audio.pause()
+    }
   }, [])
 
   const changeImg = () => {

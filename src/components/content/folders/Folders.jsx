@@ -3,7 +3,12 @@ import styles from './Folders.module.css'
 import Draggable from 'react-draggable'
 import { isTouchDevice } from '../../../utils/isTouchDevice'
 
-export default function Folders({ openFolderContent, openCircGallery, openLinearGallery }) {
+export default function Folders({ 
+  openFolderContent, 
+  openCircGallery, 
+  openLinearGallery, 
+  openInterviews 
+}) {
 
   const [folderOnfocus, setFolderOnfocus] = useState(null)
 
@@ -40,7 +45,7 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     onDoubleClick={openCircGallery} 
                     className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selected : ''} `}>&nbsp; 2021-2024</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selected : ''} `}>&nbsp; &nbsp; &nbsp; &nbsp; Fotos</span>
             </div>
           </Draggable>
 
@@ -53,11 +58,11 @@ export default function Folders({ openFolderContent, openCircGallery, openLinear
                     src="/images/folder.png" 
                     alt="folder" 
                     draggable="false"
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    onDoubleClick={openFolderContent} 
+                    onTouchStart={isTouchDevice() ? openInterviews : null}
+                    onDoubleClick={openInterviews} 
                     className={`${styles.folderText} ${folderOnfocus === 'entrevistas' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'entrevistas' ? styles.selected : ''} `}>&nbsp;Entrevistas</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'entrevistas' ? styles.selected : ''} `}>&nbsp; &nbsp; &nbsp; Prensa</span>
             </div>
           </Draggable>
 

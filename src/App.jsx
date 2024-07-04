@@ -17,6 +17,7 @@ import CircGallery from './components/content/apps/CircGallery/CircGallery'
 import Auth from './components/content/auth/Auth'
 import LinearGallery from './components/content/apps/LinearGallery/LinearGallery'
 import ValisMode from './components/valisMode/ValisMode'
+import Interviews from './components/content/apps/Interviews/Interviews'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
   const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
   const photoboothAppRef = useRef()
+  const interviewsAppRef = useRef()
   const baseFolderRef = useRef()
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
@@ -57,6 +59,7 @@ function App() {
   const [isLinearGalleryOpen, setIsLinearGalleryOpen] = useState(false)
   const [isCircGalleryOpen, setIsCircGalleryOpen] = useState(false)
   const [isPhotoBoothOpen, setIsPhotoBoothOpen] = useState(false)
+  const [isInterviewsOpen, setIsInterviewsOpen] = useState(false)
   const [isSketchOpen, setIsSketchOpen] = useState(false)
   const [isGMapsOpen, setIsGMapsOpen] = useState(false)
   const [isMusicOpen, setIsMusicOpen] = useState(false)
@@ -67,6 +70,7 @@ function App() {
       linearGalleryAppRef.current &&
       circGalleryAppRef.current &&
       photoboothAppRef.current &&
+      interviewsAppRef.current &&
       baseFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
@@ -76,6 +80,7 @@ function App() {
         linearGalleryAppRef.current,
         circGalleryAppRef.current,
         photoboothAppRef.current,
+        interviewsAppRef.current,
         baseFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
@@ -186,6 +191,19 @@ function App() {
   }
 
   /**
+   * Interviews
+   */
+  const openInterviews = () => {
+    setIsInterviewsOpen(true)
+    editZIndex('Interviews')
+    unMinimizeApp(interviewsAppRef)
+  }
+
+  const closeInterviews = () => {
+    setIsInterviewsOpen(false)
+  }
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -215,6 +233,9 @@ function App() {
       case 'LinearGallery':
         linearGalleryAppRef.current.style.zIndex = 2
         break
+      case 'Interviews':
+        interviewsAppRef.current.style.zIndex = 2
+        break
       default:
         break
     }
@@ -227,7 +248,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === baseFolderRef) {
+    if (appRef === baseFolderRef || appRef === interviewsAppRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef) {
@@ -281,7 +302,12 @@ function App() {
 
       <div className="inner_wrapper" onClick={closeAppleMenu}>
         
-        <Folders openFolderContent={openFolderContent} openCircGallery={openCircGallery} openLinearGallery={openLinearGallery}  />
+        <Folders 
+          openFolderContent={openFolderContent} 
+          openLinearGallery={openLinearGallery}
+          openCircGallery={openCircGallery}  
+          openInterviews={openInterviews}
+        />
 
         <FolderContent 
           ref={baseFolderRef} 
@@ -347,6 +373,16 @@ function App() {
           maximizeApp={() => maximizeApp(musicAppRef)}
           minimizeApp={() => minimizeApp(musicAppRef)}
           onStartDrag={() => editZIndex('Music')}
+          onStopDrag={onStopDrag}
+        />
+
+        <Interviews 
+          ref={interviewsAppRef}
+          isInterviewsOpen={isInterviewsOpen}
+          closeInterviews={closeInterviews}
+          maximizeApp={() => maximizeApp(interviewsAppRef)}
+          minimizeApp={() => minimizeApp(interviewsAppRef)}
+          onStartDrag={() => editZIndex('Interviews')}
           onStopDrag={onStopDrag}
         />
 

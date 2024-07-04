@@ -1,7 +1,7 @@
 .wrapper {
   width: 100vw;
   height: 100vh;
-  background-image: url("../../../assets/bg2.jpeg");
+  background-image: url("../../../assets/bg.png");
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -21,7 +21,7 @@
 .dayTime {
   display: flex;
   flex-direction: column;
-  color: rgba(237, 237, 237, 0.736);
+  color: rgb(255, 255, 255);
   text-align: center;
   margin-top: 3rem;
 }

@@ -38,11 +38,11 @@ export default function Auth({ onSignin }) {
         <div className={styles.authContainer}>                
             <div className={styles.loginBox}>
                 <div className={styles.avatar}>
-                    <img src="/abelo/avatar.png" alt="" />
+                    <img src="/abelo/sim.jpg" alt="" />
                 </div>
                 <span className={styles.nickname}>Abelo Valis</span>
                 <input
-                    defaultValue="$$$_abelo_valis_69"
+                    defaultValue="abelo.valis"
                     type="text"
                     placeholder="Username"
                     className={styles.inputField}

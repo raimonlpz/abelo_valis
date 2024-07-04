@@ -12,13 +12,13 @@ export function getDayAndTime() {
   var m = date.getMinutes();
   m = checkTime(m);
   var days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado",
   ];
 
   var currentDayAndTime = `${days[d].substr(0, 3)} ${h}:${m}`;
@@ -34,28 +34,28 @@ export function getFullDateAndTime() {
   var m = date.getMinutes();
   m = checkTime(m);
   var days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
+    "Domingo",
+    "Lunes",
+    "Martes",
+    "Miércoles",
+    "Jueves",
+    "Viernes",
+    "Sábado",
   ];
 
   var month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    "Enero",
+    "Febrero",
+    "Marzo",
+    "Abril",
+    "Mayo",
+    "Junio",
+    "Julio",
+    "Agosto",
+    "Septiembre",
+    "Octubre",
+    "Noviembre",
+    "Diciembre",
   ];
   var date = `${days[d]}, ${dayMon} ${month[mon]}`;
   var hour = `${h}:${m}`;

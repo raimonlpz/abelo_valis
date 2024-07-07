@@ -7,7 +7,9 @@ export default function Folders({
   openFolderContent, 
   openCircGallery, 
   openLinearGallery, 
-  openInterviews 
+  openInterviews,
+  openFormations,
+  openAboutMe
 }) {
 
   const [folderOnfocus, setFolderOnfocus] = useState(null)
@@ -75,8 +77,8 @@ export default function Folders({
                     src="/images/customicons/txt-format.png" 
                     alt="folder" 
                     draggable="false"
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    onDoubleClick={openFolderContent} 
+                    onTouchStart={isTouchDevice() ? openAboutMe : null}
+                    onDoubleClick={openAboutMe} 
                     className={`${styles.folderText} ${folderOnfocus === 'sobre_mi' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'sobre_mi' ? styles.selected : ''} `}>&nbsp;Sobre mi.txt</span>
@@ -129,7 +131,7 @@ export default function Folders({
                     onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selected : ''} `}>Downloads</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selected : ''} `}>&nbsp;Downloads</span>
             </div>
           </Draggable>
      
@@ -142,11 +144,11 @@ export default function Folders({
                     src="/images/folder.png" 
                     draggable="false"
                     alt="folder" 
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    onDoubleClick={openFolderContent}  
+                    onTouchStart={isTouchDevice() ? openFormations : null}
+                    onDoubleClick={openFormations}  
                     className={`${styles.folderText} ${folderOnfocus === 'documents' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'documents' ? styles.selected : ''} `}>Documents</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'documents' ? styles.selected : ''} `}>&nbsp;Formación</span>
               </div>
             </Draggable>
 

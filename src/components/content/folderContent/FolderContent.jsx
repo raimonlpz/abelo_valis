@@ -1,8 +1,11 @@
-import React, { forwardRef } from 'react'
+import React, { useState, forwardRef } from 'react'
 import styles from './FolderContent.module.css'
 import Draggable from 'react-draggable';
 
 const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+
+  const [folderOnfocus,setFolderOnfocus] = useState(null)
+
     return (
       <Draggable onStart={onStartDrag} onStop={onStopDrag}>
         <div
@@ -164,11 +167,16 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
             </div>
             <div className={styles.right_inner_content}>
               <div className={styles.row}>
-                <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Apps</span>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('libros')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://archive.org/', '_blank')}>
+                  <img 
+                    src="/images/icons/archiveorg.png" 
+                    alt="folder" 
+                    style={{'width': '80px'}} 
+                    className={`${folderOnfocus === 'libros' ? styles.selectedIcon : ''}`} 
+                  />
+                  <span className={`${folderOnfocus === 'libros' ? styles.selected : ''}`}>Libros</span>
                 </div>
-                <div className={styles.folderWrapper}>
+                {/* <div className={styles.folderWrapper}>
                   <img src="/images/folder.png" alt="folder" />
                   <span>Education</span>
                 </div>
@@ -183,10 +191,10 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
                 <div className={styles.folderWrapper}>
                   <img src="/images/folder.png" alt="folder" />
                   <span>Codersbite</span>
-                </div>
+                </div> */}
               </div>
               <div className={styles.row}>
-                <div className={styles.folderWrapper}>
+                {/* <div className={styles.folderWrapper}>
                   <img src="/images/folder.png" alt="folder" />
                   <span>Music Files</span>
                 </div>
@@ -217,10 +225,10 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
                     alt="folder"
                   />
                   <span>Bird</span>
-                </div>
+                </div> */}
               </div>
               <div className={styles.row}>
-                <div className={styles.folderWrapper}>
+                {/* <div className={styles.folderWrapper}>
                   <img
                     className={styles.file}
                     src="/images/image_file.png"
@@ -251,7 +259,7 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
                 <div className={styles.folderWrapper}>
                   <img src="/images/folder.png" alt="folder" />
                   <span>Github</span>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

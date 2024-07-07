@@ -121,6 +121,9 @@
   flex-direction: column;
   align-items: center;
 }
+.folderWrapper:hover {
+  cursor: pointer;
+}
 
 .folderWrapper > span {
   font-size: 12px;
@@ -131,4 +134,16 @@
 .file {
   height: 60px;
   width: 60px;
+}
+
+.selected {
+  background-color: rgb(29, 85, 255);
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3%;
+}
+
+.selectedIcon {
+  background-color: rgba(158, 158, 158, 0.327);
+  border-radius: 5px;
 }

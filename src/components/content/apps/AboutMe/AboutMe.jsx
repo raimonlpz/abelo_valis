@@ -47,7 +47,7 @@ const AboutMe = forwardRef(({ isAboutMeOpen, closeAboutMe, maximizeApp, minimize
                         Con años de experiencia, me he convertido en un <span>referente en cada disciplina que toco</span>. La pasión y dedicación que pongo en todo lo que hago te garantizan una experiencia inigualable. 
                         Si buscas excelencia y autenticidad, puedes confiar en mí para superar tus expectativas. <span>Gracias por creer en el verdadero arte</span>.
                     </p>
-                    <div class={styles.gpt}>Con ayuda de <img src="/images/icons/chatgpt.webp" alt="ChatGPT" /></div>
+                    <div className={styles.gpt}>Con ayuda de <img src="/images/icons/chatgpt.webp" alt="ChatGPT" /></div>
                 </div>
             </div>
         </Draggable>

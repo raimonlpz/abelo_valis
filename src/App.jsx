@@ -21,6 +21,7 @@ import Interviews from './components/content/apps/Interviews/Interviews'
 import Formations from './components/content/apps/Formation/Formation'
 import AboutMe from './components/content/apps/AboutMe/AboutMe'
 import FolderDocuments from './components/content/folderContent/Documents/FolderDocuments'
+import Settings from './components/content/apps/Settings/Settings'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
   const photoboothAppRef = useRef()
   const formationsAppRef = useRef()
   const interviewsAppRef = useRef()
+  const settingsAppRef = useRef()
   const aboutMeAppRef = useRef()
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
@@ -73,6 +75,13 @@ function App() {
   const [isSketchOpen, setIsSketchOpen] = useState(false)
   const [isGMapsOpen, setIsGMapsOpen] = useState(false)
   const [isMusicOpen, setIsMusicOpen] = useState(false)
+  const [isSettingsOpen, setIsSettingsOpen] = useState(false)
+
+  /**
+   * Settings Configs
+   */
+  const [isValisMode, setIsValisMode] = useState(false)
+  const [isHideBar, setIsHideBar] = useState(false)
 
 
   useEffect(() => {
@@ -87,7 +96,8 @@ function App() {
       documentFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
-      musicAppRef.current
+      musicAppRef.current && 
+      settingsAppRef.current
     ) {
       setAppRefs([
         linearGalleryAppRef.current,
@@ -100,7 +110,8 @@ function App() {
         documentFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
-        musicAppRef.current
+        musicAppRef.current,
+        settingsAppRef.current
       ])
     }
   }, [isAuth])
@@ -257,6 +268,19 @@ function App() {
   }
 
   /**
+   * Settings 
+   */
+  const openSettings = () => {
+    setIsSettingsOpen(true)
+    editZIndex('Settings')
+    unMinimizeApp(settingsAppRef)
+  }
+
+  const closeSettings = () => {
+    setIsSettingsOpen(false)
+  }
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -297,6 +321,9 @@ function App() {
         break
       case 'AboutMe':
         aboutMeAppRef.current.style.zIndex = 2
+        break
+      case 'Settings':
+        settingsAppRef.current.style.zIndex = 2
         break
       default:
         break
@@ -486,14 +513,36 @@ function App() {
           onStartDrag={() => editZIndex('AboutMe')}
           onStopDrag={onStopDrag}
         />
+        
+        <Settings 
+          ref={settingsAppRef}
+          isSettingsOpen={isSettingsOpen}
+          closeSettings={closeSettings}
+          maximizeApp={() => maximizeApp(settingsAppRef)}
+          minimizeApp={() => minimizeApp(settingsAppRef)} 
+          onStartDrag={() => editZIndex('Settings')}
+          onStopDrag={onStopDrag}
+          isValisMode={isValisMode}
+          isHideBar={isHideBar}
+          setIsValisMode={setIsValisMode}
+          setIsHideBar={setIsHideBar}
+        />
 
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
       </div>
 
-      <MenuBar openFolderContent={openFolderDocuments} openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
+      <MenuBar 
+        openFolderContent={openFolderDocuments} 
+        openPhotoBooth={openPhotoBooth} 
+        openGMaps={openGMaps} 
+        openSketch={openSketch} 
+        openMusic={openMusic} 
+        openSettings={openSettings}
+      />
     </div>
 
-    {/* <ValisMode /> */}
+    {isValisMode && <ValisMode /> }
+
     </>
   )
 }

@@ -2,7 +2,14 @@ import React, { useState } from 'react'
 import styles from './MenuBar.module.css'
 import menuBarData from './menuBarData'
 
-export default function MenuBar({ openFolderContent, openPhotoBooth, openGMaps, openSketch, openMusic }) {
+export default function MenuBar({ 
+    openFolderContent, 
+    openPhotoBooth, 
+    openSettings,
+    openSketch, 
+    openGMaps, 
+    openMusic,
+}) {
     
  const [menuBarOpen, setMenuBarOpen] = useState(false)
  const [clickedMenuItem, setClickedMenuItem] = useState(0)
@@ -65,6 +72,11 @@ export default function MenuBar({ openFolderContent, openPhotoBooth, openGMaps, 
 
     if (id === '10') {
         // AboutMe / Notes
+    }
+
+    if (id === '11') {
+        // Settings
+        openSettings()
     }
  }
 

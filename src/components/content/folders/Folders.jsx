@@ -4,6 +4,7 @@ import Draggable from 'react-draggable'
 import { isTouchDevice } from '../../../utils/isTouchDevice'
 
 export default function Folders({ 
+  openFolderDocuments,
   openFolderDownloads,
   openCircGallery, 
   openLinearGallery, 
@@ -176,8 +177,8 @@ export default function Folders({
                         src="/images/folder.png" 
                     draggable="false"
                     alt="folder" 
-                    onTouchStart={isTouchDevice() ? openFolderDownloads : null}
-                    onDoubleClick={openFolderDownloads}  
+                    onTouchStart={isTouchDevice() ? openFolderDocuments : null}
+                    onDoubleClick={openFolderDocuments}  
                     className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selectedIcon : ''} `}  
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selected : ''} `}>Documentos</span>

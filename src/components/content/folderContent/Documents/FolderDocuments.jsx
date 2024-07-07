@@ -2,7 +2,20 @@ import React, { useState, forwardRef } from 'react'
 import styles from './FolderDocuments.module.css'
 import Draggable from 'react-draggable';
 
-const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDocuments, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+const FolderDocuments = React.forwardRef(({ 
+  isFolderDocumentsOpen, 
+  closeFolderDocuments, 
+  maximizeApp, 
+  minimizeApp, 
+  onStartDrag, 
+  onStopDrag,
+  // 
+  openFolderDownloads,
+  openCircGallery,
+  openInterviews,
+  openFormations,
+  openAboutMe
+}, ref) => {
 
   const [folderOnfocus,setFolderOnfocus] = useState(null)
 
@@ -48,7 +61,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/star.png"
                     alt="star"
                   />
-                  <p className={styles.left_li_text}>Inbox</p>
+                  <p className={styles.left_li_text}>Proyectos</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -56,7 +69,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/file.png"
                     alt="file"
                   />
-                  <p className={styles.left_li_text}>AirDrop</p>
+                  <p className={styles.left_li_text}>CV_2024</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -64,7 +77,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/clock.png"
                     alt="clock"
                   />
-                  <p className={styles.left_li_text}>Recents</p>
+                  <p className={styles.left_li_text}>Sobre Mi</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -72,7 +85,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/file.png"
                     alt="file"
                   />
-                  <p className={styles.left_li_text}>Applications</p>
+                  <p className={styles.left_li_text}>Formación</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -80,7 +93,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/files.png"
                     alt="files"
                   />
-                  <p className={styles.left_li_text}>Documents</p>
+                  <p className={styles.left_li_text}>Prensa</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -88,7 +101,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/folder.png"
                     alt="folder"
                   />
-                  <p className={styles.left_li_text}>Folder</p>
+                  <p className={styles.left_li_text}>Fotos</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -96,7 +109,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/download.png"
                     alt="download"
                   />
-                  <p className={styles.left_li_text}>Downloads</p>
+                  <p className={styles.left_li_text}>Descargas</p>
                 </li>
               </ul>
               <h5 className={styles.menu_title}>iCloud</h5>
@@ -107,7 +120,7 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
                     src="/images/blueicons/cloud.png"
                     alt="cloud"
                   />
-                  <p className={styles.left_li_text}>iCloud Drive</p>
+                  <p className={styles.left_li_text}>Makarrada$</p>
                 </li>
               </ul>
               <h5 className={styles.menu_title}>Tags</h5>
@@ -167,99 +180,54 @@ const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDo
             </div>
             <div className={styles.right_inner_content}>
               <div className={styles.row}>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('libros')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://archive.org/', '_blank')}>
-                  <img 
-                    src="/images/icons/archiveorg.png" 
-                    alt="folder" 
-                    style={{'width': '80px'}} 
-                    className={`${folderOnfocus === 'libros' ? styles.selectedIcon : ''}`} 
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)}>
+                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'projects' ? styles.selectedIcon : ''}`}  />
+                  <span className={`${folderOnfocus === 'projects' ? styles.selected : ''}`}>Proyectos</span>
+                </div>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('press')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openInterviews}>
+                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'press' ? styles.selectedIcon : ''}`} />
+                  <span className={`${folderOnfocus === 'press' ? styles.selected : ''}`}>Prensa</span>
+                </div>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('photos')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openCircGallery}>
+                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'photos' ? styles.selectedIcon : ''}`} />
+                  <span className={`${folderOnfocus === 'photos' ? styles.selected : ''}`}>Fotos</span>
+                </div>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('downloads')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderDownloads}>
+                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'downloads' ? styles.selectedIcon : ''}`} />
+                  <span className={`${folderOnfocus === 'downloads' ? styles.selected : ''}`}>Descargas</span>
+                </div>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('about')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openAboutMe}>
+                  <img
+                    className={`${styles.file} ${folderOnfocus === 'about' ? styles.selectedIcon : ''}`}
+                    src="/images/customicons/txt-format.png"
+                    alt="folder"
                   />
-                  <span className={`${folderOnfocus === 'libros' ? styles.selected : ''}`}>Libros</span>
+                  <span className={`${folderOnfocus === 'about' ? styles.selected : ''}`}>Sobre_mi.txt</span>
                 </div>
-                {/* <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Education</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>React JS</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Javascript</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Codersbite</span>
-                </div> */}
+              
               </div>
               <div className={styles.row}>
-                {/* <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Music Files</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Weather</span>
-                </div>
-                <div className={styles.folderWrapper}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('cv')} onMouseLeave={() => setFolderOnfocus(null)}>
                   <img
-                    className={styles.file}
-                    src="/images/graph.png"
+                    className={`${styles.file} ${folderOnfocus === 'cv' ? styles.selectedIcon : ''}`}
+                    src="/images/customicons/pdf-format.png"
                     alt="folder"
                   />
-                  <span>Kessy</span>
+                  <span className={`${folderOnfocus === 'cv' ? styles.selected : ''}`}>CV_2024.pdf</span>
                 </div>
-                <div className={styles.folderWrapper}>
-                  <img
-                    className={styles.file}
-                    src="/images/mov.png"
-                    alt="folder"
-                  />
-                  <span>Hond</span>
+
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('formation')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFormations}>
+                  <img src="/images/folder.png" alt="folder" className={`${styles.file} ${folderOnfocus === 'formation' ? styles.selectedIcon : ''}`} />
+                  <span className={`${folderOnfocus === 'formation' ? styles.selected : ''}`}>Formación</span>
                 </div>
-                <div className={styles.folderWrapper}>
-                  <img
-                    className={styles.file}
-                    src="/images/image_file.png"
-                    alt="folder"
-                  />
-                  <span>Bird</span>
-                </div> */}
+
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)}>
+                  <img className={`${styles.file} ${folderOnfocus === 'makarradas' ? styles.selectedIcon : ''}`} src="/images/customicons/gun.png" alt="folder" />
+                  <span className={`${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Makarrada$</span>
+                </div>
+             
               </div>
               <div className={styles.row}>
-                {/* <div className={styles.folderWrapper}>
-                  <img
-                    className={styles.file}
-                    src="/images/image_file.png"
-                    alt="folder"
-                  />
-                  <span>Lion</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img
-                    className={styles.file}
-                    src="/images/image_file.png"
-                    alt="folder"
-                  />
-                  <span>Tiger</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img
-                    className={styles.file}
-                    src="/images/mov.png"
-                    alt="folder"
-                  />
-                  <span>Trees</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Wallpapers</span>
-                </div>
-                <div className={styles.folderWrapper}>
-                  <img src="/images/folder.png" alt="folder" />
-                  <span>Github</span>
-                </div> */}
               </div>
             </div>
           </div>

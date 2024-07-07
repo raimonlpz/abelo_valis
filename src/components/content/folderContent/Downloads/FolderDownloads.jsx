@@ -42,13 +42,14 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
             <div className={styles.left_menu_wrapper}>
               <h5 className={styles.menu_title}>Favourites</h5>
               <ul className={styles.left_ul}>
-                <li className={styles.left_li}>
+                
+              <li className={styles.left_li}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/star.png"
                     alt="star"
                   />
-                  <p className={styles.left_li_text}>Inbox</p>
+                  <p className={styles.left_li_text}>Proyectos</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -56,7 +57,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                     src="/images/blueicons/file.png"
                     alt="file"
                   />
-                  <p className={styles.left_li_text}>AirDrop</p>
+                  <p className={styles.left_li_text}>CV_2024</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -64,7 +65,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                     src="/images/blueicons/clock.png"
                     alt="clock"
                   />
-                  <p className={styles.left_li_text}>Recents</p>
+                  <p className={styles.left_li_text}>Sobre Mi</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -72,7 +73,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                     src="/images/blueicons/file.png"
                     alt="file"
                   />
-                  <p className={styles.left_li_text}>Applications</p>
+                  <p className={styles.left_li_text}>Formación</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -80,7 +81,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                     src="/images/blueicons/files.png"
                     alt="files"
                   />
-                  <p className={styles.left_li_text}>Documents</p>
+                  <p className={styles.left_li_text}>Prensa</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -88,7 +89,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                     src="/images/blueicons/folder.png"
                     alt="folder"
                   />
-                  <p className={styles.left_li_text}>Folder</p>
+                  <p className={styles.left_li_text}>Fotos</p>
                 </li>
                 <li className={styles.left_li}>
                   <img
@@ -96,7 +97,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                     src="/images/blueicons/download.png"
                     alt="download"
                   />
-                  <p className={styles.left_li_text}>Downloads</p>
+                  <p className={styles.left_li_text}>Makarrada$</p>
                 </li>
               </ul>
               <h5 className={styles.menu_title}>iCloud</h5>
@@ -107,7 +108,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                     src="/images/blueicons/cloud.png"
                     alt="cloud"
                   />
-                  <p className={styles.left_li_text}>iCloud Drive</p>
+                  <p className={styles.left_li_text}>Documentos</p>
                 </li>
               </ul>
               <h5 className={styles.menu_title}>Tags</h5>

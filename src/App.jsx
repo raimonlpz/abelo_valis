@@ -20,11 +20,15 @@ import ValisMode from './components/valisMode/ValisMode'
 import Interviews from './components/content/apps/Interviews/Interviews'
 import Formations from './components/content/apps/Formation/Formation'
 import AboutMe from './components/content/apps/AboutMe/AboutMe'
+import FolderDocuments from './components/content/folderContent/Documents/FolderDocuments'
 
 function App() {
 
   const [appRefs, setAppRefs] = useState([])
   const [isAuth, setIsAuth] = useState(false)
+
+  const downloadFolderRef = useRef()
+  const documentFolderRef = useRef()
 
   const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
@@ -32,7 +36,6 @@ function App() {
   const formationsAppRef = useRef()
   const interviewsAppRef = useRef()
   const aboutMeAppRef = useRef()
-  const downloadFolderRef = useRef()
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
   const musicAppRef = useRef()
@@ -55,6 +58,7 @@ function App() {
    * Base Folders
    */
   const [isFolderDownloadsOpen, setIsFolderDownloadsOpen] = useState(false) 
+  const [isFolderDocumentsOpen, setIsFolderDocumentsOpen] = useState(false)
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
   /**
@@ -80,6 +84,7 @@ function App() {
       formationsAppRef.current &&
       aboutMeAppRef.current &&
       downloadFolderRef.current &&
+      documentFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current
@@ -92,6 +97,7 @@ function App() {
         formationsAppRef.current,
         aboutMeAppRef.current,
         downloadFolderRef.current,
+        documentFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current
@@ -110,8 +116,9 @@ function App() {
   }
 
   /**
-   * Base Folder
+   * Base Folders
    */
+  // Downloads
   const openFolderDownloads = () => {
     setIsFolderDownloadsOpen(true)
     editZIndex('DownloadFolder')
@@ -120,6 +127,16 @@ function App() {
 
   const closeFolderDownloads = () => {
     setIsFolderDownloadsOpen(false)
+  }
+  // Documents
+  const openFolderDocuments = () => {
+    setIsFolderDocumentsOpen(true)
+    editZIndex('DocumentFolder')
+    unMinimizeApp(documentFolderRef)
+  }
+
+  const closeFolderDocuments = () => {
+    setIsFolderDocumentsOpen(false)
   }
 
   /**
@@ -257,6 +274,9 @@ function App() {
       case 'DownloadFolder':
         downloadFolderRef.current.style.zIndex = 2
         break
+      case 'DocumentFolder':
+        documentFolderRef.current.style.zIndex = 2
+        break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
         break
@@ -290,7 +310,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === downloadFolderRef || appRef === interviewsAppRef) {
+    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === interviewsAppRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef) {
@@ -345,6 +365,7 @@ function App() {
       <div className="inner_wrapper" onClick={closeAppleMenu}>
         
         <Folders 
+          openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads} 
           openLinearGallery={openLinearGallery}
           openCircGallery={openCircGallery}  
@@ -361,6 +382,22 @@ function App() {
           minimizeApp={() => minimizeApp(downloadFolderRef)}  
           onStartDrag={() => editZIndex('DownloadFolder')} 
           onStopDrag={onStopDrag}
+        />
+
+        <FolderDocuments 
+          ref={documentFolderRef}
+          isFolderDocumentsOpen={isFolderDocumentsOpen}
+          closeFolderDocuments={closeFolderDocuments}
+          maximizeApp={() => maximizeApp(documentFolderRef)}
+          minimizeApp={() => minimizeApp(documentFolderRef)}
+          onStartDrag={() => editZIndex('DocumentFolder')}
+          onStopDrag={onStopDrag}
+          //
+          openFolderDownloads={openFolderDownloads} 
+          openCircGallery={openCircGallery}
+          openInterviews={openInterviews}
+          openFormations={openFormations}
+          openAboutMe={openAboutMe}
         />
 
         <CircGallery
@@ -453,7 +490,7 @@ function App() {
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
       </div>
 
-      <MenuBar openFolderContent={openFolderDownloads} openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
+      <MenuBar openFolderContent={openFolderDocuments} openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
     </div>
 
     {/* <ValisMode /> */}

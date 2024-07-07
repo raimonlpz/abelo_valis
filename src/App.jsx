@@ -538,6 +538,7 @@ function App() {
         openSketch={openSketch} 
         openMusic={openMusic} 
         openSettings={openSettings}
+        isHideBar={isHideBar}
       />
     </div>
 

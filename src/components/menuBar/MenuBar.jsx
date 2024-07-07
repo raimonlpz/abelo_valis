@@ -9,6 +9,7 @@ export default function MenuBar({
     openSketch, 
     openGMaps, 
     openMusic,
+    isHideBar
 }) {
     
  const [menuBarOpen, setMenuBarOpen] = useState(false)
@@ -80,14 +81,14 @@ export default function MenuBar({
     }
  }
 
-//  if (!menuBarOpen) {
-//     return (
-//         <div
-//             className={styles.wrapperHidden}
-//             onMouseEnter={handleMouseEnter}
-//         ></div>
-//     )
-//  }
+ if (!menuBarOpen && isHideBar) {
+    return (
+        <div
+            className={styles.wrapperHidden}
+            onMouseEnter={handleMouseEnter}
+        ></div>
+    )
+ }
 
   return (
     <>

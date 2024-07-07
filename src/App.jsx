@@ -1,7 +1,7 @@
 
 import { useEffect, useRef, useState } from 'react'
 import './App.css'
-import FolderContent from './components/content/folderContent/FolderContent'
+import FolderDownloads from './components/content/folderContent/Downloads/FolderDownloads'
 import Folders from './components/content/folders/Folders'
 import StatusBar from './components/statusBar/StatusBar'
 import AppleMenu from './components/content/appleMenu/AppleMenu'
@@ -32,7 +32,7 @@ function App() {
   const formationsAppRef = useRef()
   const interviewsAppRef = useRef()
   const aboutMeAppRef = useRef()
-  const baseFolderRef = useRef()
+  const downloadFolderRef = useRef()
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
   const musicAppRef = useRef()
@@ -52,9 +52,9 @@ function App() {
   }, [isAuth])
 
   /**
-   * Base Folder
+   * Base Folders
    */
-  const [isFolderOpen, setIsFolderOpen] = useState(false) 
+  const [isFolderDownloadsOpen, setIsFolderDownloadsOpen] = useState(false) 
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
   /**
@@ -79,7 +79,7 @@ function App() {
       interviewsAppRef.current &&
       formationsAppRef.current &&
       aboutMeAppRef.current &&
-      baseFolderRef.current &&
+      downloadFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current
@@ -91,7 +91,7 @@ function App() {
         interviewsAppRef.current,
         formationsAppRef.current,
         aboutMeAppRef.current,
-        baseFolderRef.current,
+        downloadFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current
@@ -112,14 +112,14 @@ function App() {
   /**
    * Base Folder
    */
-  const openFolderContent = () => {
-    setIsFolderOpen(true)
-    editZIndex('BaseFolder')
-    unMinimizeApp(baseFolderRef)
+  const openFolderDownloads = () => {
+    setIsFolderDownloadsOpen(true)
+    editZIndex('DownloadFolder')
+    unMinimizeApp(downloadFolderRef)
   }
 
-  const closeFolderContent = () => {
-    setIsFolderOpen(false)
+  const closeFolderDownloads = () => {
+    setIsFolderDownloadsOpen(false)
   }
 
   /**
@@ -254,8 +254,8 @@ function App() {
       case 'PhotoBooth':
         photoboothAppRef.current.style.zIndex = 2
         break
-      case 'BaseFolder':
-        baseFolderRef.current.style.zIndex = 2
+      case 'DownloadFolder':
+        downloadFolderRef.current.style.zIndex = 2
         break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
@@ -290,7 +290,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === baseFolderRef || appRef === interviewsAppRef) {
+    if (appRef === downloadFolderRef || appRef === interviewsAppRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef) {
@@ -345,7 +345,7 @@ function App() {
       <div className="inner_wrapper" onClick={closeAppleMenu}>
         
         <Folders 
-          openFolderContent={openFolderContent} 
+          openFolderDownloads={openFolderDownloads} 
           openLinearGallery={openLinearGallery}
           openCircGallery={openCircGallery}  
           openInterviews={openInterviews}
@@ -353,13 +353,13 @@ function App() {
           openAboutMe={openAboutMe}
         />
 
-        <FolderContent 
-          ref={baseFolderRef} 
-          isFolderOpen={isFolderOpen} 
-          closeFolderContent={closeFolderContent}
-          maximizeApp={() => maximizeApp(baseFolderRef)}
-          minimizeApp={() => minimizeApp(baseFolderRef)}  
-          onStartDrag={() => editZIndex('BaseFolder')} 
+        <FolderDownloads 
+          ref={downloadFolderRef} 
+          isFolderDownloadsOpen={isFolderDownloadsOpen} 
+          closeFolderDownloads={closeFolderDownloads}
+          maximizeApp={() => maximizeApp(downloadFolderRef)}
+          minimizeApp={() => minimizeApp(downloadFolderRef)}  
+          onStartDrag={() => editZIndex('DownloadFolder')} 
           onStopDrag={onStopDrag}
         />
 
@@ -453,7 +453,7 @@ function App() {
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
       </div>
 
-      <MenuBar openFolderContent={openFolderContent} openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
+      <MenuBar openFolderContent={openFolderDownloads} openPhotoBooth={openPhotoBooth} openGMaps={openGMaps} openSketch={openSketch} openMusic={openMusic} />
     </div>
 
     {/* <ValisMode /> */}

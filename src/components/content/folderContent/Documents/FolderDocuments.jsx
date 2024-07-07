@@ -1,8 +1,8 @@
 import React, { useState, forwardRef } from 'react'
-import styles from './FolderContent.module.css'
+import styles from './FolderDocuments.module.css'
 import Draggable from 'react-draggable';
 
-const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+const FolderDocuments = React.forwardRef(({ isFolderDocumentsOpen, closeFolderDocuments, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
 
   const [folderOnfocus,setFolderOnfocus] = useState(null)
 
@@ -12,14 +12,14 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
           ref={ref}   
           className={styles.wrapper}
           style={{
-            visibility: isFolderOpen ? "visible" : "hidden",
+            visibility: isFolderDocumentsOpen ? "visible" : "hidden",
           }}
         >
           <div className={styles.left_inner_wrapper}>
             <div className={styles.left_corner_buttons}>
               <img
-                onTouchStart={closeFolderContent}
-                onClick={closeFolderContent}
+                onTouchStart={closeFolderDocuments}
+                onClick={closeFolderDocuments}
                 className={styles.left_corner_button_img}
                 src="/images/icons/close.png"
                 alt="icns"
@@ -152,7 +152,7 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
               <div className={styles.right_top_bar_left}>
                 <img src="/images/icons/left_arrow.png" alt="left_arrow" />
                 <img src="/images/icons/right_arrow.png" alt="right_arrow" />
-                <p className={styles.left_text}>Downloads</p>
+                <p className={styles.left_text}>Documentos</p>
               </div>
               <div className={styles.right_top_bar_right}>
                 <img src="/images/icons/windows.png" alt="windows" />
@@ -269,4 +269,4 @@ const FolderContent = React.forwardRef(({ isFolderOpen, closeFolderContent, maxi
     );
   });
 
-export default FolderContent
+export default FolderDocuments

@@ -4,7 +4,7 @@ import Draggable from 'react-draggable'
 import { isTouchDevice } from '../../../utils/isTouchDevice'
 
 export default function Folders({ 
-  openFolderContent, 
+  openFolderDownloads,
   openCircGallery, 
   openLinearGallery, 
   openInterviews,
@@ -24,8 +24,6 @@ export default function Folders({
                     src="/images/menubarimages/3.png" 
                     alt="folder" 
                     draggable="false"
-                    // onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    // onDoubleClick={openFolderContent} 
                     className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selected : ''} `}>&nbsp;Abel Store</span>
@@ -93,8 +91,8 @@ export default function Folders({
                     src="/images/customicons/pdf-format.png" 
                     alt="folder" 
                     draggable="false"
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    onDoubleClick={openFolderContent} 
+                    // onTouchStart={isTouchDevice() ? openFolderDownloads : null}
+                    // onDoubleClick={openFolderDownloads} 
                     className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selected : ''} `}>&nbsp;CV_2024.pdf</span>
@@ -110,11 +108,9 @@ export default function Folders({
                       src="/images/customicons/insta-logo.webp" 
                       alt="folder" 
                       draggable="false"
-                      onClick={openFolderContent} 
                       className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''} `}
                     />
                   </a>
-                  {/* <span className={styles.folderText}>&nbsp;CV_2024.pdf</span> */}
             </div>
           </Draggable>
       </div>
@@ -127,11 +123,11 @@ export default function Folders({
                     src="/images/folder.png" 
                     alt="folder" 
                     draggable="false"
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    onDoubleClick={openFolderContent} 
+                    onTouchStart={isTouchDevice() ? openFolderDownloads : null}
+                    onDoubleClick={openFolderDownloads} 
                     className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selected : ''} `}>&nbsp;Downloads</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selected : ''} `}>&nbsp;Descargas</span>
             </div>
           </Draggable>
      
@@ -180,11 +176,11 @@ export default function Folders({
                         src="/images/folder.png" 
                     draggable="false"
                     alt="folder" 
-                    onTouchStart={isTouchDevice() ? openFolderContent : null}
-                    onDoubleClick={openFolderContent}  
+                    onTouchStart={isTouchDevice() ? openFolderDownloads : null}
+                    onDoubleClick={openFolderDownloads}  
                     className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selectedIcon : ''} `}  
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selected : ''} `}>&nbsp; Book :p</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selected : ''} `}>Documentos</span>
               </div>
             </Draggable>
         </div>

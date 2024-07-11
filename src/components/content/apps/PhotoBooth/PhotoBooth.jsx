@@ -6,13 +6,12 @@ import Draggable from 'react-draggable'
 const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
 
     const videoRef = useRef()
-    const [imgFilter, setImgFilter] = useState('facemesh.png')
+    const shotRef = useRef()
+    const ctaRef = useRef()
+
+    const [filter, setFilter] = useState('none')
 
     useEffect(() => {
-
-      const image = new Image();
-      image.src = `/images/customicons/${imgFilter}`;
-
         if (videoRef.current && isPhotoBoothOpen) {
 
             let mediaDevices = navigator.mediaDevices;
@@ -27,69 +26,39 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
                 videoRef.current.addEventListener('loadedmetadata', () => {
                     videoRef.current.play()
                 })
-
-                // Faceapi detection
-                /*const canvas = canvasRef.current 
-                const context = canvas.getContext('2d')
-                canvas.width = videoRef.current.width
-                canvas.height = videoRef.current.height
-
-                const faceapi = ml5.faceApi(videoRef.current, { withLandmarks: true, withDescriptors: false }, () => {
-                    detectFaces();
-                });
-
-                faceApiRef.current = faceapi
-
-                const drawFilter = (context, box) => {
-                  if (!box) return;
-                  // Example: Draw a custom image over the detected face        
-                  // Draw the image at the specified location and size
-                  context.drawImage(image, box.x, box.y, box.width, box.height);
-                }
-
-                  const detectFaces = () => {
-                 
-                      faceapi.detect((err, results) => {
-
-                        if (err) {
-                          console.error('Face detection error:', err);
-                          return;
-                        }
-                    
-                        context.clearRect(0, 0, canvas.width, canvas.height);
-                        context.drawImage(videoRef.current, 0, 0, canvas.width, canvas.height);
-              
-                        if (results && results.length > 0) {
-                          drawFilter(context, results[0].alignedRect._box);
-                        }
-              
-                        animationFrameId = requestAnimationFrame(detectFaces);
-                      });          
-                  };*/
-          
             })
             .catch(alert)
         }
 
         return () => {
-          /*if (stream) {
-            stream.getTracks().forEach(track => track.stop())
-          }
-
-          if (faceApiRef.current) {
-            // faceApiRef.current.dispose()
-          }
-
-          if (animationFrameId) {
-            cancelAnimationFrame(animationFrameId)
-          }*/
         }
-    }, [isPhotoBoothOpen, imgFilter])
+    }, [isPhotoBoothOpen])
 
 
-  // const onFilterChange = (filter) => {
-  //   setImgFilter(filter)
-  // }
+
+  const onShot = () => {
+    if (ctaRef.current) {
+      ctaRef.current.style.display = 'none'
+      shotRef.current.style.display = 'flex'
+    }
+    if (shotRef.current) {
+      shotRef.current.innerHTML = '<span>3</span>'
+      setTimeout(() => {
+        shotRef.current.innerHTML = '<span>2</span>'
+      }, 1000)
+      setTimeout(() => {
+        shotRef.current.innerHTML = '<span>1</span>'
+     }, 2000)
+     setTimeout(() => {
+      shotRef.current.innerHTML = '<span>Error 404: <br/> ¡Belleza no encontrada!</span>'
+    }, 3000)
+    setTimeout(() => {
+    ctaRef.current.style.display = 'block'
+        shotRef.current.style.display = 'none'
+      }, 4000)
+    }
+  }
+
 
   return (
     <Draggable onStart={onStartDrag} onStop={onStopDrag}>
@@ -126,59 +95,37 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
           </div>
             <div className={styles.photobooth}>
                 <video ref={videoRef} disablePictureInPicture width={600} height={450} ></video>
+                {
+                                  (filter === 'none') ? <div className={`${styles.filter} ${styles.filterOptNone}`}></div>
+                                  : 
+                                  (filter === 'gingham') ? <div className={`${styles.filter} ${styles.filterOptGingham}`}></div> 
+                                  :
+                                  (filter === 'juno') ? <div className={`${styles.filter} ${styles.filterOptJuno}`}></div>
+                                  :
+                                  (filter === 'lark') ? <div className={`${styles.filter} ${styles.filterOptLark}`}></div>
+                                  :
+                                  (filter === 'ludwig') ? <div className={`${styles.filter} ${styles.filterOptLudwig}`}></div>
+                                  : 
+                                  (filter === 'sierra') ? <div className={`${styles.filter} ${styles.filterOptSierra}`}></div>
+                                  : <div className={`${styles.filter} ${styles.filterOptValencia}`}></div>
+                }
              </div>
 
             <div className={styles.effectGrid}>
-              <div className={styles.filter}></div>
-              {/* <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}> 
-                <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
-              </div>
-              <div className={imgFilter === 'facemesh3.png' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh3.png" alt="" onClick={() => onFilterChange('facemesh3.png')} />
-              </div>
-              <div className={imgFilter === 'facemesh4.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh4.webp" alt="" onClick={() => onFilterChange('facemesh4.webp')} />
-              </div>
-              <div className={imgFilter === 'facemesh5.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh5.webp" alt=""  onClick={() => onFilterChange('facemesh5.webp')} />  
-              </div>
-              <div className={imgFilter === 'facemesh6.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
-              </div>
-              <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}>
-                <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
-              </div>
-              <div className={imgFilter === 'facemesh3.png' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh3.png" alt="" onClick={() => onFilterChange('facemesh3.png')} />
-              </div>
-              <div className={imgFilter === 'facemesh4.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh4.webp" alt="" onClick={() => onFilterChange('facemesh4.webp')} />
-              </div>
-              <div className={imgFilter === 'facemesh5.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh5.webp" alt=""  onClick={() => onFilterChange('facemesh5.webp')} />  
-              </div>
-              <div className={imgFilter === 'facemesh6.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
-              </div>
-              <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}>
-                <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
-              </div>
-              <div className={imgFilter === 'facemesh3.png' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh3.png" alt="" onClick={() => onFilterChange('facemesh3.png')} />
-              </div>
-              <div className={imgFilter === 'facemesh4.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh4.webp" alt="" onClick={() => onFilterChange('facemesh4.webp')} />
-              </div>
-              <div className={imgFilter === 'facemesh5.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh5.webp" alt=""  onClick={() => onFilterChange('facemesh5.webp')} />  
-              </div>
-              <div className={imgFilter === 'facemesh6.webp' ? styles.selected : ''}>
-                <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
-              </div>*/}
+              <div className={`${styles.filterOpt} ${styles.filterOptNone}`} onClick={() => setFilter('none')}></div>
+              <div className={`${styles.filterOpt} ${styles.filterOptGingham}`} onClick={() => setFilter('gingham')}></div>
+              <div className={`${styles.filterOpt} ${styles.filterOptJuno}`} onClick={() => setFilter('juno')}></div>
+              <div className={`${styles.filterOpt} ${styles.filterOptLark}`} onClick={() => setFilter('lark')}></div>
+              <div className={`${styles.filterOpt} ${styles.filterOptLudwig}`} onClick={() => setFilter('ludwig')}></div>
+              <div className={`${styles.filterOpt} ${styles.filterOptSierra}`} onClick={() => setFilter('sierra')}></div>
+              <div className={`${styles.filterOpt} ${styles.filterOptValencia}`} onClick={() => setFilter('valencia')}></div>
             </div>
 
-            <div className={styles.commands}>
-                <img src="/images/customicons/photobooth-shot.png" alt="" />
+            <div className={styles.shot} ref={shotRef}>
+            </div>  
+
+            <div className={styles.commands} ref={ctaRef}>
+                <img src="/images/customicons/photobooth-shot.png" alt="" onClick={onShot}  />
             </div>
         </div>
     </Draggable>

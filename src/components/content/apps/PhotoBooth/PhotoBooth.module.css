@@ -81,6 +81,7 @@ PhotoBooth
   background-color: rgb(255, 67, 67);
   padding: 0.75rem;
   border-radius: 45%;
+  z-index: 11;
 
   transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
@@ -96,40 +97,107 @@ PhotoBooth
   height: auto;
 }
 
+/**
+Filters
+*/
+
 .effectGrid {
-  width: 100%;
+  width: 35px;
+  height: 50%;
   position: absolute;
-  bottom: 0;
   right: 0;
+  top: 50%;
+  transform: translate(35px, -50%);
+  background: rgba(21, 4, 4, 0.412);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  z-index: 100;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgba(245, 245, 245, 0.2);
-  background-blend-mode: luminosity;
-  backdrop-filter: blur(31.5485px);
+  gap: 0.5rem;
+}
+
+.filterOpt {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-shadow: 0 1px 3px rgba(255, 255, 255, 0.12),
+    0 4px 6px rgba(249, 249, 249, 0.1), 0 5px 5px rgba(255, 255, 255, 0.08),
+    0 10px 10px rgba(239, 239, 239, 0.06), 0 10px 20px rgba(255, 255, 255, 0.04);
+  border: 2px solid rgba(132, 132, 132, 0.178);
+  opacity: 0.65;
+}
+.filterOpt:hover {
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.filterOptNone {
+  background-color: none;
+}
+
+.filterOptGingham {
+  background-color: rgb(246, 255, 161);
+}
+
+.filterOptJuno {
+  background-color: rgb(113, 255, 170);
+}
+
+.filterOptLark {
+  background-color: rgb(152, 54, 54);
+}
+
+.filterOptLudwig {
+  background-color: rgb(172, 71, 255);
+}
+
+.filterOptSierra {
+  background-color: rgb(255, 56, 152);
+}
+
+.filterOptValencia {
+  background-color: rgb(255, 186, 219);
+}
+
+.filter {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  position: absolute;
+  opacity: 0.35;
+  pointer-events: none;
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 
-.effectGrid div {
-  width: 10%;
-  height: 35px;
-  display: flex;
+/**
+Shot
+*/
+.shot {
+  width: 100%;
+  height: 90%;
+  z-index: 11;
+  position: absolute;
+  bottom: 0;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: black;
+  color: white;
+  display: none;
+  font-family: italic;
+  font-size: 4rem;
   justify-content: center;
   align-items: center;
-  padding: 0.25rem;
+  text-align: center;
 }
 
-.effectGrid div:hover {
-  cursor: pointer;
-}
-
-.selected {
-  border: 1px solid rgba(255, 255, 255, 0.068);
-  border-radius: 10px;
-}
-
-.effectGrid div img {
-  width: auto;
-  height: 100%;
+.shot span {
 }

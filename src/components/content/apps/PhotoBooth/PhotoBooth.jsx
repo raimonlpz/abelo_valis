@@ -124,8 +124,8 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
             <div className={styles.shot} ref={shotRef}>
             </div>  
 
-            <div className={styles.commands} ref={ctaRef}>
-                <img src="/images/customicons/photobooth-shot.png" alt="" onClick={onShot}  />
+            <div className={styles.commands} ref={ctaRef} onClick={onShot}>
+                <img src="/images/customicons/photobooth-shot.png" alt="Cam shot"  />
             </div>
         </div>
     </Draggable>

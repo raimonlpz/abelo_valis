@@ -42,7 +42,7 @@ export default function Auth({ onSignin }) {
                 </div>
                 <span className={styles.nickname}>Abelo Valis</span>
                 <input
-                    defaultValue="abelo.valis"
+                    defaultValue=""
                     type="text"
                     placeholder="Username"
                     className={styles.inputField}

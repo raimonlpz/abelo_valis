@@ -27,7 +27,7 @@ export default function Folders({
                     draggable="false"
                     className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selected : ''} `}>&nbsp;Abel Store</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selected : ''} `}>&nbsp; &nbsp;Abel Store</span>
 
             </a>
           </Draggable>

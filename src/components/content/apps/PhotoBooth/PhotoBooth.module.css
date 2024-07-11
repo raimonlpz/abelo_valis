@@ -192,12 +192,8 @@ Shot
   background-color: black;
   color: white;
   display: none;
-  font-family: italic;
   font-size: 4rem;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.shot span {
 }

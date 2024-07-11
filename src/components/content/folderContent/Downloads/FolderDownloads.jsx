@@ -177,6 +177,34 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                   />
                   <span className={`${folderOnfocus === 'libros' ? styles.selected : ''}`}>Libros</span>
                 </div>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('emule')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://www.emule.es/utorr', '_blank')}>
+                  <img 
+                    src="/images/icons/emule.png" 
+                    alt="folder" 
+                    style={{'width': '80px'}} 
+                    className={`${folderOnfocus === 'emule' ? styles.selectedIcon : ''}`} 
+                  />
+                  <span className={`${folderOnfocus === 'emule' ? styles.selected : ''}`}>Música</span>
+                </div>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('utorrent')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://www.utorrent.com/', '_blank')}>
+                  <img 
+                    src="/images/icons/utorrent.png" 
+                    alt="folder" 
+                    style={{'width': '80px'}} 
+                    className={`${folderOnfocus === 'utorrent' ? styles.selectedIcon : ''}`} 
+                  />
+                  <span className={`${folderOnfocus === 'utorrent' ? styles.selected : ''}`}>xxx</span>
+                </div>
+           
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('pirate')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://thepiratebay3.co/', '_blank')}>
+                  <img 
+                    src="/images/icons/piratebay.png" 
+                    alt="folder" 
+                    style={{'width': '80px'}} 
+                    className={`${folderOnfocus === 'pirate' ? styles.selectedIcon : ''}`} 
+                  />
+                  <span className={`${folderOnfocus === 'pirate' ? styles.selected : ''}`}>🚬🥃💊</span>
+                </div>
                 {/* <div className={styles.folderWrapper}>
                   <img src="/images/folder.png" alt="folder" />
                   <span>Education</span>
@@ -195,6 +223,15 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                 </div> */}
               </div>
               <div className={styles.row}>
+              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('stremio')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://www.stremio.com/', '_blank')}>
+                  <img 
+                    src="/images/icons/stremio.ico" 
+                    alt="folder" 
+                    style={{'width': '80px'}} 
+                    className={`${folderOnfocus === 'stremio' ? styles.selectedIcon : ''}`} 
+                  />
+                  <span className={`${folderOnfocus === 'stremio' ? styles.selected : ''}`}>Pelis</span>
+                </div>
                 {/* <div className={styles.folderWrapper}>
                   <img src="/images/folder.png" alt="folder" />
                   <span>Music Files</span>

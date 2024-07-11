@@ -343,6 +343,9 @@ function App() {
     } else if (appRef === circGalleryAppRef) {
       appRef.current.style.top = 'calc(100vh - 440px)';
       appRef.current.style.left = '50%'
+    } else if (appRef === aboutMeAppRef) {
+      appRef.current.style.top = 'calc(100vh - 460px)';
+      appRef.current.style.left = '68%'
     } else {
       appRef.current.style.top = 'calc(100vh - 305px)';
       appRef.current.style.left = '75%'
@@ -362,10 +365,10 @@ function App() {
   }
   
   const maximizeApp = (appRef) => {
-    appRef.current.style.top = '-40px' 
+    /*appRef.current.style.top = '-40px' 
     appRef.current.style.left = 0
     appRef.current.style.width = '100vw'
-    appRef.current.style.height = '100vh'
+    appRef.current.style.height = '100vh'*/
   }
 
   const onSignin = () => {

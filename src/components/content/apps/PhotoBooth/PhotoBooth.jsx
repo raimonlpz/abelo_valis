@@ -1,20 +1,14 @@
 import React, { forwardRef, useEffect, useRef, useState } from 'react'
 import styles from './PhotoBooth.module.css'
 import Draggable from 'react-draggable'
-import ml5 from 'ml5'
 
 
 const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
 
-    const faceApiRef = useRef()
-    const canvasRef = useRef()
     const videoRef = useRef()
-
     const [imgFilter, setImgFilter] = useState('facemesh.png')
 
     useEffect(() => {
-      let stream = null;
-      let animationFrameId = null;
 
       const image = new Image();
       image.src = `/images/customicons/${imgFilter}`;
@@ -29,14 +23,13 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
                 audio: true
             })
             .then((mediaStream) => {
-              stream = mediaStream
-              videoRef.current.srcObject = stream
+              videoRef.current.srcObject = mediaStream
                 videoRef.current.addEventListener('loadedmetadata', () => {
                     videoRef.current.play()
                 })
 
                 // Faceapi detection
-                const canvas = canvasRef.current 
+                /*const canvas = canvasRef.current 
                 const context = canvas.getContext('2d')
                 canvas.width = videoRef.current.width
                 canvas.height = videoRef.current.height
@@ -72,14 +65,14 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
               
                         animationFrameId = requestAnimationFrame(detectFaces);
                       });          
-                  };
+                  };*/
           
             })
             .catch(alert)
         }
 
         return () => {
-          if (stream) {
+          /*if (stream) {
             stream.getTracks().forEach(track => track.stop())
           }
 
@@ -89,14 +82,14 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
 
           if (animationFrameId) {
             cancelAnimationFrame(animationFrameId)
-          }
+          }*/
         }
     }, [isPhotoBoothOpen, imgFilter])
 
 
-  const onFilterChange = (filter) => {
-    setImgFilter(filter)
-  }
+  // const onFilterChange = (filter) => {
+  //   setImgFilter(filter)
+  // }
 
   return (
     <Draggable onStart={onStartDrag} onStop={onStopDrag}>
@@ -133,11 +126,11 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
           </div>
             <div className={styles.photobooth}>
                 <video ref={videoRef} disablePictureInPicture width={600} height={450} ></video>
-                <canvas ref={canvasRef}></canvas>
              </div>
 
             <div className={styles.effectGrid}>
-              <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}>
+              <div className={styles.filter}></div>
+              {/* <div className={imgFilter === 'facemesh.png' ? styles.selected : ''}> 
                 <img  src="/images/customicons/facemesh.png" alt="" onClick={() => onFilterChange('facemesh.png')} />
               </div>
               <div className={imgFilter === 'facemesh3.png' ? styles.selected : ''}>
@@ -181,7 +174,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
               </div>
               <div className={imgFilter === 'facemesh6.webp' ? styles.selected : ''}>
                 <img src="/images/customicons/facemesh6.webp" alt="" onClick={() => onFilterChange('facemesh6.webp')} />
-              </div>
+              </div>*/}
             </div>
 
             <div className={styles.commands}>

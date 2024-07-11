@@ -22,6 +22,7 @@ import Formations from './components/content/apps/Formation/Formation'
 import AboutMe from './components/content/apps/AboutMe/AboutMe'
 import FolderDocuments from './components/content/folderContent/Documents/FolderDocuments'
 import Settings from './components/content/apps/Settings/Settings'
+import Calendar from './components/content/apps/Calendar/Calendar'
 
 function App() {
 
@@ -37,6 +38,7 @@ function App() {
   const formationsAppRef = useRef()
   const interviewsAppRef = useRef()
   const settingsAppRef = useRef()
+  const calendarAppRef = useRef()
   const aboutMeAppRef = useRef()
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
@@ -76,6 +78,7 @@ function App() {
   const [isGMapsOpen, setIsGMapsOpen] = useState(false)
   const [isMusicOpen, setIsMusicOpen] = useState(false)
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
+  const [isCalendarOpen, setIsCalendarOpen] = useState(false)
 
   /**
    * Settings Configs
@@ -97,7 +100,8 @@ function App() {
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current && 
-      settingsAppRef.current
+      settingsAppRef.current &&
+      calendarAppRef.current
     ) {
       setAppRefs([
         linearGalleryAppRef.current,
@@ -111,7 +115,8 @@ function App() {
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current,
-        settingsAppRef.current
+        settingsAppRef.current,
+        calendarAppRef.current
       ])
     }
   }, [isAuth])
@@ -281,6 +286,19 @@ function App() {
   }
 
   /**
+   * Calendar
+   */
+  const openCalendar = () => {
+    setIsCalendarOpen(true)
+    editZIndex('Calendar')
+    unMinimizeApp(calendarAppRef)
+  }
+
+  const closeCalendar = () => {
+    setIsCalendarOpen(false)
+  }
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -325,6 +343,9 @@ function App() {
       case 'Settings':
         settingsAppRef.current.style.zIndex = 2
         break
+      case 'Calendar':
+        calendarAppRef.current.style.zIndex = 2
+        break
       default:
         break
     }
@@ -346,6 +367,9 @@ function App() {
     } else if (appRef === aboutMeAppRef) {
       appRef.current.style.top = 'calc(100vh - 460px)';
       appRef.current.style.left = '68%'
+    } else if (appRef === calendarAppRef) {
+      appRef.current.style.top = 'calc(100vh - 340px)';
+      appRef.current.style.left = '62%'
     } else {
       appRef.current.style.top = 'calc(100vh - 305px)';
       appRef.current.style.left = '75%'
@@ -516,6 +540,16 @@ function App() {
           onStartDrag={() => editZIndex('AboutMe')}
           onStopDrag={onStopDrag}
         />
+
+        <Calendar 
+          ref={calendarAppRef}
+          isCalendarOpen={isCalendarOpen}
+          closeCalendar={closeCalendar}
+          maximizeApp={() => maximizeApp(calendarAppRef)}
+          minimizeApp={() => minimizeApp(calendarAppRef)}
+          onStartDrag={() => editZIndex('Calendar')}
+          onStopDrag={onStopDrag}
+        />
         
         <Settings 
           ref={settingsAppRef}
@@ -541,6 +575,7 @@ function App() {
         openSketch={openSketch} 
         openMusic={openMusic} 
         openSettings={openSettings}
+        openCalendar={openCalendar}
         isHideBar={isHideBar}
       />
     </div>

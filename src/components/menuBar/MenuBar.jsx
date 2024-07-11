@@ -9,6 +9,7 @@ export default function MenuBar({
     openSketch, 
     openGMaps, 
     openMusic,
+    openCalendar,
     isHideBar
 }) {
     
@@ -35,6 +36,7 @@ export default function MenuBar({
 
     if (id === '2') {
         // Calendar
+        openCalendar()
     }
 
     if (id === '3') {

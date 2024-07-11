@@ -1,55 +1,41 @@
-import React, { useRef, useEffect } from 'react'
-import p5 from 'p5'
-import styles from './Sketch.module.css'
+import React, { useRef, useEffect } from 'react';
+import styles from './Sketch.module.css';
 
 const Canvas = ({ brushSize, brushColor }) => {
-    const sketchRef = useRef();
+    const canvasRef = useRef(null);
 
     useEffect(() => {
-        const sketch = (p) => {
-            let x = 0;
-            let y = 0;
-            let currentBrushSize = brushSize; 
-            let currentBrushColor = brushColor;
+        const canvas = canvasRef.current;
+        const context = canvas.getContext('2d');
 
-            p.setup = () => {
-                p.createCanvas(490, 390).parent(sketchRef.current)
-                p.background('#19011C')
-            }
-
-            p.draw = () => {
-                if (p.mouseOver) {
-                    p.stroke(currentBrushColor)
-                    p.strokeWeight(currentBrushSize)
-                    p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
-                }
-            }
-
-            p.mouseOver = () => {
-                if (p.keyIsPressed && p.key === 'c') {
-                    p.background(255);
-                }
-            }
+        // Set up canvas size and background
+        context.canvas.width = 490;
+        context.canvas.height = 390;
+        context.fillStyle = '#19011C';
+        context.fillRect(0, 0, context.canvas.width, context.canvas.height);
 
 
-            p.myCustomRedrawAccordingToNewPropsHandler = (props) => {
-                if (props.brushSize) {
-                    currentBrushSize = props.brushSize
-                }
-                if (props.brushColor) {
-                    currentBrushColor = props.brushColor
-                }
-            }
-        }
+        const draw = (e) => {
 
-        const p5Instance = new p5(sketch);
+            context.strokeStyle = brushColor;
+            context.lineWidth = brushSize;
+            context.lineCap = 'round';
 
-        return () => {
-            p5Instance.remove();
+            context.lineTo(e.offsetX, e.offsetY);
+            context.stroke();
+            context.beginPath();
+            context.moveTo(e.offsetX, e.offsetY);
         };
-    }, [brushColor, brushSize])
 
-    return <div ref={sketchRef} className={styles.canvas} />;
+        canvas.addEventListener('mousemove', draw);
+
+        // Cleanup
+        return () => {
+            canvas.removeEventListener('mousemove', draw);
+        };
+    }, [brushSize, brushColor]);
+
+    return <canvas ref={canvasRef} className={styles.canvas} />;
 }
 
-export default Canvas
+export default Canvas;

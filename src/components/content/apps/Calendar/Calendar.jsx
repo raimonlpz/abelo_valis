@@ -39,7 +39,7 @@ const Calendar = forwardRef(({ isCalendarOpen, closeCalendar, maximizeApp, minim
                 </div>
                 <div className={styles.calendar}>
 
-                <iframe className={styles.googleFrame} src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FMadrid&bgcolor=%23B39DDB&showTitle=0&hl=es&showPrint=0&showTz=0&src=c3R1ZGlvLm1hcnRpcmlvQGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uc3BhaW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%230B8043" style={{border: "0", width:"600px", height:"440px", frameborder:"0", scrolling: "no"}} loading="lazy"></iframe>
+                {/* <iframe className={styles.googleFrame} src="https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FMadrid&bgcolor=%23B39DDB&showTitle=0&hl=es&showPrint=0&showTz=0&src=c3R1ZGlvLm1hcnRpcmlvQGdtYWlsLmNvbQ&src=YWRkcmVzc2Jvb2sjY29udGFjdHNAZ3JvdXAudi5jYWxlbmRhci5nb29nbGUuY29t&src=ZW4uc3BhaW4jaG9saWRheUBncm91cC52LmNhbGVuZGFyLmdvb2dsZS5jb20&color=%23039BE5&color=%2333B679&color=%230B8043" style={{border: "0", width:"600px", height:"440px", frameborder:"0", scrolling: "no"}} loading="lazy"></iframe> */}
                 </div>
             </div>
         </Draggable>

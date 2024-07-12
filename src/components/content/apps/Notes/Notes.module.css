@@ -1,0 +1,48 @@
+.wrapper {
+  position: absolute;
+  width: 600px;
+  height: 490px;
+  left: 30%;
+  top: 80px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  background: #e6e6e6;
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 5px 10px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.04);
+
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.left_inner_wrapper {
+  height: 50px;
+  width: 200px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 20px;
+}
+
+.left_corner_buttons {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.left_corner_button_img {
+  margin-right: 10px;
+}
+
+.editor {
+  width: 100%;
+  height: 100%;
+  padding: 1rem 3rem;
+}

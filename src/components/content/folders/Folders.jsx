@@ -93,8 +93,8 @@ export default function Folders({
                     src="/images/customicons/pdf-format.png" 
                     alt="folder" 
                     draggable="false"
-                    // onTouchStart={isTouchDevice() ? openFolderDownloads : null}
-                    // onDoubleClick={openFolderDownloads} 
+                    onTouchStart={isTouchDevice() ? () => window.open('/files/AbeloValis_CV.pdf', '_blank') : null}
+                    onDoubleClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')} 
                     className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selected : ''} `}>&nbsp;CV_2024.pdf</span>

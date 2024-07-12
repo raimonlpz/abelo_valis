@@ -70,7 +70,7 @@ const Interviews = forwardRef(({
                                 />
                                 <p className={styles.left_li_text}>Proyectos</p>
                             </li>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/file.png"

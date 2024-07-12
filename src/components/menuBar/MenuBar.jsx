@@ -10,6 +10,7 @@ export default function MenuBar({
     openGMaps, 
     openMusic,
     openCalendar,
+    openNotes,
     isHideBar
 }) {
     
@@ -74,7 +75,8 @@ export default function MenuBar({
     }
 
     if (id === '10') {
-        // AboutMe / Notes
+        // Notes
+        openNotes()
     }
 
     if (id === '11') {

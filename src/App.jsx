@@ -24,6 +24,7 @@ import FolderDocuments from './components/content/folderContent/Documents/Folder
 import Settings from './components/content/apps/Settings/Settings'
 import Calendar from './components/content/apps/Calendar/Calendar'
 import Videobook from './components/content/apps/Videobook/Videobook'
+import Notes from './components/content/apps/Notes/Notes'
 
 function App() {
 
@@ -45,6 +46,7 @@ function App() {
   const gmapsAppRef = useRef() 
   const musicAppRef = useRef()
   const videobookAppRef = useRef()
+  const notesAppRef = useRef()
 
   const wrapperRef = useRef()
   const videoBgRef = useRef()
@@ -82,6 +84,7 @@ function App() {
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)
   const [isVideobookOpen, setIsVideobookOpen] = useState(false) 
+  const [isNotesOpen, setIsNotesOpen] = useState(false)
 
   /**
    * Settings Configs
@@ -105,7 +108,8 @@ function App() {
       musicAppRef.current && 
       settingsAppRef.current &&
       calendarAppRef.current &&
-      videobookAppRef.current
+      videobookAppRef.current &&
+      notesAppRef.current
     ) {
       setAppRefs([
         linearGalleryAppRef.current,
@@ -121,7 +125,8 @@ function App() {
         musicAppRef.current,
         settingsAppRef.current,
         calendarAppRef.current,
-        videobookAppRef.current
+        videobookAppRef.current,
+        notesAppRef.current
       ])
     }
   }, [isAuth])
@@ -316,6 +321,18 @@ function App() {
     setIsVideobookOpen(false)
   }
 
+  /**
+   * Notes
+   */
+  const openNotes = () => {
+    setIsNotesOpen(true)
+    editZIndex('Notes')
+    unMinimizeApp(notesAppRef)
+  }
+
+  const closeNotes = () => {
+    setIsNotesOpen(false)
+  }
 
   /**
    * Utils
@@ -367,6 +384,9 @@ function App() {
         break
       case 'Videobook':
         videobookAppRef.current.style.zIndex = 2 
+        break
+      case 'Notes':
+        notesAppRef.current.style.zIndex = 2
         break
       default:
         break
@@ -613,6 +633,16 @@ function App() {
           setIsHideBar={setIsHideBar}
         />
 
+        <Notes 
+          ref={notesAppRef}
+          isNotesOpen={isNotesOpen}
+          closeNotes={closeNotes}
+          maximizeApp={() => maximizeApp(notesAppRef)}
+          minimizeApp={() => minimizeApp(notesAppRef)}
+          onStartDrag={() => editZIndex('Notes')}
+          onStopDrag={onStopDrag}
+        />
+
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
       </div>
 
@@ -624,6 +654,7 @@ function App() {
         openMusic={openMusic} 
         openSettings={openSettings}
         openCalendar={openCalendar}
+        openNotes={openNotes}
         isHideBar={isHideBar}
       />
     </div>

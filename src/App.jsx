@@ -23,6 +23,7 @@ import AboutMe from './components/content/apps/AboutMe/AboutMe'
 import FolderDocuments from './components/content/folderContent/Documents/FolderDocuments'
 import Settings from './components/content/apps/Settings/Settings'
 import Calendar from './components/content/apps/Calendar/Calendar'
+import Videobook from './components/content/apps/Videobook/Videobook'
 
 function App() {
 
@@ -43,6 +44,7 @@ function App() {
   const sketchAppRef = useRef()
   const gmapsAppRef = useRef() 
   const musicAppRef = useRef()
+  const videobookAppRef = useRef()
 
   const wrapperRef = useRef()
   const videoBgRef = useRef()
@@ -79,6 +81,7 @@ function App() {
   const [isMusicOpen, setIsMusicOpen] = useState(false)
   const [isSettingsOpen, setIsSettingsOpen] = useState(false)
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)
+  const [isVideobookOpen, setIsVideobookOpen] = useState(false) 
 
   /**
    * Settings Configs
@@ -101,7 +104,8 @@ function App() {
       gmapsAppRef.current &&
       musicAppRef.current && 
       settingsAppRef.current &&
-      calendarAppRef.current
+      calendarAppRef.current &&
+      videobookAppRef.current
     ) {
       setAppRefs([
         linearGalleryAppRef.current,
@@ -116,7 +120,8 @@ function App() {
         gmapsAppRef.current,
         musicAppRef.current,
         settingsAppRef.current,
-        calendarAppRef.current
+        calendarAppRef.current,
+        videobookAppRef.current
       ])
     }
   }, [isAuth])
@@ -299,6 +304,20 @@ function App() {
   }
 
   /**
+   * Videobook
+   */
+  const openVideobook = () => {
+    setIsVideobookOpen(true)
+    editZIndex('Videobook')
+    unMinimizeApp(videobookAppRef)
+  }
+
+  const closeVideobook = () => {
+    setIsVideobookOpen(false)
+  }
+
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -345,6 +364,9 @@ function App() {
         break
       case 'Calendar':
         calendarAppRef.current.style.zIndex = 2
+        break
+      case 'Videobook':
+        videobookAppRef.current.style.zIndex = 2 
         break
       default:
         break
@@ -426,6 +448,7 @@ function App() {
           openInterviews={openInterviews}
           openFormations={openFormations}
           openAboutMe={openAboutMe}
+          openVideobook={openVideobook}
         />
 
         <FolderDownloads 
@@ -564,6 +587,16 @@ function App() {
           minimizeApp={() => minimizeApp(calendarAppRef)}
           onStartDrag={() => editZIndex('Calendar')}
           onStopDrag={onStopDrag}
+        />
+
+        <Videobook 
+          ref={videobookAppRef}
+          isVideobookOpen={isVideobookOpen}
+          closeVideobook={closeVideobook}
+          maximizeApp={() => maximizeApp(videobookAppRef)}
+          minimizeApp={() => minimizeApp(videobookAppRef)}
+          onStartDrag={() => editZIndex('Videobook')}
+          onStopDrag={onStopDrag} 
         />
         
         <Settings 

@@ -31,6 +31,12 @@ a {
   right: 13%;
 }
 
+.wrapper_rand4 {
+  position: absolute;
+  top: 60%;
+  left: 6%;
+}
+
 .folderWrapper {
   display: flex;
   flex-direction: column;

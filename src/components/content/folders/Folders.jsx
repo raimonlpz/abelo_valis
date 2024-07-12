@@ -10,7 +10,8 @@ export default function Folders({
   openLinearGallery, 
   openInterviews,
   openFormations,
-  openAboutMe
+  openAboutMe,
+  openVideobook
 }) {
 
   const [folderOnfocus, setFolderOnfocus] = useState(null)
@@ -112,6 +113,23 @@ export default function Folders({
                       className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''} `}
                     />
                   </a>
+            </div>
+          </Draggable>
+      </div>
+
+      <div className={styles.wrapper_rand4}>
+          <Draggable>
+            <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('videbook')} onMouseLeave={() => setFolderOnfocus(null)}> 
+                    <img 
+                      src="/images/mov.png" 
+                      alt="folder" 
+                      draggable="false"
+                      onTouchStart={isTouchDevice() ? openVideobook : null}
+                      onDoubleClick={openVideobook} 
+                      className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selectedIcon : ''} `}
+                    />
+                    <span className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selected : ''} `}>&nbsp; &nbsp; &nbsp; Book :p</span>
+                  
             </div>
           </Draggable>
       </div>

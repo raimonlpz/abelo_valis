@@ -71,7 +71,7 @@ const FolderDocuments = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>CV_2024</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openAboutMe}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/clock.png"
@@ -79,7 +79,7 @@ const FolderDocuments = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Sobre Mi</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openFormations}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/file.png"
@@ -87,7 +87,7 @@ const FolderDocuments = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Formación</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openInterviews}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/files.png"
@@ -95,7 +95,7 @@ const FolderDocuments = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Prensa</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openCircGallery}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/folder.png"
@@ -103,7 +103,7 @@ const FolderDocuments = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Fotos</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openFolderDownloads}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/download.png"

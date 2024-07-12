@@ -436,6 +436,12 @@ function App() {
           minimizeApp={() => minimizeApp(downloadFolderRef)}  
           onStartDrag={() => editZIndex('DownloadFolder')} 
           onStopDrag={onStopDrag}
+          //
+          openFolderDocuments={openFolderDocuments}
+          openCircGallery={openCircGallery}
+          openInterviews={openInterviews}
+          openFormations={openFormations}
+          openAboutMe={openAboutMe}
         />
 
         <FolderDocuments 

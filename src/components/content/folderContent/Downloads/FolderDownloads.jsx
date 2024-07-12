@@ -2,7 +2,20 @@ import React, { useState, forwardRef } from 'react'
 import styles from './FolderDownloads.module.css'
 import Draggable from 'react-draggable';
 
-const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDownloads, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+const FolderDownloads = React.forwardRef(({ 
+  isFolderDownloadsOpen, 
+  closeFolderDownloads, 
+  maximizeApp, 
+  minimizeApp, 
+  onStartDrag, 
+  onStopDrag,
+  //
+  openFolderDocuments, 
+  openCircGallery,
+  openInterviews, 
+  openFormations, 
+  openAboutMe 
+}, ref) => {
 
   const [folderOnfocus,setFolderOnfocus] = useState(null)
 
@@ -59,7 +72,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                   />
                   <p className={styles.left_li_text}>CV_2024</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openAboutMe}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/clock.png"
@@ -67,7 +80,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                   />
                   <p className={styles.left_li_text}>Sobre Mi</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openFormations}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/file.png"
@@ -75,7 +88,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                   />
                   <p className={styles.left_li_text}>Formación</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openInterviews}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/files.png"
@@ -83,7 +96,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
                   />
                   <p className={styles.left_li_text}>Prensa</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openCircGallery}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/folder.png"
@@ -102,7 +115,7 @@ const FolderDownloads = React.forwardRef(({ isFolderDownloadsOpen, closeFolderDo
               </ul>
               <h5 className={styles.menu_title}>iCloud</h5>
               <ul className={styles.left_ul}>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openFolderDocuments}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/cloud.png"

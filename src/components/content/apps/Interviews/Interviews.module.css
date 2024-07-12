@@ -53,6 +53,18 @@
   margin-bottom: 12px;
 }
 
+.left_li:hover {
+  cursor: pointer;
+
+  .blue_icon_img {
+    filter: brightness(50);
+  }
+
+  .left_li_text {
+    color: white;
+  }
+}
+
 .blue_icon_img {
   height: 13px;
   width: 13px;

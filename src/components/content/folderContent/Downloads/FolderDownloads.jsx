@@ -12,6 +12,7 @@ const FolderDownloads = React.forwardRef(({
   //
   openFolderDocuments, 
   openCircGallery,
+  openMakarradas,
   openInterviews, 
   openFormations, 
   openAboutMe 
@@ -104,7 +105,7 @@ const FolderDownloads = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Fotos</p>
                 </li>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openMakarradas}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/download.png"

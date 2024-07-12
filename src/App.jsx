@@ -361,7 +361,7 @@ function App() {
     if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === interviewsAppRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
-    } else if (appRef === circGalleryAppRef) {
+    } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef) {
       appRef.current.style.top = 'calc(100vh - 440px)';
       appRef.current.style.left = '50%'
     } else if (appRef === aboutMeAppRef) {
@@ -438,6 +438,7 @@ function App() {
           onStopDrag={onStopDrag}
           //
           openFolderDocuments={openFolderDocuments}
+          openMakarradas={openLinearGallery}
           openCircGallery={openCircGallery}
           openInterviews={openInterviews}
           openFormations={openFormations}
@@ -454,6 +455,7 @@ function App() {
           onStopDrag={onStopDrag}
           //
           openFolderDownloads={openFolderDownloads} 
+          openMakarradas={openLinearGallery}
           openCircGallery={openCircGallery}
           openInterviews={openInterviews}
           openFormations={openFormations}
@@ -528,6 +530,7 @@ function App() {
           //
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads}
+          openMakarradas={openLinearGallery}
           openCircGallery={openCircGallery}
           openFormations={openFormations}
           openAboutMe={openAboutMe}

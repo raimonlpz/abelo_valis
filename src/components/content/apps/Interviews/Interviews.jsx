@@ -12,6 +12,7 @@ const Interviews = forwardRef(({
     //
     openFolderDocuments,
     openFolderDownloads,
+    openMakarradas,
     openCircGallery,
     openFormations,
     openAboutMe
@@ -120,7 +121,7 @@ const Interviews = forwardRef(({
                         </ul>
                         <h5 className={styles.menu_title}>iCloud</h5>
                         <ul className={styles.left_ul}>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={openMakarradas}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/cloud.png"

@@ -12,6 +12,7 @@ const FolderDocuments = React.forwardRef(({
   // 
   openFolderDownloads,
   openCircGallery,
+  openMakarradas,
   openInterviews,
   openFormations,
   openAboutMe
@@ -114,7 +115,7 @@ const FolderDocuments = React.forwardRef(({
               </ul>
               <h5 className={styles.menu_title}>iCloud</h5>
               <ul className={styles.left_ul}>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openMakarradas}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/cloud.png"
@@ -226,7 +227,7 @@ const FolderDocuments = React.forwardRef(({
 
           
 
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openMakarradas}>
                   <img className={`${styles.file} ${folderOnfocus === 'makarradas' ? styles.selectedIcon : ''}`} src="/images/customicons/gun.png" alt="folder" />
                   <span className={`${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Makarrada$</span>
                 </div>

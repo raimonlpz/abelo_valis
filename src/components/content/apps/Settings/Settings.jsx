@@ -53,7 +53,7 @@ const Settings = forwardRef(({
             </div>
             <div className={styles.settings}>
                 <div>
-                    <h6>Appearance</h6>
+                    <h6>System Settings</h6>
                     <div className={styles.option}>
                         <div>Valis Mode</div>
                         <label className={styles.switch}>

@@ -2,7 +2,20 @@ import React, { forwardRef } from 'react'
 import styles from './Interviews.module.css'
 import Draggable from 'react-draggable'
 
-const Interviews = forwardRef(({ isInterviewsOpen, closeInterviews, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+const Interviews = forwardRef(({ 
+    isInterviewsOpen, 
+    closeInterviews, 
+    maximizeApp, 
+    minimizeApp,
+    onStartDrag, 
+    onStopDrag,
+    //
+    openFolderDocuments,
+    openFolderDownloads,
+    openCircGallery,
+    openFormations,
+    openAboutMe
+}, ref) => {
 
     const data = [
         { name: 'https://www.neo2.com/abelo-valis-moda-canalla/', kind: 'Neo2', date: '2019-11-06' },
@@ -64,7 +77,7 @@ const Interviews = forwardRef(({ isInterviewsOpen, closeInterviews, maximizeApp,
                             />
                             <p className={styles.left_li_text}>CV_2024</p>
                             </li>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={openAboutMe}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/clock.png"
@@ -72,7 +85,7 @@ const Interviews = forwardRef(({ isInterviewsOpen, closeInterviews, maximizeApp,
                             />
                             <p className={styles.left_li_text}>Sobre Mi</p>
                             </li>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={openFormations}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/file.png"
@@ -80,7 +93,7 @@ const Interviews = forwardRef(({ isInterviewsOpen, closeInterviews, maximizeApp,
                             />
                             <p className={styles.left_li_text}>Formación</p>
                             </li>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={openFolderDocuments}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/files.png"
@@ -88,7 +101,7 @@ const Interviews = forwardRef(({ isInterviewsOpen, closeInterviews, maximizeApp,
                             />
                             <p className={styles.left_li_text}>Documentos</p>
                             </li>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={openCircGallery}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/folder.png"
@@ -96,7 +109,7 @@ const Interviews = forwardRef(({ isInterviewsOpen, closeInterviews, maximizeApp,
                             />
                             <p className={styles.left_li_text}>Fotos</p>
                             </li>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={openFolderDownloads}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/download.png"

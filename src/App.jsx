@@ -525,6 +525,12 @@ function App() {
           minimizeApp={() => minimizeApp(interviewsAppRef)}
           onStartDrag={() => editZIndex('Interviews')}
           onStopDrag={onStopDrag}
+          //
+          openFolderDocuments={openFolderDocuments}
+          openFolderDownloads={openFolderDownloads}
+          openCircGallery={openCircGallery}
+          openFormations={openFormations}
+          openAboutMe={openAboutMe}
         />
 
         <Formations 

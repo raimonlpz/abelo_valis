@@ -117,6 +117,21 @@ export default function Folders({
           </Draggable>
       </div>
 
+      {/* <div className={styles.wrapper_rand5}>
+          <Draggable>
+            <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('imdb')} onMouseLeave={() => setFolderOnfocus(null)}> 
+                  <a rel="noopener noreferrer" href="https://www.imdb.com/name/nm7323689/" target="_blank">
+                    <img 
+                      src="/images/icons/imdb.png" 
+                      alt="folder" 
+                      draggable="false"
+                      className={`${styles.folderText} ${folderOnfocus === 'imdb' ? styles.selectedIcon : ''} `}
+                    />
+                  </a>
+            </div>
+          </Draggable>
+      </div> */}
+
       <div className={styles.wrapper_rand4}>
           <Draggable>
             <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('videbook')} onMouseLeave={() => setFolderOnfocus(null)}> 

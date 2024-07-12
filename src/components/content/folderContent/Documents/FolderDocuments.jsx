@@ -188,10 +188,12 @@ const FolderDocuments = React.forwardRef(({
                   <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'press' ? styles.selectedIcon : ''}`} />
                   <span className={`${folderOnfocus === 'press' ? styles.selected : ''}`}>Prensa</span>
                 </div>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('photos')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openCircGallery}>
-                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'photos' ? styles.selectedIcon : ''}`} />
-                  <span className={`${folderOnfocus === 'photos' ? styles.selected : ''}`}>Fotos</span>
+               
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('formation')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFormations}>
+                  <img src="/images/customicons/iterm-logo.webp" alt="folder" className={`${styles.file} ${folderOnfocus === 'formation' ? styles.selectedIcon : ''}`} />
+                  <span className={`${folderOnfocus === 'formation' ? styles.selected : ''}`}>Formación</span>
                 </div>
+
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('downloads')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderDownloads}>
                   <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'downloads' ? styles.selectedIcon : ''}`} />
                   <span className={`${folderOnfocus === 'downloads' ? styles.selected : ''}`}>Descargas</span>
@@ -216,10 +218,13 @@ const FolderDocuments = React.forwardRef(({
                   <span className={`${folderOnfocus === 'cv' ? styles.selected : ''}`}>CV_2024.pdf</span>
                 </div>
 
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('formation')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFormations}>
-                  <img src="/images/folder.png" alt="folder" className={`${styles.file} ${folderOnfocus === 'formation' ? styles.selectedIcon : ''}`} />
-                  <span className={`${folderOnfocus === 'formation' ? styles.selected : ''}`}>Formación</span>
+
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('photos')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openCircGallery}>
+                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'photos' ? styles.selectedIcon : ''}`} />
+                  <span className={`${folderOnfocus === 'photos' ? styles.selected : ''}`}>Fotos</span>
                 </div>
+
+          
 
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)}>
                   <img className={`${styles.file} ${folderOnfocus === 'makarradas' ? styles.selectedIcon : ''}`} src="/images/customicons/gun.png" alt="folder" />

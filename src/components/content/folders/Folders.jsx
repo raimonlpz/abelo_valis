@@ -138,7 +138,7 @@ export default function Folders({
             <Draggable>
               <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)}>
                   <img 
-                    src="/images/folder.png" 
+                    src="/images/customicons/iterm-logo.webp" 
                     draggable="false"
                     alt="folder" 
                     onTouchStart={isTouchDevice() ? openFormations : null}

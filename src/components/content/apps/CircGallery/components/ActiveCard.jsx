@@ -1,15 +1,11 @@
-import { Billboard, Image, Text } from "@react-three/drei";
-import { useLayoutEffect, useMemo, useRef } from "react";
-import { generate } from 'random-words'
+import { Billboard, Image } from "@react-three/drei";
+import { useLayoutEffect, useRef } from "react";
 import { useFrame } from "@react-three/fiber";
 import { easing } from "maath";
-import { suspend } from 'suspend-react'
 
-const inter = import('@pmndrs/assets/fonts/inter_thin_italic.woff')
 
 export default function ActiveCard({ hovered, ...props }) {
     const ref = useRef()
-    const name = useMemo(() => generate({ exactly: 2 }).join(' '), [hovered])
     useLayoutEffect(() => void (ref.current.material.zoom = 0.8), [hovered])
     useFrame((state, delta) => {
         easing.damp(ref.current.material, 'zoom', 1, 0.5, delta)

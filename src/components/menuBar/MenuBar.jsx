@@ -11,6 +11,7 @@ export default function MenuBar({
     openMusic,
     openCalendar,
     openNotes,
+    openTrash,
     isHideBar
 }) {
     
@@ -82,6 +83,10 @@ export default function MenuBar({
     if (id === '11') {
         // Settings
         openSettings()
+    }
+
+    if (id === '12') {
+        openTrash()
     }
  }
 

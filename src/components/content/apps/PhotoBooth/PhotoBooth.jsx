@@ -50,7 +50,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
         shotRef.current.innerHTML = '<span>1</span>'
      }, 2000)
      setTimeout(() => {
-      shotRef.current.innerHTML = '<span>Error 404: <br/> ¡Belleza no encontrada!</span>'
+      shotRef.current.innerHTML = '<span>Error 404: <br/> ¡Belleza Not Found!</span>'
     }, 3000)
     setTimeout(() => {
     ctaRef.current.style.display = 'block'

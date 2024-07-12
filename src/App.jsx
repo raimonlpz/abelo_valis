@@ -25,6 +25,7 @@ import Settings from './components/content/apps/Settings/Settings'
 import Calendar from './components/content/apps/Calendar/Calendar'
 import Videobook from './components/content/apps/Videobook/Videobook'
 import Notes from './components/content/apps/Notes/Notes'
+import Trash from './components/content/apps/Trash/Trash'
 
 function App() {
 
@@ -47,6 +48,7 @@ function App() {
   const musicAppRef = useRef()
   const videobookAppRef = useRef()
   const notesAppRef = useRef()
+  const trashAppRef = useRef()
 
   const wrapperRef = useRef()
   const videoBgRef = useRef()
@@ -85,6 +87,7 @@ function App() {
   const [isCalendarOpen, setIsCalendarOpen] = useState(false)
   const [isVideobookOpen, setIsVideobookOpen] = useState(false) 
   const [isNotesOpen, setIsNotesOpen] = useState(false)
+  const [isTrashOpen, setIsTrashOpen] = useState(false)
 
   /**
    * Settings Configs
@@ -109,7 +112,8 @@ function App() {
       settingsAppRef.current &&
       calendarAppRef.current &&
       videobookAppRef.current &&
-      notesAppRef.current
+      notesAppRef.current &&
+      trashAppRef.current
     ) {
       setAppRefs([
         linearGalleryAppRef.current,
@@ -126,7 +130,8 @@ function App() {
         settingsAppRef.current,
         calendarAppRef.current,
         videobookAppRef.current,
-        notesAppRef.current
+        notesAppRef.current,
+        trashAppRef.current
       ])
     }
   }, [isAuth])
@@ -335,6 +340,19 @@ function App() {
   }
 
   /**
+   * Trash
+   */
+  const openTrash = () => {
+    setIsTrashOpen(true)
+    editZIndex('Trash')
+    unMinimizeApp(trashAppRef)
+  }
+
+  const closeTrash = () => {
+    setIsTrashOpen(false)
+  }
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -388,6 +406,9 @@ function App() {
       case 'Notes':
         notesAppRef.current.style.zIndex = 2
         break
+      case 'Trash':
+        trashAppRef.current.style.zIndex = 2
+        break
       default:
         break
     }
@@ -400,10 +421,10 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === interviewsAppRef) {
+    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === interviewsAppRef || appRef === trashAppRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
-    } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef) {
+    } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef ) {
       appRef.current.style.top = 'calc(100vh - 440px)';
       appRef.current.style.left = '50%'
     } else if (appRef === aboutMeAppRef) {
@@ -643,6 +664,23 @@ function App() {
           onStopDrag={onStopDrag}
         />
 
+        <Trash 
+          ref={trashAppRef}
+          isTrashOpen={isTrashOpen}
+          closeTrash={closeTrash}
+          maximizeApp={() => maximizeApp(trashAppRef)}
+          minimizeApp={() => minimizeApp(trashAppRef)}
+          onStartDrag={() => editZIndex('Trash')}
+          onStopDrag={onStopDrag}
+           //
+           openFolderDocuments={openFolderDocuments}
+           openFolderDownloads={openFolderDownloads}
+           openMakarradas={openLinearGallery}
+           openCircGallery={openCircGallery}
+           openFormations={openFormations}
+           openAboutMe={openAboutMe}
+        />
+
         <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
       </div>
 
@@ -656,6 +694,7 @@ function App() {
         openCalendar={openCalendar}
         openNotes={openNotes}
         isHideBar={isHideBar}
+        openTrash={openTrash}
       />
     </div>
 

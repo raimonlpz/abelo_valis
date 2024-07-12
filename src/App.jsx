@@ -26,6 +26,7 @@ import Calendar from './components/content/apps/Calendar/Calendar'
 import Videobook from './components/content/apps/Videobook/Videobook'
 import Notes from './components/content/apps/Notes/Notes'
 import Trash from './components/content/apps/Trash/Trash'
+import Agenda from './components/content/apps/Agenda/Agenda'
 
 function App() {
 
@@ -49,6 +50,7 @@ function App() {
   const videobookAppRef = useRef()
   const notesAppRef = useRef()
   const trashAppRef = useRef()
+  const agendaAppRef = useRef()
 
   const wrapperRef = useRef()
   const videoBgRef = useRef()
@@ -88,6 +90,7 @@ function App() {
   const [isVideobookOpen, setIsVideobookOpen] = useState(false) 
   const [isNotesOpen, setIsNotesOpen] = useState(false)
   const [isTrashOpen, setIsTrashOpen] = useState(false)
+  const [isAgendaOpen, setIsAgendaOpen] = useState(false)
 
   /**
    * Settings Configs
@@ -113,7 +116,8 @@ function App() {
       calendarAppRef.current &&
       videobookAppRef.current &&
       notesAppRef.current &&
-      trashAppRef.current
+      trashAppRef.current &&
+      agendaAppRef.current
     ) {
       setAppRefs([
         linearGalleryAppRef.current,
@@ -131,7 +135,8 @@ function App() {
         calendarAppRef.current,
         videobookAppRef.current,
         notesAppRef.current,
-        trashAppRef.current
+        trashAppRef.current,
+        agendaAppRef.current
       ])
     }
   }, [isAuth])
@@ -353,6 +358,19 @@ function App() {
   }
 
   /**
+   * Agenda
+   */
+  const openAgenda = () => {
+    setIsAgendaOpen(true)
+    editZIndex('Agenda')
+    unMinimizeApp(agendaAppRef)
+  }
+
+  const closeAgenda = () => {
+    setIsAgendaOpen(false)
+  }
+
+  /**
    * Utils
    */
   const editZIndex = (appSel) => {
@@ -408,6 +426,9 @@ function App() {
         break
       case 'Trash':
         trashAppRef.current.style.zIndex = 2
+        break
+      case 'Agenda':
+        agendaAppRef.current.style.zIndex = 2 
         break
       default:
         break
@@ -664,6 +685,16 @@ function App() {
           onStopDrag={onStopDrag}
         />
 
+        <Agenda 
+          ref={agendaAppRef}
+          isAgendaOpen={isAgendaOpen}
+          closeAgenda={closeAgenda}
+          maximizeApp={() => maximizeApp(agendaAppRef)}
+          minimizeApp={() => minimizeApp(agendaAppRef)}
+          onStartDrag={() => editZIndex('Agenda')}
+          onStopDrag={onStopDrag}
+        />
+
         <Trash 
           ref={trashAppRef}
           isTrashOpen={isTrashOpen}
@@ -693,8 +724,9 @@ function App() {
         openSettings={openSettings}
         openCalendar={openCalendar}
         openNotes={openNotes}
-        isHideBar={isHideBar}
         openTrash={openTrash}
+        openAgenda={openAgenda}
+        isHideBar={isHideBar}
       />
     </div>
 

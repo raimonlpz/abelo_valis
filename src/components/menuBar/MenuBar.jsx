@@ -12,6 +12,7 @@ export default function MenuBar({
     openCalendar,
     openNotes,
     openTrash,
+    openAgenda,
     isHideBar
 }) {
     
@@ -58,11 +59,12 @@ export default function MenuBar({
     
     if (id === '6') {
         // Agenda
+        openAgenda()
     }
 
     if (id === '7') {
         // Mail
-        window.open('mailto:abelovalis@gmail.com', '_blank')
+        window.open('mailto:valisattitude@gmail.com', '_blank')
     }
 
     if (id === '8') {

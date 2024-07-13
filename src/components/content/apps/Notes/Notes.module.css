@@ -46,3 +46,7 @@
   height: 100%;
   padding: 1rem 3rem;
 }
+
+.quotes p {
+  margin-bottom: 0.4rem;
+}

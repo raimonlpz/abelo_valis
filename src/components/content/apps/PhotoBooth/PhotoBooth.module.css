@@ -47,6 +47,7 @@
   top: 1.25rem;
   left: 51%;
   transform: translateX(-50%);
+  font-weight: bold;
 }
 
 /**
@@ -196,4 +197,8 @@ Shot
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.shot.error {
+  display: none;
 }

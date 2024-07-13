@@ -50,12 +50,12 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
         shotRef.current.innerHTML = '<span>1</span>'
      }, 2000)
      setTimeout(() => {
-      shotRef.current.innerHTML = '<span>Error 404: <br/> ¡Belleza Not Found!</span>'
+      shotRef.current.innerHTML = '<span>Error 404: <br/> <span style="display: block; font-size: 2.3rem; margin: 0 2rem; line-height: 2.8rem;">Eres feisim@ quien coño te crees para venir a hacerte una foto a mi fuckin web</span></span>'
     }, 3000)
     setTimeout(() => {
     ctaRef.current.style.display = 'block'
         shotRef.current.style.display = 'none'
-      }, 4000)
+      }, 6000)
     }
   }
 
@@ -90,7 +90,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
                 alt="icns"
               />
 
-              <div className={styles.appTitle}>🪞 EgoBooth</div>
+              <div className={styles.appTitle}>🪞 Ego Booth</div>
             </div>
           </div>
             <div className={styles.photobooth}>

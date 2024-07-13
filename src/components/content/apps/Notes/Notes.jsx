@@ -46,10 +46,20 @@ const Notes = forwardRef(({ isNotesOpen, closeNotes, maximizeApp, minimizeApp, o
                 <div
                     className={styles.editor}
                 >
+                        <div className={styles.quotes}>
+                            <p>Un buen artista roba, un mal artista copia</p>
+                            <p>Sin lluvia las flores no crecen</p>
+                            <p>Haz el bien y no mires a quien</p>
+                            <p>Hacerme rico, dormir hasta el mediodía y joderlos a todos</p>
+                            <p>Los sueños solo son ruido</p>
+                            <p>Tu novio te pone a 4 yo A24 </p>
+                            <p>Yo humilde no soy pero me encanta la humildad</p>
+                        </div>
+                 
                         <YooptaEditor
                             editor={editor}
                             plugins={plugins}
-                            placeholder="Un buen artista roba, un mal artista copia / Un buen artista roba, un mal artista copia / Un buen artista roba, un mal artista copia / Un buen artista roba, un mal artista copia / Un buen artista roba, un mal artista copia"
+                            placeholder=""
                         />
                 </div>
             </div>

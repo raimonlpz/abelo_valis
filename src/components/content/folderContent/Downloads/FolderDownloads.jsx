@@ -54,7 +54,7 @@ const FolderDownloads = React.forwardRef(({
               />
             </div>
             <div className={styles.left_menu_wrapper}>
-              <h5 className={styles.menu_title}>Favourites</h5>
+              <h5 className={styles.menu_title}>Favoritos</h5>
               <ul className={styles.left_ul}>
                 
               <li className={styles.left_li}>

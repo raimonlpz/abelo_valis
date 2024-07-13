@@ -183,7 +183,7 @@ const Trash = forwardRef(({
         <div className={styles.row}>
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('ex')} onMouseLeave={() => setFolderOnfocus(null)} >
                   <img 
-                          src="/abelo/sims-ex.png" 
+                          src="/abelo/ex.jpg" 
                     alt="folder" 
                     style={{'width': '80px'}} 
                     className={`${folderOnfocus === 'ex' ? styles.selectedIcon : ''}`} 
@@ -192,9 +192,9 @@ const Trash = forwardRef(({
                 </div>
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('fakes')} onMouseLeave={() => setFolderOnfocus(null)} >
                   <img 
-                   src="/abelo/sims-friend.png" 
+                   src="/abelo/no-rats.png" 
                     alt="folder" 
-                    style={{'width': '80px' }}
+                    style={{'width': '65px', background: 'white', padding: '.25rem' }}
                     className={`${folderOnfocus === 'fakes' ? styles.selectedIcon : ''}`} 
                   />
                   <span style={{textAlign: 'center' }}  className={`${folderOnfocus === 'fakes' ? styles.selected : ''}`}>Amigxs que creía <br /> que eran mis amigxs<br />  y nunca fueron <br /> mis amigxs</span>

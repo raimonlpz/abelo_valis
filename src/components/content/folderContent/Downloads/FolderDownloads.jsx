@@ -191,14 +191,14 @@ const FolderDownloads = React.forwardRef(({
                   />
                   <span className={`${folderOnfocus === 'libros' ? styles.selected : ''}`}>Libros</span>
                 </div>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('emule')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://www.emule.es/utorr', '_blank')}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('emule')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://audiotools.in/', '_blank')}>
                   <img 
                     src="/images/icons/emule.png" 
                     alt="folder" 
                     style={{'width': '80px'}} 
                     className={`${folderOnfocus === 'emule' ? styles.selectedIcon : ''}`} 
                   />
-                  <span className={`${folderOnfocus === 'emule' ? styles.selected : ''}`}>Música</span>
+                  <span className={`${folderOnfocus === 'emule' ? styles.selected : ''}`}>Música/Plugins</span>
                 </div>
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('utorrent')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://www.utorrent.com/', '_blank')}>
                   <img 

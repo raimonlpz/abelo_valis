@@ -1,7 +1,15 @@
 import React from 'react'
 import styles from './AppleMenu.module.css'
 
-export default function AppleMenu({ isAppleMenuOpen, onShutDown }) {
+export default function AppleMenu({ 
+  isAppleMenuOpen, 
+  onShutDown,
+  // 
+  openAboutMe, 
+  openSettings, 
+  openFolderDocuments, 
+  closeFolderDocuments
+}) {
     return (
       <>
         <div
@@ -11,30 +19,30 @@ export default function AppleMenu({ isAppleMenuOpen, onShutDown }) {
           }}
         >
           <ul className={styles.ul}>
-            <li className={styles.li}>
-              <p className={styles.p}>About This Mac</p>
+            <li className={styles.li} onClick={openAboutMe}>
+              <p className={styles.p}>About Me</p>
             </li>
   
             <div className={styles.border}></div>
   
-            <li className={styles.li}>
-              <p className={styles.p}>System Preferences</p>
+            <li className={styles.li} onClick={openSettings}>
+              <p className={styles.p}>System Settings</p>
             </li>
   
-            <li className={styles.li}>
-              <p className={styles.p}>App Store</p>
+            <li className={styles.li} onClick={() => window.open('https://abelovalis.bigcartel.com/', '_blank') }>
+              <p className={styles.p}>Abel Store</p>
               <span className={styles.appStoreSpan}>3 updates</span>
             </li>
   
             <div className={styles.border}></div>
   
-            <li className={styles.li}>
+            <li className={styles.li} onClick={openFolderDocuments}>
               <p className={styles.p}>Recent Items</p>
             </li>
   
             <div className={styles.border}></div>
   
-            <li className={styles.li}>
+            <li className={styles.li} onClick={closeFolderDocuments}>
               <p className={styles.p}>Force Quit Finder</p>
               <span className={styles.chars}>
                 &#x2318; &#x21e7; &#x2325; &#x2303;

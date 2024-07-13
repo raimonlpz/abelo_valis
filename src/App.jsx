@@ -712,7 +712,15 @@ function App() {
            openAboutMe={openAboutMe}
         />
 
-        <AppleMenu isAppleMenuOpen={isAppleMenuOpen} onShutDown={onShutDown} />
+        <AppleMenu 
+          isAppleMenuOpen={isAppleMenuOpen} 
+          onShutDown={onShutDown} 
+          //
+          openAboutMe={openAboutMe}
+          openSettings={openSettings}
+          openFolderDocuments={openFolderDocuments}
+          closeFolderDocuments={closeFolderDocuments}
+        />
       </div>
 
       <MenuBar 

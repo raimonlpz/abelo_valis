@@ -86,6 +86,8 @@ const DinoGame = () => {
 
   return (
     <div className={styles.dinoGame} onClick={!isGameOver ? handleJump : null}>
+      <img src="/abelo/sky.webp" alt="Sky" />
+      <img src="/abelo/sky.webp" alt="Sky" />
       <Dino position={dinoPosition} />
       <Obstacle position={obstaclePosition} />
       {isGameOver && (

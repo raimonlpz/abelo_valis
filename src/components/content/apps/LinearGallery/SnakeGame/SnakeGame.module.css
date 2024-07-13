@@ -1,0 +1,71 @@
+.snakeGame {
+  text-align: center;
+  padding: 20px;
+}
+
+.gameOver {
+  font-size: 2rem;
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.gameBoard {
+  display: grid;
+  width: 550px;
+  height: 550px;
+  background-color: #fff9893d;
+  margin: 0 auto;
+  /* border: 2px solid #333; */
+  border-radius: 10px;
+}
+
+.snakeSegment {
+  background-color: rgba(255, 0, 225, 0.389);
+  border: 1px solid rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+}
+
+.snakeHead {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.snakeHeadImg {
+  width: 100%;
+  height: 100%;
+  object-fit: fill; /* Ensures the image covers the entire cell */
+}
+
+.food {
+  background-color: rgba(136, 209, 9, 0.56);
+  width: 100%;
+  height: 100%;
+}
+
+.tryAgain {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  width: max-content;
+}
+
+.tryAgain:hover {
+  background-color: #555;
+}
+
+.foodImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the entire cell */
+}

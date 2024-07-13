@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LinearGallery.module.css'
+import styles from '../LinearGallery.module.css'
 
 const ImageCard = ({ src, index, isFlipped, handleClick }) => {
   return (

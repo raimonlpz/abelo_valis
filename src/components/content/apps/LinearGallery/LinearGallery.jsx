@@ -1,9 +1,11 @@
-import React, { forwardRef, useEffect, useState } from 'react'
+import React, { forwardRef, useRef, useState } from 'react'
 import styles from './LinearGallery.module.css'
 import Draggable from 'react-draggable'
-import GridMakarradas from './GridMakarradas'
+import MemoryGame from './MemoryGame/MemoryGame'
+import SnakeGame from './SnakeGame/SnakeGame'
+import DinoGame from './DinoGame/DinoGame'
 
-// Formerly Makarrada$
+// Formerly Makarrada$ / Game$
 const LinearGallery = forwardRef(({
     isLinearGalleryOpen,
     closeLinearGallery,
@@ -13,44 +15,18 @@ const LinearGallery = forwardRef(({
     onStopDrag
 }, ref) => {
 
-    const [images, setImages] = useState([])
-    const [flippedCards, setFlippedCards] = useState([]) 
-    const [matchedCards, setMatchedCards] = useState([])
+    const changerRef = useRef()
+    const [currentGame, setCurrentGame] = useState('memory')
 
-    const originalImages = [
-        '/abelo/img25.jpg',
-        '/abelo/img26.jpg',
-        '/abelo/img27.jpg',
-        '/abelo/img28.jpg',
-        '/abelo/img29.jpg',
-        '/abelo/img30.jpg',
-        '/abelo/img24.webp',
-        '/abelo/img18.webp',
-        '/abelo/img14.webp',
-        '/abelo/img4.webp',
-        '/abelo/img21.webp',
-        '/abelo/img13.webp',
-    ]
-
-    useEffect(() => {
-        const duplicatedImages = [...originalImages, ...originalImages]
-        const shuffledImages = duplicatedImages.sort(() => Math.random() - 0.5)
-        setImages(shuffledImages)
-    }, [])
-
-    const handleCardClick = (index) => {
-        if (flippedCards.length === 2 || matchedCards.includes(index)) return 
-        
-        const newFlippedCards = [...flippedCards, index]
-        setFlippedCards(newFlippedCards)
-
-        if (newFlippedCards.length === 2) {
-            const [firstIndex, secondIndex] = newFlippedCards
-            if (images[firstIndex] === images[secondIndex]) {
-                setMatchedCards([...matchedCards, firstIndex, secondIndex])
-            } 
-            setTimeout(() => setFlippedCards([]), 1000) 
+    const changeGame = () => {
+        if (currentGame ==='memory') {
+            setCurrentGame('snake')
+        } else if (currentGame === 'snake') {
+            setCurrentGame('dino')
+        } else {
+            setCurrentGame('memory')
         }
+        changerRef.current.blur()
     }
 
   return (
@@ -85,16 +61,15 @@ const LinearGallery = forwardRef(({
                     src="/images/icons/zoom.png"
                     alt="icns"
                 />
-                <div className={styles.appTitle}></div>
+                <div className={styles.appTitle}>
+                    <button className={styles.macButton} onClick={changeGame} ref={changerRef}>Cambiar Juego</button>
+                </div>
                 </div>
             </div>
             <div className={styles.linearGallery}>
-                <GridMakarradas 
-                    images={images} 
-                    flippedCards={flippedCards}
-                    matchedCards={matchedCards}
-                    handleCardClick={handleCardClick}
-                />
+                {currentGame === 'snake' && <SnakeGame />}
+                {currentGame === 'memory' && <MemoryGame />}
+                {currentGame === 'dino' && <DinoGame />}
             </div>
         </div>
     </Draggable>

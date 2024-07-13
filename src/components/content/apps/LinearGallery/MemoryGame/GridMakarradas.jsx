@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './LinearGallery.module.css'
+import styles from '../LinearGallery.module.css'
 import ImageCard from './ImageCard';
 
 const GridMakarradas = ({ images, flippedCards, matchedCards, handleCardClick }) => {

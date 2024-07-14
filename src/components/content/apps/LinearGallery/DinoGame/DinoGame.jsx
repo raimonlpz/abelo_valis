@@ -11,6 +11,7 @@ const DinoGame = () => {
   const [isGameOver, setIsGameOver] = useState(false);
   const [gameSpeed, setGameSpeed] = useState(30); // Starting speed
   const [score, setScore] = useState(0);
+  const [rotationAngle, setRotationAngle] = useState(0);
 
   const handleJump = () => {
     if (!isJumping) {
@@ -43,6 +44,7 @@ const DinoGame = () => {
       if (!isGameOver) {
         if (obstaclePosition > -10) { // Allow obstacle to move off-screen
           setObstaclePosition(obstaclePosition - (1 + score * 0.05)); // Increase speed based on score
+          setRotationAngle(prevAngle => (prevAngle + 3) % 360);
         } else {
           setObstaclePosition(100);
           setScore(prevScore => prevScore + 1); // Increment score when obstacle resets
@@ -82,14 +84,19 @@ const DinoGame = () => {
     setIsJumping(false);
     setScore(0);
     setGameSpeed(30); // Reset game speed
+    setRotationAngle(0);
   };
+
 
   return (
     <div className={styles.dinoGame} onClick={!isGameOver ? handleJump : null}>
       <img src="/abelo/sky.webp" alt="Sky" />
       <img src="/abelo/sky.webp" alt="Sky" />
+      <div className={styles.score}>
+        Score: {score * 10}
+      </div>
       <Dino position={dinoPosition} />
-      <Obstacle position={obstaclePosition} />
+      <Obstacle position={obstaclePosition} rotationAngle={rotationAngle} />
       {isGameOver && (
         <div className={styles.gameOver}>
           Game Over!

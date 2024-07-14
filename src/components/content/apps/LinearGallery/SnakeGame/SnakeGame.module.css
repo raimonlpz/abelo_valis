@@ -69,3 +69,11 @@
   height: 100%;
   object-fit: cover; /* Ensures the image covers the entire cell */
 }
+
+.score {
+  position: absolute;
+  right: 3rem;
+  top: 6rem;
+  font-weight: bold;
+  color: brown;
+}

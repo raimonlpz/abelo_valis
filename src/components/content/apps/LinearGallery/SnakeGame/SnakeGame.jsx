@@ -9,6 +9,7 @@ const SnakeGame = () => {
     const [isGameOver, setIsGameOver] = useState(false);
     const boardSize = 15;
     const gameSpeed = 200; // milliseconds
+    const [score, setScore] = useState(0);
 
     const handleKeyDown = (e) => {
         switch (e.key) {
@@ -70,6 +71,7 @@ const SnakeGame = () => {
           if (head[0] === food[0] && head[1] === food[1]) {
             growSnake();
             generateFood();
+            setScore(prevScore => prevScore + 1);
           }
         }
     };
@@ -105,10 +107,14 @@ const SnakeGame = () => {
         setFood([10, 10]);
         setDirection('RIGHT');
         setIsGameOver(false);
+        setScore(0);
     };
 
     return (
         <div className={styles.snakeGame}>
+          <div className={styles.score}>
+            Score: {score * 10}
+          </div>
           {isGameOver ? (
             <div className={styles.gameOver}>
                 Game Over!

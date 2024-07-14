@@ -10,6 +10,7 @@ const FolderDownloads = React.forwardRef(({
   onStartDrag, 
   onStopDrag,
   //
+  openFolderProjects,
   openFolderDocuments, 
   openCircGallery,
   openMakarradas,
@@ -57,7 +58,7 @@ const FolderDownloads = React.forwardRef(({
               <h5 className={styles.menu_title}>Favoritos</h5>
               <ul className={styles.left_ul}>
                 
-              <li className={styles.left_li}>
+              <li className={styles.left_li} onClick={openFolderProjects}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/star.png"
@@ -127,7 +128,7 @@ const FolderDownloads = React.forwardRef(({
               </ul>
               <h5 className={styles.menu_title}>Tags</h5>
               <ul className={styles.left_ul}>
-                <li className={styles.left_li}>
+                {/* <li className={styles.left_li}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/orangeTag.png"
@@ -150,7 +151,7 @@ const FolderDownloads = React.forwardRef(({
                     alt="greenTag"
                   />
                   <p className={styles.left_li_text}>Green Tag</p>
-                </li>
+                </li> */}
                 <li className={styles.left_li}>
                   <img
                     className={styles.blue_icon_img}

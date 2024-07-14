@@ -10,6 +10,7 @@ const FolderDocuments = React.forwardRef(({
   onStartDrag, 
   onStopDrag,
   // 
+  openFolderProjects,
   openFolderDownloads,
   openCircGallery,
   openMakarradas,
@@ -56,7 +57,7 @@ const FolderDocuments = React.forwardRef(({
             <div className={styles.left_menu_wrapper}>
               <h5 className={styles.menu_title}>Favoritos</h5>
               <ul className={styles.left_ul}>
-                <li className={styles.left_li}>
+                <li className={styles.left_li} onClick={openFolderProjects}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/star.png"
@@ -126,30 +127,6 @@ const FolderDocuments = React.forwardRef(({
               </ul>
               <h5 className={styles.menu_title}>Tags</h5>
               <ul className={styles.left_ul}>
-                <li className={styles.left_li}>
-                  <img
-                    className={styles.blue_icon_img}
-                    src="/images/blueicons/orangeTag.png"
-                    alt="orangeTag"
-                  />
-                  <p className={styles.left_li_text}>Orange Tag</p>
-                </li>
-                <li className={styles.left_li}>
-                  <img
-                    className={styles.blue_icon_img}
-                    src="/images/blueicons/blueTag.png"
-                    alt="blueTag"
-                  />
-                  <p className={styles.left_li_text}>Blue Tag</p>
-                </li>
-                <li className={styles.left_li}>
-                  <img
-                    className={styles.blue_icon_img}
-                    src="/images/blueicons/greenTag.png"
-                    alt="greenTag"
-                  />
-                  <p className={styles.left_li_text}>Green Tag</p>
-                </li>
                 <li className={styles.left_li}>
                   <img
                     className={styles.blue_icon_img}

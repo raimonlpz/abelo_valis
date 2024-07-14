@@ -10,6 +10,7 @@ const Interviews = forwardRef(({
     onStartDrag, 
     onStopDrag,
     //
+    openFolderProjects,
     openFolderDocuments,
     openFolderDownloads,
     openMakarradas,
@@ -62,7 +63,7 @@ const Interviews = forwardRef(({
                     <div className={styles.left_menu_wrapper}>
                         <h5 className={styles.menu_title}>Favoritos</h5>
                         <ul className={styles.left_ul}>
-                            <li className={styles.left_li}>
+                            <li className={styles.left_li} onClick={openFolderProjects}>
                                 <img
                                     className={styles.blue_icon_img}
                                     src="/images/blueicons/star.png"
@@ -133,36 +134,12 @@ const Interviews = forwardRef(({
                         <h5 className={styles.menu_title}>Tags</h5>
                         <ul className={styles.left_ul}>
                             <li className={styles.left_li}>
-                            <img
-                                className={styles.blue_icon_img}
-                                src="/images/blueicons/orangeTag.png"
-                                alt="orangeTag"
-                            />
-                            <p className={styles.left_li_text}>Orange Tag</p>
-                            </li>
-                            <li className={styles.left_li}>
-                            <img
-                                className={styles.blue_icon_img}
-                                src="/images/blueicons/blueTag.png"
-                                alt="blueTag"
-                            />
-                            <p className={styles.left_li_text}>Blue Tag</p>
-                            </li>
-                            <li className={styles.left_li}>
-                            <img
-                                className={styles.blue_icon_img}
-                                src="/images/blueicons/greenTag.png"
-                                alt="greenTag"
-                            />
-                            <p className={styles.left_li_text}>Green Tag</p>
-                            </li>
-                            <li className={styles.left_li}>
-                            <img
-                                className={styles.blue_icon_img}
-                                src="/images/blueicons/allTags.png"
-                                alt="allTags"
-                            />
-                            <p className={styles.left_li_text}>All Tags</p>
+                                <img
+                                    className={styles.blue_icon_img}
+                                    src="/images/blueicons/allTags.png"
+                                    alt="allTags"
+                                />
+                                <p className={styles.left_li_text}>All Tags</p>
                             </li>
                         </ul>
                     </div>

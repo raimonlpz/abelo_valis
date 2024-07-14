@@ -39,7 +39,7 @@ const Videobook = forwardRef(({ isVideobookOpen, closeVideobook, maximizeApp, mi
                 </div>
                 <div className={styles.videobook}>
                 <iframe width="600px" height="440px" style={{border: 'none', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}}
-                    src="https://www.youtube.com/embed/AyczLbxTX20?autoplay=1&mute=1">
+                    src="https://www.youtube.com/embed/AyczLbxTX20?autoplay=0&mute=1">
                 </iframe> 
                 </div>
             </div>

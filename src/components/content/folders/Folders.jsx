@@ -6,6 +6,7 @@ import { isTouchDevice } from '../../../utils/isTouchDevice'
 export default function Folders({ 
   openFolderDocuments,
   openFolderDownloads,
+  openFolderProjects,
   openCircGallery, 
   openLinearGallery, 
   openInterviews,
@@ -68,6 +69,25 @@ export default function Folders({
             </div>
           </Draggable>
 
+          <div className={styles.marginBottom20}>
+          </div>
+
+       
+          <Draggable>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)}>
+                  <img 
+                    src="/images/folder.png" 
+                    alt="folder" 
+                    draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderProjects : null}
+                    onDoubleClick={openFolderProjects} 
+                    className={`${styles.folderText} ${folderOnfocus === 'projects' ? styles.selectedIcon : ''} `}
+                  />
+                  <span className={`${styles.folderText} ${folderOnfocus === 'projects' ? styles.selected : ''} `}>&nbsp; &nbsp;Proyectos</span>
+            </div>
+          </Draggable>
+    
+
        </div>
 
       <div className={styles.wrapper_rand1}>
@@ -85,6 +105,7 @@ export default function Folders({
             </div>
           </Draggable>
       </div>
+
 
       <div className={styles.wrapper_rand2}>
           <Draggable>

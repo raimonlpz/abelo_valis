@@ -1,0 +1,161 @@
+.wrapper {
+  position: absolute;
+  width: 900px;
+  height: 550px;
+  left: 30%;
+  top: 80px;
+  border-radius: 6px;
+  display: flex;
+
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 5px 10px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.04);
+
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.left_inner_wrapper {
+  background: rgba(245, 245, 245, 0.5);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(81.5485px);
+  -webkit-background-blend-mode: luminosity; /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  height: 100%;
+  width: 200px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 20px;
+}
+
+.left_corner_buttons {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.left_corner_button_img {
+  margin-right: 10px;
+}
+
+/* .left_menu_wrapper {
+  } */
+
+.menu_title {
+  font-size: 12px;
+  color: #797979;
+  margin: 15px 0;
+  letter-spacing: 0.6px;
+}
+
+.left_ul {
+  list-style: none;
+}
+
+.left_li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.blue_icon_img {
+  height: 13px;
+  width: 13px;
+  margin-right: 8px;
+}
+
+.left_li_text {
+  font-size: 13px;
+  color: #232526;
+  font-weight: bold;
+}
+
+.left_li:hover {
+  cursor: pointer;
+
+  .blue_icon_img {
+    filter: brightness(50);
+  }
+
+  .left_li_text {
+    color: white;
+  }
+}
+
+.right_inner_wrapper {
+  background-color: #ffffff;
+  height: 100%;
+  width: calc(900px - 200px);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.right_top_bar {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid;
+  border-color: rgba(0, 0, 0, 0.05);
+}
+
+.right_top_bar_left {
+  display: flex;
+  align-items: center;
+}
+
+.right_top_bar_left > img {
+  margin-right: 20px;
+}
+
+.left_text {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.right_top_bar_right > img {
+  margin-left: 10px;
+  height: 15px;
+  width: 15px;
+}
+
+.right_inner_content {
+  padding: 20px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.folderWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.folderWrapper:hover {
+  cursor: pointer;
+}
+
+.folderWrapper > span {
+  font-size: 12px;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.file {
+  height: 60px;
+  width: 60px;
+}
+
+.selected {
+  background-color: rgb(29, 85, 255);
+  color: white;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3%;
+}
+
+.selectedIcon {
+  background-color: rgba(158, 158, 158, 0.327);
+  border-radius: 5px;
+}

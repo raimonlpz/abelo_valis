@@ -34,16 +34,7 @@ a {
 .wrapper_rand4 {
   position: absolute;
   top: 60%;
-  left: 6%;
-}
-
-.wrapper_rand5 {
-  position: absolute;
-  top: 18%;
-  right: 13.5%;
-}
-.wrapper_rand5 img {
-  width: 50px !important;
+  left: 10%;
 }
 
 .folderWrapper {

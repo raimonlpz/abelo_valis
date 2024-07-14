@@ -27,6 +27,7 @@ import Videobook from './components/content/apps/Videobook/Videobook'
 import Notes from './components/content/apps/Notes/Notes'
 import Trash from './components/content/apps/Trash/Trash'
 import Agenda from './components/content/apps/Agenda/Agenda'
+import FolderProjects from './components/content/folderContent/Projects/FolderProjects'
 
 function App() {
 
@@ -35,6 +36,7 @@ function App() {
 
   const downloadFolderRef = useRef()
   const documentFolderRef = useRef()
+  const projectsFolderRef = useRef()
 
   const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
@@ -71,6 +73,7 @@ function App() {
    */
   const [isFolderDownloadsOpen, setIsFolderDownloadsOpen] = useState(false) 
   const [isFolderDocumentsOpen, setIsFolderDocumentsOpen] = useState(false)
+  const [isFolderProjectsOpen, setIsFolderProjectsOpen] = useState(false)
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
   /**
@@ -109,6 +112,7 @@ function App() {
       aboutMeAppRef.current &&
       downloadFolderRef.current &&
       documentFolderRef.current &&
+      projectsFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current && 
@@ -128,6 +132,7 @@ function App() {
         aboutMeAppRef.current,
         downloadFolderRef.current,
         documentFolderRef.current,
+        projectsFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current,
@@ -174,6 +179,16 @@ function App() {
   const closeFolderDocuments = () => {
     setIsFolderDocumentsOpen(false)
   }
+  // Projects
+  const openFolderProjects = () => {
+    setIsFolderProjectsOpen(true)
+    editZIndex('ProjectsFolder')
+    unMinimizeApp(projectsFolderRef)
+  }
+
+  const closeFolderProjects = () => {
+    setIsFolderProjectsOpen(false)
+  } 
 
   /**
    * GMaps
@@ -391,6 +406,9 @@ function App() {
       case 'DocumentFolder':
         documentFolderRef.current.style.zIndex = 2
         break
+      case 'ProjectsFolder':
+        projectsFolderRef.current.style.zIndex = 2
+        break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
         break
@@ -442,7 +460,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === interviewsAppRef || appRef === trashAppRef) {
+    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef ) {
@@ -505,6 +523,7 @@ function App() {
         <Folders 
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads} 
+          openFolderProjects={openFolderProjects}
           openLinearGallery={openLinearGallery}
           openCircGallery={openCircGallery}  
           openInterviews={openInterviews}
@@ -522,6 +541,7 @@ function App() {
           onStartDrag={() => editZIndex('DownloadFolder')} 
           onStopDrag={onStopDrag}
           //
+          openFolderProjects={openFolderProjects}
           openFolderDocuments={openFolderDocuments}
           openMakarradas={openLinearGallery}
           openCircGallery={openCircGallery}
@@ -539,7 +559,26 @@ function App() {
           onStartDrag={() => editZIndex('DocumentFolder')}
           onStopDrag={onStopDrag}
           //
+          openFolderProjects={openFolderProjects}
           openFolderDownloads={openFolderDownloads} 
+          openMakarradas={openLinearGallery}
+          openCircGallery={openCircGallery}
+          openInterviews={openInterviews}
+          openFormations={openFormations}
+          openAboutMe={openAboutMe}
+        />
+
+        <FolderProjects 
+          ref={projectsFolderRef}
+          isFolderProjectsOpen={isFolderProjectsOpen}
+          closeFolderProjects={closeFolderProjects}
+          maximizeApp={() => maximizeApp(projectsFolderRef)}
+          minimizeApp={() => minimizeApp(projectsFolderRef)}
+          onStartDrag={() => editZIndex('ProjectsFolder')}
+          onStopDrag={onStopDrag}
+          //
+          openFolderDocuments={openFolderDocuments}
+          openFolderDownloads={openFolderDownloads}
           openMakarradas={openLinearGallery}
           openCircGallery={openCircGallery}
           openInterviews={openInterviews}
@@ -613,6 +652,7 @@ function App() {
           onStartDrag={() => editZIndex('Interviews')}
           onStopDrag={onStopDrag}
           //
+          openFolderProjects={openFolderProjects}
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads}
           openMakarradas={openLinearGallery}
@@ -704,6 +744,7 @@ function App() {
           onStartDrag={() => editZIndex('Trash')}
           onStopDrag={onStopDrag}
            //
+           openFolderProjects={openFolderProjects}
            openFolderDocuments={openFolderDocuments}
            openFolderDownloads={openFolderDownloads}
            openMakarradas={openLinearGallery}

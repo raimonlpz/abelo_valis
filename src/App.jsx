@@ -30,6 +30,7 @@ import Agenda from './components/content/apps/Agenda/Agenda'
 import FolderProjects from './components/content/folderContent/Projects/FolderProjects'
 import ProjectsVideoclips from './components/content/folderContent/Projects/ProjectsVideoclips/ProjectsVideoclips'
 import ProjectsMovies from './components/content/folderContent/Projects/ProjectsMovies/ProjectsMovies'
+import ProjectsTV from './components/content/folderContent/Projects/ProjectsTV/ProjectsTV'
 
 function App() {
 
@@ -124,7 +125,7 @@ function App() {
       documentFolderRef.current &&
       projectsFolderRef.current &&
       projectsMoviesFolderRef.current &&
-      // projectsTVFolderRef.current &&
+      projectsTVFolderRef.current &&
       projectsVideoclipsFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
@@ -147,7 +148,7 @@ function App() {
         documentFolderRef.current,
         projectsFolderRef.current,
         projectsMoviesFolderRef.current,
-        // projectsTVFolderRef.current,
+        projectsTVFolderRef.current,
         projectsVideoclipsFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
@@ -518,7 +519,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef) {
+    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef || appRef === projectsTVFolderRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef ) {
@@ -637,6 +638,7 @@ function App() {
           //
           openFolderProjectsVideoclips={openFolderProjectsVideoclips}
           openFolderProjectsMovies={openFolderProjectsMovies}
+          openFolderProjectsTV={openFolderProjectsTV}
           //
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads}
@@ -839,6 +841,24 @@ function App() {
           maximizeApp={() => maximizeApp(projectsMoviesFolderRef)}  
           minimizeApp={() => minimizeApp(projectsMoviesFolderRef)}
           onStartDrag={() => editZIndex('ProjectsMoviesFolder')}
+          onStopDrag={onStopDrag}
+          //
+          openFolderProjects={openFolderProjects}
+          openFolderDocuments={openFolderDocuments}
+          openFolderDownloads={openFolderDownloads}
+          openMakarradas={openLinearGallery}
+          openCircGallery={openCircGallery}
+          openFormations={openFormations}
+          openAboutMe={openAboutMe}
+        />
+
+        <ProjectsTV 
+          ref={projectsTVFolderRef}
+          isFolderProjectsTVOpen={isFolderProjectsTVOpen}
+          closeFolderProjectsTV={closeFolderProjectsTV}
+          maximizeApp={() => maximizeApp(projectsTVFolderRef)}
+          minimizeApp={() => minimizeApp(projectsTVFolderRef)}
+          onStartDrag={() => editZIndex('ProjectsTVFolder')}
           onStopDrag={onStopDrag}
           //
           openFolderProjects={openFolderProjects}

@@ -22,7 +22,7 @@ const ProjectsMovies = forwardRef(({
         {
             id: 1,
             title: 'La manzana de oro',
-            subtitles: ['Comdedy Drama', '2022', '1h 47m'],
+            subtitles: ['Comedy Drama', '2022', '1h 47m'],
             info: {
                 director: 'Jaime Chávarri',
                 stars: ['Abelo Valis, Sergi López, Marta Nieto, Adrián Lastra'],

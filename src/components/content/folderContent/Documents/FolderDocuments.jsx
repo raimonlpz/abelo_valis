@@ -158,7 +158,7 @@ const FolderDocuments = React.forwardRef(({
             </div>
             <div className={styles.right_inner_content}>
               <div className={styles.row}>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjects}>
                   <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'projects' ? styles.selectedIcon : ''}`}  />
                   <span className={`${folderOnfocus === 'projects' ? styles.selected : ''}`}>Proyectos</span>
                 </div>

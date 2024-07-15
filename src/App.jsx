@@ -28,6 +28,7 @@ import Notes from './components/content/apps/Notes/Notes'
 import Trash from './components/content/apps/Trash/Trash'
 import Agenda from './components/content/apps/Agenda/Agenda'
 import FolderProjects from './components/content/folderContent/Projects/FolderProjects'
+import ProjectsVideoclips from './components/content/folderContent/Projects/ProjectsVideoclips/ProjectsVideoclips'
 
 function App() {
 
@@ -37,6 +38,9 @@ function App() {
   const downloadFolderRef = useRef()
   const documentFolderRef = useRef()
   const projectsFolderRef = useRef()
+  const projectsMoviesFolderRef = useRef()
+  const projectsTVFolderRef = useRef()
+  const projectsVideoclipsFolderRef = useRef()
 
   const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
@@ -73,7 +77,12 @@ function App() {
    */
   const [isFolderDownloadsOpen, setIsFolderDownloadsOpen] = useState(false) 
   const [isFolderDocumentsOpen, setIsFolderDocumentsOpen] = useState(false)
+
   const [isFolderProjectsOpen, setIsFolderProjectsOpen] = useState(false)
+  const [isFolderProjectsMoviesOpen, setIsFolderProjectsMoviesOpen] = useState(false)
+  const [isFolderProjectsTVOpen, setIsFolderProjectsTVOpen] = useState(false)
+  const [isFolderProjectsVideoclipsOpen, setIsFolderProjectsVideoclipsOpen] = useState(false)
+
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
   /**
@@ -113,6 +122,9 @@ function App() {
       downloadFolderRef.current &&
       documentFolderRef.current &&
       projectsFolderRef.current &&
+      // projectsMoviesFolderRef.current &&
+      // projectsTVFolderRef.current &&
+      projectsVideoclipsFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current && 
@@ -133,6 +145,9 @@ function App() {
         downloadFolderRef.current,
         documentFolderRef.current,
         projectsFolderRef.current,
+        // projectsMoviesFolderRef.current,
+        // projectsTVFolderRef.current,
+        projectsVideoclipsFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current,
@@ -189,6 +204,39 @@ function App() {
   const closeFolderProjects = () => {
     setIsFolderProjectsOpen(false)
   } 
+
+    // Projects > Movies
+    const openFolderProjectsMovies = () => {
+      setIsFolderProjectsMoviesOpen(true)
+      editZIndex('ProjectsMoviesFolder')
+      unMinimizeApp(projectsMoviesFolderRef)
+    }
+  
+    const closeFolderProjectsMovies = () => {
+      setIsFolderProjectsMoviesOpen(false)
+    } 
+
+    // Projects > TV
+    const openFolderProjectsTV = () => {
+      setIsFolderProjectsTVOpen(true)
+      editZIndex('ProjectsTVFolder')
+      unMinimizeApp(projectsTVFolderRef)
+    }
+    
+    const closeFolderProjectsTV = () => {
+      setIsFolderProjectsTVOpen(false)
+    } 
+
+    // Projects > Movies
+    const openFolderProjectsVideoclips = () => {
+      setIsFolderProjectsVideoclipsOpen(true)
+      editZIndex('ProjectsVideoclipsFolder')
+      unMinimizeApp(projectsVideoclipsFolderRef)
+    }
+  
+    const closeFolderProjectsVideoclips = () => {
+      setIsFolderProjectsVideoclipsOpen(false)
+    } 
 
   /**
    * GMaps
@@ -409,6 +457,15 @@ function App() {
       case 'ProjectsFolder':
         projectsFolderRef.current.style.zIndex = 2
         break
+      case 'ProjectsMoviesFolder':
+          projectsMoviesFolderRef.current.style.zIndex = 2
+          break
+      case 'ProjectsTVFolder':
+          projectsTVFolderRef.current.style.zIndex = 2
+          break
+      case 'ProjectsVideoclipsFolder':
+          projectsVideoclipsFolderRef.current.style.zIndex = 2
+          break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
         break
@@ -576,6 +633,8 @@ function App() {
           minimizeApp={() => minimizeApp(projectsFolderRef)}
           onStartDrag={() => editZIndex('ProjectsFolder')}
           onStopDrag={onStopDrag}
+          //
+          openFolderProjectsVideoclips={openFolderProjectsVideoclips}
           //
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads}
@@ -751,6 +810,24 @@ function App() {
            openCircGallery={openCircGallery}
            openFormations={openFormations}
            openAboutMe={openAboutMe}
+        />
+
+        <ProjectsVideoclips 
+          ref={projectsVideoclipsFolderRef}
+          isFolderProjectsVideoclipsOpen={isFolderProjectsVideoclipsOpen}
+          closeFolderProjectsVideoclips={closeFolderProjectsVideoclips}
+          maximizeApp={() => maximizeApp(projectsVideoclipsFolderRef)}
+          minimizeApp={() => minimizeApp(projectsVideoclipsFolderRef)}
+          onStartDrag={() => editZIndex('ProjectsVideoclipsFolder')}
+          onStopDrag={onStopDrag}
+          //
+          openFolderProjects={openFolderProjects}
+          openFolderDocuments={openFolderDocuments}
+          openFolderDownloads={openFolderDownloads}
+          openMakarradas={openLinearGallery}
+          openCircGallery={openCircGallery}
+          openFormations={openFormations}
+          openAboutMe={openAboutMe}
         />
 
         <AppleMenu 

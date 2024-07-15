@@ -10,6 +10,8 @@ const FolderProjects = React.forwardRef(({
     onStartDrag, 
     onStopDrag,
     //
+    openFolderProjectsVideoclips,
+    //
     openFolderDownloads,
     openFolderDocuments,
     openMakarradas,
@@ -185,7 +187,7 @@ const FolderProjects = React.forwardRef(({
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
-                    style={{'width': '80px'}} 
+                    style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'pelis' ? styles.selectedIcon : ''}`} 
                   />
                   <span className={`${folderOnfocus === 'pelis' ? styles.selected : ''}`}>Películas</span>
@@ -194,7 +196,7 @@ const FolderProjects = React.forwardRef(({
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
-                    style={{'width': '80px'}} 
+                    style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'series' ? styles.selectedIcon : ''}`} 
                   />
                   <span className={`${folderOnfocus === 'series' ? styles.selected : ''}`}>Series</span>
@@ -203,17 +205,17 @@ const FolderProjects = React.forwardRef(({
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
-                    style={{'width': '80px'}} 
+                    style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'musica' ? styles.selectedIcon : ''}`} 
                   />
                   <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>Música</span>
                 </div>
            
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videoclips')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videoclips')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsVideoclips}>
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
-                    style={{'width': '80px'}} 
+                    style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'videoclips' ? styles.selectedIcon : ''}`} 
                   />
                   <span className={`${folderOnfocus === 'videoclips' ? styles.selected : ''}`}>Videoclips</span>
@@ -224,7 +226,7 @@ const FolderProjects = React.forwardRef(({
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
-                    style={{'width': '80px'}} 
+                    style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'merch' ? styles.selectedIcon : ''}`} 
                   />
                   <span className={`${folderOnfocus === 'merch' ? styles.selected : ''}`}>Ropa & Objetos</span>

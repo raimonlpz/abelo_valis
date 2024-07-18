@@ -231,7 +231,7 @@ const FolderProjects = React.forwardRef(({
                     style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'merch' ? styles.selectedIcon : ''}`} 
                   />
-                  <span className={`${folderOnfocus === 'merch' ? styles.selected : ''}`}>Ropa & Objetos</span>
+                  <span className={`${folderOnfocus === 'merch' ? styles.selected : ''}`}>Cortos</span>
                 </div>
               </div>
               <div className={styles.row}>

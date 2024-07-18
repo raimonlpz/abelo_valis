@@ -44,6 +44,7 @@
   align-items: center;
   list-style: none;
   height: 100%;
+  margin-bottom: 0.45rem;
 }
 
 .left_ul > li {
@@ -102,6 +103,4 @@
   .date {
     font-size: 20px;
   }
-
-  
 }

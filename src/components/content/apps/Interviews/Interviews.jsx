@@ -25,6 +25,7 @@ const Interviews = forwardRef(({
         { name: 'https://www.lavozdegalicia.es/noticia/vigo/2023/12/27/mejor-obra-/0003_202312V27C8991.htm', kind: 'La Voz de Galicia', date: '2023-12-27' },
         { name: 'https://troiscontactblog.wordpress.com/portfolio/blooper-abelo-valis/', kind: 'TroisContact Blog', date: 'Unknown' },
         { name: 'https://www.laregion.es/articulo/ourense/abelo-valis-ribadaviense-enamoro-camara/20170910153750735002.html', kind: 'La Región', date: '2017-09-11' },
+        { name: 'https://maldita.es/malditobulo/20230421/el-piti-senor-agente-policia/', kind: 'Maldita.es', date: '2023-04-21' }
       ];
 
     return (

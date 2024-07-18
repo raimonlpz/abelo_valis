@@ -120,7 +120,7 @@ export default function Folders({
                       draggable="false"
                       className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''} `}
                     />
-                    <span id="ig_text" className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selected : ''} `}>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram</span>
+                    <span id="ig_text" className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selected : ''} `}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;Instagram</span>
                   </a>
             </div>
           </Draggable>

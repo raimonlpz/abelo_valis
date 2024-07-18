@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
   width: 1000px;
-  height: 550px;
+  height: 580px;
   left: 30%;
   top: 80px;
   border-radius: 6px;
@@ -199,6 +199,7 @@
 
 .finder_panel_right {
   width: 35%;
+  margin-top: -30px;
 }
 
 .finder_panel_left {

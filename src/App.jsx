@@ -67,6 +67,10 @@ function App() {
     if (isAuth) {
       if (videoBgRef.current) {
         videoBgRef.current.play()
+        videoBgRef.current.playsInline = true;
+        videoBgRef.current.setAttribute("webkit-playsinline", "webkit-playsinline");
+        videoBgRef.current.setAttribute("playsinline", "");
+        videoBgRef.current.setAttribute("playsinline", true);
       }
       if (wrapperRef.current) {
         wrapperRef.current.style.filter = 'brightness(100%)'
@@ -571,7 +575,7 @@ function App() {
   return (
     <>
     <div className="wrapper" ref={wrapperRef}>
-    <video id="background-video" autoPlay loop disablePictureInPicture controlsList="nodownload" ref={videoBgRef}>
+    <video id="background-video" autoPlay loop disablePictureInPicture playsInline controlsList="nodownload" ref={videoBgRef}>
       <source src="/videos/reel2.mp4" type="video/mp4" />
     </video>
 

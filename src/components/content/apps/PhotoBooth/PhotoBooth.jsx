@@ -94,7 +94,7 @@ const PhotoBooth = forwardRef(({ isPhotoBoothOpen, closePhotoBooth, maximizeApp,
             </div>
           </div>
             <div className={styles.photobooth}>
-                <video ref={videoRef} disablePictureInPicture width={600} height={450} ></video>
+                <video ref={videoRef} disablePictureInPicture playsInline width={600} height={450} ></video>
                 {
                                   (filter === 'none') ? <div className={`${styles.filter} ${styles.filterOptNone}`}></div>
                                   : 

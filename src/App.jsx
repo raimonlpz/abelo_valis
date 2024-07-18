@@ -577,7 +577,7 @@ function App() {
 
       <StatusBar toggleAppleMenu={toggleAppleMenu} />
 
-      <div className="inner_wrapper md:mt-20 lg:pt-0" onClick={closeAppleMenu}>
+      <div className="inner_wrapper md:t-20 lg:pt-0" onClick={closeAppleMenu}>
         
         <Folders 
           openFolderDocuments={openFolderDocuments}

@@ -34,6 +34,14 @@
   align-items: center;
   list-style: none;
   height: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
+  padding: 0 10px; /* Add some padding to the container */
+}
+
+.ul > li {
+  flex: 0 0 auto;
+  margin: 0 0px;
 }
 
 .ul > li > img {
@@ -62,4 +70,24 @@
 }
 .bounceAnimation {
   animation: bounce 0.35s infinite alternate;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    left: 0;
+    right: 0;
+  }
+
+  .ul {
+    overflow-x: scroll;
+    padding: 0 10px;
+    margin: 0px 20px;
+    padding-left: 30px;
+  }
+
+  .ul > li {
+    flex: 0 0 33.33%;
+    margin: 0px -30px;
+  }
 }

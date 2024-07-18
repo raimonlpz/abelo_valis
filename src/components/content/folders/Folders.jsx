@@ -18,11 +18,10 @@ export default function Folders({
   const [folderOnfocus, setFolderOnfocus] = useState(null)
 
   return (
-    <>
+    <div className={styles.inner_wrapper}>
        <div className={styles.wrapper_left}>
           <Draggable >
             <a rel="noopener noreferrer" href="https://abelovalis.bigcartel.com/" target="_blank" className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)}>
-      
                 <img 
                     src="/images/menubarimages/3.png" 
                     alt="folder" 
@@ -30,13 +29,9 @@ export default function Folders({
                     className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selected : ''} `}>&nbsp; &nbsp;Abel Store</span>
-
             </a>
           </Draggable>
-
-          <div className={styles.marginBottom20}>
-            </div>
-
+          <div className={styles.marginBottom20}></div>
 
           <Draggable >
             <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('2021')} onMouseLeave={() => setFolderOnfocus(null)}>
@@ -51,9 +46,7 @@ export default function Folders({
                   <span className={`${styles.folderText} ${folderOnfocus === '2021' ? styles.selected : ''} `}>&nbsp; &nbsp; &nbsp; &nbsp; Fotos</span>
             </div>
           </Draggable>
-
-          <div className={styles.marginBottom20}>
-            </div>
+          <div className={styles.marginBottom20}></div>
 
           <Draggable >
             <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('entrevistas')} onMouseLeave={() => setFolderOnfocus(null)}>
@@ -68,11 +61,8 @@ export default function Folders({
                   <span className={`${styles.folderText} ${folderOnfocus === 'entrevistas' ? styles.selected : ''} `}>&nbsp; &nbsp; &nbsp; Prensa</span>
             </div>
           </Draggable>
+          <div className={styles.marginBottom20}></div>
 
-          <div className={styles.marginBottom20}>
-          </div>
-
-       
           <Draggable>
             <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)}>
                   <img 
@@ -86,8 +76,6 @@ export default function Folders({
                   <span className={`${styles.folderText} ${folderOnfocus === 'projects' ? styles.selected : ''} `}>&nbsp; &nbsp;Proyectos</span>
             </div>
           </Draggable>
-    
-
        </div>
 
       <div className={styles.wrapper_rand1}>
@@ -105,7 +93,6 @@ export default function Folders({
             </div>
           </Draggable>
       </div>
-
 
       <div className={styles.wrapper_rand2}>
           <Draggable>
@@ -133,25 +120,11 @@ export default function Folders({
                       draggable="false"
                       className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''} `}
                     />
+                    <span id="ig_text" className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selected : ''} `}>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Instagram</span>
                   </a>
             </div>
           </Draggable>
       </div>
-
-      {/* <div className={styles.wrapper_rand5}>
-          <Draggable>
-            <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('imdb')} onMouseLeave={() => setFolderOnfocus(null)}> 
-                  <a rel="noopener noreferrer" href="https://www.imdb.com/name/nm7323689/" target="_blank">
-                    <img 
-                      src="/images/icons/imdb.png" 
-                      alt="folder" 
-                      draggable="false"
-                      className={`${styles.folderText} ${folderOnfocus === 'imdb' ? styles.selectedIcon : ''} `}
-                    />
-                  </a>
-            </div>
-          </Draggable>
-      </div> */}
 
       <div className={styles.wrapper_rand4}>
           <Draggable>
@@ -164,15 +137,28 @@ export default function Folders({
                       onDoubleClick={openVideobook} 
                       className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selectedIcon : ''} `}
                     />
-                    <span className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selected : ''} `}>&nbsp; &nbsp; &nbsp; Book :p</span>
-                  
+                    <span className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selected : ''} `}>Videobook</span>
             </div>
           </Draggable>
       </div>
 
-        <div className={styles.wrapper_right}>
-  
-          <Draggable >
+      <div className={styles.wrapper_right}>
+          <Draggable>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('formaciones')} onMouseLeave={() => setFolderOnfocus(null)}>
+                  <img 
+                    src="/images/folder.png" 
+                    alt="folder" 
+                    draggable="false"
+                    onTouchStart={isTouchDevice() ? openFormations : null}
+                    onDoubleClick={openFormations} 
+                    className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selectedIcon : ''} `}
+                  />
+                  <span className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selected : ''} `}>Formaciones</span>
+            </div>
+          </Draggable>
+          <div className={styles.marginBottom20}></div>
+
+          <Draggable>
             <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('downloads')} onMouseLeave={() => setFolderOnfocus(null)}>
                   <img 
                     src="/images/folder.png" 
@@ -182,63 +168,25 @@ export default function Folders({
                     onDoubleClick={openFolderDownloads} 
                     className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selected : ''} `}>&nbsp;Descargas</span>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'downloads' ? styles.selected : ''} `}>Descargas</span>
             </div>
           </Draggable>
-     
-            <div className={styles.marginBottom20}>
-            </div>
+          <div className={styles.marginBottom20}></div>
 
-            <Draggable>
-              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)}>
+          <Draggable>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)}>
                   <img 
-                    src="/images/customicons/iterm-logo.webp" 
-                    draggable="false"
+                    src="/images/folder.png" 
                     alt="folder" 
-                    onTouchStart={isTouchDevice() ? openFormations : null}
-                    onDoubleClick={openFormations}  
+                    draggable="false"
+                    onTouchStart={isTouchDevice() ? openFolderDocuments : null}
+                    onDoubleClick={openFolderDocuments} 
                     className={`${styles.folderText} ${folderOnfocus === 'documents' ? styles.selectedIcon : ''} `}
                   />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'documents' ? styles.selected : ''} `}>&nbsp;Formación</span>
-              </div>
-            </Draggable>
-
-            
-            
-            <div className={styles.marginBottom20}>
+                  <span className={`${styles.folderText} ${folderOnfocus === 'documents' ? styles.selected : ''} `}>Documentos</span>
             </div>
-
-            <Draggable>
-              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('macarradas')} onMouseLeave={() => setFolderOnfocus(null)}>
-                  <img 
-                    src="/images/customicons/gun.png"
-                    draggable="false"
-                    alt="folder"
-                    onTouchStart={isTouchDevice() ? openLinearGallery : null} 
-                    onDoubleClick={openLinearGallery}
-                    className={`${styles.folderText} ${folderOnfocus === 'macarradas' ? styles.selectedIcon : ''} `}  
-                  />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'macarradas' ? styles.selected : ''} `}>Macarrada$</span>
-              </div>
-            </Draggable>
-
-            <div className={styles.marginBottom20}>
-            </div>
-
-            <Draggable>
-              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('book')} onMouseLeave={() => setFolderOnfocus(null)}>
-                  <img 
-                        src="/images/folder.png" 
-                    draggable="false"
-                    alt="folder" 
-                    onTouchStart={isTouchDevice() ? openFolderDocuments : null}
-                    onDoubleClick={openFolderDocuments}  
-                    className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selectedIcon : ''} `}  
-                  />
-                  <span className={`${styles.folderText} ${folderOnfocus === 'book' ? styles.selected : ''} `}>Documentos</span>
-              </div>
-            </Draggable>
-        </div>
-    </>
+          </Draggable>
+      </div>
+    </div>
   )
 }

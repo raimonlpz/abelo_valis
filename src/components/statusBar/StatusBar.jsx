@@ -32,7 +32,7 @@ export default function StatusBar({ toggleAppleMenu }) {
           src="/svgs/apple.svg"
           alt="apple_icon"
         />
-        <ul className={styles.left_ul}>
+        <ul className={` ${styles.left_ul}`}>
           <li>
             <span>Finder</span>
           </li>
@@ -85,7 +85,20 @@ export default function StatusBar({ toggleAppleMenu }) {
         </ul>
       </div>
     </div>
+
+  <div className={`flex justify-between w-[90%] absolute mx-7 pt-4 lg:visible md:hidden`}>
+    <div className=''>
+    <img
+          onClick={toggleAppleMenu}
+          className={styles.appleIcon_mobile}
+          src="/svgs/apple.svg"
+          alt="apple_icon"
+        />
+    </div>
+    <div className='text-white tracking-wider'>
+      <span className={styles.date}>{currentTime}</span>
+    </div>
+  </div>
   </>
-   
   )
 }

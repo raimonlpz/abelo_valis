@@ -77,7 +77,7 @@
 }
 
 .aboutMe p span:nth-last-child(1) {
-  background-color: rgba(153, 205, 50, 0.72);
+  background-color: rgba(153, 205, 50, 0.473);
 }
 .aboutMe p span:nth-last-child(2) {
   background-color: rgb(255, 186, 186);

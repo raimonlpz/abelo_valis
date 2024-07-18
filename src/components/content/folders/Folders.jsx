@@ -21,15 +21,17 @@ export default function Folders({
     <div className={styles.inner_wrapper}>
        <div className={styles.wrapper_left}>
           <Draggable >
-            <a rel="noopener noreferrer" href="https://abelovalis.bigcartel.com/" target="_blank" className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)}>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)}>
                 <img 
                     src="/images/menubarimages/3.png" 
                     alt="folder" 
                     draggable="false"
+                    onTouchStart={isTouchDevice() ? () => window.open('https://abelovalis.bigcartel.com/', '_blank') : null}
+                    onDoubleClick={() => window.open('https://abelovalis.bigcartel.com/', '_blank')} 
                     className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selectedIcon : ''} `}
                   />
                   <span className={`${styles.folderText} ${folderOnfocus === 'abel_store' ? styles.selected : ''} `}>&nbsp; &nbsp;Abel Store</span>
-            </a>
+            </div>
           </Draggable>
           <div className={styles.marginBottom20}></div>
 
@@ -113,15 +115,17 @@ export default function Folders({
       <div className={styles.wrapper_rand3}>
           <Draggable>
             <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('insta')} onMouseLeave={() => setFolderOnfocus(null)}> 
-                  <a rel="noopener noreferrer" href="https://www.instagram.com/abelovalis" target="_blank">
+                 
                     <img 
                       src="/images/customicons/insta-logo.webp" 
                       alt="folder" 
                       draggable="false"
+                      onTouchStart={isTouchDevice() ? () => window.open('https://www.instagram.com/abelovalis', '_blank') : null}
+                      onDoubleClick={() => window.open('https://www.instagram.com/abelovalis', '_blank')} 
                       className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''} `}
                     />
                     <span id="ig_text" className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selected : ''} `}>&nbsp;&nbsp;&nbsp;Instagram</span>
-                  </a>
+                
             </div>
           </Draggable>
       </div>
@@ -137,7 +141,7 @@ export default function Folders({
                       onDoubleClick={openVideobook} 
                       className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selectedIcon : ''} `}
                     />
-                    <span className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selected : ''} `}>&nbsp; Videobook</span>
+                    <span className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selected : ''} `}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Reel</span>
             </div>
           </Draggable>
       </div>

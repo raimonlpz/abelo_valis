@@ -30,6 +30,7 @@
 .left_corner_buttons {
   margin-bottom: 20px;
   cursor: pointer;
+  display: flex;
 }
 
 .left_corner_button_img {
@@ -107,6 +108,9 @@
 .left_text {
   font-size: 15px;
   font-weight: bold;
+}
+.right_top_bar_right {
+  display: flex;
 }
 
 .right_top_bar_right > img {

@@ -34,6 +34,7 @@
 .left_corner_buttons {
   margin-bottom: 40px;
   cursor: pointer;
+  display: flex;
 }
 
 .left_corner_button_img {

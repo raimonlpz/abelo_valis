@@ -56,6 +56,8 @@ const FolderProjects = React.forwardRef(({
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
+                        <div className={styles.closeX}>&#10005;</div>
+                        <div className={styles.miniX}>-</div>
                     </div>
                     <div className={styles.left_menu_wrapper}>
                     <h5 className={styles.menu_title}>Favoritos</h5>

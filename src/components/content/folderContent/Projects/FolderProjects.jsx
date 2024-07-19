@@ -210,7 +210,7 @@ const FolderProjects = React.forwardRef(({
                     style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'musica' ? styles.selectedIcon : ''}`} 
                   />
-                  <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>Música</span>
+                  <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>Ropa & Objetos</span>
                 </div>
            
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videoclips')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsVideoclips}>

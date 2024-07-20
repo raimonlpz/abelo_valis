@@ -77,8 +77,8 @@
   position: absolute;
   font-size: 0.75rem;
   color: rgb(69, 69, 69);
-  top: 1.25rem;
-  left: 51%;
+  top: 0rem;
+  left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
 }

@@ -31,8 +31,11 @@ import FolderProjects from './components/content/folderContent/Projects/FolderPr
 import ProjectsVideoclips from './components/content/folderContent/Projects/ProjectsVideoclips/ProjectsVideoclips'
 import ProjectsMovies from './components/content/folderContent/Projects/ProjectsMovies/ProjectsMovies'
 import ProjectsTV from './components/content/folderContent/Projects/ProjectsTV/ProjectsTV'
+import { useTour } from '@reactour/tour'
 
 function App() {
+
+  const { setIsOpen, currentStep } = useTour()
 
   const [appRefs, setAppRefs] = useState([])
   const [isAuth, setIsAuth] = useState(false)
@@ -77,6 +80,12 @@ function App() {
       }
     }
   }, [isAuth])
+
+  useEffect(() => {
+    if (currentStep === 10) {
+      openFolderProjectsMovies()
+    }
+  }, [currentStep])
 
   /**
    * Base Folders
@@ -164,6 +173,9 @@ function App() {
         trashAppRef.current,
         agendaAppRef.current
       ])
+
+      // Tour
+      setIsOpen(true)
     }
   }, [isAuth])
 

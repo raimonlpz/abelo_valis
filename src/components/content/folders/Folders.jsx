@@ -21,7 +21,7 @@ export default function Folders({
     <div className={styles.inner_wrapper}>
        <div className={styles.wrapper_left}>
           <Draggable >
-            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)}>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)} id="store">
                 <img 
                     src="/images/menubarimages/3.png" 
                     alt="folder" 
@@ -51,7 +51,7 @@ export default function Folders({
           <div className={styles.marginBottom20}></div>
 
           <Draggable >
-            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('entrevistas')} onMouseLeave={() => setFolderOnfocus(null)}>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('entrevistas')} onMouseLeave={() => setFolderOnfocus(null)} id="press">
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
@@ -66,7 +66,7 @@ export default function Folders({
           <div className={styles.marginBottom20}></div>
 
           <Draggable>
-            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)}>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)} id="projects">
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
@@ -132,7 +132,7 @@ export default function Folders({
 
       <div className={styles.wrapper_rand4}>
           <Draggable>
-            <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('videbook')} onMouseLeave={() => setFolderOnfocus(null)}> 
+            <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('videbook')} onMouseLeave={() => setFolderOnfocus(null)} id="reel"> 
                     <img 
                       src="/images/mov.png" 
                       alt="folder" 
@@ -181,7 +181,7 @@ export default function Folders({
           <div className={styles.marginBottom20}></div>
 
           <Draggable>
-            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)}>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)} id="games">
                   <img 
                     src="/images/customicons/gun.png" 
                     alt="folder" 
@@ -198,7 +198,7 @@ export default function Folders({
 
 
           <Draggable>
-            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)}>
+            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)} id="folder">
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 

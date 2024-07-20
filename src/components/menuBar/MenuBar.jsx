@@ -27,7 +27,7 @@ export default function MenuBar({
         setTimeout(() => setClickedMenuItem(0), 5000);
 
         switch (id) {
-            case '1': openFolderContent(); break;
+            case 'finder': openFolderContent(); break;
             case '2': openCalendar(); break;
             case '3': window.open('https://abelovalis.bigcartel.com/', '_blank'); break;
             case '4': openMusic(); break;
@@ -37,7 +37,7 @@ export default function MenuBar({
             case '8': openPhotoBooth(); break;
             case '9': openSketch(); break;
             case '10': openNotes(); break;
-            case '11': openSettings(); break;
+            case 'settings': openSettings(); break;
             case '12': openTrash(); break;
             default: break;
         }

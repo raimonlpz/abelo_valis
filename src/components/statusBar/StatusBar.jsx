@@ -24,9 +24,10 @@ export default function StatusBar({ toggleAppleMenu }) {
 
   return (
     <>
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} >
       <div className={styles.wrapper_inner_left}>
         <img
+          id="statusBar"
           onClick={toggleAppleMenu}
           className={styles.appleIcon}
           src="/svgs/apple.svg"
@@ -79,7 +80,7 @@ export default function StatusBar({ toggleAppleMenu }) {
           <li>
             <img src="/images/statusicons/7.png" alt="s7" />
           </li>
-          <li>
+          <li id="clock">
             <span className={styles.date}>{currentTime}</span>
           </li>
         </ul>

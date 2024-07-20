@@ -81,7 +81,7 @@ const ProjectsTV = forwardRef(({
                 }}
             >
                 <div className={styles.left_inner_wrapper}>
-                    <div className={styles.left_corner_buttons}>
+                    <div className={styles.left_corner_buttons} id="ctas">
                         <img
                             onClick={closeFolderProjectsTV}
                             className={styles.left_corner_button_img}

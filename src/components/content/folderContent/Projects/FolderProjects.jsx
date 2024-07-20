@@ -225,17 +225,31 @@ const FolderProjects = React.forwardRef(({
                   <span className={`${folderOnfocus === 'videoclips' ? styles.selected : ''}`}>Videoclips</span>
                 </div>
               </div>
+
+
               <div className={styles.row}>
-              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('merch')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
-                  <img 
-                    src="/images/folder.png" 
-                    alt="folder" 
-                    style={{'width': '70px'}} 
-                    className={`${folderOnfocus === 'merch' ? styles.selectedIcon : ''}`} 
-                  />
-                  <span className={`${folderOnfocus === 'merch' ? styles.selected : ''}`}>Cortos</span>
-                </div>
+
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('shorts')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                    <img 
+                      src="/images/folder.png" 
+                      alt="folder" 
+                      style={{'width': '70px'}} 
+                      className={`${folderOnfocus === 'shorts' ? styles.selectedIcon : ''}`} 
+                    />
+                    <span className={`${folderOnfocus === 'shorts' ? styles.selected : ''}`}>Cortos</span>
+                  </div>
+
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('publi')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                    <img 
+                      src="/images/folder.png" 
+                      alt="folder" 
+                      style={{'width': '70px'}} 
+                      className={`${folderOnfocus === 'publi' ? styles.selectedIcon : ''}`} 
+                    />
+                    <span className={`${folderOnfocus === 'publi' ? styles.selected : ''}`}>Publi</span>
+                  </div>
               </div>
+
               <div className={styles.row}>
               </div>
             </div>

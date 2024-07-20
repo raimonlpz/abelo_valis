@@ -8,7 +8,7 @@ import { TourProvider } from '@reactour/tour'
 const steps = [
   {
     selector: '#statusBar',
-    content: '¡Hey! aquí una pequeña guía para navegar por mi fuckin web. Haz click en  para ver la navegación general o reiniciar mi PC.'
+    content: '¡Hey! Aquí una pequeña guía para navegar por mi fuckin web. Haz click en  para ver la navegación general o reiniciar mi PC.'
   },
   {
     selector: '#clock',

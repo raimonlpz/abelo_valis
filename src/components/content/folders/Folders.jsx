@@ -114,8 +114,8 @@ export default function Folders({
 
       <div className={styles.wrapper_rand3}>
           <Draggable>
-            <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('insta')} onMouseLeave={() => setFolderOnfocus(null)}> 
-                 
+            <div  className={styles.folderWrapper} onClick={() => setFolderOnfocus('insta')} onMouseLeave={() => setFolderOnfocus(null)}
+                            ontouchstart={() => window.open('https://www.instagram.com/abelovalis', '_blank')}>
                     <img 
                       src="/images/customicons/insta-logo.webp" 
                       alt="folder" 

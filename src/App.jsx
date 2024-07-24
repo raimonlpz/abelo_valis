@@ -1,11 +1,14 @@
 
 import { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import './App.css'
 import FolderDownloads from './components/content/folderContent/Downloads/FolderDownloads'
 import Folders from './components/content/folders/Folders'
 import StatusBar from './components/statusBar/StatusBar'
 import AppleMenu from './components/content/appleMenu/AppleMenu'
 import MenuBar from './components/menuBar/MenuBar'
+import Notification from './components/Notification/Notification'
+
 /**
  * Apps
  */
@@ -35,6 +38,7 @@ import { useTour } from '@reactour/tour'
 
 function App() {
 
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
   const { setIsOpen, currentStep } = useTour()
 
   const [appRefs, setAppRefs] = useState([])
@@ -65,6 +69,14 @@ function App() {
 
   const wrapperRef = useRef()
   const videoBgRef = useRef()
+
+
+  // Notificación de mobile 
+  const [showNotification, setShowNotification] = useState(true);
+
+  const handleCloseNotification = () => {
+      setShowNotification(false);
+  };
 
   useEffect(() => {
     if (isAuth) {
@@ -175,9 +187,12 @@ function App() {
       ])
 
       // Tour
-      setIsOpen(true)
+      if (!isMobile) {
+        setIsOpen(true);
+      }
     }
-  }, [isAuth])
+  }, [isAuth, isMobile]);
+
 
   const toggleAppleMenu = () => {
     setIsAppleMenuOpen(!isAppleMenuOpen)
@@ -592,6 +607,7 @@ function App() {
     </video>
 
       <StatusBar toggleAppleMenu={toggleAppleMenu} />
+      {showNotification && <Notification onClose={handleCloseNotification} />}
 
       <div className="inner_wrapper md:t-20 lg:pt-0" onClick={closeAppleMenu}>
         

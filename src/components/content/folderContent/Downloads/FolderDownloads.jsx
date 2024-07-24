@@ -22,6 +22,7 @@ const FolderDownloads = React.forwardRef(({
   const [folderOnfocus,setFolderOnfocus] = useState(null)
 
     return (
+      <>
       <Draggable onStart={onStartDrag} onStop={onStopDrag}>
         <div
           ref={ref}   
@@ -321,6 +322,7 @@ const FolderDownloads = React.forwardRef(({
         </div>
 
       </Draggable>
+      </>
     );
   });
 

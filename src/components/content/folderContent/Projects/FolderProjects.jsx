@@ -56,6 +56,8 @@ const FolderProjects = React.forwardRef(({
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
+                        <div className={styles.closeX}>&#10005;</div>
+                        <div className={styles.miniX}>-</div>
                     </div>
                     <div className={styles.left_menu_wrapper}>
                     <h5 className={styles.menu_title}>Favoritos</h5>
@@ -210,7 +212,7 @@ const FolderProjects = React.forwardRef(({
                     style={{'width': '70px'}} 
                     className={`${folderOnfocus === 'musica' ? styles.selectedIcon : ''}`} 
                   />
-                  <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>Música</span>
+                  <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>Ropa & Objetos</span>
                 </div>
            
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videoclips')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsVideoclips}>
@@ -223,17 +225,31 @@ const FolderProjects = React.forwardRef(({
                   <span className={`${folderOnfocus === 'videoclips' ? styles.selected : ''}`}>Videoclips</span>
                 </div>
               </div>
+
+
               <div className={styles.row}>
-              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('merch')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
-                  <img 
-                    src="/images/folder.png" 
-                    alt="folder" 
-                    style={{'width': '70px'}} 
-                    className={`${folderOnfocus === 'merch' ? styles.selectedIcon : ''}`} 
-                  />
-                  <span className={`${folderOnfocus === 'merch' ? styles.selected : ''}`}>Ropa & Objetos</span>
-                </div>
+
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('shorts')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                    <img 
+                      src="/images/folder.png" 
+                      alt="folder" 
+                      style={{'width': '70px'}} 
+                      className={`${folderOnfocus === 'shorts' ? styles.selectedIcon : ''}`} 
+                    />
+                    <span className={`${folderOnfocus === 'shorts' ? styles.selected : ''}`}>Cortos</span>
+                  </div>
+
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('publi')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                    <img 
+                      src="/images/folder.png" 
+                      alt="folder" 
+                      style={{'width': '70px'}} 
+                      className={`${folderOnfocus === 'publi' ? styles.selectedIcon : ''}`} 
+                    />
+                    <span className={`${folderOnfocus === 'publi' ? styles.selected : ''}`}>Publi</span>
+                  </div>
               </div>
+
               <div className={styles.row}>
               </div>
             </div>

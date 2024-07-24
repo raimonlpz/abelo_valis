@@ -3,6 +3,10 @@ a {
   color: unset;
 }
 
+.folder_fotos, .folder_prensa, .folder_proyectos {
+  visibility: visible;
+}
+
 .wrapper_right, .wrapper_left, .wrapper_rand1, .wrapper_rand2, .wrapper_rand3, .wrapper_rand4 {
   position: absolute;
 }
@@ -83,19 +87,30 @@ a {
     margin: 0 10px 0px 10px;
   }
 
+  .folder_abel_store {
+    visibility: visible;
+    position: absolute;
+    top: 90px;
+    left: 100px;
+  }
+
+  .wrapper_right {
+    visibility: hidden;
+  }
+
   .wrapper_rand3 {
     top: -10px;
     left: 120px;
   }
 
   .wrapper_rand1 {
-    top: 142px;
-    left: 135px;
+    top: 300px;
+    left: 175px;
   }
 
   .wrapper_rand2 {
-    top: 280px;
-    left: 135px;
+    top: 480px;
+    left: 45px;
   }
 
   .wrapper_rand2 img{
@@ -108,10 +123,15 @@ a {
     margin-left: 10px
   }
 
-  .wrapper_rand4 {
-    top: 410px;
-    left: 135px;
+  .wrapper_rand3 {
+    top: 5px;
+    left: 235px;
   }
+
+  .wrapper_rand4 {
+  visibility: hidden;
+  }
+
   .inner_wrapper {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -120,8 +140,8 @@ a {
     grid-row-gap: 0px;
   }
 
-  .folderWrapper img {
-    width: 70px;
+  .folderWrapper {
+    width: 150px;
   }
   
   .folderText {
@@ -131,4 +151,9 @@ a {
   #ig_text {
     margin-left: 400px !important;
   }
+
+  .folder_fotos, .folder_prensa, .folder_proyectos {
+    visibility: hidden;
+  }
+
 }

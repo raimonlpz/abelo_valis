@@ -43,6 +43,8 @@ const Music = forwardRef(({
                     src="/images/icons/zoom.png"
                     alt="icns"
                 />
+                 <div className={styles.closeX}>&#10005;</div>
+                 <div className={styles.miniX}>-</div>
                 <div className={styles.appTitle}></div>
                 </div>
             </div>

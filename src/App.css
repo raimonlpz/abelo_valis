@@ -2,10 +2,11 @@
   width: 100vw;
   height: 100vh;
   background: rgb(37, 37, 37);
-  display: flex;
   overflow: hidden;
+  display: flex;
   transition: filter 0.5s ease-in-out;
   filter: brightness(30%);
+  position: absolute;
 }
 
 .inner_wrapper {
@@ -32,4 +33,4 @@
   .inner_wrapper {
     margin-top: 80px;
   }
-} 
+}

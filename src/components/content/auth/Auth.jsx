@@ -32,8 +32,8 @@ export default function Auth({ onSignin }) {
   return (
     <div className={styles.wrapper} ref={wrapperRef}>
         <div className={styles.dayTime}>
-            <span>{currentDayTime[0]}</span>
-            <span>{currentDayTime[1]}</span>
+            <span className={styles.day}>{currentDayTime[0]}</span>
+            <span className={styles.time}>{currentDayTime[1]}</span>
         </div>  
         <div className={styles.authContainer}>                
             <div className={styles.loginBox}>

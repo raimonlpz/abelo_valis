@@ -1,11 +1,14 @@
 
 import { useEffect, useRef, useState } from 'react'
+import { useMediaQuery } from 'react-responsive'
 import './App.css'
 import FolderDownloads from './components/content/folderContent/Downloads/FolderDownloads'
 import Folders from './components/content/folders/Folders'
 import StatusBar from './components/statusBar/StatusBar'
 import AppleMenu from './components/content/appleMenu/AppleMenu'
 import MenuBar from './components/menuBar/MenuBar'
+import Notification from './components/Notification/Notification'
+
 /**
  * Apps
  */
@@ -31,8 +34,12 @@ import FolderProjects from './components/content/folderContent/Projects/FolderPr
 import ProjectsVideoclips from './components/content/folderContent/Projects/ProjectsVideoclips/ProjectsVideoclips'
 import ProjectsMovies from './components/content/folderContent/Projects/ProjectsMovies/ProjectsMovies'
 import ProjectsTV from './components/content/folderContent/Projects/ProjectsTV/ProjectsTV'
+import { useTour } from '@reactour/tour'
 
 function App() {
+
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const { setIsOpen, currentStep } = useTour()
 
   const [appRefs, setAppRefs] = useState([])
   const [isAuth, setIsAuth] = useState(false)
@@ -63,16 +70,34 @@ function App() {
   const wrapperRef = useRef()
   const videoBgRef = useRef()
 
+
+  // Notificación de mobile 
+  const [showNotification, setShowNotification] = useState(true);
+
+  const handleCloseNotification = () => {
+      setShowNotification(false);
+  };
+
   useEffect(() => {
     if (isAuth) {
       if (videoBgRef.current) {
         videoBgRef.current.play()
+        videoBgRef.current.playsInline = true;
+        videoBgRef.current.setAttribute("webkit-playsinline", "webkit-playsinline");
+        videoBgRef.current.setAttribute("playsinline", "");
+        videoBgRef.current.setAttribute("playsinline", true);
       }
       if (wrapperRef.current) {
         wrapperRef.current.style.filter = 'brightness(100%)'
       }
     }
   }, [isAuth])
+
+  useEffect(() => {
+    if (currentStep === 10) {
+      openFolderProjectsMovies()
+    }
+  }, [currentStep])
 
   /**
    * Base Folders
@@ -160,8 +185,14 @@ function App() {
         trashAppRef.current,
         agendaAppRef.current
       ])
+
+      // Tour
+      if (!isMobile) {
+        setIsOpen(true);
+      }
     }
-  }, [isAuth])
+  }, [isAuth, isMobile]);
+
 
   const toggleAppleMenu = () => {
     setIsAppleMenuOpen(!isAppleMenuOpen)
@@ -571,11 +602,12 @@ function App() {
   return (
     <>
     <div className="wrapper" ref={wrapperRef}>
-    <video id="background-video" autoPlay loop disablePictureInPicture controlsList="nodownload" ref={videoBgRef}>
+    <video id="background-video" autoPlay loop disablePictureInPicture playsInline controlsList="nodownload" ref={videoBgRef}>
       <source src="/videos/reel2.mp4" type="video/mp4" />
     </video>
 
       <StatusBar toggleAppleMenu={toggleAppleMenu} />
+      {showNotification && <Notification onClose={handleCloseNotification} />}
 
       <div className="inner_wrapper md:t-20 lg:pt-0" onClick={closeAppleMenu}>
         

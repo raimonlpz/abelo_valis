@@ -134,3 +134,32 @@ body {
   overscroll-behavior: none;
   overflow: hidden;
 }
+
+.reactour__popover {
+  border-radius: 10px !important;
+  opacity: 0.95;
+  background: rgba(255, 255, 255, 0.905) !important;
+  color: rgb(45, 45, 45) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500;
+  margin: 1.5rem;
+}
+
+.reactour__popover div div button {
+  background: rgb(121, 9, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(121, 9, 83, 1) 47%,
+    rgba(0, 212, 255, 1) 100%
+  ) !important;
+  border: none !important;
+}
+
+.reactour__popover span {
+  background: rgb(121, 9, 83);
+  background: linear-gradient(
+    90deg,
+    rgba(121, 9, 83, 1) 47%,
+    rgba(0, 212, 255, 1) 100%
+  ) !important;
+}

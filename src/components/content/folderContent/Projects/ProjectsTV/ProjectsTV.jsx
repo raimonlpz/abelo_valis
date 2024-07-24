@@ -81,7 +81,7 @@ const ProjectsTV = forwardRef(({
                 }}
             >
                 <div className={styles.left_inner_wrapper}>
-                    <div className={styles.left_corner_buttons}>
+                    <div className={styles.left_corner_buttons} id="ctas">
                         <img
                             onClick={closeFolderProjectsTV}
                             className={styles.left_corner_button_img}
@@ -100,6 +100,8 @@ const ProjectsTV = forwardRef(({
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
+                         <div className={styles.closeX}>&#10005;</div>
+                         <div className={styles.miniX}>-</div>
                     </div>
                     <div className={styles.left_menu_wrapper}>
                         <h5 className={styles.menu_title}>Favoritos</h5>

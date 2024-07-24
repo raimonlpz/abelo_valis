@@ -27,7 +27,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   font-size: 24px;
-  color: red;
+  color: rgb(255, 120, 228);
 }
 
 .dino {
@@ -79,5 +79,5 @@
   right: 3rem;
   top: 3rem;
   font-weight: bold;
-  color: brown;
+  color: rgb(255, 120, 228);
 }

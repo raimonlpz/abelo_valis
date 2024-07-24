@@ -1,6 +1,6 @@
 const menuBarData = [
   {
-    id: "1",
+    id: "finder",
     image: "/images/menubarimages/1.png",
   },
   {
@@ -40,7 +40,7 @@ const menuBarData = [
     image: "/images/menubarimages/10.png",
   },
   {
-    id: "11",
+    id: "settings",
     image: "/images/menubarimages/11.png",
   },
   {

@@ -29,7 +29,9 @@ export default function AppleMenu({
               <p className={styles.p}>System Settings</p>
             </li>
   
-            <li className={styles.li} onClick={() => window.open('https://abelovalis.bigcartel.com/', '_blank') }>
+            <li className={styles.li} 
+                onClick={() => window.open('https://abelovalis.bigcartel.com/', '_blank')}
+                ontouchstart={() => window.open('https://abelovalis.bigcartel.com/', '_blank')}>
               <p className={styles.p}>Abel Store</p>
               <span className={styles.appStoreSpan}>3 updates</span>
             </li>

@@ -35,6 +35,8 @@ const Videobook = forwardRef(({ isVideobookOpen, closeVideobook, maximizeApp, mi
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
+                         <div className={styles.closeX}>&#10005;</div>
+                         <div className={styles.miniX}>-</div>
                     </div>
                 </div>
                 <div className={styles.videobook}>

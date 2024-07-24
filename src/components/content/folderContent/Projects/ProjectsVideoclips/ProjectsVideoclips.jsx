@@ -95,6 +95,25 @@ const ProjectsVideoclips = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=eNRoiM5NHYQ',
                 imdb: 'https://www.imdb.com/title/tt14336192'
             }
+        },
+        {
+            id: 5,
+            title: 'Pipiolas - Crying Mañana',
+            subtitles: ['Short Film', '2023', '17m'],
+            info: {
+                director: 'Juan Carlos Ballesteros',
+                stars: ['Abelo Valis, Paula Reyes, Adriana Ubani, Nicole Wallace...'],
+                storyline: "Paula and Adriana work at Banda Aparte, a prestigious production company...",
+                release: 'April 2023 (Spain)',
+                language: 'Spanish',
+                locations: 'Spain',
+                company: 'Elefant Records'
+            },
+            imgs: ['/projects/videoclips/pip1.png', '/projects/videoclips/pipi2.png', '/projects/videoclips/pipi3.png'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=xpRDD3z6Hks',
+                imdb: ''
+            }
         }
     ]
     
@@ -158,6 +177,8 @@ const ProjectsVideoclips = forwardRef(({
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
+                         <div className={styles.closeX}>&#10005;</div>
+                         <div className={styles.miniX}>-</div>
                     </div>
                     <div className={styles.left_menu_wrapper}>
                         <h5 className={styles.menu_title}>Favoritos</h5>

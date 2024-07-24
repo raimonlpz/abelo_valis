@@ -34,6 +34,39 @@
 .left_corner_buttons {
   margin-bottom: 40px;
   cursor: pointer;
+  display: flex;
+  position: relative;
+}
+
+.closeX,
+.miniX {
+  display: none;
+}
+
+.left_corner_buttons:hover {
+  .closeX,
+  .miniX {
+    display: block;
+  }
+}
+
+.closeX,
+.miniX {
+  position: absolute;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.closeX {
+  top: -2px;
+  left: 2.15px;
+  font-size: 0.65rem;
+}
+
+.miniX {
+  top: -11px;
+  left: 23.65px;
+  font-size: 1.25rem;
 }
 
 .left_corner_button_img {
@@ -44,8 +77,8 @@
   position: absolute;
   font-size: 0.75rem;
   color: rgb(69, 69, 69);
-  top: 1.25rem;
-  left: 51%;
+  top: 0rem;
+  left: 50%;
   transform: translateX(-50%);
   font-weight: bold;
 }

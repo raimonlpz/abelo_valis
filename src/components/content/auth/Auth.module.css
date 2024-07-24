@@ -109,13 +109,13 @@
   cursor: pointer;
   opacity: 0.4;
   width: 40px;
-  height: 40px;
+  height: auto;
   transition: transform 1s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 .loginButton img {
   width: 45px;
-  height: 45px;
+  height: auto;
   background: #d9d9d91f;
   border-radius: 50%;
   margin-top: 0.75rem;
@@ -123,4 +123,52 @@
 
 .loginButton:hover {
   transform: scale(1.2);
+}
+
+@media screen and (max-width: 668px) {
+  .authContainer {
+    width: 90%;
+    margin-top: 50px;
+  }
+
+  .dayTime {
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .dayTime span:nth-child(1) {
+    font-size: 1.5rem;
+  }
+  
+  .dayTime span:nth-child(2) {
+    font-size: 6rem;
+  }
+
+  .nickname {
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    font-size: 1.75rem;
+    margin: 0 auto 10px;
+  }
+  
+  .inputField::placeholder {
+    color: white;
+    font-size: 13px; 
+  }
+
+  .loginBox {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
 }

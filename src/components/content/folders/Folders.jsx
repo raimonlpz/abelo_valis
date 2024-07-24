@@ -21,7 +21,8 @@ export default function Folders({
     <div className={styles.inner_wrapper}>
        <div className={styles.wrapper_left}>
           <Draggable >
-            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)} id="store">
+          <div className={`${styles.folderWrapper} ${styles.folder_abel_store}`} 
+            onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)} id="store">
                 <img 
                     src="/images/menubarimages/3.png" 
                     alt="folder" 

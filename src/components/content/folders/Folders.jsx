@@ -15,12 +15,11 @@ export default function Folders({
   openVideobook
 }) {
 
-  const [folderOnfocus, setFolderOnfocus] = useState(null);
+  const [folderOnfocus, setFolderOnfocus] = React.useState(null);
 
-  const handleTouchStart = (callback) => {
-    if (isTouchDevice()) {
-      callback();
-    }
+  const handleTouchStart = (callback) => (e) => {
+      e.preventDefault();
+      callback(); 
   };
 
   return (
@@ -127,19 +126,27 @@ export default function Folders({
       </div>
 
       <div className={styles.wrapper_rand3}>
-        <Draggable>
-          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('insta')} onMouseLeave={() => setFolderOnfocus(null)}
-           onTouchStart={() => handleTouchStart(() => window.open('https://www.instagram.com/abelovalis', '_blank'))}>
-            <img
-              src="/images/customicons/insta-logo.webp"
-              alt="folder"
-              draggable="false"
-              onTouchStart={handleTouchStart(() => window.open('https://www.instagram.com/abelovalis', '_blank'))}
-              onDoubleClick={() => window.open('https://www.instagram.com/abelovalis', '_blank')}
-              className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''}`}
-            />
-            <span id="ig_text" className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selected : ''}`}>Instagram</span>
-          </div>
+      <Draggable>
+            <div
+                className={styles.folderWrapper}
+                onClick={() => setFolderOnfocus('insta')}
+                onMouseLeave={() => setFolderOnfocus(null)}
+            >
+                <img
+                    src="/images/customicons/insta-logo.webp"
+                    alt="folder"
+                    draggable="false"
+                    className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selectedIcon : ''}`}
+                    onClick={() => window.open('https://www.instagram.com/abelovalis', '_blank')}
+                    onTouchStart={handleTouchStart(() => window.open('https://www.instagram.com/abelovalis', '_blank'))}
+                />
+                <span
+                    id="ig_text"
+                    className={`${styles.folderText} ${folderOnfocus === 'insta' ? styles.selected : ''}`}
+                >
+                    Instagram
+                </span>
+            </div>
         </Draggable>
       </div>
 

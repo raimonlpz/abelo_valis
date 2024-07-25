@@ -7,4 +7,7 @@ export default defineConfig({
   optimizeDeps: {
     include: ["@react-three/fiber", "@react-three/drei", "react-merge-refs"],
   },
+  server: {
+    host: true,
+  },
 });

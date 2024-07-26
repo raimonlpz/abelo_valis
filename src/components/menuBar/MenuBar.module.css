@@ -98,3 +98,29 @@
     transition: 0.1s ease-in;
   }
 }
+
+
+@media screen and (max-width: 768px) {
+  .wrapper {
+    width: 100%;
+    left: 0;
+    right: 0;
+    height: 10%;
+  }
+
+  .ul {
+    overflow-x: scroll;
+    padding: 0 10px;
+    margin: 0px 20px;
+    padding-left: 30px;
+  }
+
+  .ul > li:not(:nth-child(-n+3)) {
+    display: none;
+  }
+
+  .ul > li:nth-child(-n+3) > img {
+    width: 80px;
+    height: 80px;
+  }
+}

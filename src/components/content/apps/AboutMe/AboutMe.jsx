@@ -26,19 +26,19 @@ const AboutMe = forwardRef(({ isAboutMeOpen, closeAboutMe, maximizeApp, minimize
                     <div className={styles.left_corner_buttons}>
                         <img
                             onClick={closeAboutMe}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_close}
                             src="/images/icons/close.png"
                             alt="Close"
                         />
                         <img
                             onClick={minimizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_minimize}
                             src="/images/icons/minimise.png"
                             alt="Minimize"
                         />
                         <img
                             onClick={maximizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_maximize}
                             src="/images/icons/zoom.png"
                             alt="Maximize"
                         />

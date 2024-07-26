@@ -16,19 +16,32 @@ export default function Folders({
 }) {
 
   const [folderOnfocus, setFolderOnfocus] = React.useState(null);
+  const [isTouched, setIsTouched] = useState(false);
 
   const handleTouchStart = (callback) => (e) => {
       e.preventDefault();
-      callback(); 
+      if (!isTouched) {
+          callback(); 
+          setIsTouched(true);
+          // setTimeout(() => setIsTouched(false), 500);
+      }
   };
+
+  const handleClick = (callback) => () => {
+    callback();
+  };
+  
 
   return (
     <div className={styles.inner_wrapper}>
       <div className={styles.wrapper_left}>
         <Draggable>
           <div className={`${styles.folderWrapper} ${styles.folder_abel_store}`}
-            onClick={() => setFolderOnfocus('abel_store')} onMouseLeave={() => setFolderOnfocus(null)} id="store"
-            onTouchStart={() => handleTouchStart(() => window.open('https://abelovalis.bigcartel.com/', '_blank'))}>
+          onClick={handleClick(() => window.open('https://abelovalis.bigcartel.com/', '_blank'))}
+          onMouseLeave={() => setFolderOnfocus(null)} 
+          id="store"
+          // onTouchStart={handleTouchStart(() => window.open('https://abelovalis.bigcartel.com/', '_blank'))}
+          >
             <img
               src="/images/menubarimages/3.png"
               alt="folder"
@@ -44,7 +57,9 @@ export default function Folders({
 
         <Draggable>
           <div className={`${styles.folderWrapper} ${styles.folder_fotos}`}
-            onClick={() => setFolderOnfocus('2021')} onMouseLeave={() => setFolderOnfocus(null)}>
+            onClick={() => setFolderOnfocus('2021')} onMouseLeave={() => setFolderOnfocus(null)}
+            onTouchStart={handleTouchStart(openCircGallery)} id="photos"
+            >
             <img
               src="/images/folder.png"
               alt="folder"
@@ -60,7 +75,9 @@ export default function Folders({
 
         <Draggable>
           <div className={`${styles.folderWrapper} ${styles.folder_prensa}`}
-            onClick={() => setFolderOnfocus('entrevistas')} onMouseLeave={() => setFolderOnfocus(null)} id="press">
+            onClick={() => setFolderOnfocus('entrevistas')} onMouseLeave={() => setFolderOnfocus(null)} id="press"
+            onTouchStart={ handleTouchStart(openInterviews) }
+            >
             <img
               src="/images/folder.png"
               alt="folder"
@@ -76,7 +93,9 @@ export default function Folders({
 
         <Draggable>
           <div className={`${styles.folderWrapper} ${styles.folder_proyectos}`}
-            onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)} id="projects">
+            onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)} id="projects"
+            onTouchStart={handleTouchStart(openFolderProjects)}
+            >
             <img
               src="/images/folder.png"
               alt="folder"
@@ -93,7 +112,7 @@ export default function Folders({
       <div className={styles.wrapper_rand1}>
         <Draggable>
           <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('sobre_mi')} onMouseLeave={() => setFolderOnfocus(null)}
-                      onTouchStart={() => handleTouchStart(openAboutMe)}
+          onTouchStart={() => handleTouchStart(openAboutMe)}
           >
             <img
               src="/images/customicons/txt-format.png"
@@ -111,7 +130,7 @@ export default function Folders({
       <div className={styles.wrapper_rand2}>
         <Draggable>
           <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('cv')} onMouseLeave={() => setFolderOnfocus(null)}
-           onTouchStart={() => handleTouchStart(() => window.open('/files/AbeloValis_CV.pdf', '_blank'))}>
+          onTouchStart={() => handleTouchStart(() => window.open('/files/AbeloValis_CV.pdf', '_blank'))}>
             <img
               src="/images/customicons/pdf-format.png"
               alt="folder"
@@ -131,6 +150,8 @@ export default function Folders({
                 className={styles.folderWrapper}
                 onClick={() => setFolderOnfocus('insta')}
                 onMouseLeave={() => setFolderOnfocus(null)}
+                id='insta'
+                onTouchStart={handleTouchStart(() => window.open('https://www.instagram.com/abelovalis', '_blank'))}
             >
                 <img
                     src="/images/customicons/insta-logo.webp"
@@ -152,7 +173,9 @@ export default function Folders({
 
       <div className={styles.wrapper_rand4}>
         <Draggable>
-          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videbook')} onMouseLeave={() => setFolderOnfocus(null)} id="reel">
+          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videbook')} onMouseLeave={() => setFolderOnfocus(null)} id="reel"
+          onTouchStart={handleTouchStart(openVideobook)}
+          >
             <img
               src="/images/mov.png"
               alt="folder"
@@ -168,7 +191,9 @@ export default function Folders({
 
       <div className={styles.wrapper_right}>
         <Draggable>
-          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('downloads')} onMouseLeave={() => setFolderOnfocus(null)}>
+          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('downloads')} onMouseLeave={() => setFolderOnfocus(null)}
+          onTouchStart={handleTouchStart(openFolderDownloads)}
+          >
             <img
               src="/images/folder.png"
               alt="folder"
@@ -184,7 +209,9 @@ export default function Folders({
         <div className={styles.marginBottom20}></div>
 
         <Draggable>
-          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('formaciones')} onMouseLeave={() => setFolderOnfocus(null)}>
+          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('formaciones')} onMouseLeave={() => setFolderOnfocus(null)}
+          onTouchStart={handleTouchStart(openFormations)}
+          >
             <img
               src="/images/customicons/iterm-logo.webp"
               alt="folder"
@@ -200,7 +227,9 @@ export default function Folders({
         <div className={styles.marginBottom20}></div>
 
         <Draggable>
-          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)} id="games">
+          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)} id="games"
+          onTouchStart={handleTouchStart(openLinearGallery)}
+          >
             <img
               src="/images/customicons/gun.png"
               alt="folder"
@@ -216,7 +245,9 @@ export default function Folders({
         <div className={styles.marginBottom20}></div>
 
         <Draggable>
-          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)} id="folder">
+          <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)} id="folder"
+          onTouchStart={handleTouchStart(openFolderDocuments)}
+          >
             <img
               src="/images/folder.png"
               alt="folder"

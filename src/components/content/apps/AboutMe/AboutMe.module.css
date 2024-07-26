@@ -68,7 +68,7 @@
   font-size: 1.25rem;
 }
 
-.left_corner_button_img {
+.left_corner_button_close, .left_corner_button_maximize, .left_corner_button_minimize {
   margin-right: 10px;
 }
 
@@ -171,3 +171,14 @@
   width: 100%;
   margin-top: -0.8rem;
 }
+
+@media screen and (max-width: 668px) {
+  .left_corner_button_maximize, .left_corner_button_minimize {
+    visibility: hidden;
+  }
+
+  .left_corner_button_close {
+    width: 20px
+  }
+}
+

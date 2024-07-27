@@ -852,6 +852,7 @@ function App() {
           isHideBar={isHideBar}
           setIsValisMode={setIsValisMode}
           setIsHideBar={setIsHideBar}
+          setIsRestartTour={setIsOpen}
         />
 
         <Notes 

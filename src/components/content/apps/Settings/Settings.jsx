@@ -10,6 +10,7 @@ const Settings = forwardRef(({
     onStartDrag, 
     onStopDrag,
 
+    setIsRestartTour,
     setIsValisMode,
     setIsHideBar,
     isValisMode,
@@ -68,6 +69,12 @@ const Settings = forwardRef(({
                         <label className={styles.switch}>
                             <input type="checkbox" onChange={() => setIsHideBar(!isHideBar)} />
                             <span className={`${styles.slider} ${styles.round}`}></span>
+                        </label>
+                    </div>
+                    <div className={styles.option}>
+                        <div>Open Tour Guide</div>
+                        <label className={styles.switch}>
+                            <button onClick={() => setIsRestartTour(true)}>Open</button>
                         </label>
                     </div>
                 </div>

@@ -134,7 +134,7 @@ const Interviews = forwardRef(({
                             <p className={styles.left_li_text}>Makarrada$</p>
                             </li>
                         </ul>
-                        <h5 className={styles.menu_title}>Tags</h5>
+                        {/* <h5 className={styles.menu_title}>Tags</h5>
                         <ul className={styles.left_ul}>
                             <li className={styles.left_li}>
                                 <img
@@ -144,7 +144,7 @@ const Interviews = forwardRef(({
                                 />
                                 <p className={styles.left_li_text}>All Tags</p>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
                 <div className={styles.right_inner_wrapper}>

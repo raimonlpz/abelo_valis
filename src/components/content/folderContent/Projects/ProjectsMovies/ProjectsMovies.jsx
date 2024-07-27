@@ -56,6 +56,25 @@ const ProjectsMovies = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=4a0IE_gSMYI',
                 imdb: 'https://www.imdb.com/title/tt3169770'
             }
+        },
+        {
+            id: 3,
+            title: 'H',
+            subtitles: ['Documentary', '2022', '1h 7m'],
+            info: {
+                director: 'Carlos Pardo Ros',
+                stars: ['Abelo Valis, Itsaso Arana, Pedro Ladroga, Leonard Plattner'],
+                storyline: "On July 12th 1969, during the bull run of San Fermín, a bull killed H by goring him in the heart...",
+                release: 'April 15, 2022 (Switzerland)',
+                language: 'Spanish',
+                locations: "Pamplona, Navarra, Spain",
+                company: 'DVEIN Films'
+            },
+            imgs: ['/projects/movies/h1.png', '/projects/movies/h2.png', '/projects/movies/h3.png'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=C2SWRfdlEy4',
+                imdb: 'https://www.imdb.com/title/tt21228552'
+            }
         }
     ]
     
@@ -193,7 +212,7 @@ const ProjectsMovies = forwardRef(({
                             <p className={styles.left_li_text}>Makarrada$</p>
                             </li>
                         </ul>
-                        <h5 className={styles.menu_title}>Tags</h5>
+                        {/* <h5 className={styles.menu_title}>Tags</h5>
                         <ul className={styles.left_ul}>
                             <li className={styles.left_li}>
                                 <img
@@ -203,7 +222,7 @@ const ProjectsMovies = forwardRef(({
                                 />
                                 <p className={styles.left_li_text}>All Tags</p>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
                 <div className={styles.right_inner_wrapper}>
@@ -310,6 +329,10 @@ const ProjectsMovies = forwardRef(({
                                                 {project.info.company}
                                             </div>
                                     </div>
+                                </div>
+                                <div className={styles.panel_links_nav}>
+                                    <div onClick={changeProjectMinus}>&#8676; Anterior</div>
+                                    <div onClick={changeProjectPlus}>Siguiente &#8677;</div>
                                 </div>
                             </div>
                         </div>

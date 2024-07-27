@@ -129,8 +129,8 @@ const FolderDownloads = React.forwardRef(({
                   <p className={styles.left_li_text}>Documentos</p>
                 </li>
               </ul>
-              <h5 className={styles.menu_title}>Tags</h5>
-              <ul className={styles.left_ul}>
+              {/* <h5 className={styles.menu_title}>Tags</h5>
+              <ul className={styles.left_ul}> */}
                 {/* <li className={styles.left_li}>
                   <img
                     className={styles.blue_icon_img}
@@ -155,15 +155,15 @@ const FolderDownloads = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Green Tag</p>
                 </li> */}
-                <li className={styles.left_li}>
+                {/* <li className={styles.left_li}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/allTags.png"
                     alt="allTags"
                   />
                   <p className={styles.left_li_text}>All Tags</p>
-                </li>
-              </ul>
+                </li> 
+              </ul>*/}
             </div>
           </div>
           <div className={styles.right_inner_wrapper}>

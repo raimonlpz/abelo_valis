@@ -13,6 +13,7 @@ const FolderProjects = React.forwardRef(({
     openFolderProjectsVideoclips,
     openFolderProjectsMovies,
     openFolderProjectsTV,
+    openFolderProjectsShorts,
     //
     openFolderDownloads,
     openFolderDocuments,
@@ -130,8 +131,8 @@ const FolderProjects = React.forwardRef(({
                         <p className={styles.left_li_text}>Makarrada$</p>
                         </li>
                     </ul>
-                    <h5 className={styles.menu_title}>Tags</h5>
-                    <ul className={styles.left_ul}>
+                    {/* <h5 className={styles.menu_title}>Tags</h5>
+                    <ul className={styles.left_ul}> */}
                         {/* <li className={styles.left_li}>
                         <img
                             className={styles.blue_icon_img}
@@ -156,7 +157,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>Green Tag</p>
                         </li> */}
-                        <li className={styles.left_li}>
+                        {/* <li className={styles.left_li}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/allTags.png"
@@ -164,7 +165,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>All Tags</p>
                         </li>
-                    </ul>
+                    </ul> */}
                     </div>
                 </div>
                 <div className={styles.right_inner_wrapper}>
@@ -229,7 +230,7 @@ const FolderProjects = React.forwardRef(({
 
               <div className={styles.row}>
 
-                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('shorts')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('shorts')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsShorts}>
                     <img 
                       src="/images/folder.png" 
                       alt="folder" 

@@ -95,25 +95,6 @@ const ProjectsVideoclips = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=eNRoiM5NHYQ',
                 imdb: 'https://www.imdb.com/title/tt14336192'
             }
-        },
-        {
-            id: 5,
-            title: 'Pipiolas - Crying Mañana',
-            subtitles: ['Short Film', '2023', '17m'],
-            info: {
-                director: 'Juan Carlos Ballesteros',
-                stars: ['Abelo Valis, Paula Reyes, Adriana Ubani, Nicole Wallace...'],
-                storyline: "Paula and Adriana work at Banda Aparte, a prestigious production company...",
-                release: 'April 2023 (Spain)',
-                language: 'Spanish',
-                locations: 'Spain',
-                company: 'Elefant Records'
-            },
-            imgs: ['/projects/videoclips/pip1.png', '/projects/videoclips/pipi2.png', '/projects/videoclips/pipi3.png'],
-            links: {
-                youtube: 'https://www.youtube.com/watch?v=xpRDD3z6Hks',
-                imdb: ''
-            }
         }
     ]
     
@@ -251,7 +232,7 @@ const ProjectsVideoclips = forwardRef(({
                             <p className={styles.left_li_text}>Makarrada$</p>
                             </li>
                         </ul>
-                        <h5 className={styles.menu_title}>Tags</h5>
+                        {/* <h5 className={styles.menu_title}>Tags</h5>
                         <ul className={styles.left_ul}>
                             <li className={styles.left_li}>
                                 <img
@@ -261,7 +242,7 @@ const ProjectsVideoclips = forwardRef(({
                                 />
                                 <p className={styles.left_li_text}>All Tags</p>
                             </li>
-                        </ul>
+                        </ul> */}
                     </div>
                 </div>
                 <div className={styles.right_inner_wrapper}>
@@ -368,6 +349,10 @@ const ProjectsVideoclips = forwardRef(({
                                                 {project.info.company}
                                             </div>
                                     </div>
+                                </div>
+                                <div className={styles.panel_links_nav}>
+                                    <div onClick={changeProjectMinus}>&#8676; Anterior</div>
+                                    <div onClick={changeProjectPlus}>Siguiente &#8677;</div>
                                 </div>
                             </div>
                         </div>

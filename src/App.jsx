@@ -35,6 +35,7 @@ import ProjectsVideoclips from './components/content/folderContent/Projects/Proj
 import ProjectsMovies from './components/content/folderContent/Projects/ProjectsMovies/ProjectsMovies'
 import ProjectsTV from './components/content/folderContent/Projects/ProjectsTV/ProjectsTV'
 import { useTour } from '@reactour/tour'
+import ProjectsShorts from './components/content/folderContent/Projects/ProjectsShorts/ProjectsShorts'
 
 function App() {
 
@@ -50,6 +51,7 @@ function App() {
   const projectsMoviesFolderRef = useRef()
   const projectsTVFolderRef = useRef()
   const projectsVideoclipsFolderRef = useRef()
+  const projectsShortsFolderRef = useRef()
 
   const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
@@ -109,6 +111,7 @@ function App() {
   const [isFolderProjectsMoviesOpen, setIsFolderProjectsMoviesOpen] = useState(false)
   const [isFolderProjectsTVOpen, setIsFolderProjectsTVOpen] = useState(false)
   const [isFolderProjectsVideoclipsOpen, setIsFolderProjectsVideoclipsOpen] = useState(false)
+  const [isFolderProjectsShortsOpen, setIsFolderProjectsShortsOpen] = useState(false)
 
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
@@ -152,6 +155,7 @@ function App() {
       projectsMoviesFolderRef.current &&
       projectsTVFolderRef.current &&
       projectsVideoclipsFolderRef.current &&
+      projectsShortsFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current && 
@@ -175,6 +179,7 @@ function App() {
         projectsMoviesFolderRef.current,
         projectsTVFolderRef.current,
         projectsVideoclipsFolderRef.current,
+        projectsShortsFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current,
@@ -270,6 +275,18 @@ function App() {
     const closeFolderProjectsVideoclips = () => {
       setIsFolderProjectsVideoclipsOpen(false)
     } 
+
+    // Projects > Shorts 
+    const openFolderProjectsShorts = () => {
+      setIsFolderProjectsShortsOpen(true)
+      editZIndex('ProjectsShortsFolder')
+      unMinimizeApp(projectsShortsFolderRef)
+    }
+
+    const closeFolderProjectsShorts = () => {
+      setIsFolderProjectsShortsOpen(false)
+    }
+
 
   /**
    * GMaps
@@ -499,6 +516,9 @@ function App() {
       case 'ProjectsVideoclipsFolder':
           projectsVideoclipsFolderRef.current.style.zIndex = 2
           break
+      case 'ProjectsShortsFolder':
+          projectsShortsFolderRef.current.style.zIndex = 2
+          break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
         break
@@ -550,7 +570,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef || appRef === projectsTVFolderRef) {
+    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef || appRef === projectsTVFolderRef || appRef === projectsShortsFolderRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef ) {
@@ -671,6 +691,7 @@ function App() {
           openFolderProjectsVideoclips={openFolderProjectsVideoclips}
           openFolderProjectsMovies={openFolderProjectsMovies}
           openFolderProjectsTV={openFolderProjectsTV}
+          openFolderProjectsShorts={openFolderProjectsShorts}
           //
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads}
@@ -882,6 +903,24 @@ function App() {
           openCircGallery={openCircGallery}
           openFormations={openFormations}
           openAboutMe={openAboutMe}
+        />
+
+        <ProjectsShorts 
+             ref={projectsShortsFolderRef}
+             isFolderProjectsShortsOpen={isFolderProjectsShortsOpen}
+             closeFolderProjectsShorts={closeFolderProjectsShorts}
+             maximizeApp={() => maximizeApp(projectsShortsFolderRef)}  
+             minimizeApp={() => minimizeApp(projectsShortsFolderRef)}
+             onStartDrag={() => editZIndex('ProjectsShortsFolder')}
+             onStopDrag={onStopDrag}
+             //
+             openFolderProjects={openFolderProjects}
+             openFolderDocuments={openFolderDocuments}
+             openFolderDownloads={openFolderDownloads}
+             openMakarradas={openLinearGallery}
+             openCircGallery={openCircGallery}
+             openFormations={openFormations}
+             openAboutMe={openAboutMe}
         />
 
         <ProjectsTV 

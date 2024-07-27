@@ -14,6 +14,7 @@ const FolderProjects = React.forwardRef(({
     openFolderProjectsMovies,
     openFolderProjectsTV,
     openFolderProjectsShorts,
+    openFolderProjectsPubli,
     //
     openFolderDownloads,
     openFolderDocuments,
@@ -240,7 +241,7 @@ const FolderProjects = React.forwardRef(({
                     <span className={`${folderOnfocus === 'shorts' ? styles.selected : ''}`}>Cortos</span>
                   </div>
 
-                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('publi')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('publi')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsPubli}>
                     <img 
                       src="/images/folder.png" 
                       alt="folder" 

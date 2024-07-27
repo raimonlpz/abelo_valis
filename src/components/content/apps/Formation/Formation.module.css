@@ -84,10 +84,11 @@
 .formations h5 {
   font-size: 0.85rem;
   font-weight: 600;
+  font-family: monospace;
 }
 
 .formations div {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 300;
   margin-top: 1rem;
 }
@@ -101,4 +102,5 @@
 
 .formations div ul li span {
   font-weight: 600;
+  font-family: monospace;
 }

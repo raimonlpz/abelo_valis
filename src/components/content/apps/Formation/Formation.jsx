@@ -40,7 +40,7 @@ const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp,
                     </div>
                 </div>
                 <div className={styles.formations}>
-                    <h5>Formación:</h5>
+                    <h5>~ Formación </h5>
                     <div>
                         <ul>
                             <li><span style={{'color': '#54FFD5'}}>2022</span>: Taller "La memoria de los Objetos" impartido por Xavier Bobés.</li>

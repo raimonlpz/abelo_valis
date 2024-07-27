@@ -36,6 +36,7 @@ import ProjectsMovies from './components/content/folderContent/Projects/Projects
 import ProjectsTV from './components/content/folderContent/Projects/ProjectsTV/ProjectsTV'
 import { useTour } from '@reactour/tour'
 import ProjectsShorts from './components/content/folderContent/Projects/ProjectsShorts/ProjectsShorts'
+import ProjectsPubli from './components/content/folderContent/Projects/ProjectsPubli/ProjectsPubli'
 
 function App() {
 
@@ -52,6 +53,7 @@ function App() {
   const projectsTVFolderRef = useRef()
   const projectsVideoclipsFolderRef = useRef()
   const projectsShortsFolderRef = useRef()
+  const projectsPubliFolderRef = useRef()
 
   const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
@@ -112,6 +114,7 @@ function App() {
   const [isFolderProjectsTVOpen, setIsFolderProjectsTVOpen] = useState(false)
   const [isFolderProjectsVideoclipsOpen, setIsFolderProjectsVideoclipsOpen] = useState(false)
   const [isFolderProjectsShortsOpen, setIsFolderProjectsShortsOpen] = useState(false)
+  const [isFolderProjectsPubliOpen, setIsFolderProjectsPubliOpen] = useState(false)
 
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
 
@@ -156,6 +159,7 @@ function App() {
       projectsTVFolderRef.current &&
       projectsVideoclipsFolderRef.current &&
       projectsShortsFolderRef.current &&
+      projectsPubliFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current && 
@@ -180,6 +184,7 @@ function App() {
         projectsTVFolderRef.current,
         projectsVideoclipsFolderRef.current,
         projectsShortsFolderRef.current,
+        projectsPubliFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current,
@@ -285,6 +290,17 @@ function App() {
 
     const closeFolderProjectsShorts = () => {
       setIsFolderProjectsShortsOpen(false)
+    }
+
+    // Projects > Publi 
+    const openFolderProjectsPubli = () => {
+      setIsFolderProjectsPubliOpen(true)
+      editZIndex('ProjectsPubliFolder')
+      unMinimizeApp(projectsPubliFolderRef)
+    }
+
+    const closeFolderProjectsPubli = () => {
+      setIsFolderProjectsPubliOpen(false)
     }
 
 
@@ -519,6 +535,9 @@ function App() {
       case 'ProjectsShortsFolder':
           projectsShortsFolderRef.current.style.zIndex = 2
           break
+      case 'ProjectsPubliFolder':
+          projectsPubliFolderRef.current.style.zIndex = 2 
+          break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
         break
@@ -570,7 +589,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef || appRef === projectsTVFolderRef || appRef === projectsShortsFolderRef) {
+    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef || appRef === projectsTVFolderRef || appRef === projectsShortsFolderRef || appRef === projectsPubliFolderRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef ) {
@@ -692,6 +711,7 @@ function App() {
           openFolderProjectsMovies={openFolderProjectsMovies}
           openFolderProjectsTV={openFolderProjectsTV}
           openFolderProjectsShorts={openFolderProjectsShorts}
+          openFolderProjectsPubli={openFolderProjectsPubli}
           //
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads}
@@ -921,6 +941,25 @@ function App() {
              openCircGallery={openCircGallery}
              openFormations={openFormations}
              openAboutMe={openAboutMe}
+        />
+
+        <ProjectsPubli 
+            ref={projectsPubliFolderRef}
+            isFolderProjectsPubliOpen={isFolderProjectsPubliOpen}
+            closeFolderProjectsPubli={closeFolderProjectsPubli}
+            maximizeApp={() => maximizeApp(projectsPubliFolderRef)}  
+            minimizeApp={() => minimizeApp(projectsPubliFolderRef)}
+            onStartDrag={() => editZIndex('ProjectsPubliFolder')}
+            onStopDrag={onStopDrag}
+            //
+            openFolderProjects={openFolderProjects}
+            openFolderDocuments={openFolderDocuments}
+            openFolderDownloads={openFolderDownloads}
+            openMakarradas={openLinearGallery}
+            openCircGallery={openCircGallery}
+            openFormations={openFormations}
+            openAboutMe={openAboutMe}
+        
         />
 
         <ProjectsTV 

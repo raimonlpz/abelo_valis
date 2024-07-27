@@ -43,7 +43,7 @@ const ProjectsShorts = forwardRef(({
             title: 'Playing Tinieblas',
             subtitles: ['Short Film', '2020', '?'],
             info: {
-                director: 'CARLOS SAIZ',
+                director: 'Carlos Saiz',
                 stars: ['Abelo Valis, Milena Smit'],
                 storyline: "Milena y Abel van a tener un bebé. Desesperados por la idea de poder darle un buen futuro a las puertas de una nueva crisis, deciden atracar una pastelería aprovechando la Noche de Reyes.",
                 release: 'June 9, 2020 (Spain)',

@@ -146,20 +146,20 @@ body {
 }
 
 .reactour__popover div div button {
-  background: rgb(121, 9, 83);
+  background: rgb(210, 68, 163);
   background: linear-gradient(
     90deg,
-    rgba(121, 9, 83, 1) 47%,
-    rgba(0, 212, 255, 1) 100%
+    rgb(210, 68, 163) 47%,
+    rgb(255, 140, 0) 100%
   ) !important;
   border: none !important;
 }
 
 .reactour__popover span {
-  background: rgb(121, 9, 83);
+  background: rgb(210, 68, 163);
   background: linear-gradient(
     90deg,
-    rgba(121, 9, 83, 1) 47%,
-    rgba(0, 212, 255, 1) 100%
+    rgb(210, 68, 163) 47%,
+    rgb(255, 140, 0) 100%
   ) !important;
 }

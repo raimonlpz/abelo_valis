@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
-  width: 600px;
-  height: 490px;
+  width: 620px;
+  height: 520px;
   left: 30%;
   top: 80px;
   border-radius: 6px;
@@ -98,9 +98,18 @@
 }
 .formations div ul li {
   margin-top: 0.65rem;
+  font-family: monospace;
+  color: rgb(51, 255, 0);
+  font-size: 0.75rem;
 }
 
 .formations div ul li span {
   font-weight: 600;
   font-family: monospace;
+}
+
+.quote {
+  margin-top: 2rem;
+  font-family: monospace;
+  color: rgb(51, 255, 0);
 }

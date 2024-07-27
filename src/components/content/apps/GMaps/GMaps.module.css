@@ -93,3 +93,12 @@ GMaps
   margin-top: 0.5rem;
   overflow: hidden;
 }
+
+.postit {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  width: 180px;
+  height: 180px;
+  pointer-events: none;
+}

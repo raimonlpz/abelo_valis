@@ -61,7 +61,7 @@ export default function Folders({
             onTouchStart={handleTouchStart(openCircGallery)} id="photos"
             >
             <img
-              src="/images/folder.png"
+              src="/images/customicons/photos-icon.png"
               alt="folder"
               draggable="false"
               onTouchStart={handleTouchStart(openCircGallery)}
@@ -79,7 +79,7 @@ export default function Folders({
             onTouchStart={ handleTouchStart(openInterviews) }
             >
             <img
-              src="/images/folder.png"
+              src="/images/customicons/sys-info.png"
               alt="folder"
               draggable="false"
               onTouchStart={handleTouchStart(openInterviews)}
@@ -195,7 +195,7 @@ export default function Folders({
           onTouchStart={handleTouchStart(openFolderDownloads)}
           >
             <img
-              src="/images/folder.png"
+              src="/images/customicons/download-icon.webp"
               alt="folder"
               draggable="false"
               onTouchStart={handleTouchStart(openFolderDownloads)}

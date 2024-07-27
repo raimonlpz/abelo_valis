@@ -41,6 +41,8 @@ import ProjectsPubli from './components/content/folderContent/Projects/ProjectsP
 function App() {
 
   const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const [ isInit, setIsInit ] = useState(true)
+
   const { setIsOpen, currentStep } = useTour()
 
   const [appRefs, setAppRefs] = useState([])
@@ -197,8 +199,9 @@ function App() {
       ])
 
       // Tour
-      if (!isMobile) {
+      if (!isMobile && isInit) {
         setIsOpen(true);
+        setIsInit(false)
       }
     }
   }, [isAuth, isMobile]);

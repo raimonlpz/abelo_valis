@@ -52,6 +52,8 @@ const GMaps = forwardRef(({ isGMapsOpen, closeGMaps, maximizeApp, minimizeApp, o
                     src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=es&amp;q=Casco+Vello,+Vigo,+36202+Vigo,+Pontevedra&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                     ><a href="https://www.gps.ie/car-satnav-gps/">Sat Navs</a></iframe
                 >
+
+              <img src="/abelo/postit-maps.png" alt="Postit" className={styles.postit} />
           </div>
         </div>
     </Draggable>

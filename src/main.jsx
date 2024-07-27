@@ -48,7 +48,7 @@ const steps = [
   },
   {
     selector: '#ctas',
-    content: 'Y recuerda. Botón 🔴 para Cerrar. Botón 🟡 para Minimizar. ¡Ya puedes cerrarme! :) '
+    content: 'Y recuerda. Botón 🔴 para Cerrar. Botón 🟡 para Minimizar. El 🟢 no hace nada. ¡Ya puedes cerrarme! :) '
   }
 ]
 

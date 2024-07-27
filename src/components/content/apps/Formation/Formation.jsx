@@ -52,6 +52,8 @@ const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp,
                             <li><span style={{'color': '#94FFE0'}}>2015</span>: Autoría y libertad creativa en escena por Marco Layera. (Chile)</li>
                             <li><span style={{'color': '#FFB0B7'}}>2012-2013</span>: Curso de Interpretación en la Escuela de Ficción de Voz Audiovisual, con Marcos Orsi, Tacho Gonzalez, Antonio Mourelos, Chema Gagino, Fina Calleja, Ibon Uzkudun, Jorge Saavedra y Luis Iglesias</li>
                         </ul>
+                        
+                        <p className={styles.quote}>"Intento aprender de todo lo que me rodea, sobretodo de las cosas malas que les pasan a los demás"</p>
                     </div>
                 </div>
             </div>

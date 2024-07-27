@@ -165,7 +165,7 @@ const FolderDocuments = React.forwardRef(({
                   <span className={`${folderOnfocus === 'projects' ? styles.selected : ''}`}>Proyectos</span>
                 </div>
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('press')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openInterviews}>
-                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'press' ? styles.selectedIcon : ''}`} />
+                  <img src="/images/customicons/sys-info.png" alt="folder" className={`${folderOnfocus === 'press' ? styles.selectedIcon : ''} w-16`} />
                   <span className={`${folderOnfocus === 'press' ? styles.selected : ''}`}>Prensa</span>
                 </div>
                
@@ -175,7 +175,7 @@ const FolderDocuments = React.forwardRef(({
                 </div>
 
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('downloads')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderDownloads}>
-                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'downloads' ? styles.selectedIcon : ''}`} />
+                  <img src="/images/customicons/download-icon.webp" alt="folder" className={`${folderOnfocus === 'downloads' ? styles.selectedIcon : ''} w-16`} />
                   <span className={`${folderOnfocus === 'downloads' ? styles.selected : ''}`}>Descargas</span>
                 </div>
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('about')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openAboutMe}>
@@ -200,7 +200,7 @@ const FolderDocuments = React.forwardRef(({
 
 
                 <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('photos')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openCircGallery}>
-                  <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'photos' ? styles.selectedIcon : ''}`} />
+                  <img src="/images/customicons/photos-icon.png" alt="folder" className={`${folderOnfocus === 'photos' ? styles.selectedIcon : ''} w-20`} />
                   <span className={`${folderOnfocus === 'photos' ? styles.selected : ''}`}>Fotos</span>
                 </div>
 

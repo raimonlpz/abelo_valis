@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
   width: 500px;
-  height: 400px;
+  min-height: 400px; 
   left: 30%;
   top: 10px;
   border-radius: 6px;
@@ -12,17 +12,16 @@
   backdrop-filter: blur(81.5485px);
   -webkit-background-blend-mode: luminosity; /* Safari */
   -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.1),
+    0 5px 10px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.06),
+    0 20px 40px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-top: 20px;
-
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 4px 6px rgba(0, 0, 0, 0.1),
-    0 5px 10px rgba(0, 0, 0, 0.08), 0 10px 20px rgba(0, 0, 0, 0.06),
-    0 20px 40px rgba(0, 0, 0, 0.04);
-
-  transition: all 0.35s cubic-bezier(0.165, 0.84, 0.44, 1);
+  overflow: auto; 
 }
 
 .left_inner_wrapper {
@@ -37,16 +36,15 @@
   display: flex;
   position: relative;
 }
+
 .closeX,
 .miniX {
   display: none;
 }
 
-.left_corner_buttons:hover {
-  .closeX,
-  .miniX {
-    display: block;
-  }
+.left_corner_buttons:hover .closeX,
+.left_corner_buttons:hover .miniX {
+  display: block;
 }
 
 .closeX,
@@ -68,7 +66,7 @@
   font-size: 1.25rem;
 }
 
-.left_corner_button_img {
+.left_corner_button_close, .left_corner_button_maximize, .left_corner_button_minimize, .left_corner_button_img {
   margin-right: 10px;
 }
 
@@ -191,4 +189,53 @@ input:checked + .slider:before {
 .switch button:hover {
   background-color: white;
   color: black;
+}
+
+@media screen and (max-width: 668px) {
+  .left_corner_button_img {
+    width: 20px;
+  }
+
+  .left_corner_button_maximize, .left_corner_button_minimize {
+    display: none;
+  }
+
+  .left_corner_button_maximize, .left_corner_button_minimize {
+    display: none;
+  }
+
+  .wrapper {
+    width: 90vw;
+    height: auto;
+    left: 5%;
+    top: 5%;
+  }
+
+  .appTitle {
+    font-size: 0.65rem;
+  }
+
+  .settings div h6 {
+    font-size: 0.7rem;
+  }
+
+  .option div {
+    font-size: 0.7rem;
+  }
+
+  .switch {
+    width: 50px;
+    height: 20px;
+  }
+
+  .slider:before {
+    height: 16px;
+    width: 16px;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(18px);
+    -ms-transform: translateX(18px);
+    transform: translateX(18px);
+  }
 }

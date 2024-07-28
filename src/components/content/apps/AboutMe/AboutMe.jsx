@@ -1,19 +1,25 @@
-import React, { forwardRef, useState, useCallback } from 'react';
+import React, { forwardRef, useState, useCallback, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import styles from './AboutMe.module.css';
 import { getFullDateAndTime } from '../../../../utils/time';
 
 const AboutMe = forwardRef(({ isAboutMeOpen, closeAboutMe, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
-
-
-    const [currentDayTime, setCurrentTime] = useState(getFullDateAndTime())
+    const [currentDayTime, setCurrentTime] = useState(getFullDateAndTime());
 
     const getTime = useCallback(() => {
         const currentDayAndTime = getFullDateAndTime();
         setCurrentTime(currentDayAndTime);
-    }
-        , []);  
+    }, []);
 
+    useEffect(() => {
+        const interval = setInterval(getTime, 60000); // Update time every minute
+        return () => clearInterval(interval);
+    }, [getTime]);
+
+    const handleClose = (e) => {
+        e.stopPropagation();
+        closeAboutMe();
+    };
 
     return (
         <Draggable onStart={onStartDrag} onStop={onStopDrag}>
@@ -25,19 +31,22 @@ const AboutMe = forwardRef(({ isAboutMeOpen, closeAboutMe, maximizeApp, minimize
                 <div className={styles.left_inner_wrapper}>
                     <div className={styles.left_corner_buttons}>
                         <img
-                            onClick={closeAboutMe}
+                            onClick={handleClose}
+                            onTouchStart={handleClose}
                             className={styles.left_corner_button_close}
                             src="/images/icons/close.png"
                             alt="Close"
                         />
                         <img
                             onClick={minimizeApp}
+                            onTouchStart={minimizeApp}
                             className={styles.left_corner_button_minimize}
                             src="/images/icons/minimise.png"
                             alt="Minimize"
                         />
                         <img
                             onClick={maximizeApp}
+                            onTouchStart={maximizeApp}
                             className={styles.left_corner_button_maximize}
                             src="/images/icons/zoom.png"
                             alt="Maximize"
@@ -52,7 +61,7 @@ const AboutMe = forwardRef(({ isAboutMeOpen, closeAboutMe, maximizeApp, minimize
                         <span>{currentDayTime[0]}</span>
                         <span>{currentDayTime[1]}</span>
                     </div>
-                    
+
                     <div className={styles.title}>
                         <img src="/abelo/aboutMe.png" alt="About Me" />
                         <img src="/abelo/dni.png" alt="DNI" />
@@ -63,8 +72,9 @@ const AboutMe = forwardRef(({ isAboutMeOpen, closeAboutMe, maximizeApp, minimize
                             Con años de experiencia, me he convertido en un <span>referente en cada disciplina que toco</span>. La pasión y dedicación que pongo en todo lo que hago te garantizan una experiencia inigualable.
                             Si buscas excelencia y autenticidad, puedes confiar en mí para superar tus expectativas. <br /><span>Gracias por creer en el verdadero arte</span>.
                         </p>
+                        <div className={styles.gpt}>Con ayuda de <img src="/images/icons/chatgpt.webp" alt="ChatGPT" /></div>
+
                     </div>
-                    <div className={styles.gpt}>Con ayuda de <img src="/images/icons/chatgpt.webp" alt="ChatGPT" /></div>
                 </div>
             </div>
         </Draggable>

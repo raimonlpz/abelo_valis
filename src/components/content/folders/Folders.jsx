@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './Folders.module.css';
 import Draggable from 'react-draggable';
 import { isTouchDevice } from '../../../utils/isTouchDevice';
-
+import { useEffect } from 'react';
 export default function Folders({
   openFolderDocuments,
   openFolderDownloads,
@@ -15,11 +15,27 @@ export default function Folders({
   openVideobook
 }) {
 
+
+
   const [folderOnfocus, setFolderOnfocus] = React.useState(null);
   const [isTouched, setIsTouched] = useState(false);
 
+
+  useEffect(() => {
+    const handleTouchMove = (e) => {
+      if (isTouched) {
+        e.preventDefault();
+      }
+    };
+
+    window.addEventListener('touchmove', handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener('touchmove', handleTouchMove);
+    };
+  }, [isTouched]);
+
   const handleTouchStart = (callback) => (e) => {
-      e.preventDefault();
       if (!isTouched) {
           callback(); 
           setIsTouched(true);

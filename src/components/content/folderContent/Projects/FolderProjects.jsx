@@ -26,6 +26,11 @@ const FolderProjects = React.forwardRef(({
 }, ref) => {
     const [folderOnfocus, setFolderOnfocus] = useState(null)
 
+    const handleTouchStart = (callback) => (e) => {
+      e.preventDefault();
+      callback();
+    };
+
     return (
         <Draggable onStart={onStartDrag} onStop={onStopDrag}>
             <div
@@ -47,14 +52,14 @@ const FolderProjects = React.forwardRef(({
                         <img
                             onTouchStart={minimizeApp}
                             onClick={minimizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_minimize}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onTouchStart={maximizeApp}
                             onClick={maximizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_maximize}
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
@@ -64,7 +69,7 @@ const FolderProjects = React.forwardRef(({
                     <div className={styles.left_menu_wrapper}>
                     <h5 className={styles.menu_title}>Favoritos</h5>
                     <ul className={styles.left_ul}>
-                        <li className={styles.left_li} onClick={openFolderDocuments}>
+                        <li className={styles.left_li} onClick={openFolderDocuments} onTouchStart={handleTouchStart(openFolderDocuments)}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/cloud.png"
@@ -72,7 +77,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>Documentos</p>
                         </li>
-                        <li className={styles.left_li} onClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')}>
+                        <li className={styles.left_li} onClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')} onTouchStart={handleTouchStart(() => window.open('/files/AbeloValis_CV.pdf', '_blank'))}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/file.png"
@@ -80,7 +85,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>CV_2024</p>
                         </li>
-                        <li className={styles.left_li} onClick={openAboutMe}>
+                        <li className={styles.left_li} onClick={openAboutMe} onTouchStart={handleTouchStart(openAboutMe)}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/clock.png"
@@ -88,7 +93,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>Sobre Mi</p>
                         </li>
-                        <li className={styles.left_li} onClick={openFormations}>
+                        <li className={styles.left_li} onClick={openFormations} onTouchStart={handleTouchStart(openFormations)}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/file.png"
@@ -96,7 +101,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>Formación</p>
                         </li>
-                        <li className={styles.left_li} onClick={openInterviews}>
+                        <li className={styles.left_li} onClick={openInterviews} onTouchStart={handleTouchStart(openInterviews)}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/files.png"
@@ -104,7 +109,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>Prensa</p>
                         </li>
-                        <li className={styles.left_li} onClick={openCircGallery}>
+                        <li className={styles.left_li} onClick={openCircGallery} onTouchStart={handleTouchStart(openCircGallery)}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/folder.png"
@@ -112,7 +117,7 @@ const FolderProjects = React.forwardRef(({
                         />
                         <p className={styles.left_li_text}>Fotos</p>
                         </li>
-                        <li className={styles.left_li} onClick={openFolderDownloads}>
+                        <li className={styles.left_li} onClick={openFolderDownloads} onTouchStart={handleTouchStart(openFolderDownloads)}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/download.png"
@@ -123,7 +128,7 @@ const FolderProjects = React.forwardRef(({
                     </ul>
                     <h5 className={styles.menu_title}>iCloud</h5>
                     <ul className={styles.left_ul}>
-                        <li className={styles.left_li} onClick={openMakarradas}>
+                        <li className={styles.left_li} onClick={openMakarradas} onTouchStart={handleTouchStart(openMakarradas)}>
                         <img
                             className={styles.blue_icon_img}
                             src="/images/blueicons/star.png"
@@ -189,7 +194,7 @@ const FolderProjects = React.forwardRef(({
             </div>
             <div className={styles.right_inner_content}>
               <div className={styles.row}>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('pelis')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsMovies}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('pelis')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsMovies} onTouchStart={handleTouchStart(openFolderProjectsMovies)}>
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
@@ -198,7 +203,7 @@ const FolderProjects = React.forwardRef(({
                   />
                   <span className={`${folderOnfocus === 'pelis' ? styles.selected : ''}`}>Películas</span>
                 </div>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('series')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsTV}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('series')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsTV} onTouchStart={handleTouchStart(openFolderProjectsTV)}>
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
@@ -207,7 +212,7 @@ const FolderProjects = React.forwardRef(({
                   />
                   <span className={`${folderOnfocus === 'series' ? styles.selected : ''}`}>Series</span>
                 </div>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('musica')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('musica')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}} onTouchStart={handleTouchStart()}>
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
@@ -217,7 +222,7 @@ const FolderProjects = React.forwardRef(({
                   <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>Ropa & Objetos</span>
                 </div>
            
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videoclips')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsVideoclips}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videoclips')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsVideoclips} onTouchStart={handleTouchStart(openFolderProjectsVideoclips)}>
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 
@@ -231,7 +236,7 @@ const FolderProjects = React.forwardRef(({
 
               <div className={styles.row}>
 
-                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('shorts')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsShorts}>
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('shorts')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsShorts} onTouchStart={handleTouchStart(openFolderProjectsShorts)}>
                     <img 
                       src="/images/folder.png" 
                       alt="folder" 
@@ -241,7 +246,7 @@ const FolderProjects = React.forwardRef(({
                     <span className={`${folderOnfocus === 'shorts' ? styles.selected : ''}`}>Cortos</span>
                   </div>
 
-                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('publi')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsPubli}>
+                  <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('publi')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsPubli} onTouchStart={handleTouchStart(openFolderProjectsPubli)}>
                     <img 
                       src="/images/folder.png" 
                       alt="folder" 

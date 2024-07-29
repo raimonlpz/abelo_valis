@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
   width: 1000px;
-  height: 580px;
+  height: 650px;
   left: 30%;
   top: 80px;
   border-radius: 6px;
@@ -18,8 +18,10 @@
   background: rgba(13, 12, 12, 0.5);
   background-blend-mode: luminosity;
   backdrop-filter: blur(81.5485px);
-  -webkit-background-blend-mode: luminosity; /* Safari */
-  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  -webkit-background-blend-mode: luminosity;
+  /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px);
+  /* Safari */
   height: 100%;
   width: 200px;
   border-top-left-radius: 10px;
@@ -40,6 +42,7 @@
 }
 
 .left_corner_buttons:hover {
+
   .closeX,
   .miniX {
     display: block;
@@ -65,9 +68,10 @@
   font-size: 1.25rem;
 }
 
-.left_corner_button_img {
+.left_corner_button_img, .left_corner_button_maximize, .left_corner_button_minimize  {
   margin-right: 10px;
 }
+
 
 .menu_title {
   font-size: 12px;
@@ -146,7 +150,7 @@
   border-radius: 2.5px;
 }
 
-.right_top_bar_left > img {
+.right_top_bar_left>img {
   margin-right: 20px;
 }
 
@@ -159,7 +163,7 @@
   display: flex;
 }
 
-.right_top_bar_right > img {
+.right_top_bar_right>img {
   margin-left: 10px;
   height: 15px;
   width: 15px;
@@ -182,7 +186,7 @@
   align-items: center;
 }
 
-.folderWrapper > span {
+.folderWrapper>span {
   font-size: 12px;
   font-weight: bold;
   margin-top: 5px;
@@ -247,11 +251,12 @@
 .panel_title {
   margin-bottom: 1rem;
 }
+
 .panel_title h5 {
   font-size: 1.6rem;
   font-weight: bold;
-  line-height: 1.85rem;
 }
+
 .panel_title span {
   margin-right: 1rem;
   font-size: 0.85rem;
@@ -271,6 +276,7 @@
   border-radius: 5px;
   overflow: hidden;
 }
+
 .panel_main_photo img {
   width: 100%;
   height: 100%;
@@ -289,6 +295,7 @@
   display: flex;
   margin-top: 1rem;
 }
+
 .panel_gallery div:nth-child(2) img {
   width: 140px;
   height: 100%;
@@ -326,8 +333,173 @@
   padding: 0.15rem 0.75rem;
   border-radius: 10px;
 }
+
 .panel_links div:hover,
 .panel_links_nav div:hover {
   cursor: pointer;
   border: 1px solid rgb(125, 125, 125);
+}
+
+.panel_main_photo_mobile{
+    display: none;
+}
+
+@media screen and (max-width: 668px) {
+  .wrapper {
+    width: 100vw;
+    height: 85vh;
+    left: 0;
+    top: 0;
+    box-shadow: none;
+    flex-direction: row;
+  }
+
+  .left_inner_wrapper {
+    width: 30%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 10px;
+  }
+
+  .finder_panel_left {
+    display: none;
+  }
+  .panel_main_photo_mobile{
+    display:flex;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+  }
+
+  .finder_panel_right {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .right_inner_wrapper {
+    width: 70%;
+    height: 100%;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    overflow-y: auto;
+  }
+
+  .right_top_bar {
+    padding: 10px;
+  }
+
+  .right_inner_content {
+    padding: 10px;
+  }
+
+  .row {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .folderWrapper {
+    margin-bottom: 10px;
+  }
+
+  .left_corner_button_maximize,
+  .left_corner_button_minimize {
+    display: none;
+  }
+
+  .menu_title {
+    font-size: 0.7rem;
+  }
+
+  .left_li_text {
+    font-size: 0.7rem;
+  }
+
+  .left_ul {
+    padding: 0;
+  }
+
+  .right_top_bar_left>img {
+    margin-right: 10px;
+  }
+
+  .left_text {
+    font-size: 0.8rem;
+  }
+
+  .right_top_bar_right>img {
+    display: none;
+  }
+
+  .folderWrapper>span {
+    font-size: 0.7rem;
+  }
+
+  .file {
+    width: 40px;
+  }
+
+  .panel_links {
+    display: none;
+  }
+
+  .panel_title {
+    order: 1;
+    margin-bottom: 1rem;
+  }
+
+  .panel_main_photo {
+    order: 2;
+    width: 100%;
+    height: auto;
+    padding-right: 0;
+  }
+
+  .panel_gallery {
+    order: 3;
+    width: 100%;
+    height: auto;
+  }
+
+  .panel_gallery div:nth-child(2) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .panel_gallery div:nth-child(2) img {
+    width: 100px;
+    height: auto;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .panel_info,
+  .finder_table {
+    order: 4;
+  }
+
+  .panel_title h5 {
+    font-size: 1.2rem;
+  }
+
+  .panel_title span {
+    font-size: 0.75rem;
+  }
+
+  .panel_info {
+    font-size: 0.85rem;
+  }
+
+  .finder_cell {
+    padding: 4px 8px;
+  }
+
+  .panel_links_nav div {
+    padding: 0.1rem 0.5rem;
+  }
+
+  .finder_table {
+    width: 100%;
+  }
 }

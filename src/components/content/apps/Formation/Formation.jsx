@@ -3,6 +3,11 @@ import styles from './Formation.module.css'
 import Draggable from 'react-draggable'
  
 const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
+
+    const handleTouchStart = (callback) => (e) => {
+        e.preventDefault();
+        callback();
+    };
     return (
         <Draggable
             onStart={onStartDrag}
@@ -19,19 +24,20 @@ const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp,
                     <div className={styles.left_corner_buttons}>
                         <img
                             onClick={closeFormations}
+                            onTouchStart={handleTouchStart(closeFormations)}
                             className={styles.left_corner_button_img}
                             src="/images/icons/close.png"
                             alt="icns"
                         />
                         <img
                             onClick={minimizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_minimize}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onClick={maximizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_maximize}
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />

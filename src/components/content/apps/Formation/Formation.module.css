@@ -44,11 +44,9 @@
   display: none;
 }
 
-.left_corner_buttons:hover {
-  .closeX,
-  .miniX {
-    display: block;
-  }
+.left_corner_buttons:hover .closeX,
+.left_corner_buttons:hover .miniX {
+  display: block;
 }
 
 .closeX,
@@ -70,7 +68,8 @@
   font-size: 1.25rem;
 }
 
-.left_corner_button_img {
+
+.left_corner_button_img, .left_corner_button_maximize, .left_corner_button_minimize  {
   margin-right: 10px;
 }
 
@@ -96,6 +95,7 @@
 .formations div ul {
   list-style: georgian;
 }
+
 .formations div ul li {
   margin-top: 0.65rem;
   font-family: monospace;
@@ -112,4 +112,55 @@
   margin-top: 2rem;
   font-family: monospace;
   color: rgb(51, 255, 0);
+}
+
+@media screen and (max-width: 668px) {
+  .wrapper {
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    box-shadow: none;
+    flex-direction: row;
+  }
+
+  .left_inner_wrapper {
+    width: 15%;
+    height: 100%;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 10px;
+  }
+
+  .formations {
+    width: 70%;
+    height: 100%;
+    padding: 10px;
+  }
+
+  .formations h5 {
+    font-size: 0.7rem;
+  }
+
+  .formations div {
+    font-size: 0.8rem;
+  }
+
+  .formations div ul li {
+    font-size: 0.65rem;
+  }
+
+  .quote {
+    font-size: 0.7rem;
+  }
+
+  .left_corner_button_maximize,
+  .left_corner_button_minimize {
+    display: none;
+  }
+
+  .closeX,
+  .miniX {
+    display: none;
+  }
 }

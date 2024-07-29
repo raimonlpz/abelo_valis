@@ -111,7 +111,7 @@ const ProjectsPubli = forwardRef(({
                     <div className={styles.left_menu_wrapper}>
                         <h5 className={styles.menu_title}>Favoritos</h5>
                         <ul className={styles.left_ul}>
-                            <li className={styles.left_li} onClick={openFolderProjects}>
+                            <li className={styles.left_li} onClick={openFolderProjects}  onTouchStart={openFolderProjects}>
                                 <img
                                     className={styles.blue_icon_img}
                                     src="/images/blueicons/star.png"

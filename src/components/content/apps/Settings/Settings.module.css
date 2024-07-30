@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
   width: 500px;
-  min-height: 400px; 
+  min-height: 400px;
   left: 30%;
   top: 10px;
   border-radius: 6px;
@@ -21,7 +21,7 @@
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
   padding-top: 20px;
-  overflow: auto; 
+  overflow: auto;
 }
 
 .left_inner_wrapper {
@@ -66,7 +66,10 @@
   font-size: 1.25rem;
 }
 
-.left_corner_button_close, .left_corner_button_maximize, .left_corner_button_minimize, .left_corner_button_img {
+.left_corner_button_close,
+.left_corner_button_maximize,
+.left_corner_button_minimize,
+.left_corner_button_img {
   margin-right: 10px;
 }
 
@@ -196,11 +199,13 @@ input:checked + .slider:before {
     width: 20px;
   }
 
-  .left_corner_button_maximize, .left_corner_button_minimize {
+  .left_corner_button_maximize,
+  .left_corner_button_minimize {
     display: none;
   }
 
-  .left_corner_button_maximize, .left_corner_button_minimize {
+  .left_corner_button_maximize,
+  .left_corner_button_minimize {
     display: none;
   }
 

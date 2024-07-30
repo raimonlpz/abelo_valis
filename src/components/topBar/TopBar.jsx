@@ -72,18 +72,12 @@ const TopBar = (props) => {
 
   useEffect(() => {
     props.setSpotlightBtnRef(spotlightBtnRef);
-    controls.volume(volume / 100);
   }, []);
 
   useEffect(() => {
     const isFull = isFullScreen();
     toggleFullScreen(isFull);
   }, [winWidth, winHeight]);
-
-  const setAudioVolume = (value) => {
-    setVolume(value);
-    controls.volume(value / 100);
-  };
 
   const setSiteBrightness = (value) => {
     setBrightness(value);

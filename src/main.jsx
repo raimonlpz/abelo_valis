@@ -4,7 +4,6 @@ import App from './App.jsx'
 import './index.css'
 import { TourProvider } from '@reactour/tour'
 
-import "@unocss/reset/tailwind.css";
 import 'uno.css'
 
 

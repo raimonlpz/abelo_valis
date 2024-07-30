@@ -4,6 +4,7 @@ import { useInterval } from "../../hooks/useInterval";
 import { isFullScreen } from "../../utils/fullScreen";
 import { useStore } from "../../store";
 import Battery from "./Battery";
+import { useClickOutside } from "../../hooks/useClickOutside";
 
 const TopBarItem = forwardRef((props, ref) => {
   const hide = props.hideOnMobile ? "hidden sm:inline-flex" : "inline-flex";
@@ -81,23 +82,11 @@ const TopBar = (props) => {
 
   const setSiteBrightness = (value) => {
     setBrightness(value);
-  };
+  }
 
-  const toggleControlCenter = () => {
-    setState({
-      ...state,
-      showControlCenter: !state.showControlCenter,
-    });
-  };
-
-
-  const toggleWifiMenu = () => {
-    setState({
-      ...state,
-      showWifiMenu: !state.showWifiMenu,
-    });
-  };
-
+  useClickOutside(wifiBtnRef, props.toggleSpotlight, [wifiBtnRef]);
+  useClickOutside(spotlightBtnRef, props.toggleSpotlight, [spotlightBtnRef]);
+  useClickOutside(controlCenterBtnRef, props.toggleSpotlight, [controlCenterBtnRef]);
 
   return (
     <div
@@ -106,13 +95,13 @@ const TopBar = (props) => {
       } text-sm text-white bg-gray-700/10 backdrop-blur-2xl shadow transition`}
     >
      <div className="hstack flex-row justify-end space-x-2">
-        <TopBarItem hideOnMobile={true}>
+        <TopBarItem hideOnMobile={true} onClick={props.toggleSpotlight} >
             <Battery />
           </TopBarItem>
         <TopBarItem
           hideOnMobile={true}
           forceHover={state.showWifiMenu}
-          onClick={toggleWifiMenu}
+          onClick={props.toggleSpotlight}
           ref={wifiBtnRef}
         >
           {wifi ? (
@@ -126,14 +115,14 @@ const TopBar = (props) => {
         </TopBarItem>
         <TopBarItem
           forceHover={state.showControlCenter}
-          onClick={toggleControlCenter}
+          onClick={props.toggleSpotlight}
           ref={controlCenterBtnRef}
         >
           <CCMIcon size={16} />
         </TopBarItem>
 
-        <TopBarItem>
-          <span className="font-bold">{props.time}</span>
+        <TopBarItem onClick={props.toggleSpotlight} >
+          <span className="font-bold" id="clock">{props.time}</span>
         </TopBarItem>
       </div>
     </div>

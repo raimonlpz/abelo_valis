@@ -993,6 +993,7 @@ function App() {
           openFolderDocuments={openFolderDocuments}
           closeFolderDocuments={closeFolderDocuments}
         />
+
       </div>
 
       <MenuBar 

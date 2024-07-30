@@ -1,10 +1,5 @@
-import React, { useState, useRef, forwardRef, useEffect} from "react";
-import { useWindowSize } from "../../hooks/useWindowSize";
-import { useInterval } from "../../hooks/useInterval";
-import { isFullScreen } from "../../utils/fullScreen";
-import { useStore } from "../../store";
+import React, { useRef, forwardRef } from "react";
 import Battery from "./Battery";
-import { useClickOutside } from "../../hooks/useClickOutside";
 
 const TopBarItem = forwardRef((props, ref) => {
   const hide = props.hideOnMobile ? "hidden sm:inline-flex" : "inline-flex";
@@ -45,49 +40,6 @@ const TopBar = (props) => {
   const wifiBtnRef = useRef(null);
   const spotlightBtnRef = useRef(null);
 
-  const [state, setState] = useState({
-    date: new Date(),
-    showControlCenter: false,
-    showWifiMenu: false,
-    showAppleMenu: false,
-  });
-
-  const { winWidth, winHeight } = useWindowSize();
-
-  const { volume, wifi } = useStore((state) => ({
-    volume: state.volume,
-    wifi: state.wifi,
-  }));
-  const { toggleFullScreen, setVolume, setBrightness } = useStore((state) => ({
-    toggleFullScreen: state.toggleFullScreen,
-    setVolume: state.setVolume,
-    setBrightness: state.setBrightness,
-  }));
-
-  useInterval(() => {
-    setState({
-      ...state,
-      date: new Date(),
-    });
-  }, 60 * 1000);
-
-  useEffect(() => {
-    props.setSpotlightBtnRef(spotlightBtnRef);
-  }, []);
-
-  useEffect(() => {
-    const isFull = isFullScreen();
-    toggleFullScreen(isFull);
-  }, [winWidth, winHeight]);
-
-  const setSiteBrightness = (value) => {
-    setBrightness(value);
-  }
-
-  useClickOutside(wifiBtnRef, props.toggleSpotlight, [wifiBtnRef]);
-  useClickOutside(spotlightBtnRef, props.toggleSpotlight, [spotlightBtnRef]);
-  useClickOutside(controlCenterBtnRef, props.toggleSpotlight, [controlCenterBtnRef]);
-
   return (
     <div
       className={`w-full h-6 px-2 fixed top-0 hstack justify-between ${
@@ -100,21 +52,15 @@ const TopBar = (props) => {
           </TopBarItem>
         <TopBarItem
           hideOnMobile={true}
-          forceHover={state.showWifiMenu}
           onClick={props.toggleSpotlight}
           ref={wifiBtnRef}
         >
-          {wifi ? (
             <span className="i-material-symbols:wifi text-lg" />
-          ) : (
-            <span className="i-material-symbols:wifi-off text-lg" />
-          )}
         </TopBarItem>
         <TopBarItem ref={spotlightBtnRef} onClick={props.toggleSpotlight}>
           <span className="i-bx:search text-[17px]" />
         </TopBarItem>
         <TopBarItem
-          forceHover={state.showControlCenter}
           onClick={props.toggleSpotlight}
           ref={controlCenterBtnRef}
         >

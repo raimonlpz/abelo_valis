@@ -47,27 +47,29 @@ const TopBar = (props) => {
       } text-sm text-white bg-gray-700/10 backdrop-blur-2xl shadow transition`}
     >
      <div className="hstack flex-row justify-end space-x-2">
-        <TopBarItem hideOnMobile={true} onClick={props.toggleSpotlight} >
+        <TopBarItem hideOnMobile={true} onClick={props.toggleSpotlight} className="cursor-pointer" >
             <Battery />
           </TopBarItem>
         <TopBarItem
           hideOnMobile={true}
           onClick={props.toggleSpotlight}
           ref={wifiBtnRef}
+          className="cursor-pointer"
         >
             <span className="i-material-symbols:wifi text-lg" />
         </TopBarItem>
-        <TopBarItem ref={spotlightBtnRef} onClick={props.toggleSpotlight}>
+        <TopBarItem ref={spotlightBtnRef} onClick={props.toggleSpotlight} className="cursor-pointer">
           <span className="i-bx:search text-[17px]" />
         </TopBarItem>
         <TopBarItem
+        className="cursor-pointer"
           onClick={props.toggleSpotlight}
           ref={controlCenterBtnRef}
         >
           <CCMIcon size={16} />
         </TopBarItem>
 
-        <TopBarItem onClick={props.toggleSpotlight} >
+        <TopBarItem onClick={props.toggleSpotlight} className="cursor-pointer">
           <span className="font-bold" id="clock">{props.time}</span>
         </TopBarItem>
       </div>

@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect } from 'react'
 import { getDayAndTime } from '../../utils/time'
 import TopBar from '../topBar/TopBar'
 
-export default function StatusBar({ toggleAppleMenu }) {
+export default function StatusBar({ toggleAppleMenu, toggleLateralBar }) {
     const [currentTime, setCurrentTime] = useState(getDayAndTime())
 
     const getTime = useCallback(() => {
@@ -63,7 +63,7 @@ export default function StatusBar({ toggleAppleMenu }) {
         <div className={styles.right_ul}>
           <TopBar
             title={''}
-            toggleSpotlight={() => {}}
+            toggleSpotlight={toggleLateralBar}
             hide={false}
             setSpotlightBtnRef={() => {}}
             time={currentTime}

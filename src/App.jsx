@@ -37,6 +37,7 @@ import ProjectsTV from './components/content/folderContent/Projects/ProjectsTV/P
 import { useTour } from '@reactour/tour'
 import ProjectsShorts from './components/content/folderContent/Projects/ProjectsShorts/ProjectsShorts'
 import ProjectsPubli from './components/content/folderContent/Projects/ProjectsPubli/ProjectsPubli'
+import RightBar from './components/rightBar/RightBar'
 
 function App() {
 
@@ -119,6 +120,7 @@ function App() {
   const [isFolderProjectsPubliOpen, setIsFolderProjectsPubliOpen] = useState(false)
 
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
+  const [rightBarOpened, setRightBarOpened] = useState(false) 
 
   /**
    * Apps
@@ -214,6 +216,10 @@ function App() {
   const closeAppleMenu = () => {
     if (isAppleMenuOpen) {
       setIsAppleMenuOpen(false)
+    }
+
+    if (rightBarOpened) {
+      setRightBarOpened(false)
     }
   }
 
@@ -648,7 +654,7 @@ function App() {
       <source src="/videos/reel2.mp4" type="video/mp4" />
     </video>
 
-      <StatusBar toggleAppleMenu={toggleAppleMenu} />
+      <StatusBar toggleAppleMenu={toggleAppleMenu} toggleLateralBar={() => setRightBarOpened(!rightBarOpened)} />
       {showNotification && <Notification onClose={handleCloseNotification} />}
 
       <div className="inner_wrapper md:t-20 lg:pt-0" onClick={closeAppleMenu}>
@@ -1009,6 +1015,9 @@ function App() {
         openAgenda={openAgenda}
         isHideBar={isHideBar}
       />
+
+
+      <RightBar rightBarOpened={rightBarOpened} />
     </div>
 
     {isValisMode && <ValisMode /> }

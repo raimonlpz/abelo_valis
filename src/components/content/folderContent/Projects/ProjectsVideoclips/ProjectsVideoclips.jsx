@@ -126,6 +126,12 @@ const ProjectsVideoclips = forwardRef(({
         setMainImg(data[indexProject].imgs[0])
     }, [indexProject])
 
+
+    const handleTouchStart = (callback) => (e) => {
+        e.preventDefault();
+        callback();
+    };
+
     return (
         <Draggable
             onStart={onStartDrag}
@@ -142,19 +148,20 @@ const ProjectsVideoclips = forwardRef(({
                     <div className={styles.left_corner_buttons}>
                         <img
                             onClick={closeFolderProjectsVideoclips}
+                            onTouchStart={closeFolderProjectsVideoclips}
                             className={styles.left_corner_button_img}
                             src="/images/icons/close.png"
                             alt="icns"
                         />
                         <img
                             onClick={minimizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_minimize}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onClick={maximizeApp}
-                            className={styles.left_corner_button_img}
+                            className={styles.left_corner_button_maximize}
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
@@ -164,7 +171,7 @@ const ProjectsVideoclips = forwardRef(({
                     <div className={styles.left_menu_wrapper}>
                         <h5 className={styles.menu_title}>Favoritos</h5>
                         <ul className={styles.left_ul}>
-                            <li className={styles.left_li} onClick={openFolderProjects}>
+                            <li className={styles.left_li} onClick={openFolderProjects} onTouchStart={openFolderProjects}>
                                 <img
                                     className={styles.blue_icon_img}
                                     src="/images/blueicons/star.png"
@@ -267,8 +274,8 @@ const ProjectsVideoclips = forwardRef(({
                         <div className={styles.finder_panel}>
                             <div className={styles.finder_panel_left}>
                                 <div className={styles.panel_links}>
-                                    <div onClick={() => window.open(project.links.youtube)}>Youtube</div>
-                                    <div onClick={() => window.open(project.links.imdb)}>IMDB</div>
+                                <div onClick={() => window.open(project.links.youtube)} onTouchStart={handleTouchStart(() => window.open(project.links.youtube))}>Youtube</div>
+                                    <div onClick={() => window.open(project.links.imdb)} onTouchStart={handleTouchStart(() => window.open(project.links.imdb))}>IMDB</div>
                                 </div>
                                 <div className={styles.panel_main_photo}>
                                     <img src={mainImg} alt="" />
@@ -278,15 +285,18 @@ const ProjectsVideoclips = forwardRef(({
                                         Más Fotos
                                     </div>
                                     <div>
-                                        <img src={project.imgs[0]} alt="" onClick={() => setMainImg(project.imgs[0])} />
-                                        <img src={project.imgs[1]} alt="" onClick={() => setMainImg(project.imgs[1])} />
-                                        <img src={project.imgs[2]} alt="" onClick={() => setMainImg(project.imgs[2])} />
+                                    <img src={project.imgs[0]} alt="" onClick={() => setMainImg(project.imgs[0])} onTouchStart={handleTouchStart(() => setMainImg(project.imgs[0]))} />
+                                        <img src={project.imgs[1]} alt="" onClick={() => setMainImg(project.imgs[1])} onTouchStart={handleTouchStart(() => setMainImg(project.imgs[1]))} />
+                                        <img src={project.imgs[2]} alt="" onClick={() => setMainImg(project.imgs[2])} onTouchStart={handleTouchStart(() => setMainImg(project.imgs[2]))} />
                                     </div>
                                 </div>
                             </div>
                             <div className={styles.finder_panel_right}>
                                 <div className={styles.panel_title}>
                                     <h5>{project.title}</h5>
+                                    <div className={styles.panel_main_photo_mobile}>
+                                        <img src={mainImg} alt="" />
+                                    </div>
                                     <span>{project.subtitles[0]}</span>
                                     <span>{project.subtitles[1]}</span>
                                     <span>{project.subtitles[2]}</span>
@@ -351,8 +361,8 @@ const ProjectsVideoclips = forwardRef(({
                                     </div>
                                 </div>
                                 <div className={styles.panel_links_nav}>
-                                    <div onClick={changeProjectMinus}>&#8676; Anterior</div>
-                                    <div onClick={changeProjectPlus}>Siguiente &#8677;</div>
+                                <div onClick={changeProjectMinus} onTouchStart={handleTouchStart(changeProjectMinus)}>&#8676; Anterior</div>
+                                    <div onClick={changeProjectPlus} onTouchStart={handleTouchStart(changeProjectPlus)}>Siguiente &#8677;</div>
                                 </div>
                             </div>
                         </div>

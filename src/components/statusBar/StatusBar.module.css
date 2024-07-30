@@ -65,6 +65,7 @@
   align-items: center;
   list-style: none;
   height: 100%;
+  width: 260px;
 }
 
 .right_ul > li {

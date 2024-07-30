@@ -38,6 +38,7 @@ import { useTour } from '@reactour/tour'
 import ProjectsShorts from './components/content/folderContent/Projects/ProjectsShorts/ProjectsShorts'
 import ProjectsPubli from './components/content/folderContent/Projects/ProjectsPubli/ProjectsPubli'
 import RightBar from './components/rightBar/RightBar'
+import ProjectsMerch from './components/content/folderContent/Projects/ProjectsMerch/ProjectsMerch'
 
 function App() {
 
@@ -57,6 +58,7 @@ function App() {
   const projectsVideoclipsFolderRef = useRef()
   const projectsShortsFolderRef = useRef()
   const projectsPubliFolderRef = useRef()
+  const projectsMerchFolderRef = useRef()
 
   const linearGalleryAppRef = useRef()
   const circGalleryAppRef = useRef()
@@ -118,6 +120,7 @@ function App() {
   const [isFolderProjectsVideoclipsOpen, setIsFolderProjectsVideoclipsOpen] = useState(false)
   const [isFolderProjectsShortsOpen, setIsFolderProjectsShortsOpen] = useState(false)
   const [isFolderProjectsPubliOpen, setIsFolderProjectsPubliOpen] = useState(false)
+  const [isFolderProjectsMerchOpen, setIsFolderProjectsMerchOpen] = useState(false)
 
   const [isAppleMenuOpen, setIsAppleMenuOpen] = useState(false)
   const [rightBarOpened, setRightBarOpened] = useState(false) 
@@ -164,6 +167,7 @@ function App() {
       projectsVideoclipsFolderRef.current &&
       projectsShortsFolderRef.current &&
       projectsPubliFolderRef.current &&
+      projectsMerchFolderRef.current &&
       sketchAppRef.current &&
       gmapsAppRef.current &&
       musicAppRef.current && 
@@ -189,6 +193,7 @@ function App() {
         projectsVideoclipsFolderRef.current,
         projectsShortsFolderRef.current,
         projectsPubliFolderRef.current,
+        projectsMerchFolderRef.current,
         sketchAppRef.current,
         gmapsAppRef.current,
         musicAppRef.current,
@@ -312,6 +317,17 @@ function App() {
       setIsFolderProjectsPubliOpen(false)
     }
 
+    // Projects > Merch 
+    const openFolderProjectsMerch = () => {
+      console.log('hola?')
+      setIsFolderProjectsMerchOpen(true)
+      editZIndex('ProjectsMerchFolder')
+      unMinimizeApp(projectsMerchFolderRef)
+    }
+
+    const closeFolderProjectsMerch = () => {
+      setIsFolderProjectsMerchOpen(false)
+    }
 
   /**
    * GMaps
@@ -547,6 +563,9 @@ function App() {
       case 'ProjectsPubliFolder':
           projectsPubliFolderRef.current.style.zIndex = 2 
           break
+      case 'ProjectsMerchFolder':
+          projectsMerchFolderRef.current.style.zIndex = 2 
+          break
       case 'Sketch':
         sketchAppRef.current.style.zIndex = 2
         break
@@ -598,7 +617,7 @@ function App() {
   }
 
   const minimizeApp = (appRef) => {
-    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef || appRef === projectsTVFolderRef || appRef === projectsShortsFolderRef || appRef === projectsPubliFolderRef) {
+    if (appRef === downloadFolderRef || appRef === documentFolderRef || appRef === projectsFolderRef || appRef === interviewsAppRef || appRef === trashAppRef || appRef === projectsVideoclipsFolderRef || appRef === projectsMoviesFolderRef || appRef === projectsTVFolderRef || appRef === projectsShortsFolderRef || appRef === projectsPubliFolderRef || appRef === projectsMerchFolderRef) {
       appRef.current.style.top = 'calc(100vh - 370px)';
       appRef.current.style.left = '62%'
     } else if (appRef === circGalleryAppRef || appRef === linearGalleryAppRef ) {
@@ -721,6 +740,7 @@ function App() {
           openFolderProjectsTV={openFolderProjectsTV}
           openFolderProjectsShorts={openFolderProjectsShorts}
           openFolderProjectsPubli={openFolderProjectsPubli}
+          openFolderProjectsMerch={openFolderProjectsMerch}
           //
           openFolderDocuments={openFolderDocuments}
           openFolderDownloads={openFolderDownloads}
@@ -988,6 +1008,25 @@ function App() {
           openCircGallery={openCircGallery}
           openFormations={openFormations}
           openAboutMe={openAboutMe}
+        />
+
+
+        <ProjectsMerch 
+          ref={projectsMerchFolderRef}
+          isFolderProjectsMerchOpen={isFolderProjectsMerchOpen}
+                  closeFolderProjectsMerch={closeFolderProjectsMerch}
+                  maximizeApp={() => maximizeApp(projectsMerchFolderRef)}
+                  minimizeApp={() => minimizeApp(projectsMerchFolderRef)}
+                  onStartDrag={() => editZIndex('ProjectsMerchFolder')}
+                  onStopDrag={onStopDrag}
+                    //
+                  openFolderProjects={openFolderProjects}
+                  openFolderDocuments={openFolderDocuments}
+                  openFolderDownloads={openFolderDownloads}
+                  openMakarradas={openLinearGallery}
+                  openCircGallery={openCircGallery}
+                  openFormations={openFormations}
+                  openAboutMe={openAboutMe}
         />
 
         <AppleMenu 

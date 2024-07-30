@@ -15,6 +15,7 @@ const FolderProjects = React.forwardRef(({
     openFolderProjectsTV,
     openFolderProjectsShorts,
     openFolderProjectsPubli,
+    openFolderProjectsMerch,
     //
     openFolderDownloads,
     openFolderDocuments,
@@ -212,7 +213,7 @@ const FolderProjects = React.forwardRef(({
                   />
                   <span className={`${folderOnfocus === 'series' ? styles.selected : ''}`}>Series</span>
                 </div>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('musica')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => {}} onTouchStart={handleTouchStart()}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('musica')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsMerch} onTouchStart={handleTouchStart(openFolderProjectsMerch)}>
                   <img 
                     src="/images/folder.png" 
                     alt="folder" 

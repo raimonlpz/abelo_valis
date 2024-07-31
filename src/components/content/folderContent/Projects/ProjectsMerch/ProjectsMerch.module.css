@@ -1,7 +1,7 @@
 .wrapper {
   position: absolute;
   width: 1000px;
-  height: 580px;
+  height: 650px;
   left: 30%;
   top: 80px;
   border-radius: 6px;
@@ -186,10 +186,6 @@
   align-items: center;
 }
 
-.folderWrapper:hover {
-  cursor: pointer;
-}
-
 .folderWrapper > span {
   font-size: 12px;
   font-weight: bold;
@@ -346,18 +342,6 @@
 
 .panel_main_photo_mobile {
   display: none;
-}
-
-.selected {
-  background-color: rgb(29, 85, 255);
-  color: white;
-  padding: 0.1rem 0.4rem;
-  border-radius: 3%;
-}
-
-.selectedIcon {
-  background-color: rgba(158, 158, 158, 0.327);
-  border-radius: 5px;
 }
 
 @media screen and (max-width: 668px) {

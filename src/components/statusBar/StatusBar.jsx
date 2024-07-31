@@ -2,8 +2,9 @@ import React from 'react'
 import styles from './StatusBar.module.css'
 import { useState, useCallback, useEffect } from 'react'
 import { getDayAndTime } from '../../utils/time'
+import TopBar from '../topBar/TopBar'
 
-export default function StatusBar({ toggleAppleMenu }) {
+export default function StatusBar({ toggleAppleMenu, toggleLateralBar }) {
     const [currentTime, setCurrentTime] = useState(getDayAndTime())
 
     const getTime = useCallback(() => {
@@ -58,32 +59,16 @@ export default function StatusBar({ toggleAppleMenu }) {
         </ul>
       </div>
       <div className={styles.wrapper_inner_right}>
-        <ul className={styles.right_ul}>
-          <li>
-            <img src="/images/statusicons/1.png" alt="s1" />
-          </li>
-          <li>
-            <img src="/images/statusicons/2.png" alt="s2" />
-          </li>
-          <li>
-            <img src="/images/statusicons/3.png" alt="s3" />
-          </li>
-          <li>
-            <img src="/images/statusicons/4.png" alt="s4" />
-          </li>
-          <li>
-            <img src="/images/statusicons/5.png" alt="s5" />
-          </li>
-          <li>
-            <img src="/images/statusicons/6.png" alt="s6" />
-          </li>
-          <li>
-            <img src="/images/statusicons/7.png" alt="s7" />
-          </li>
-          <li id="clock">
-            <span className={styles.date}>{currentTime}</span>
-          </li>
-        </ul>
+        
+        <div className={styles.right_ul}>
+          <TopBar
+            title={''}
+            toggleSpotlight={toggleLateralBar}
+            hide={false}
+            setSpotlightBtnRef={() => {}}
+            time={currentTime}
+          />
+        </div>
       </div>
     </div>
 

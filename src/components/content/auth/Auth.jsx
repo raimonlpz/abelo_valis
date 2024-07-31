@@ -1,10 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react'
 import styles from './Auth.module.css'
 import { getFullDateAndTime } from '../../../utils/time'
+import Boot from './Booth';
 
 export default function Auth({ onSignin }) {
-
+ const [booting, setBooting] = useState(true);
  const [currentDayTime, setCurrentTime] = useState(getFullDateAndTime())
+
  const wrapperRef = useRef()
 
  const getTime = useCallback(() => {
@@ -27,6 +29,10 @@ export default function Auth({ onSignin }) {
     setTimeout(() => {
         onSignin()
     }, 850);
+ }
+
+ if (booting) {
+  return <Boot className={styles.wrapper} restart={() => {}} sleep={false} setBooting={setBooting} />;
  }
 
   return (

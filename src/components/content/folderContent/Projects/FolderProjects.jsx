@@ -3,26 +3,27 @@ import styles from './FolderProjects.module.css'
 import Draggable from 'react-draggable';
 
 const FolderProjects = React.forwardRef(({
-  isFolderProjectsOpen,
-  closeFolderProjects,
-  maximizeApp,
-  minimizeApp,
-  onStartDrag,
-  onStopDrag,
-  //
-  openFolderProjectsVideoclips,
-  openFolderProjectsMovies,
-  openFolderProjectsTV,
-  openFolderProjectsShorts,
-  openFolderProjectsPubli,
-  //
-  openFolderDownloads,
-  openFolderDocuments,
-  openMakarradas,
-  openCircGallery,
-  openInterviews,
-  openFormations,
-  openAboutMe
+    isFolderProjectsOpen, 
+    closeFolderProjects, 
+    maximizeApp, 
+    minimizeApp, 
+    onStartDrag, 
+    onStopDrag,
+    //
+    openFolderProjectsVideoclips,
+    openFolderProjectsMovies,
+    openFolderProjectsTV,
+    openFolderProjectsShorts,
+    openFolderProjectsPubli,
+    openFolderProjectsMerch,
+    //
+    openFolderDownloads,
+    openFolderDocuments,
+    openMakarradas,
+    openCircGallery,
+    openInterviews,
+    openFormations,
+    openAboutMe
 }, ref) => {
   const [folderOnfocus, setFolderOnfocus] = useState(null)
 

@@ -1,6 +1,8 @@
 import React, { forwardRef } from 'react';
 import styles from './Settings.module.css';
 import Draggable from 'react-draggable';
+import { enterFullScreen, exitFullScreen } from '../../../../utils/fullScreen';
+import { useState } from 'react';
 
 const Settings = forwardRef(({
     isSettingsOpen,
@@ -16,6 +18,8 @@ const Settings = forwardRef(({
     isValisMode,
     isHideBar
 }, ref) => {
+
+    const [isFullscreen, setIsFullscreen] = useState(false);
 
     const handleClose = (e) => {
         e.stopPropagation();
@@ -35,6 +39,17 @@ const Settings = forwardRef(({
     const handleRestartTour = (e) => {
         e.stopPropagation();
         setIsRestartTour(true);
+    };
+
+
+    const enterFullScreenHandler = () => {
+        setIsFullscreen(true);
+        enterFullScreen()
+    };
+
+    const exitFullScreenHandler = () => {
+        setIsFullscreen(false);
+        exitFullScreen()
     };
 
     return (
@@ -98,7 +113,18 @@ const Settings = forwardRef(({
                             </label>
                         </div>
                         <div className={styles.option}>
-                            <div>Open Tour Guide</div>
+                            <div>Fullscreen</div>
+                            <label>
+                                {!isFullscreen && (
+                                    <button onClick={enterFullScreenHandler}><span className="i-bi:fullscreen text-base filter invert brightness-0" /></button>
+                                )}
+                                {isFullscreen && (
+                                    <button onClick={exitFullScreenHandler}><span className="i-bi:fullscreen-exit text-base filter invert brightness-0" /></button>
+                                )}
+                            </label>
+                        </div>
+                        <div className={styles.option}>
+                            <div>Restart Tour Guide</div>
                             <label className={styles.switch}>
                                 <button onClick={handleRestartTour} onTouchStart={handleRestartTour}>Open</button>
                             </label>

@@ -128,7 +128,7 @@ const ProjectsShorts = forwardRef(({
                          <div className={styles.miniX}>-</div>
                     </div>
                     <div className={styles.left_menu_wrapper}>
-                        <h5 className={styles.menu_title}>Favoritos</h5>
+                    <h5 className={styles.menu_title}>Favoritos</h5>
                         <ul className={styles.left_ul}>
                             <li className={styles.left_li} onClick={openFolderProjects} onTouchStart={handleTouchStart(openFolderProjects)}>
                                 <img
@@ -138,7 +138,7 @@ const ProjectsShorts = forwardRef(({
                                 />
                                 <p className={styles.left_li_text}>Proyectos</p>
                             </li>
-                            <li className={styles.left_li} onClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')}>
+                            <li className={styles.left_li} onClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')} onTouchStart={handleTouchStart(() => window.open('/files/AbeloValis_CV.pdf', '_blank'))}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/file.png"
@@ -146,7 +146,7 @@ const ProjectsShorts = forwardRef(({
                             />
                             <p className={styles.left_li_text}>CV_2024</p>
                             </li>
-                            <li className={styles.left_li} onClick={openAboutMe}>
+                            <li className={styles.left_li} onClick={openAboutMe} onTouchStart={handleTouchStart(openAboutMe)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/clock.png"
@@ -154,7 +154,7 @@ const ProjectsShorts = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Sobre Mi</p>
                             </li>
-                            <li className={styles.left_li} onClick={openFormations}>
+                            <li className={styles.left_li} onClick={openFormations} onTouchStart={handleTouchStart(openFormations)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/file.png"
@@ -162,7 +162,7 @@ const ProjectsShorts = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Formación</p>
                             </li>
-                            <li className={styles.left_li} onClick={openFolderDocuments}>
+                            <li className={styles.left_li} onClick={openFolderDocuments} onTouchStart={handleTouchStart(openFolderDocuments)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/files.png"
@@ -170,7 +170,7 @@ const ProjectsShorts = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Documentos</p>
                             </li>
-                            <li className={styles.left_li} onClick={openCircGallery}>
+                            <li className={styles.left_li} onClick={openCircGallery} onTouchStart={handleTouchStart(openCircGallery)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/folder.png"
@@ -178,7 +178,7 @@ const ProjectsShorts = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Fotos</p>
                             </li>
-                            <li className={styles.left_li} onClick={openFolderDownloads}>
+                            <li className={styles.left_li} onClick={openFolderDownloads} onTouchStart={handleTouchStart(openFolderDownloads)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/download.png"
@@ -189,7 +189,7 @@ const ProjectsShorts = forwardRef(({
                         </ul>
                         <h5 className={styles.menu_title}>iCloud</h5>
                         <ul className={styles.left_ul}>
-                            <li className={styles.left_li} onClick={openMakarradas}>
+                            <li className={styles.left_li} onClick={openMakarradas} onTouchStart={handleTouchStart(openMakarradas)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/cloud.png"

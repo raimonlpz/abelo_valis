@@ -3,11 +3,11 @@ import styles from './FolderDocuments.module.css';
 import Draggable from 'react-draggable';
 
 const FolderDocuments = forwardRef(({
-  isFolderDocumentsOpen, 
-  closeFolderDocuments, 
-  maximizeApp, 
-  minimizeApp, 
-  onStartDrag, 
+  isFolderDocumentsOpen,
+  closeFolderDocuments,
+  maximizeApp,
+  minimizeApp,
+  onStartDrag,
   onStopDrag,
   openFolderProjects,
   openFolderDownloads,
@@ -28,7 +28,7 @@ const FolderDocuments = forwardRef(({
   return (
     <Draggable onStart={onStartDrag} onStop={onStopDrag}>
       <div
-        ref={ref}   
+        ref={ref}
         className={styles.wrapper}
         style={{
           visibility: isFolderDocumentsOpen ? "visible" : "hidden",
@@ -154,7 +154,7 @@ const FolderDocuments = forwardRef(({
           <div className={styles.right_inner_content}>
             <div className={styles.row}>
               <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('projects')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjects} onTouchStart={handleTouchStart(openFolderProjects)}>
-                <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'projects' ? styles.selectedIcon : ''}`}  />
+                <img src="/images/folder.png" alt="folder" className={`${folderOnfocus === 'projects' ? styles.selectedIcon : ''}`} />
                 <span className={`${folderOnfocus === 'projects' ? styles.selected : ''}`}>Proyectos</span>
               </div>
               <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('press')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openInterviews} onTouchStart={handleTouchStart(openInterviews)}>

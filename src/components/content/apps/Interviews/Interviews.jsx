@@ -28,6 +28,11 @@ const Interviews = forwardRef(({
         { name: 'https://maldita.es/malditobulo/20230421/el-piti-senor-agente-policia/', kind: 'Maldita.es', date: '2023-04-21' }
       ];
 
+    const handleTouchStart = (callback) => (e) => {
+        e.preventDefault();
+        callback();
+    };
+
     return (
         <Draggable
             onStart={onStartDrag}
@@ -44,18 +49,21 @@ const Interviews = forwardRef(({
                     <div className={styles.left_corner_buttons}>
                         <img
                             onClick={closeInterviews}
+                            onTouchStart={handleTouchStart(closeInterviews)}
                             className={styles.left_corner_button_img}
                             src="/images/icons/close.png"
                             alt="icns"
                         />
                         <img
                             onClick={minimizeApp}
+                            onTouchStart={handleTouchStart(minimizeApp)}
                             className={styles.left_corner_button_img}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onClick={maximizeApp}
+                            onTouchStart={handleTouchStart(maximizeApp)}
                             className={styles.left_corner_button_img}
                             src="/images/icons/zoom.png"
                             alt="icns"
@@ -66,7 +74,7 @@ const Interviews = forwardRef(({
                     <div className={styles.left_menu_wrapper}>
                         <h5 className={styles.menu_title}>Favoritos</h5>
                         <ul className={styles.left_ul}>
-                            <li className={styles.left_li} onClick={openFolderProjects}>
+                            <li className={styles.left_li} onClick={openFolderProjects} onTouchStart={handleTouchStart(openFolderProjects)}>
                                 <img
                                     className={styles.blue_icon_img}
                                     src="/images/blueicons/star.png"
@@ -74,7 +82,7 @@ const Interviews = forwardRef(({
                                 />
                                 <p className={styles.left_li_text}>Proyectos</p>
                             </li>
-                            <li className={styles.left_li} onClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')}>
+                            <li className={styles.left_li} onClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')} onTouchStart={handleTouchStart(() => window.open('/files/AbeloValis_CV.pdf', '_blank'))}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/file.png"
@@ -82,7 +90,7 @@ const Interviews = forwardRef(({
                             />
                             <p className={styles.left_li_text}>CV_2024</p>
                             </li>
-                            <li className={styles.left_li} onClick={openAboutMe}>
+                            <li className={styles.left_li} onClick={openAboutMe} onTouchStart={handleTouchStart(openAboutMe)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/clock.png"
@@ -90,7 +98,7 @@ const Interviews = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Sobre Mi</p>
                             </li>
-                            <li className={styles.left_li} onClick={openFormations}>
+                            <li className={styles.left_li} onClick={openFormations} onTouchStart={handleTouchStart(openFormations)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/file.png"
@@ -98,7 +106,7 @@ const Interviews = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Formación</p>
                             </li>
-                            <li className={styles.left_li} onClick={openFolderDocuments}>
+                            <li className={styles.left_li} onClick={openFolderDocuments} onTouchStart={handleTouchStart(openFolderDocuments)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/files.png"
@@ -106,7 +114,7 @@ const Interviews = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Documentos</p>
                             </li>
-                            <li className={styles.left_li} onClick={openCircGallery}>
+                            <li className={styles.left_li} onClick={openCircGallery} onTouchStart={handleTouchStart(openCircGallery)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/folder.png"
@@ -114,7 +122,7 @@ const Interviews = forwardRef(({
                             />
                             <p className={styles.left_li_text}>Fotos</p>
                             </li>
-                            <li className={styles.left_li} onClick={openFolderDownloads}>
+                            <li className={styles.left_li} onClick={openFolderDownloads} onTouchStart={handleTouchStart(openFolderDownloads)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/download.png"
@@ -125,7 +133,7 @@ const Interviews = forwardRef(({
                         </ul>
                         <h5 className={styles.menu_title}>iCloud</h5>
                         <ul className={styles.left_ul}>
-                            <li className={styles.left_li} onClick={openMakarradas}>
+                            <li className={styles.left_li} onClick={openMakarradas} onTouchStart={handleTouchStart(openMakarradas)}>
                             <img
                                 className={styles.blue_icon_img}
                                 src="/images/blueicons/cloud.png"
@@ -190,6 +198,5 @@ const Interviews = forwardRef(({
         </Draggable>
     )
 })
-
 
 export default Interviews

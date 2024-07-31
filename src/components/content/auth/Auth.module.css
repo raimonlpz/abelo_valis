@@ -138,11 +138,11 @@
     text-align: center;
     margin-top: 3rem;
   }
-  
+
   .dayTime span:nth-child(1) {
     font-size: 1.5rem;
   }
-  
+
   .dayTime span:nth-child(2) {
     font-size: 6rem;
   }
@@ -153,10 +153,10 @@
     font-size: 1.75rem;
     margin: 0 auto 10px;
   }
-  
+
   .inputField::placeholder {
     color: white;
-    font-size: 13px; 
+    font-size: 13px;
   }
 
   .loginBox {
@@ -169,6 +169,13 @@
     display: flex;
     flex-direction: column;
   }
-  
-  
+}
+
+.loading {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
 }

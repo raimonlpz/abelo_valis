@@ -44,7 +44,7 @@ const TopBar = (props) => {
     <div
       className={`w-full h-6 px-2 fixed top-0 hstack justify-between ${
         props.hide ? "z-0" : "z-20"
-      } text-sm text-white bg-gray-700/10 backdrop-blur-2xl shadow transition`}
+      } text-sm text-white  shadow transition`}
     >
      <div className="hstack flex-row justify-end space-x-2">
         <TopBarItem hideOnMobile={true} onClick={props.toggleSpotlight} className="cursor-pointer" >

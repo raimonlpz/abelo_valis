@@ -3,6 +3,7 @@ import { useInterval } from "../../../hooks/useInterval";
 import { useEffect } from "react";
 
 import styles from './Auth.module.css'
+import { useMediaQuery } from "react-responsive";
 
 
 const loadingInterval = 1;
@@ -12,13 +13,15 @@ export default function Boot({ restart, sleep, setBooting }) {
   const [loading, setLoading] = useState(false);
   const [percent, setPercent] = useState(0);
 
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+
   useEffect(() => {
     if (restart && !sleep) setLoading(true);
   }, [restart, sleep]);
 
   useInterval(
     () => {
-      const newPercent = percent + 0.25;
+      const newPercent = percent + (isMobile ? 0.6 : 0.35);
       if (newPercent >= 100) {
         setTimeout(() => {
           setBooting(false);
@@ -41,7 +44,7 @@ export default function Boot({ restart, sleep, setBooting }) {
       {loading && (
         <div
           className="absolute top-1/2 inset-x-0 w-36 md:w-56 h-1 sm:h-1.5 bg-gray-500 rounded overflow-hidden"
-          m="t-16 sm:t-24 x-auto"
+          m=" sm:t-28 t-22  x-auto"
         >
           <span
             className="absolute top-0 bg-white h-full rounded-sm"

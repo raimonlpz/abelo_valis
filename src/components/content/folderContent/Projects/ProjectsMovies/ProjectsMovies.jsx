@@ -124,7 +124,7 @@ const ProjectsMovies = forwardRef(({
                 }}
             >
                 <div className={styles.left_inner_wrapper}>
-                    <div className={styles.left_corner_buttons}>
+                    <div className={styles.left_corner_buttons} id="ctas">
                         <img
                             onClick={closeFolderProjectsMovies}
                             onTouchStart={closeFolderProjectsMovies}

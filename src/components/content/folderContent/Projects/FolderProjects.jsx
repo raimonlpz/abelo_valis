@@ -43,21 +43,21 @@ const FolderProjects = React.forwardRef(({
         <div className={styles.left_inner_wrapper}>
           <div className={styles.left_corner_buttons}>
             <img
-              onTouchStart={closeFolderProjects}
+              onTouchStart={handleTouchStart(closeFolderProjects)}
               onClick={closeFolderProjects}
               className={styles.left_corner_button_img}
               src="/images/icons/close.png"
               alt="icns"
             />
             <img
-              onTouchStart={minimizeApp}
+              onTouchStart={handleTouchStart(minimizeApp)}
               onClick={minimizeApp}
               className={styles.left_corner_button_minimize}
               src="/images/icons/minimise.png"
               alt="icns"
             />
             <img
-              onTouchStart={maximizeApp}
+              onTouchStart={handleTouchStart(maximizeApp)}
               onClick={maximizeApp}
               className={styles.left_corner_button_maximize}
               src="/images/icons/zoom.png"

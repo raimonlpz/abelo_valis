@@ -239,14 +239,14 @@
 
   .right_top_bar {
     padding: 10px;
-    flex-direction: column; /* Cambiar a columna para apilar los elementos */
-    align-items: flex-start; /* Alinear al inicio */
+    flex-direction: column;
+    align-items: flex-start; 
   }
 
   .right_inner_content {
     padding: 10px;
-    overflow-x: auto; /* Habilitar desplazamiento horizontal si es necesario */
-    overflow-y: auto; /* Habilitar desplazamiento vertical si es necesario */
+    overflow-x: auto; 
+    overflow-y: auto; 
   }
 
   .row {
@@ -295,10 +295,10 @@
   }
 
   .finder_table {
-    font-size: 0.7rem; /* Ajustar el tamaño de la fuente */
+    font-size: 0.7rem;
   }
 
   .finder_cell {
-    padding: 4px 8px; /* Ajustar el padding */
+    padding: 4px 8px;
   }
 }

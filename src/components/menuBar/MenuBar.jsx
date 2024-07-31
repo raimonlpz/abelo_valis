@@ -75,7 +75,7 @@ export default function MenuBar({
                         key={data.id}
                         id={data.id}
                         onClick={() => onMenuChange(data.id)}
-                        className={clickedMenuItem === data.id ? styles.bounceAnimation : ''}
+                        className={`${clickedMenuItem === data.id ? styles.bounceAnimation : ''} ${['5', '8', '2', '9'].includes(data.id) ? styles['hide-mobile'] : ''}`}
                     >
                         <img src={data.image} alt="image_alt" />
                     </li>

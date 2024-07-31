@@ -24,7 +24,7 @@ const Trash = forwardRef(({
     const handleTouchStart = (callback) => (e) => {
         e.preventDefault();
         callback();
-      };
+    };
 
     return (
         <Draggable
@@ -42,19 +42,22 @@ const Trash = forwardRef(({
                     <div className={styles.left_corner_buttons}>
                         <img
                             onClick={closeTrash}
+                            onTouchStart={handleTouchStart(closeTrash)}
                             className={styles.left_corner_button_img}
                             src="/images/icons/close.png"
                             alt="icns"
                         />
                         <img
                             onClick={minimizeApp}
-                            className={styles.left_corner_button_img}
+                            onTouchStart={handleTouchStart(minimizeApp)}
+                            className={styles.left_corner_button_minimize}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onClick={maximizeApp}
-                            className={styles.left_corner_button_img}
+                            onTouchStart={handleTouchStart(maximizeApp)}
+                            className={styles.left_corner_button_maximize}
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />
@@ -165,7 +168,7 @@ const Trash = forwardRef(({
                     </div>
                     <div className={styles.right_inner_content}>
                         <div className={styles.row}>
-                            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('ex')} onMouseLeave={() => setFolderOnfocus(null)} >
+                            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('ex')} onTouchStart={handleTouchStart(() => setFolderOnfocus('ex'))} onMouseLeave={() => setFolderOnfocus(null)} >
                                 <img
                                     src="/abelo/ex.png"
                                     alt="folder"
@@ -174,7 +177,7 @@ const Trash = forwardRef(({
                                 />
                                 <span className={`${folderOnfocus === 'ex' ? styles.selected : ''}`}>Mis ex favoritas</span>
                             </div>
-                            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('fakes')} onMouseLeave={() => setFolderOnfocus(null)} >
+                            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('fakes')} onTouchStart={handleTouchStart(() => setFolderOnfocus('fakes'))} onMouseLeave={() => setFolderOnfocus(null)} >
                                 <img
                                     src="/abelo/no-rats.png"
                                     alt="folder"
@@ -183,7 +186,7 @@ const Trash = forwardRef(({
                                 />
                                 <span style={{ textAlign: 'center' }} className={`${folderOnfocus === 'fakes' ? styles.selected : ''}`}>Amigxs que creía <br /> que eran mis amigxs<br />  y nunca fueron <br /> mis amigxs</span>
                             </div>
-                            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('cast')} onMouseLeave={() => setFolderOnfocus(null)} >
+                            <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('cast')} onTouchStart={handleTouchStart(() => setFolderOnfocus('cast'))} onMouseLeave={() => setFolderOnfocus(null)} >
                                 <img
                                     src="/abelo/sims-cast.webp"
                                     alt="folder"

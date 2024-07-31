@@ -57,14 +57,14 @@ const Interviews = forwardRef(({
                         <img
                             onClick={minimizeApp}
                             onTouchStart={handleTouchStart(minimizeApp)}
-                            className={styles.left_corner_button_img}
+                            className={`${styles.left_corner_button_minimize} `}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onClick={maximizeApp}
                             onTouchStart={handleTouchStart(maximizeApp)}
-                            className={styles.left_corner_button_img}
+                            className={`${styles.left_corner_button_maximize} `}
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />

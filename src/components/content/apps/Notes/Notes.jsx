@@ -8,7 +8,10 @@ const plugins = [Paragraph];
 
 const Notes = forwardRef(({ isNotesOpen, closeNotes, maximizeApp, minimizeApp, onStartDrag, onStopDrag }, ref) => {
     const editor = useMemo(() => createYooptaEditor(), []);
-
+    const handleTouchStart = (callback) => (e) => {
+        e.preventDefault();
+        callback();
+    };
     return (
         <Draggable
             onStart={onStartDrag}
@@ -26,18 +29,21 @@ const Notes = forwardRef(({ isNotesOpen, closeNotes, maximizeApp, minimizeApp, o
                         <img
                             onClick={closeNotes}
                             className={styles.left_corner_button_img}
+                            onTouchStart={handleTouchStart(closeNotes)}
                             src="/images/icons/close.png"
                             alt="icns"
                         />
                         <img
                             onClick={minimizeApp}
-                            className={styles.left_corner_button_img}
+                            onTouchStart={handleTouchStart(minimizeApp)}
+                            className={styles.left_corner_button_minimize}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onClick={maximizeApp}
-                            className={styles.left_corner_button_img}
+                            onTouchStart={handleTouchStart(maximizeApp)}
+                            className={styles.left_corner_button_maximize}
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />

@@ -21,7 +21,7 @@ export default function Boot({ restart, sleep, setBooting }) {
 
   useInterval(
     () => {
-      const newPercent = percent + (isMobile ? 1 : 0.35);
+      const newPercent = percent + (isMobile ? 1.35 : 0.55);
       if (newPercent >= 100) {
         setTimeout(() => {
           setBooting(false);

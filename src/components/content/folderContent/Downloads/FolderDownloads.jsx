@@ -64,7 +64,6 @@ const FolderDownloads = React.forwardRef(({
             <div className={styles.left_menu_wrapper}>
               <h5 className={styles.menu_title}>Favoritos</h5>
               <ul className={styles.left_ul}>
-
                 <li className={styles.left_li} onClick={openFolderProjects} onTouchStart={handleTouchStart(openFolderProjects)}>
                   <img
                     className={styles.blue_icon_img}
@@ -97,13 +96,13 @@ const FolderDownloads = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Formación</p>
                 </li>
-                <li className={styles.left_li} onClick={openInterviews} onTouchStart={handleTouchStart(openInterviews)}>
+                <li className={styles.left_li} onClick={openFolderDocuments} onTouchStart={handleTouchStart(openFolderDocuments)}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/files.png"
                     alt="files"
                   />
-                  <p className={styles.left_li_text}>Prensa</p>
+                  <p className={styles.left_li_text}>Documentos</p>
                 </li>
                 <li className={styles.left_li} onClick={openCircGallery} onTouchStart={handleTouchStart(openCircGallery)}>
                   <img
@@ -113,24 +112,24 @@ const FolderDownloads = React.forwardRef(({
                   />
                   <p className={styles.left_li_text}>Fotos</p>
                 </li>
-                <li className={styles.left_li} onClick={openMakarradas} onTouchStart={handleTouchStart(openMakarradas)}>
+                <li className={styles.left_li} onClick={openInterviews} onTouchStart={handleTouchStart(openInterviews)}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/download.png"
                     alt="download"
                   />
-                  <p className={styles.left_li_text}>Makarrada$</p>
+                  <p className={styles.left_li_text}>Prensa</p>
                 </li>
               </ul>
               <h5 className={styles.menu_title}>iCloud</h5>
               <ul className={styles.left_ul}>
-                <li className={styles.left_li} onClick={openFolderDocuments} onTouchStart={handleTouchStart(openFolderDocuments)}>
+                <li className={styles.left_li} onClick={openMakarradas} onTouchStart={handleTouchStart(openMakarradas)}>
                   <img
                     className={styles.blue_icon_img}
                     src="/images/blueicons/cloud.png"
                     alt="cloud"
                   />
-                  <p className={styles.left_li_text}>Documentos</p>
+                  <p className={styles.left_li_text}>Makarrada$</p>
                 </li>
               </ul>
               {/* <h5 className={styles.menu_title}>Tags</h5>
@@ -244,7 +243,7 @@ const FolderDownloads = React.forwardRef(({
                 </div> */}
               </div>
               <div className={styles.row}>
-                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('stremio')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://www.stremio.com/', '_blank')}  onTouchStart={handleTouchStart(() => window.open('https://www.stremio.com/', '_blank'))}>
+                <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('stremio')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://www.stremio.com/', '_blank')} onTouchStart={handleTouchStart(() => window.open('https://www.stremio.com/', '_blank'))}>
                   <img
                     src="/images/icons/stremio.ico"
                     alt="folder"

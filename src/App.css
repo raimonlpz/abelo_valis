@@ -30,7 +30,14 @@
 }
 
 @media screen and (max-width: 768px) {
+  .wrapper {
+    padding-bottom: 90px;
+  }
+
   .inner_wrapper {
+    height: calc(100% - 72px);
+    /* Ajusta la altura para dejar espacio para el MenuBar */
     margin-top: 80px;
+    margin-bottom: 50px;
   }
 }

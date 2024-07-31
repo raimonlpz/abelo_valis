@@ -100,6 +100,9 @@ a {
     min-height: min-content;
     margin: 0 10px 0px 10px;
   }
+  .inner_wrapper{
+    padding-bottom: 100px;
+  }
 
   .folder_abel_store {
     visibility: visible;
@@ -123,8 +126,8 @@ a {
   }
 
   .wrapper_rand2 {
-    top: 480px;
-    left: 45px;
+    top: 320px;
+    left: 25px;
   }
 
   .wrapper_rand2 img {

@@ -34,9 +34,8 @@
   align-items: center;
   list-style: none;
   height: 100%;
-  /* overflow-x: auto; */
-  -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on iOS */
-  padding: 0 10px; /* Add some padding to the container */
+  -webkit-overflow-scrolling: touch; 
+  padding: 0 10px; 
 }
 
 .ul > li {
@@ -74,16 +73,22 @@
 
 @media screen and (max-width: 768px) {
   .wrapper {
-    width: 100%;
-    left: 0;
-    right: 0;
-  }
+    position: fixed;
+    width: auto;
+    height: auto;
+    left: 0; 
+    right:0;
+    bottom: 10; 
+    
 
+  }
   .ul {
-    overflow-x: scroll;
+    overflow-x: hidden;
     padding: 0 10px;
     margin: 0px 20px;
-    padding-left: 30px;
+    padding-left: 10px;
+    -webkit-overflow-scrolling: touch;
+
   }
 
   .ul > li {
@@ -95,32 +100,17 @@
     width: 50px;
     height: 50px;
     cursor: pointer;
-    transition: 0.1s ease-in;
+    margin-left: 20px;
+
+  }
+
+  .ul > li > img:hover {
+    width: 50px;
+    height: 50px; 
+  }
+  .bounceAnimation {
+    animation: none;
   }
 }
 
 
-@media screen and (max-width: 768px) {
-  .wrapper {
-    width: 100%;
-    left: 0;
-    right: 0;
-    height: 10%;
-  }
-
-  .ul {
-    overflow-x: scroll;
-    padding: 0 10px;
-    margin: 0px 20px;
-    padding-left: 30px;
-  }
-
-  .ul > li:not(:nth-child(-n+3)) {
-    display: none;
-  }
-
-  .ul > li:nth-child(-n+3) > img {
-    width: 80px;
-    height: 80px;
-  }
-}

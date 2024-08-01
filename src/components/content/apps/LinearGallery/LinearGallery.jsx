@@ -4,6 +4,7 @@ import Draggable from 'react-draggable'
 import MemoryGame from './MemoryGame/MemoryGame'
 import SnakeGame from './SnakeGame/SnakeGame'
 import DinoGame from './DinoGame/DinoGame'
+import { useMediaQuery } from 'react-responsive'
 
 // Formerly Makarrada$ / Game$
 const LinearGallery = forwardRef(({
@@ -14,6 +15,8 @@ const LinearGallery = forwardRef(({
     onStartDrag,
     onStopDrag
 }, ref) => {
+
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
     const changerRef = useRef()
     const [currentGame, setCurrentGame] = useState('memory')
@@ -69,9 +72,10 @@ const LinearGallery = forwardRef(({
                 </div>
             </div>
             <div className={styles.linearGallery}>
-                {currentGame === 'snake' && <SnakeGame />}
-                {currentGame === 'memory' && <MemoryGame />}
-                {currentGame === 'dino' && <DinoGame />}
+                {(currentGame === 'snake' && !isMobile) && <SnakeGame />}
+                {(currentGame === 'memory' && !isMobile) && <MemoryGame />}
+                {(currentGame === 'dino' && !isMobile) && <DinoGame />}
+                {isMobile && <MemoryGame />}
             </div>
         </div>
     </Draggable>

@@ -127,8 +127,8 @@
 
 @media screen and (max-width: 668px) {
   .authContainer {
-    width: 90%;
-    margin-top: 50px;
+    width: 70%;
+    margin-top: 10px;
   }
 
   .dayTime {

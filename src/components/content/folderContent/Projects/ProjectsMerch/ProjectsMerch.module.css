@@ -368,8 +368,15 @@
   .panel_main_photo_mobile {
     display: flex;
     width: 100%;
+    max-height: 200px;
+    height: auto;
     margin-top: 5px;
     margin-bottom: 5px;
+  }
+
+  .panel_main_photo_mobile img {
+    object-fit: cover;
+    object-position: center;
   }
 
   .finder_panel_right {

@@ -196,7 +196,8 @@ export default function Folders({
               src="/images/mov.png"
               alt="folder"
               draggable="false"
-              onTouchStart={handleTouchStart(openVideobook)}
+              // onTouchStart={handleTouchStart(openVideobook)}
+              onTouchStart={() => window.open('https://www.youtube.com/watch?v=AyczLbxTX20', '_blank')}
               onDoubleClick={openVideobook}
               className={`${styles.folderText} ${folderOnfocus === 'videbook' ? styles.selectedIcon : ''}`}
             />

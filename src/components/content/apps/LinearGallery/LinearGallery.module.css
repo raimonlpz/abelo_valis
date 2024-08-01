@@ -69,7 +69,9 @@
   font-size: 1.25rem;
 }
 
-.left_corner_button_img {
+.left_corner_button_img,
+.left_corner_button_minimize,
+.left_corner_button_maximize {
   margin-right: 10px;
 }
 
@@ -155,4 +157,62 @@
     #c0c0c0
   ); /* Adjusted gradient */
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.5); /* Adjusted inner shadow */
+}
+@media screen and (max-width: 668px) {
+  .left_corner_button_maximize, .left_corner_button_minimize {
+    display: none;
+  }
+
+  @media screen and (max-width: 668px) {
+    .wrapper {
+      width: 100vw;
+      height: 100vh;
+      left: 0;
+      top: 0;
+      padding: 10px;
+      box-shadow: none;
+    }
+  
+    .left_inner_wrapper {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .left_corner_buttons {
+      margin-bottom: 10px;
+    }
+
+    .left_corner_button_maximize,
+    .left_corner_button_minimize {
+      display: none;
+    }
+  
+  
+    .linearGallery {
+      width: 100%;
+      height: auto;
+      padding: 10px;
+    }
+  
+    .gallery {
+      grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+      gap: 5px;
+      padding: 5px;
+    }
+  
+    .galleryItem {
+      padding: 5px;
+    }
+  
+    .galleryImage {
+      width: 100%;
+      height: auto;
+    }
+  
+    .macButton {
+      font-size: 12px;
+      padding: 5px 10px;
+    }
+  }
 }

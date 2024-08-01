@@ -199,6 +199,10 @@ input:checked + .slider:before {
     width: 20px;
   }
 
+  .isMobile{
+    display: none;
+  }
+
   .left_corner_button_maximize,
   .left_corner_button_minimize {
     display: none;

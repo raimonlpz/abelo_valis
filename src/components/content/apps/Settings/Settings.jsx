@@ -123,7 +123,7 @@ const Settings = forwardRef(({
                                 )}
                             </label>
                         </div>
-                        <div className={styles.option}>
+                        <div className={`${styles.option} ${styles.isMobile}`}>
                             <div>Restart Tour Guide</div>
                             <label className={styles.switch}>
                                 <button onClick={handleRestartTour} onTouchStart={handleRestartTour}>Open</button>

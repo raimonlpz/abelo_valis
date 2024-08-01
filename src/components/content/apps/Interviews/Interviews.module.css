@@ -18,8 +18,10 @@
   background: rgba(13, 12, 12, 0.5);
   background-blend-mode: luminosity;
   backdrop-filter: blur(81.5485px);
-  -webkit-background-blend-mode: luminosity; /* Safari */
-  -webkit-backdrop-filter: blur(81.5485px); /* Safari */
+  -webkit-background-blend-mode: luminosity;
+  /* Safari */
+  -webkit-backdrop-filter: blur(81.5485px);
+  /* Safari */
   height: 100%;
   width: 200px;
   border-top-left-radius: 10px;
@@ -40,6 +42,7 @@
 }
 
 .left_corner_buttons:hover {
+
   .closeX,
   .miniX {
     display: block;
@@ -65,7 +68,9 @@
   font-size: 1.25rem;
 }
 
-.left_corner_button_img {
+.left_corner_button_img,
+.left_corner_button_minimize,
+.left_corner_button_maximize {
   margin-right: 10px;
 }
 
@@ -133,7 +138,7 @@
   align-items: center;
 }
 
-.right_top_bar_left > img {
+.right_top_bar_left>img {
   margin-right: 20px;
 }
 
@@ -141,11 +146,12 @@
   font-size: 15px;
   font-weight: bold;
 }
+
 .right_top_bar_right {
   display: flex;
 }
 
-.right_top_bar_right > img {
+.right_top_bar_right>img {
   margin-left: 10px;
   height: 15px;
   width: 15px;
@@ -168,7 +174,7 @@
   align-items: center;
 }
 
-.folderWrapper > span {
+.folderWrapper>span {
   font-size: 12px;
   font-weight: bold;
   margin-top: 5px;
@@ -210,6 +216,7 @@
 .finder_row:hover {
   background-color: #333335;
 }
+
 @media screen and (max-width: 668px) {
   .wrapper {
     width: 100vw;
@@ -222,16 +229,16 @@
   }
 
   .left_inner_wrapper {
-    width: 100%; 
+    width: 100%;
     height: 100%;
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
-  
+
   .right_inner_wrapper {
-    width: 150%; 
-  
-    height: auto; 
+    width: 150%;
+
+    height: auto;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 10px;
@@ -240,13 +247,13 @@
   .right_top_bar {
     padding: 10px;
     flex-direction: column;
-    align-items: flex-start; 
+    align-items: flex-start;
   }
 
   .right_inner_content {
     padding: 10px;
-    overflow-x: auto; 
-    overflow-y: auto; 
+    overflow-x: auto;
+    overflow-y: auto;
   }
 
   .row {
@@ -258,7 +265,8 @@
     margin-bottom: 10px;
   }
 
-  .left_corner_button_maximize, .left_corner_button_minimize {
+  .left_corner_button_maximize,
+  .left_corner_button_minimize {
     display: none;
   }
 
@@ -274,7 +282,7 @@
     padding: 0;
   }
 
-  .right_top_bar_left > img {
+  .right_top_bar_left>img {
     margin-right: 10px;
   }
 
@@ -282,11 +290,11 @@
     font-size: 0.8rem;
   }
 
-  .right_top_bar_right > img {
+  .right_top_bar_right>img {
     display: none;
   }
 
-  .folderWrapper > span {
+  .folderWrapper>span {
     font-size: 0.7rem;
   }
 

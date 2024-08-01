@@ -110,7 +110,12 @@ a {
     top: 90px;
     left: 100px;
   }
+  .folder_proyectos{
+    position: absolute;
+    top:155px;
+    left:-55px
 
+  }
   .wrapper_right {
     visibility: hidden;
   }
@@ -146,7 +151,8 @@ a {
   }
 
   .wrapper_rand4 {
-    visibility: hidden;
+    top: 5px;
+    left: -5px;
   }
 
   .inner_wrapper {
@@ -170,8 +176,8 @@ a {
   }
 
   .folder_fotos,
-  .folder_prensa,
-  .folder_proyectos {
+  .folder_prensa
+  {
     visibility: hidden;
   }
 }

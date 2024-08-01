@@ -203,10 +203,7 @@ input:checked + .slider:before {
     display: none;
   }
 
-  .left_corner_button_maximize,
-  .left_corner_button_minimize {
-    display: none;
-  }
+
 
   .left_corner_button_maximize,
   .left_corner_button_minimize {

@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './Folders.module.css';
 import Draggable from 'react-draggable';
-// import { isTouchDevice } from '../../../utils/isTouchDevice';
 
 export default function Folders({
   openFolderDocuments,
@@ -16,7 +15,7 @@ export default function Folders({
 }) {
   const [folderOnfocus, setFolderOnfocus] = useState(null);
   const [isTouched, setIsTouched] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 568); 
 
   useEffect(() => {
     const handleResize = () => {
@@ -24,6 +23,7 @@ export default function Folders({
     };
 
     window.addEventListener('resize', handleResize);
+
     return () => {
       window.removeEventListener('resize', handleResize);
     };
@@ -47,14 +47,14 @@ export default function Folders({
     if (!isTouched) {
       callback();
       setIsTouched(true);
-      // setTimeout(() => setIsTouched(false), 500);
+      setTimeout(() => setIsTouched(false), 500); 
     }
   };
 
   const handleClick = (callback) => () => {
     callback();
   };
-
+  
   return (
     <div className={styles.inner_wrapper}>
       {!isMobile ? (

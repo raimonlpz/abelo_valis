@@ -181,8 +181,8 @@ const Trash = forwardRef(({
                                 <img
                                     src="/abelo/no-rats.png"
                                     alt="folder"
-                                    style={{ 'width': '65px', padding: '.25rem' }}
-                                    className={`${folderOnfocus === 'fakes' ? styles.selectedIcon : ''} filter brightness-60 invert`}
+                                    style={{ 'width': '105px', padding: '.25rem' }}
+                                    className={`${folderOnfocus === 'fakes' ? styles.selectedIcon : ''}`}
                                 />
                                 <span style={{ textAlign: 'center' }} className={`${folderOnfocus === 'fakes' ? styles.selected : ''}`}>Amigxs que creía <br /> que eran mis amigxs<br />  y nunca fueron <br /> mis amigxs</span>
                             </div>

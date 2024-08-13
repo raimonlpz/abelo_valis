@@ -25,7 +25,7 @@ const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp,
                         <img
                             onClick={closeFormations}
                             onTouchStart={handleTouchStart(closeFormations)}
-                            className={styles.left_corner_button_close}
+                            className={styles.left_corner_button_img}
                             src="/images/icons/close.png"
                             alt="icns"
                         />

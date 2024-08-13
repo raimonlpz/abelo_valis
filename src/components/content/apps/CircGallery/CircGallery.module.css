@@ -50,6 +50,12 @@
   }
 }
 
+.left_corner_button_img,
+.left_corner_button_maximize,
+.left_corner_button_minimize {
+  margin-right: 10px;
+}
+
 .closeX,
 .miniX {
   position: absolute;

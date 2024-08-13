@@ -38,7 +38,7 @@ const CircGallery = forwardRef(({
               <img
                 onClick={handleClose}
                 onTouchStart={handleClose}
-                className={styles.left_corner_button_close}
+                className={styles.left_corner_button_img}
                     src="/images/icons/close.png"
                     alt="icns"
                 />

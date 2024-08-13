@@ -319,7 +319,6 @@ function App() {
 
     // Projects > Merch 
     const openFolderProjectsMerch = () => {
-      console.log('hola?')
       setIsFolderProjectsMerchOpen(true)
       editZIndex('ProjectsMerchFolder')
       unMinimizeApp(projectsMerchFolderRef)

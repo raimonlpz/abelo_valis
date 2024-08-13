@@ -49,7 +49,7 @@ const Videobook = forwardRef(({ isVideobookOpen, closeVideobook, maximizeApp, mi
                 </div>
                 <div className={styles.videobook}>
                 <iframe width="600px" height="440px" referrerPolicy='strict-origin-when-cross-origin' style={{border: 'none', borderBottomLeftRadius: '10px', borderBottomRightRadius: '10px'}}
-                    src="https://www.youtube.com/embed/AyczLbxTX20?si=O1mbeOl-NX-Ocx53" allow='encrypted-media'>
+                    src="https://www.youtube.com/embed/ENcS-FtIEm0?si=O1mbeOl-NX-Ocx53" allow='encrypted-media'>
                 </iframe> 
                 </div>
             </div>

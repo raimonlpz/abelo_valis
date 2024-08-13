@@ -31,13 +31,13 @@ const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp,
                         />
                         <img
                             onClick={minimizeApp}
-                            className={styles.left_corner_button_minimize}
+                            className={styles.left_corner_button_img}
                             src="/images/icons/minimise.png"
                             alt="icns"
                         />
                         <img
                             onClick={maximizeApp}
-                            className={styles.left_corner_button_maximize}
+                            className={styles.left_corner_button_img}
                             src="/images/icons/zoom.png"
                             alt="icns"
                         />

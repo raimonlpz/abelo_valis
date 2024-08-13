@@ -44,9 +44,11 @@
   display: none;
 }
 
-.left_corner_buttons:hover .closeX,
-.left_corner_buttons:hover .miniX {
-  display: block;
+.left_corner_buttons:hover {
+  .closeX,
+  .miniX {
+    display: block;
+  }
 }
 
 .closeX,
@@ -68,8 +70,9 @@
   font-size: 1.25rem;
 }
 
-
-.left_corner_button_img, .left_corner_button_maximize, .left_corner_button_minimize  {
+.left_corner_button_img,
+.left_corner_button_maximize,
+.left_corner_button_minimize {
   margin-right: 10px;
 }
 

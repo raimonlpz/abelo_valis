@@ -98,3 +98,15 @@ canvas {
   touch-action: none;
   animation: fade-in 5s ease 1s forwards;
 }
+
+@media screen and (max-width: 668px) {
+  .left_corner_button_maximize,
+  .left_corner_button_minimize {
+    display: none;
+  }
+
+  .closeX,
+  .miniX {
+    display: none;
+  }
+}

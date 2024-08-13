@@ -244,7 +244,7 @@ export default function Folders({
                   onDoubleClick={openFormations}
                   className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selectedIcon : ''}`}
                 />
-                <span className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selected : ''}`}>Formaciones</span>
+                <span className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selected : ''}`}>Formación</span>
               </div>
             </Draggable>
 
@@ -437,7 +437,7 @@ export default function Folders({
                   onDoubleClick={openFormations}
                   className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selectedIcon : ''}`}
                 />
-                <span className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selected : ''}`}>Formaciones</span>
+                <span className={`${styles.folderText} ${folderOnfocus === 'formaciones' ? styles.selected : ''}`}>Formación</span>
               </div>
 
 

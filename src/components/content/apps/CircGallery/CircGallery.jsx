@@ -30,19 +30,19 @@ const CircGallery = forwardRef(({
             <div className={styles.left_corner_buttons}>
               <img
                 onClick={closeCircGallery}
-                className={styles.left_corner_button_img}
+                className={styles.left_corner_button_close}
                     src="/images/icons/close.png"
                     alt="icns"
                 />
                 <img
                     onClick={minimizeApp}
-                    className={styles.left_corner_button_img}
+                    className={styles.left_corner_button_minimize}
                     src="/images/icons/minimise.png"
                     alt="icns"
                 />
                 <img
                     onClick={maximizeApp}
-                    className={styles.left_corner_button_img}
+                    className={styles.left_corner_button_maximize}
                     src="/images/icons/zoom.png"
                     alt="icns"
                 />

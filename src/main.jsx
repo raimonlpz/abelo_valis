@@ -12,10 +12,10 @@ const steps = [
     selector: '#statusBar',
     content: '¡Hey! Aquí una pequeña guía para navegar por mi fuckin web. Haz click en  para ver la navegación general o reiniciar mi PC.'
   },
-  {
-    selector: '#clock',
-    content: 'Aquí puedes ver la hora actual (España), una hora menos en Canarias :p'
-  },
+  // {
+  //   selector: '#clock',
+  //   content: 'Aquí puedes ver la hora actual (España), una hora menos en Canarias :p'
+  // },
   {
     selector: '#folder',
     content: 'Esto es la Carpeta de Documentos, o Finder. Puedes acceder a ella haciendo Doble Click. También puedes arrastrarla por el escritorio jejeje'

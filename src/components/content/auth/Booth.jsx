@@ -40,11 +40,11 @@ export default function Boot({ restart, sleep, setBooting }) {
 
   return (
     <div className={styles.loading} onClick={handleClick}>
-      <div className="i-fa-brands:apple text-white  -mt-12 md:-mt-4 size-20 sm:size-24" />
+      <div className="i-fa-brands:apple text-white  -mt-12 md:-mt-4 size-20 sm:size-24 rotate-180" />
       {loading && (
         <div
           className="absolute top-1/2 inset-x-0 w-36 md:w-56 h-1 sm:h-1.5 bg-gray-500 rounded overflow-hidden"
-          m=" sm:t-28 t-22  x-auto"
+          m="sm:t-28 t-22  x-auto"
         >
           <span
             className="absolute top-0 bg-white h-full rounded-sm"

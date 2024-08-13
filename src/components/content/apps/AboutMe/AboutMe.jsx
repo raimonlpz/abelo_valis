@@ -51,6 +51,8 @@ const AboutMe = forwardRef(({ isAboutMeOpen, closeAboutMe, maximizeApp, minimize
                             src="/images/icons/zoom.png"
                             alt="Maximize"
                         />
+                         <div className={styles.closeX}>&#10005;</div>
+                         <div className={styles.miniX}>-</div>
                     </div>
                 </div>
                 <div>

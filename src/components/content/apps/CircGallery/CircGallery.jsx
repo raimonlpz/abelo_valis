@@ -13,6 +13,13 @@ const CircGallery = forwardRef(({
   onStartDrag,
   onStopDrag
 }, ref) => {
+
+  const handleClose = (e) => {
+    e.stopPropagation();
+    closeCircGallery();
+};
+
+
   return (
     <Draggable
       onStart={onStartDrag}
@@ -29,7 +36,8 @@ const CircGallery = forwardRef(({
         <div className={styles.left_inner_wrapper}>
             <div className={styles.left_corner_buttons}>
               <img
-                onClick={closeCircGallery}
+                onClick={handleClose}
+                onTouchStart={handleClose}
                 className={styles.left_corner_button_close}
                     src="/images/icons/close.png"
                     alt="icns"

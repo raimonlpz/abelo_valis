@@ -256,6 +256,19 @@ const FolderProjects = React.forwardRef(({
                 />
                 <span className={`${folderOnfocus === 'publi' ? styles.selected : ''}`}>Publi</span>
               </div>
+
+              <div className={styles.folderWrapper} >
+               
+              </div>
+
+              <div className={styles.folderWrapper} >
+               
+              </div>
+
+              <div className={styles.folderWrapper} >
+               
+              </div>
+              
             </div>
 
             <div className={styles.row}>

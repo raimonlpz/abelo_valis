@@ -256,7 +256,7 @@ const ProjectsPubli = forwardRef(({
                                 <div className={styles.finder_table}>
                                     <div className={styles.finder_row}>
                                         <div className={styles.finder_cell}>
-                                            Director
+                                        Dirección
                                         </div>
                                         <div>
                                             {project.info.director}
@@ -264,7 +264,7 @@ const ProjectsPubli = forwardRef(({
                                     </div>
                                     <div className={styles.finder_row}>
                                         <div className={styles.finder_cell}>
-                                            Stars
+                                        Reparto
                                         </div>
                                         <div>
                                             {project.info.stars}
@@ -272,7 +272,7 @@ const ProjectsPubli = forwardRef(({
                                     </div>
                                     <div className={styles.finder_row}>
                                         <div className={styles.finder_cell}>
-                                            Storyline
+                                        Sinopsis
                                         </div>
                                         <div>
                                             {project.info.storyline}
@@ -280,7 +280,7 @@ const ProjectsPubli = forwardRef(({
                                     </div>
                                     <div className={styles.finder_row}>
                                         <div className={styles.finder_cell}>
-                                            Release Date
+                                        Fecha
                                         </div>
                                         <div>
                                             {project.info.release}
@@ -288,7 +288,7 @@ const ProjectsPubli = forwardRef(({
                                     </div>
                                     <div className={styles.finder_row}>
                                         <div className={styles.finder_cell}>
-                                            Language
+                                        V.O
                                         </div>
                                         <div>
                                             {project.info.language}
@@ -296,7 +296,7 @@ const ProjectsPubli = forwardRef(({
                                     </div>
                                     <div className={styles.finder_row}>
                                         <div className={styles.finder_cell}>
-                                            Filming Locations
+                                        Localizaciones
                                         </div>
                                         <div>
                                             {project.info.locations}
@@ -305,7 +305,7 @@ const ProjectsPubli = forwardRef(({
                                     {project.info.company && (
                                         <div className={styles.finder_row}>
                                             <div className={styles.finder_cell}>
-                                                Production Company
+                                            Producción
                                             </div>
                                             <div>
                                                 {project.info.company}

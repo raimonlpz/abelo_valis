@@ -103,7 +103,7 @@ function App() {
   }, [isAuth])
 
   useEffect(() => {
-    if (currentStep === 10) {
+    if (currentStep === 9) {
       openFolderProjectsMovies()
     }
   }, [currentStep])

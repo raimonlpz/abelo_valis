@@ -21,8 +21,8 @@ export default function Notification({ onClose }) {
         <div className={`${styles.modalOverlay} ${isExiting ? styles.hidden : ''}`}>
             <div className={`${styles.modalContent} ${isExiting ? styles.hidden : ''}`}>
                 <p>
-                    Escríbeme si quieres trabajar conmigo, parezco caro, de hecho soy muy caro pero seguro que podemos encontrar la forma.
-                    PD. Vísitame en un 🖥.
+                    Escríbeme si quieres trabajar conmigo, parezco caro, de hecho soy muy caro, pero seguro que podemos encontrar la forma.
+                    Vísitame en un 🖥
                 </p>
                 {/* <p>Esta página web tiene una mejor visualización en ordenador, recomendamos cambiar de dispositivo.</p> */}
                 <button onClick={handleClose} className={styles.closeButton}>Cerrar</button>

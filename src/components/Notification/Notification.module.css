@@ -45,8 +45,8 @@
 .closeButton:hover {
   background: linear-gradient(
     90deg,
-    rgb(255, 140, 0) 47%,
-    rgb(210, 68, 163) 100%
+    rgb(189, 255, 67) 47%,
+    rgb(31, 22, 28) 100%
   ) !important;
 }
 

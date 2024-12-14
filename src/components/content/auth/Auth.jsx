@@ -50,7 +50,7 @@ export default function Auth({ onSignin }) {
                 <input
                     defaultValue=""
                     type="text"
-                    placeholder="Username"
+                    placeholder="¡Dale click abajo!"
                     className={styles.inputField}
                 />
                 <div className={styles.loginButton} onClick={onClick}>

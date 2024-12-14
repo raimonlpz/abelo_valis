@@ -41,3 +41,19 @@
     margin-bottom: 50px;
   }
 }
+
+.lettering {
+  width: 70vw;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: .45;
+}
+
+@media screen and (max-width: 768px) {
+  .lettering {
+    display: none;
+  }
+}

@@ -262,7 +262,7 @@ export default function Folders({
                   onDoubleClick={openLinearGallery}
                   className={`${styles.folderText} ${folderOnfocus === 'makarradas' ? styles.selectedIcon : ''}`}
                 />
-                <span className={`${styles.folderText} ${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Makarrada$</span>
+                <span className={`${styles.folderText} ${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Minijuego$</span>
               </div>
             </Draggable>
 
@@ -452,7 +452,7 @@ export default function Folders({
                   onDoubleClick={openLinearGallery}
                   className={`${styles.folderText} ${folderOnfocus === 'makarradas' ? styles.selectedIcon : ''}`}
                 />
-                <span className={`${styles.folderText} ${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Makarrada$</span>
+                <span className={`${styles.folderText} ${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Minijuego$</span>
               </div>
 
               <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('documents')} onMouseLeave={() => setFolderOnfocus(null)} id="folder"

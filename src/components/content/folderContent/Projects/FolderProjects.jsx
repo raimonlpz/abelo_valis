@@ -135,7 +135,7 @@ const FolderProjects = React.forwardRef(({
                   src="/images/blueicons/cloud.png"
                   alt="cloud"
                 />
-                <p className={styles.left_li_text}>Makarrada$</p>
+                <p className={styles.left_li_text}>Minijuego$</p>
               </li>
             </ul>
             {/* <h5 className={styles.menu_title}>Tags</h5>
@@ -213,14 +213,15 @@ const FolderProjects = React.forwardRef(({
                 />
                 <span className={`${folderOnfocus === 'series' ? styles.selected : ''}`}>Series</span>
               </div>
-              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('musica')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsMerch} onTouchStart={handleTouchStart()}>
+              <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('musica')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={() => window.open('https://abelovalis.bigcartel.com/', '_blank')} onTouchStart={handleTouchStart()}>
                 <img
-                  src="/images/folder.png"
+                  src="/images/menubarimages/3.png"
                   alt="folder"
                   style={{ 'width': '70px' }}
                   className={`${folderOnfocus === 'musica' ? styles.selectedIcon : ''}`}
                 />
                 <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>Ropa & Objetos</span>
+                <span className={`${folderOnfocus === 'musica' ? styles.selected : ''}`}>(+ info en mi tienda)</span>
               </div>
 
               <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('videoclips')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openFolderProjectsVideoclips} onTouchStart={handleTouchStart(openFolderProjectsVideoclips)}>

@@ -177,7 +177,7 @@ const ProjectsTV = forwardRef(({
                                     src="/images/blueicons/cloud.png"
                                     alt="cloud"
                                 />
-                                <p className={styles.left_li_text}>Makarrada$</p>
+                                <p className={styles.left_li_text}>Minijuego$</p>
                             </li>
                         </ul>
                         {/* <h5 className={styles.menu_title}>Tags</h5>

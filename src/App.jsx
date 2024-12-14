@@ -672,6 +672,9 @@ function App() {
       <source src="/videos/reel2.mp4" type="video/mp4" />
     </video>
 
+    { !isValisMode && <img src="/letter/lettering.png" className="lettering" alt="lettering" /> }
+    
+
       <StatusBar toggleAppleMenu={toggleAppleMenu} toggleLateralBar={() => setRightBarOpened(!rightBarOpened)} />
       {showNotification && <Notification onClose={handleCloseNotification} />}
 

@@ -20,13 +20,14 @@ const Interviews = forwardRef(({
 }, ref) => {
 
     const data = [
-        { name: 'https://www.neo2.com/abelo-valis-moda-canalla/', kind: 'Neo2', date: '2019-11-06' },
-        { name: 'https://www.neo2.com/descubriendo-al-artista-multidisciplinar-abelo-valis/', kind: 'Neo2', date: '2020-07-03' },
-        { name: 'https://www.lavozdegalicia.es/noticia/vigo/2023/12/27/mejor-obra-/0003_202312V27C8991.htm', kind: 'La Voz de Galicia', date: '2023-12-27' },
         { name: 'https://troiscontactblog.wordpress.com/portfolio/blooper-abelo-valis/', kind: 'TroisContact Blog', date: 'Unknown' },
         { name: 'https://www.laregion.es/articulo/ourense/abelo-valis-ribadaviense-enamoro-camara/20170910153750735002.html', kind: 'La Región', date: '2017-09-11' },
-        { name: 'https://maldita.es/malditobulo/20230421/el-piti-senor-agente-policia/', kind: 'Maldita.es', date: '2023-04-21' }
-      ];
+        { name: 'https://www.neo2.com/abelo-valis-moda-canalla/', kind: 'Neo2', date: '2019-11-06' },
+        { name: 'https://www.neo2.com/descubriendo-al-artista-multidisciplinar-abelo-valis/', kind: 'Neo2', date: '2020-07-03' },
+        { name: 'https://maldita.es/malditobulo/20230421/el-piti-senor-agente-policia/', kind: 'Maldita.es', date: '2023-04-21' },
+        { name: 'https://www.lavozdegalicia.es/noticia/vigo/2023/12/27/mejor-obra-/0003_202312V27C8991.htm', kind: 'La Voz de Galicia', date: '2023-12-27' },
+        { name: 'https://diariodevigo.com/el-gobierno-impulsa-el-uso-del-transporte-publico-con-un-rap-de-abelovalis/', kind: 'Diario de Vigo', date: '2024-09-19' }
+      ].reverse();
 
     const handleTouchStart = (callback) => (e) => {
         e.preventDefault();
@@ -139,7 +140,7 @@ const Interviews = forwardRef(({
                                 src="/images/blueicons/cloud.png"
                                 alt="cloud"
                             />
-                            <p className={styles.left_li_text}>Makarrada$</p>
+                            <p className={styles.left_li_text}>Minijuego$</p>
                             </li>
                         </ul>
                         {/* <h5 className={styles.menu_title}>Tags</h5>

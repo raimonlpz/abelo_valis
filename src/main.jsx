@@ -10,7 +10,7 @@ import 'uno.css'
 const steps = [
   {
     selector: '#statusBar',
-    content: '¡Hey! Aquí una pequeña guía para navegar por mi fuckin web. Haz click en  para ver la navegación general o reiniciar mi PC.'
+    content: 'Hey! Aquí una pequeña guía para navegar por mi fuckin web. Haz click en  para ver la navegación general o reiniciar mi PC. Te recomiendo usar PC para disfrutar la experiencia completa.'
   },
   // {
   //   selector: '#clock',

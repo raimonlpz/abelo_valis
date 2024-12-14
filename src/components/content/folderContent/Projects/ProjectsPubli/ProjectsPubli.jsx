@@ -37,6 +37,24 @@ const ProjectsPubli = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=RZMqJH343K8'
             }
         },
+        {
+            id: 2,
+            title: 'Transporte público, ¿lo pillas?',
+            subtitles: ['Spot', '2024', '1m'],
+            info: {
+                director: 'Javi Díaz',
+                stars: ['Abelo Valis'],
+                storyline: 'Campaña institucional de impulso al transporte público del Ministerio de Transportes y Movilidad Sostenible.',
+                release: 'Sep 1, 2024 (Spain)',
+                language: 'Spanish',
+                locations: 'Madrid, Spain',
+                company: 'Ministerio de Transportes y Mobilidad Sostenible, Gobierno de España'
+            },
+            imgs: ['/projects/publi/renfe1.webp', '/projects/publi/renfe2.webp', '/projects/publi/renfe3.webp'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=EvwnDMmUnKU'
+            }
+        }
     ]
 
     const [indexProject, setIndexProject] = useState(0)
@@ -176,7 +194,7 @@ const ProjectsPubli = forwardRef(({
                                     src="/images/blueicons/cloud.png"
                                     alt="cloud"
                                 />
-                                <p className={styles.left_li_text}>Makarrada$</p>
+                                <p className={styles.left_li_text}>Minijuego$</p>
                             </li>
                         </ul>
                         {/* <h5 className={styles.menu_title}>Tags</h5>

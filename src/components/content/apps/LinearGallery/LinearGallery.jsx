@@ -6,7 +6,7 @@ import SnakeGame from './SnakeGame/SnakeGame'
 import DinoGame from './DinoGame/DinoGame'
 import { useMediaQuery } from 'react-responsive'
 
-// Formerly Makarrada$ / Game$
+// Formerly Minijuego$ / Game$
 const LinearGallery = forwardRef(({
     isLinearGalleryOpen,
     closeLinearGallery,

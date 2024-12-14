@@ -128,7 +128,7 @@ const FolderDocuments = forwardRef(({
                   src="/images/blueicons/cloud.png"
                   alt="cloud"
                 />
-                <p className={styles.left_li_text}>Makarrada$</p>
+                <p className={styles.left_li_text}>Minijuego$</p>
               </li>
             </ul>
           </div>
@@ -193,7 +193,7 @@ const FolderDocuments = forwardRef(({
               </div>
               <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('makarradas')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openMakarradas} onTouchStart={handleTouchStart(openMakarradas)}>
                 <img className={`${styles.file} ${folderOnfocus === 'makarradas' ? styles.selectedIcon : ''}`} src="/images/customicons/gun.png" alt="folder" />
-                <span className={`${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Makarrada$</span>
+                <span className={`${folderOnfocus === 'makarradas' ? styles.selected : ''}`}>Minijuego$</span>
               </div>
             </div>
             <div className={styles.row}>

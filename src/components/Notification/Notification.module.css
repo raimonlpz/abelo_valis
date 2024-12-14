@@ -26,11 +26,11 @@
 }
 
 .closeButton {
-  background: rgb(210, 68, 163);
+  background: rgb(31, 22, 28) 47%;
   background: linear-gradient(
     90deg,
-    rgb(210, 68, 163) 47%,
-    rgb(255, 140, 0) 100%
+    rgb(31, 22, 28) 47%,
+    rgb(189, 255, 67) 100%
   ) !important;
   color: white;
   border: none;

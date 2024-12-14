@@ -6,7 +6,7 @@ import Card from "./Card"
 export default function Cards({ category, data, from = 0, len = Math.PI * 2, radius = 5.25, onPointerOver, onPointerOut, ...props }) {
 
     const [hovered, hover] = useState(null)
-    const amount = Math.round(len * 22)
+    const amount = Math.round(len * 16)
     const textPosition = from + (amount / 2 / amount) * len
 
     return (
@@ -26,7 +26,7 @@ export default function Cards({ category, data, from = 0, len = Math.PI * 2, rad
                     rotation={[0, Math.PI / 2 + angle, 0]}
                     active={hovered !== null}
                     hovered={hovered === i}
-                    url={`/abelo/img${Math.floor(i % 20) + 1}.webp`}
+                    url={`/abelo2/${Math.floor(i % 16) + 1}.jpg`}
                 />
                 )
         })}

@@ -125,7 +125,9 @@ const ProjectsMerch = forwardRef(({
         callback();
     };*/
 
-    return <></>
+    return <>
+        <div ref={ref}></div>
+    </>
 
     {/*return (
         <Draggable

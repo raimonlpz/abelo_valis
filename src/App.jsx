@@ -1012,7 +1012,7 @@ function App() {
           openAboutMe={openAboutMe}
         />
 
-        {/* <ProjectsMerch 
+        <ProjectsMerch 
           ref={projectsMerchFolderRef}
           isFolderProjectsMerchOpen={isFolderProjectsMerchOpen}
                   closeFolderProjectsMerch={closeFolderProjectsMerch}
@@ -1028,7 +1028,7 @@ function App() {
                   openCircGallery={openCircGallery}
                   openFormations={openFormations}
                   openAboutMe={openAboutMe}
-        /> */}
+        />
 
         <AppleMenu 
           isAppleMenuOpen={isAppleMenuOpen} 

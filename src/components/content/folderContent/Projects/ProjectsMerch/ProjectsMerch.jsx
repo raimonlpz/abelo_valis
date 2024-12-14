@@ -19,7 +19,7 @@ const ProjectsMerch = forwardRef(({
     openAboutMe
 }, ref) => {
     const data = [
-        {
+        /*{
             id: 1,
             title: 'Viva Vigo para Siempre me Cago en Tal de Abelo Valis',
             subtitles: ['20€', 'On sale'],
@@ -89,10 +89,10 @@ const ProjectsMerch = forwardRef(({
             links: {
                 bigcartel: 'https://abelovalis.bigcartel.com/product/licor-cafe-original-de-abelo-valis',
             }
-        }
+        }*/
     ]
     
-    const [indexProject, setIndexProject] = useState(0)
+    /*const [indexProject, setIndexProject] = useState(0)
     const [project, setProject] = useState(data[indexProject])
     const [mainImg, setMainImg] = useState(data[indexProject].imgs[0])
 
@@ -123,9 +123,11 @@ const ProjectsMerch = forwardRef(({
     const handleTouchStart = (callback) => (e) => {
         e.preventDefault();
         callback();
-    };
+    };*/
 
-    return (
+    return <></>
+
+    {/*return (
         <Draggable
             onStart={onStartDrag}
             onStop={onStopDrag}
@@ -242,7 +244,7 @@ const ProjectsMerch = forwardRef(({
                                 />
                                 <p className={styles.left_li_text}>All Tags</p>
                             </li>
-                        </ul> */}
+                        </ul> 
                     </div>
                 </div>
                 <div className={styles.right_inner_wrapper}>
@@ -312,7 +314,7 @@ const ProjectsMerch = forwardRef(({
                 </div>
             </div>
         </Draggable>
-    )
+    )*/}
 })
 
 export default ProjectsMerch

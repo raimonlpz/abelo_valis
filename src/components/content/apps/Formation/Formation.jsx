@@ -49,6 +49,7 @@ const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp,
                     <h5>~ Formación </h5>
                     <div>
                         <ul>
+                            <li><span style={{'color': '#54FFD5'}}>2025</span>: Taller Intensivo con Carlos Sedes en ACT Galicia.</li>
                             <li><span style={{'color': '#54FFD5'}}>2025</span>: Taller Intensivo de cámara con Carla Calparsoro en Escena311.</li>
                             <li><span style={{'color': '#54FFD5'}}>2022</span>: Taller "La memoria de los Objetos" impartido por Xavier Bobés.</li>
                             <li><span style={{'color': '#C5FF80'}}>2020</span>: Curso Intensivo UX/UI Beginners en Mr Marcel School impartido por Andres Rigo (IBM) y Jorge Barriobero (Tribal WW).</li>

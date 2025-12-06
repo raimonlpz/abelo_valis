@@ -77,7 +77,7 @@ const FolderDocuments = forwardRef(({
                   src="/images/blueicons/file.png"
                   alt="file"
                 />
-                <p className={styles.left_li_text}>CV_2024</p>
+                <p className={styles.left_li_text}>cv_2026</p>
               </li>
               <li className={styles.left_li} onClick={openAboutMe} onTouchStart={handleTouchStart(openAboutMe)}>
                 <img
@@ -185,7 +185,7 @@ const FolderDocuments = forwardRef(({
                   src="/images/customicons/pdf-format.png"
                   alt="folder"
                 />
-                <span className={`${folderOnfocus === 'cv' ? styles.selected : ''}`}>CV_2024.pdf</span>
+                <span className={`${folderOnfocus === 'cv' ? styles.selected : ''}`}>cv_2026.pdf</span>
               </div>
               <div className={styles.folderWrapper} onClick={() => setFolderOnfocus('photos')} onMouseLeave={() => setFolderOnfocus(null)} onDoubleClick={openCircGallery} onTouchStart={handleTouchStart(openCircGallery)}>
                 <img src="/images/customicons/photos-icon.png" alt="folder" className={`${folderOnfocus === 'photos' ? styles.selectedIcon : ''} w-20`} />

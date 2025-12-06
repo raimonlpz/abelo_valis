@@ -163,7 +163,7 @@ export default function Folders({
                   onDoubleClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')}
                   className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selectedIcon : ''}`}
                 />
-                <span className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selected : ''}`}>CV_2024.pdf</span>
+                <span className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selected : ''}`}>cv_2026.pdf</span>
               </div>
             </Draggable>
           </div>
@@ -372,7 +372,7 @@ export default function Folders({
                   onDoubleClick={() => window.open('/files/AbeloValis_CV.pdf', '_blank')}
                   className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selectedIcon : ''}`}
                 />
-                <span className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selected : ''}`}>CV_2024.pdf</span>
+                <span className={`${styles.folderText} ${folderOnfocus === 'cv' ? styles.selected : ''}`}>cv_2026.pdf</span>
               </div>
 
               <div

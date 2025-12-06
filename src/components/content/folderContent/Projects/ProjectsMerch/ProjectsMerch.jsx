@@ -182,7 +182,7 @@ const ProjectsMerch = forwardRef(({
                                 src="/images/blueicons/file.png"
                                 alt="file"
                             />
-                            <p className={styles.left_li_text}>CV_2024</p>
+                            <p className={styles.left_li_text}>cv_2026</p>
                             </li>
                             <li className={styles.left_li} onClick={openAboutMe}>
                             <img

@@ -37,6 +37,25 @@ const ProjectsTV = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=ABCbAdUX4Dk',
                 imdb: 'https://www.imdb.com/title/tt8038148'
             }
+        },
+        {
+            id: 2,
+            title: 'Animal',
+            subtitles: ['TV Series', '2025', '2 temporadas'],
+            info: {
+                director: 'Víctor García Leon, Alberto de Toro',
+                stars: ['Abelo Valis, Luís Zahera, Lucía Caraballo, Carmen Ruiz, Raquel Nogueira'],
+                storyline: "Uxía has a pet store and employs her uncle Antón, a rural veterinarian.",
+                release: 'Oct 3, 2025 (Spain)',
+                language: 'Spanish',
+                locations: "A Coruña (Galicia, Spain)",
+                company: 'Alea Media'
+            },
+            imgs: ['/projects/tv/animal1.png', '/projects/tv/animal2.jpg', '/projects/tv/animal3.jpg'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=S7i50IGdnNs',
+                imdb: 'https://www.imdb.com/title/tt30817086/'
+            }
         }
     ]
 

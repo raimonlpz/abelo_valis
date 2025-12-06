@@ -49,6 +49,7 @@ const Formations = forwardRef(({ isFormationsOpen, closeFormations, maximizeApp,
                     <h5>~ Formación </h5>
                     <div>
                         <ul>
+                            <li><span style={{'color': '#E2FF94'}}>2025</span>: Taller con Tito Asorey "A palabra como Acción" en Escola Unitaria</li>
                             <li><span style={{'color': '#C5FF80'}}>2025</span>: Taller Intensivo con Carlos Sedes en ACT Galicia.</li>
                             <li><span style={{'color': '#FFB0B7'}}>2025</span>: Taller Intensivo de cámara con Carla Calparsoro en Escena311.</li>
                             <li><span style={{'color': '#54FFD5'}}>2022</span>: Taller "La memoria de los Objetos" impartido por Xavier Bobés.</li>

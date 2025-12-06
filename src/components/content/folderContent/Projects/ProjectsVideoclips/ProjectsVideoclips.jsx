@@ -95,6 +95,25 @@ const ProjectsVideoclips = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=eNRoiM5NHYQ',
                 imdb: 'https://www.imdb.com/title/tt14336192'
             }
+        },
+                {
+            id: 5,
+            title: 'Boyanka Kostova: Europa do Oeste',
+            subtitles: ['Music Video', '2025', '3m'],
+            info: {
+                director: 'Javi Ziontifik',
+                stars: ['Abelo Valis, Sabela Aran, Miky Facal'],
+                storyline: 'Music video for "Europa do Oeste" by Boyanka Kostova',
+                release: 'January 31, 2025 (Spain)',
+                language: 'Galego',
+                locations: "Spain",
+                company: 'Juan Barbazan, Fon Soto, Mundo X'
+            },
+            imgs: ['/projects/videoclips/kostova1.png', '/projects/videoclips/kostova2.png', '/projects/videoclips/kostova3.png'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=vFz79V7sBko&list=RDvFz79V7sBko',
+                imdb: '-'
+            }
         }
     ]
 

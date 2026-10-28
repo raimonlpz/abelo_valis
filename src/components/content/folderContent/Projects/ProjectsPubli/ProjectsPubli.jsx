@@ -54,6 +54,42 @@ const ProjectsPubli = forwardRef(({
             links: {
                 youtube: 'https://www.youtube.com/watch?v=EvwnDMmUnKU'
             }
+        },
+        {
+            id: 3,
+            title: 'St. Petroni',
+            subtitles: ['Spot', '2026', '2m'],
+            info: {
+                director: 'Iñaki Tena',
+                stars: ['Abelo Valis, Petro, Toni'],
+                storyline: 'Somos Petro y Toni, y vamos MUY A LO NUESTRO. ¿Qué es lo nuestro? Lo nuestro es el aperitivo.',
+                release: 'Jun 1, 2026 (Spain)',
+                language: 'Spanish',
+                locations: 'Galicia, Spain',
+                company: 'Jakiens'
+            },
+            imgs: ['/projects/publi/petro1.png', '/projects/publi/petro2.png', '/projects/publi/petro3.png'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=ZpoPDLO9cUk'
+            }
+        },
+        {
+            id: 4,
+            title: 'Mexillón de Galicia - Se é galego, salta á vista',
+            subtitles: ['Spot', '2026', '1m'],
+            info: {
+                director: 'Jacobo Areal',
+                stars: ['Abelo Valis, Iago Aspas'],
+                storyline: 'Este é o vídeo da nova campaña de comunicación da DOP Mexillón de Galicia',
+                release: 'Sep 22, 2026 (Spain)',
+                language: 'Spanish',
+                locations: 'Galicia, Spain',
+                company: 'Tio Phil'
+            },
+            imgs: ['/projects/publi/mexi1.png', '/projects/publi/mexi2.png', '/projects/publi/mexi3.png'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=-JhhOaac0S0'
+            }
         }
     ]
 

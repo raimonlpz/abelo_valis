@@ -75,6 +75,25 @@ const ProjectsMovies = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=C2SWRfdlEy4',
                 imdb: 'https://www.imdb.com/title/tt21228552'
             }
+        },
+            {
+            id: 4,
+            title: 'A morte nos teus ollos',
+            subtitles: ['Crime', '2027', ''],
+            info: {
+                director: 'Guillermo de Oliveira',
+                stars: ['Abelo Valis, Iván Marcos, Nerea Barros, Peop Suevos'],
+                storyline: "In Vigo, 1994, two disgraced police officers join forces to rob a businessman.",
+                release: 'January 22, 2027 (Spain)',
+                language: 'Spanish',
+                locations: "Vigo, Galicia, Spain",
+                company: 'Atresmedia Cine'
+            },
+            imgs: ['/projects/movies/a-morte-1.jpg', '/projects/movies/a-morte-2.jpg', '/projects/movies/a-morte-3.jpg'],
+            links: {
+                youtube: '#',
+                imdb: 'https://www.imdb.com/es-es/title/tt35715640/'
+            }
         }
     ]
 

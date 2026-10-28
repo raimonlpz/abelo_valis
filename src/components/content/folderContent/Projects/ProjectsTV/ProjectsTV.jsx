@@ -56,6 +56,25 @@ const ProjectsTV = forwardRef(({
                 youtube: 'https://www.youtube.com/watch?v=S7i50IGdnNs',
                 imdb: 'https://www.imdb.com/title/tt30817086/'
             }
+        },
+        {
+            id: 3,
+            title: 'Clanes',
+            subtitles: ['TV Series', '2024', '3 temporadas'],
+            info: {
+                director: 'Roger Gual, Jorge Guerricaechevarría',
+                stars: ['Abelo Valis, Clara Lago, Tamar Novas, Melania Cruz, María Pujalte'],
+                storyline: "A new lawyer arrives to set up practice in the small town of Cambados.",
+                release: 'Jun 21, 2024 (Spain)',
+                language: 'Spanish',
+                locations: "Oporto (Portugal)",
+                company: 'Netflix, Vaca Films'
+            },
+            imgs: ['/projects/tv/clanes1.jpg', '/projects/tv/clanes2.jpg', '/projects/tv/clanes3.webp'],
+            links: {
+                youtube: 'https://www.youtube.com/watch?v=wzFd0xzeSY4',
+                imdb: 'https://www.imdb.com/es-es/title/tt27843828/'
+            }
         }
     ]
 
